@@ -1,0 +1,406 @@
+{
+  "nav": {
+    "inicio": "Start",
+    "servicos": "Dienstleistungen",
+    "portfolio": "Portfolio",
+    "sobre": "Über uns",
+    "faq": "FAQ",
+    "contato": "Kontakt"
+  },
+  "hero": {
+    "title": "DIGITALE TRANSFORMATION & KI-AUTOMATISIERUNG",
+    "subtitle": "Stärken Sie Ihr Unternehmen mit künstlicher Intelligenz",
+    "cta": "Projekt starten"
+  },
+  "about": {
+    "title": "WER WIR SIND",
+    "paragraphs": [
+      "Gegründet {foundingYear} in Portugal, entstand Devloper.eu aus der Vision, den Markt für Unternehmensautomatisierung durch künstliche Intelligenz zu revolutionieren. Wir sind Pioniere bei der Integration maßgeschneiderter KI-Agenten, die komplexe Prozesse in effiziente und skalierbare Lösungen umwandeln.",
+      "Unser einzigartiger Ansatz verbindet modernste Technologie mit einem tiefen Verständnis für die spezifischen Bedürfnisse jedes Kunden. Wir entwickeln Lösungen, die nicht nur Aufgaben automatisieren, sondern sich kontinuierlich weiterentwickeln und anpassen, was einen echten Wettbewerbsvorteil auf dem europäischen Markt bietet."
+    ],
+    "stats": {
+      "projects": {
+        "value": "100+",
+        "label": "Abgeschlossene Projekte"
+      },
+      "satisfaction": {
+        "value": "95%",
+        "label": "Kundenzufriedenheit"
+      },
+      "support": {
+        "value": "24/7",
+        "label": "KI-Support"
+      }
+    }
+  },
+  "services": {
+    "title": "UNSERE DIENSTLEISTUNGEN",
+    "subtitle": "Innovative Lösungen für Ihre digitale Transformation",
+    "items": {
+      "ia_consultoria": {
+        "title": "KI-Beratung",
+        "description": "Maßgeschneiderte KI-Strategien zur Optimierung Ihrer Geschäftsprozesse."
+      },
+      "automacao": {
+        "title": "Automatisierung",
+        "description": "Intelligente Prozessautomatisierung für höhere betriebliche Effizienz."
+      },
+      "machine_learning": {
+        "title": "Machine Learning",
+        "description": "Machine-Learning-Lösungen für prädiktive Analysen."
+      },
+      "big_data": {
+        "title": "Big Data",
+        "description": "Analyse und Verarbeitung großer Datenmengen."
+      },
+      "desenvolvimento": {
+        "title": "Entwicklung",
+        "description": "Entwicklung individueller Software und Anwendungen."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Datenbasierte Erkenntnisse für die Entscheidungsfindung."
+      }
+    }
+  },
+  "advantages": {
+    "title": "UNSER VORTEIL",
+    "subtitle": "WARUM UNTERNEHMEN MIT UNS ERFOLGREICH SIND",
+    "description": "Unsere KI-gestützten Lösungen sind darauf ausgerichtet, Ihre Arbeitsabläufe zu optimieren, die Kundenzufriedenheit zu steigern und messbares Wachstum zu erzielen.",
+    "items": {
+      "efficiency": {
+        "title": "GESTEIGERTE EFFIZIENZ",
+        "description": "Maßgeschneiderte KI-Agenten vereinfachen repetitive Aufgaben und setzen personelle Ressourcen für wichtige Aktivitäten frei."
+      },
+      "experience": {
+        "title": "VERBESSERTE KUNDENERFAHRUNG",
+        "description": "KI-Agenten liefern schnelle und präzise Antworten sowie personalisierte Interaktionen, die die Kundenzufriedenheit und -bindung steigern."
+      },
+      "insights": {
+        "title": "DATENBASIERTE ERKENNTNISSE",
+        "description": "Durch die Analyse von Interaktionen und Ergebnissen liefern diese Agenten wertvolle Erkenntnisse für bessere Entscheidungen und Strategieverfeinerung."
+      },
+      "scalability": {
+        "title": "SKALIERBARKEIT",
+        "description": "Maßgeschneiderte Agenten passen sich flexibel Ihrem Unternehmenswachstum an und ermöglichen eine nahtlose Erweiterung automatisierter Support-, Marketing- und Vertriebsprozesse."
+      },
+      "integration": {
+        "title": "NAHTLOSE INTEGRATION",
+        "description": "KI-Agenten integrieren sich problemlos in Ihre bestehenden Systeme und gewährleisten eine reibungslose Einführung ohne Unterbrechung aktueller Arbeitsabläufe."
+      },
+      "growth": {
+        "title": "BESCHLEUNIGTES WACHSTUM",
+        "description": "Nutzen Sie KI-gestützte Automatisierung, um die Produktivität zu steigern, die Leistung zu optimieren und Ihre Geschäftsziele schneller als je zuvor zu erreichen."
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "name": "Name",
+    "email": "E-Mail",
+    "message": "Nachricht",
+    "send": "Senden"
+  },
+  "faq": {
+    "title": "HÄUFIG GESTELLTE FRAGEN",
+    "questions": [
+      {
+        "question": "Ist die Implementierung von benutzerdefinierten KI-Agenten teuer?",
+        "answer": "Es gibt eine anfängliche Investition, aber die Vorteile zahlen sich langfristig aus. Unsere KI-Agenten reduzieren die Betriebskosten und steigern die Effizienz, was einen guten Return on Investment gewährleistet."
+      },
+      {
+        "question": "Wird die Integration von KI-Agenten für unsere bestehenden Systeme zu komplex sein?",
+        "answer": "Nein. Unsere Agenten sind für eine einfache Integration in Ihre Infrastruktur konzipiert und gewährleisten eine reibungslose Implementierung mit voller Unterstützung durch unser Team."
+      },
+      {
+        "question": "Wie sicher sind unsere Daten bei der Verwendung von KI-Agenten?",
+        "answer": "Wir priorisieren Sicherheit mit robusten Protokollen, erfüllen alle Branchenstandards und bieten kontinuierliche Überwachung zum Schutz Ihrer Informationen."
+      },
+      {
+        "question": "Werden KI-Agenten unsere Mitarbeiter ersetzen?",
+        "answer": "Nein. Die Agenten sind darauf ausgelegt, Ihr Team zu ergänzen, indem sie Routineaufgaben automatisieren, damit sich die Mitarbeiter auf strategische Aktivitäten konzentrieren können."
+      },
+      {
+        "question": "Wie schnell können wir mit einer Kapitalrendite (ROI) rechnen?",
+        "answer": "Unternehmen sehen typischerweise signifikante Verbesserungen in den ersten Monaten nach der Implementierung, wobei der ROI je nach Projektumfang variiert."
+      },
+      {
+        "question": "Können KI-Agenten an unsere einzigartigen geschäftlichen Anforderungen angepasst werden?",
+        "answer": "Ja. Wir entwickeln vollständig maßgeschneiderte Lösungen, die auf Ihre spezifischen Prozesse und Ziele zugeschnitten sind."
+      },
+      {
+        "question": "Welche Art von laufendem Support und Wartung wird benötigt?",
+        "answer": "Wir bieten umfassenden Support nach der Implementierung, einschließlich Updates, Überwachung und Anpassungen nach Bedarf."
+      },
+      {
+        "question": "Können wir darauf vertrauen, dass KI-Agenten konsistent und fehlerfrei arbeiten?",
+        "answer": "Unsere Agenten werden rigoros getestet und verfügen über kontinuierliche Verbesserungsprotokolle, die hohe Zuverlässigkeit und Genauigkeit gewährleisten."
+      },
+      {
+        "question": "Wie werden sich KI-Agenten auf unsere Kundenbeziehungen auswirken?",
+        "answer": "Die Agenten verbessern den Service durch schnelle und präzise Antworten, steigern die Kundenzufriedenheit, während sich Ihr Team auf strategischere Interaktionen konzentrieren kann."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Transformation von Unternehmen durch digitale Innovation und maßgeschneiderte KI-Lösungen.",
+    "quickLinks": {
+      "title": "Schnellzugriff",
+      "services": "Dienstleistungen",
+      "about": "Über Uns",
+      "portfolio": "Portfolio",
+      "faq": "FAQ"
+    },
+    "ourServices": {
+      "title": "Unsere Dienstleistungen",
+      "aiConsulting": "KI-Beratung",
+      "automation": "Automatisierung",
+      "machineLearning": "Machine Learning",
+      "development": "Entwicklung"
+    },
+    "contact": {
+      "title": "Kontakt"
+    },
+    "copyright": "© 2025 Devloper.eu. Alle Rechte vorbehalten.",
+    "legal": {
+      "privacy": "Datenschutz",
+      "terms": "AGB",
+      "cookies": "Cookies"
+    },
+    "cookieBanner": {
+      "title": "Ihre Datenschutzeinstellungen",
+      "description": "Wir verwenden Cookies, um Ihr Browsing-Erlebnis zu verbessern. Wir bitten um Ihre Zustimmung für:",
+      "categories": {
+        "essential": "Essentielle Cookies (Erforderlich)",
+        "preferences": "Präferenzen",
+        "analytics": "Analyse",
+        "marketing": "Marketing"
+      },
+      "buttons": {
+        "acceptAll": "Alle Akzeptieren",
+        "acceptSelected": "Ausgewählte Akzeptieren",
+        "rejectAll": "Alle Ablehnen"
+      }
+    }
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "lastUpdated": "Zuletzt aktualisiert: {{date}}",
+    "sections": {
+      "dataController": {
+        "title": "1. VERANTWORTLICHER FÜR DIE DATENVERARBEITUNG",
+        "company": "devloper.eu",
+        "location": "Braga, Portugal",
+        "email": "Email: contato@devlopereu.com",
+        "dpo": "DPO (Datenschutzbeauftragter): [Gabriel Kevin]"
+      },
+      "personalData": {
+        "title": "2. PERSONENBEZOGENE DATEN, DIE WIR VERARBEITEN",
+        "categories": {
+          "title": "2.1. Kategorien personenbezogener Daten:",
+          "items": [
+            "Identifikationsdaten (Name, E-Mail)",
+            "Technische Daten (IP, Cookies, Gerät)",
+            "Nutzungsdaten (Websiteverhalten)",
+            "Kommunikationsdaten"
+          ]
+        },
+        "legalBasis": {
+          "title": "2.2. Rechtsgrundlage für die Verarbeitung:",
+          "items": [
+            "Ausdrückliche Einwilligung",
+            "Vertragliche Verpflichtung",
+            "Berechtigte Interessen",
+            "Gesetzliche Verpflichtung"
+          ]
+        }
+      },
+      "processingPurposes": {
+        "title": "3. ZWECKE DER VERARBEITUNG",
+        "purposes": {
+          "title": "3.1. Wir verarbeiten Ihre Daten für:",
+          "items": [
+            "Bereitstellung unserer Dienstleistungen",
+            "Verbesserung der Benutzererfahrung",
+            "Erfüllung gesetzlicher Verpflichtungen",
+            "Marketing (mit Einwilligung)"
+          ]
+        },
+        "automated": "3.2. Wir treffen keine automatisierten Entscheidungen, die Benutzer erheblich beeinflussen."
+      },
+      "dataRetention": {
+        "title": "4. DATENSPEICHERUNG",
+        "periods": {
+          "title": "4.1. Aufbewahrungsfristen:",
+          "items": [
+            "Kontodaten: Während der Existenz des Kontos",
+            "Transaktionsdaten: 5 Jahre",
+            "Cookies: Gemäß Benutzereinstellungen"
+          ]
+        }
+      },
+      "gdprRights": {
+        "title": "5. IHRE DSGVO-RECHTE",
+        "intro": "Sie haben das Recht auf:",
+        "rights": [
+          "Zugriff auf Ihre Daten",
+          "Berichtigung der Daten",
+          "Löschung (\"Recht auf Vergessenwerden\")",
+          "Einschränkung der Verarbeitung",
+          "Datenübertragbarkeit",
+          "Widerspruch gegen die Verarbeitung",
+          "Widerruf der Einwilligung",
+          "Beschwerde bei der Aufsichtsbehörde"
+        ]
+      },
+      "internationalTransfers": {
+        "title": "6. INTERNATIONALE ÜBERMITTLUNGEN",
+        "transfers": {
+          "title": "6.1. Übermittlungen außerhalb der EU/EWR:",
+          "items": [
+            "Angemessene Schutzmaßnahmen",
+            "Standardvertragsklauseln",
+            "Angemessenheitsbeschlüsse"
+          ]
+        }
+      },
+      "securityMeasures": {
+        "title": "7. SICHERHEITSMASSNAHMEN",
+        "measures": [
+          "Datenverschlüsselung",
+          "Zugriffskontrollen",
+          "Regelmäßige Backups",
+          "Sicherheitsüberwachung"
+        ]
+      }
+    }
+  },
+  "terms": {
+    "title": "Nutzungsbedingungen",
+    "lastUpdated": "Zuletzt aktualisiert: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "1. ANNAHME DER BEDINGUNGEN",
+        "content": "Durch den Zugriff auf und die Nutzung der Dienste von Devloper.eu stimmen Sie zu, diese Nutzungsbedingungen einzuhalten und daran gebunden zu sein. Wenn Sie einem Teil dieser Bedingungen nicht zustimmen, dürfen Sie unsere Dienste nicht nutzen."
+      },
+      "services": {
+        "title": "2. BESCHREIBUNG DER DIENSTE",
+        "content": "Devloper.eu bietet KI-Beratung, Softwareentwicklung und maßgeschneiderte Technologielösungen.",
+        "items": [
+          "KI-Beratung",
+          "Softwareentwicklung",
+          "Prozessautomatisierung",
+          "Machine Learning"
+        ]
+      },
+      "userResponsibilities": {
+        "title": "3. BENUTZERVERANTWORTLICHKEITEN",
+        "intro": "Bei der Nutzung unserer Dienste stimmen Sie zu:",
+        "items": [
+          "Wahre und genaue Informationen bereitzustellen",
+          "Die Vertraulichkeit Ihrer Zugangsdaten zu wahren",
+          "Die Dienste nicht für illegale Zwecke zu nutzen",
+          "Geistige Eigentumsrechte zu respektieren"
+        ]
+      },
+      "intellectualProperty": {
+        "title": "4. GEISTIGES EIGENTUM",
+        "content": "Alle Inhalte, Marken, Logos, Software und Technologien, die auf der Plattform verwendet werden, sind Eigentum von Devloper.eu oder ihrer Lizenzgeber und durch Gesetze zum geistigen Eigentum geschützt."
+      },
+      "liability": {
+        "title": "5. HAFTUNGSBESCHRÄNKUNG",
+        "content": "Devloper.eu haftet nicht für indirekte, zufällige oder Folgeschäden, die sich aus der Nutzung oder Unmöglichkeit der Nutzung der Dienste ergeben."
+      },
+      "modifications": {
+        "title": "6. ÄNDERUNGEN DER BEDINGUNGEN",
+        "content": "Wir behalten uns das Recht vor, diese Bedingungen jederzeit zu ändern. Die Änderungen treten nach Veröffentlichung der aktualisierten Bedingungen auf unserer Plattform in Kraft."
+      },
+      "termination": {
+        "title": "7. KÜNDIGUNG",
+        "content": "Wir können Ihren Zugang zu den Diensten bei Verstoß gegen diese Bedingungen sofort und ohne vorherige Ankündigung beenden oder aussetzen."
+      },
+      "applicableLaw": {
+        "title": "8. GELTENDES RECHT",
+        "content": "Diese Bedingungen unterliegen den Gesetzen Portugals. Alle Streitigkeiten unterliegen der ausschließlichen Gerichtsbarkeit der portugiesischen Gerichte."
+      }
+    },
+    "footer": {
+      "moreInfo": "Für weitere Informationen konsultieren Sie unsere:"
+    }
+  },
+  "cookies": {
+    "title": "Cookie-Richtlinie",
+    "lastUpdated": "Zuletzt aktualisiert: {{date}}",
+    "sections": {
+      "consent": {
+        "title": "1. EINWILLIGUNGSVERWALTUNG",
+        "categoriesTitle": "1.1. Cookie-Kategorien:",
+        "categories": {
+          "necessary": {
+            "title": "Unbedingt Erforderlich:",
+            "items": [
+              "Wesentlich für die Funktionalität",
+              "Können nicht deaktiviert werden",
+              "Rechtsgrundlage: berechtigtes Interesse"
+            ]
+          },
+          "preferences": {
+            "title": "Präferenzen:",
+            "items": [
+              "Speichern Einstellungen",
+              "Können deaktiviert werden",
+              "Rechtsgrundlage: Einwilligung"
+            ]
+          },
+          "statistics": {
+            "title": "Statistiken:",
+            "items": [
+              "Nutzungsanalyse",
+              "Anonym",
+              "Rechtsgrundlage: Einwilligung"
+            ]
+          },
+          "marketing": {
+            "title": "Marketing:",
+            "items": [
+              "Tracking",
+              "Zielgerichtete Werbung",
+              "Rechtsgrundlage: Einwilligung"
+            ]
+          }
+        }
+      },
+      "thirdParty": {
+        "title": "2. DRITTANBIETER-COOKIES",
+        "subtitle": "2.1. Wir nutzen Dienste von:",
+        "services": [
+          "Google Analytics",
+          "Facebook Pixel",
+          "LinkedIn Insight Tag"
+        ]
+      },
+      "storage": {
+        "title": "3. SPEICHERDAUER",
+        "periods": [
+          "Sitzung: bis zum Schließen des Browsers",
+          "Persistent: maximal 12 Monate",
+          "Marketing: maximal 13 Monate"
+        ]
+      },
+      "settings": {
+        "title": "4. COOKIE-EINSTELLUNGEN",
+        "description": "Sie können Ihre Cookie-Einstellungen jederzeit über unser Cookie-Einstellungspanel verwalten, das Folgendes bietet:",
+        "features": [
+          "Optionen nach Kategorie",
+          "Klare Beschreibung",
+          "Einfaches Opt-out"
+        ],
+        "manageButton": "Cookies verwalten"
+      }
+    },
+    "footer": {
+      "moreInfo": "Weitere Informationen zum Schutz Ihrer Daten finden Sie in unserer:",
+      "privacyLink": "Datenschutzerklärung"
+    }
+  }
+}

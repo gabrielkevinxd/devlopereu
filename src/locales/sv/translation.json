@@ -1,0 +1,406 @@
+{
+  "nav": {
+    "inicio": "Hem",
+    "servicos": "Tjänster",
+    "portfolio": "Portfolio",
+    "sobre": "Om oss",
+    "faq": "FAQ",
+    "contato": "Kontakt"
+  },
+  "hero": {
+    "title": "DIGITAL TRANSFORMATION & AI-AUTOMATION",
+    "subtitle": "Stärk ditt företag med artificiell intelligens",
+    "cta": "Starta Projekt"
+  },
+  "about": {
+    "title": "VILKA VI ÄR",
+    "paragraphs": [
+      "Grundat {foundingYear} i Portugal, föddes Devloper.eu ur visionen att revolutionera marknaden för företagsautomatisering genom artificiell intelligens. Vi är pionjärer inom integration av anpassade AI-agenter som omvandlar komplexa processer till effektiva och skalbara lösningar.",
+      "Vårt unika tillvägagångssätt kombinerar toppmodern teknik med en djup förståelse för varje kunds specifika behov. Vi utvecklar lösningar som inte bara automatiserar uppgifter utan kontinuerligt utvecklas och anpassas, vilket ger en verklig konkurrensfördel på den europeiska marknaden."
+    ],
+    "stats": {
+      "projects": {
+        "value": "100+",
+        "label": "Levererade Projekt"
+      },
+      "satisfaction": {
+        "value": "95%",
+        "label": "Kundnöjdhet"
+      },
+      "support": {
+        "value": "24/7",
+        "label": "AI-Support"
+      }
+    }
+  },
+  "services": {
+    "title": "VÅRA TJÄNSTER",
+    "subtitle": "Innovativa lösningar för att driva din digitala transformation",
+    "items": {
+      "ia_consultoria": {
+        "title": "AI-Konsulting",
+        "description": "Skräddarsydda AI-strategier för att optimera dina affärsprocesser."
+      },
+      "automacao": {
+        "title": "Automation",
+        "description": "Intelligent processautomatisering för ökad operativ effektivitet."
+      },
+      "machine_learning": {
+        "title": "Machine Learning",
+        "description": "Maskininlärningslösningar för prediktiv analys."
+      },
+      "big_data": {
+        "title": "Big Data",
+        "description": "Analys och bearbetning av stora datamängder."
+      },
+      "desenvolvimento": {
+        "title": "Utveckling",
+        "description": "Utveckling av skräddarsydd programvara och applikationer."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Datadriven insikt för beslutsfattande."
+      }
+    }
+  },
+  "advantages": {
+    "title": "VÅR FÖRDEL",
+    "subtitle": "VARFÖR FÖRETAG BLOMSTRAR MED OSS",
+    "description": "Våra AI-drivna lösningar är utformade för att effektivisera dina arbetsflöden, förbättra kundnöjdheten och driva mätbar tillväxt.",
+    "items": {
+      "efficiency": {
+        "title": "ÖKAD EFFEKTIVITET",
+        "description": "Anpassade AI-agenter förenklar repetitiva uppgifter och frigör mänskliga resurser för att fokusera på aktiviteter med hög påverkan."
+      },
+      "experience": {
+        "title": "FÖRBÄTTRAD KUNDUPPLEVELSE",
+        "description": "AI-agenter ger snabba och exakta svar samt personliga interaktioner som ökar kundnöjdheten och lojaliteten."
+      },
+      "insights": {
+        "title": "DATADRIVNA INSIKTER",
+        "description": "Genom att analysera interaktioner och resultat ger dessa agenter värdefulla insikter för bättre beslutsfattande och strategiförfining."
+      },
+      "scalability": {
+        "title": "SKALBARHET",
+        "description": "Anpassade agenter anpassar sig enkelt när ditt företag växer och möjliggör sömlös expansion av automatiserade support-, marknadsförings- och säljprocesser."
+      },
+      "integration": {
+        "title": "SÖMLÖS INTEGRATION",
+        "description": "AI-agenter integreras enkelt med dina befintliga system och säkerställer smidig implementering utan att störa nuvarande arbetsflöden."
+      },
+      "growth": {
+        "title": "ACCELERERAD TILLVÄXT",
+        "description": "Utnyttja AI-driven automatisering för att öka produktiviteten, optimera prestandan och nå dina affärsmål snabbare än någonsin."
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontakta Oss",
+    "name": "Namn",
+    "email": "E-post",
+    "message": "Meddelande",
+    "send": "Skicka"
+  },
+  "faq": {
+    "title": "VANLIGA FRÅGOR",
+    "questions": [
+      {
+        "question": "Är implementering av anpassade AI-agenter dyrt?",
+        "answer": "Det finns en initial investering, men fördelarna lönar sig på lång sikt. Våra AI-agenter minskar driftskostnaderna och ökar effektiviteten, vilket säkerställer en god avkastning på investeringen."
+      },
+      {
+        "question": "Kommer AI-agent-integrationen att vara för komplex för våra befintliga system?",
+        "answer": "Nej. Våra agenter är utformade för enkel integration med din infrastruktur, vilket säkerställer smidig implementering med fullt stöd från vårt team."
+      },
+      {
+        "question": "Hur säker är vår data när vi använder AI-agenter?",
+        "answer": "Vi prioriterar säkerhet med robusta protokoll, uppfyller alla branschstandarder och erbjuder kontinuerlig övervakning för att skydda din information."
+      },
+      {
+        "question": "Kommer AI-agenter att ersätta våra anställda?",
+        "answer": "Nej. Agenterna är utformade för att komplettera ditt team genom att automatisera rutinuppgifter så att anställda kan fokusera på strategiska aktiviteter."
+      },
+      {
+        "question": "Hur snart kan vi förvänta oss att se en avkastning på investeringen (ROI)?",
+        "answer": "Företag ser vanligtvis betydande förbättringar under de första månaderna efter implementering, med ROI som varierar beroende på projektets omfattning."
+      },
+      {
+        "question": "Kan AI-agenter anpassas för att möta våra unika affärsbehov?",
+        "answer": "Ja. Vi utvecklar helt anpassade lösningar, skräddarsydda efter dina specifika processer och mål."
+      },
+      {
+        "question": "Vilken typ av löpande support och underhåll krävs?",
+        "answer": "Vi erbjuder omfattande support efter implementering, inklusive uppdateringar, övervakning och justeringar efter behov."
+      },
+      {
+        "question": "Kan vi lita på att AI-agenter kommer att prestera konsekvent och felfritt?",
+        "answer": "Våra agenter testas rigoröst och har kontinuerliga förbättringsprotokoll som säkerställer hög tillförlitlighet och precision."
+      },
+      {
+        "question": "Hur kommer AI-agenter att påverka våra kundrelationer?",
+        "answer": "Agenterna förbättrar servicen med snabba och exakta svar, ökar kundnöjdheten medan ditt team fokuserar på mer strategiska interaktioner."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Transformerar företag genom digital innovation och skräddarsydda AI-lösningar.",
+    "quickLinks": {
+      "title": "Snabblänkar",
+      "services": "Tjänster",
+      "about": "Om Oss",
+      "portfolio": "Portfolio",
+      "faq": "FAQ"
+    },
+    "ourServices": {
+      "title": "Våra Tjänster",
+      "aiConsulting": "AI-Konsulting",
+      "automation": "Automation",
+      "machineLearning": "Machine Learning",
+      "development": "Utveckling"
+    },
+    "contact": {
+      "title": "Kontakt"
+    },
+    "copyright": "© 2025 Devloper.eu. Alla rättigheter förbehållna.",
+    "legal": {
+      "privacy": "Integritet",
+      "terms": "Villkor",
+      "cookies": "Cookies"
+    },
+    "cookieBanner": {
+      "title": "Dina integritetsval",
+      "description": "Vi använder cookies för att förbättra din surfupplevelse. Vi ber om ditt samtycke för:",
+      "categories": {
+        "essential": "Nödvändiga Cookies (Krävs)",
+        "preferences": "Preferenser",
+        "analytics": "Analys",
+        "marketing": "Marknadsföring"
+      },
+      "buttons": {
+        "acceptAll": "Acceptera Alla",
+        "acceptSelected": "Acceptera Valda",
+        "rejectAll": "Avvisa Alla"
+      }
+    }
+  },
+  "privacy": {
+    "title": "Integritetspolicy",
+    "lastUpdated": "Senast uppdaterad: {{date}}",
+    "sections": {
+      "dataController": {
+        "title": "1. PERSONUPPGIFTSANSVARIG",
+        "company": "devloper.eu",
+        "location": "Braga, Portugal",
+        "email": "Email: contato@devlopereu.com",
+        "dpo": "DPO (Dataskyddsombud): [Gabriel Kevin]"
+      },
+      "personalData": {
+        "title": "2. PERSONUPPGIFTER VI BEHANDLAR",
+        "categories": {
+          "title": "2.1. Kategorier av personuppgifter:",
+          "items": [
+            "Identifieringsuppgifter (namn, e-post)",
+            "Tekniska uppgifter (IP, cookies, enhet)",
+            "Användningsdata (webbplatsbeteende)",
+            "Kommunikationsdata"
+          ]
+        },
+        "legalBasis": {
+          "title": "2.2. Rättslig grund för behandling:",
+          "items": [
+            "Uttryckligt samtycke",
+            "Avtalsförpliktelse",
+            "Berättigade intressen",
+            "Rättslig förpliktelse"
+          ]
+        }
+      },
+      "processingPurposes": {
+        "title": "3. ÄNDAMÅL MED BEHANDLINGEN",
+        "purposes": {
+          "title": "3.1. Vi behandlar dina uppgifter för att:",
+          "items": [
+            "Tillhandahålla våra tjänster",
+            "Förbättra användarupplevelsen",
+            "Uppfylla rättsliga skyldigheter",
+            "Marknadsföring (med samtycke)"
+          ]
+        },
+        "automated": "3.2. Vi fattar inga automatiserade beslut som väsentligt påverkar användare."
+      },
+      "dataRetention": {
+        "title": "4. DATALAGRING",
+        "periods": {
+          "title": "4.1. Lagringsperioder:",
+          "items": [
+            "Kontouppgifter: Under kontots existens",
+            "Transaktionsdata: 5 år",
+            "Cookies: Enligt användarinställningar"
+          ]
+        }
+      },
+      "gdprRights": {
+        "title": "5. DINA GDPR-RÄTTIGHETER",
+        "intro": "Du har rätt till:",
+        "rights": [
+          "Tillgång till dina uppgifter",
+          "Rättelse av uppgifter",
+          "Radering (\"rätten att bli bortglömd\")",
+          "Begränsning av behandling",
+          "Dataportabilitet",
+          "Invändning mot behandling",
+          "Återkallelse av samtycke",
+          "Klagomål till tillsynsmyndighet"
+        ]
+      },
+      "internationalTransfers": {
+        "title": "6. INTERNATIONELLA ÖVERFÖRINGAR",
+        "transfers": {
+          "title": "6.1. Överföringar utanför EU/EES:",
+          "items": [
+            "Lämpliga skyddsåtgärder",
+            "Standardavtalsklausuler",
+            "Beslut om adekvat skyddsnivå"
+          ]
+        }
+      },
+      "securityMeasures": {
+        "title": "7. SÄKERHETSÅTGÄRDER",
+        "measures": [
+          "Datakryptering",
+          "Åtkomstkontroller",
+          "Regelbundna säkerhetskopior",
+          "Säkerhetsövervakning"
+        ]
+      }
+    }
+  },
+  "terms": {
+    "title": "Användarvillkor",
+    "lastUpdated": "Senast uppdaterad: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "1. GODKÄNNANDE AV VILLKOR",
+        "content": "Genom att använda Devloper.eu:s tjänster godkänner du och är bunden av dessa användarvillkor. Om du inte godkänner någon del av dessa villkor får du inte använda våra tjänster."
+      },
+      "services": {
+        "title": "2. BESKRIVNING AV TJÄNSTER",
+        "content": "Devloper.eu tillhandahåller AI-konsulttjänster, mjukvaruutveckling och skräddarsydda tekniklösningar.",
+        "items": [
+          "AI-Konsulting",
+          "Mjukvaruutveckling",
+          "Processautomatisering",
+          "Machine Learning"
+        ]
+      },
+      "userResponsibilities": {
+        "title": "3. ANVÄNDARANSVAR",
+        "intro": "När du använder våra tjänster godkänner du att:",
+        "items": [
+          "Tillhandahålla sann och korrekt information",
+          "Upprätthålla sekretessen för dina inloggningsuppgifter",
+          "Inte använda tjänsterna för olagliga ändamål",
+          "Respektera immateriella rättigheter"
+        ]
+      },
+      "intellectualProperty": {
+        "title": "4. IMMATERIELLA RÄTTIGHETER",
+        "content": "Allt innehåll, varumärken, logotyper, programvara och teknologi som används på plattformen ägs av Devloper.eu eller dess licensgivare och skyddas av immaterialrättsliga lagar."
+      },
+      "liability": {
+        "title": "5. ANSVARSBEGRÄNSNING",
+        "content": "Devloper.eu ansvarar inte för indirekta skador, följdskador eller tillfälliga skador som uppstår från användning eller oförmåga att använda tjänsterna."
+      },
+      "modifications": {
+        "title": "6. ÄNDRINGAR AV VILLKOR",
+        "content": "Vi förbehåller oss rätten att ändra dessa villkor när som helst. Ändringarna träder i kraft efter publicering av de uppdaterade villkoren på vår plattform."
+      },
+      "termination": {
+        "title": "7. UPPSÄGNING",
+        "content": "Vi kan avsluta eller stänga av din åtkomst till tjänsterna omedelbart, utan föregående meddelande, för eventuella överträdelser av dessa villkor."
+      },
+      "applicableLaw": {
+        "title": "8. TILLÄMPLIG LAG",
+        "content": "Dessa villkor regleras av Portugals lagar. Eventuella tvister ska underställas exklusiv jurisdiktion av portugisiska domstolar."
+      }
+    },
+    "footer": {
+      "moreInfo": "För mer information, se vår:"
+    }
+  },
+  "cookies": {
+    "title": "Cookie-policy",
+    "lastUpdated": "Senast uppdaterad: {{date}}",
+    "sections": {
+      "consent": {
+        "title": "1. SAMTYCKESHANTERING",
+        "categoriesTitle": "1.1. Cookie-kategorier:",
+        "categories": {
+          "necessary": {
+            "title": "Strikt Nödvändiga:",
+            "items": [
+              "Nödvändiga för funktionalitet",
+              "Kan inte inaktiveras",
+              "Rättslig grund: berättigat intresse"
+            ]
+          },
+          "preferences": {
+            "title": "Preferenser:",
+            "items": [
+              "Lagrar inställningar",
+              "Kan inaktiveras",
+              "Rättslig grund: samtycke"
+            ]
+          },
+          "statistics": {
+            "title": "Statistik:",
+            "items": [
+              "Användningsanalys",
+              "Anonyma",
+              "Rättslig grund: samtycke"
+            ]
+          },
+          "marketing": {
+            "title": "Marknadsföring:",
+            "items": [
+              "Spårning",
+              "Riktad annonsering",
+              "Rättslig grund: samtycke"
+            ]
+          }
+        }
+      },
+      "thirdParty": {
+        "title": "2. TREDJEPARTSCOOKIES",
+        "subtitle": "2.1. Vi använder tjänster från:",
+        "services": [
+          "Google Analytics",
+          "Facebook Pixel",
+          "LinkedIn Insight Tag"
+        ]
+      },
+      "storage": {
+        "title": "3. LAGRINGSPERIOD",
+        "periods": [
+          "Session: tills webbläsaren stängs",
+          "Permanenta: max 12 månader",
+          "Marknadsföring: max 13 månader"
+        ]
+      },
+      "settings": {
+        "title": "4. COOKIE-INSTÄLLNINGAR",
+        "description": "Du kan hantera dina cookie-inställningar när som helst via vår cookie-inställningspanel, som erbjuder:",
+        "features": [
+          "Alternativ per kategori",
+          "Tydlig beskrivning",
+          "Enkel opt-out"
+        ],
+        "manageButton": "Hantera Cookies"
+      }
+    },
+    "footer": {
+      "moreInfo": "För mer information om hur vi skyddar dina uppgifter, se vår:",
+      "privacyLink": "Integritetspolicy"
+    }
+  }
+}

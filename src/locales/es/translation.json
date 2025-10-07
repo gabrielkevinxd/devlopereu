@@ -1,0 +1,406 @@
+{
+  "nav": {
+    "inicio": "Inicio",
+    "servicos": "Servicios",
+    "portfolio": "Portafolio",
+    "sobre": "Sobre",
+    "faq": "FAQ",
+    "contato": "Contacto"
+  },
+  "hero": {
+    "title": "TRANSFORMACIÓN DIGITAL & AUTOMATIZACIÓN IA",
+    "subtitle": "Potenciando tu negocio con inteligencia artificial",
+    "cta": "Iniciar Proyecto"
+  },
+  "about": {
+    "title": "QUIÉNES SOMOS",
+    "paragraphs": [
+      "Fundada en {foundingYear} en Portugal, Devloper.eu nació de la visión de revolucionar el mercado de automatización empresarial a través de la inteligencia artificial. Somos pioneros en la integración de agentes de IA personalizados que transforman procesos complejos en soluciones eficientes y escalables.",
+      "Nuestro enfoque único combina tecnología de vanguardia con una profunda comprensión de las necesidades específicas de cada cliente. Desarrollamos soluciones que no solo automatizan tareas, sino que evolucionan y se adaptan continuamente, proporcionando una ventaja competitiva real en el mercado europeo."
+    ],
+    "stats": {
+      "projects": {
+        "value": "100+",
+        "label": "Proyectos Entregados"
+      },
+      "satisfaction": {
+        "value": "95%",
+        "label": "Satisfacción Cliente"
+      },
+      "support": {
+        "value": "24/7",
+        "label": "Soporte IA"
+      }
+    }
+  },
+  "services": {
+    "title": "NUESTROS SERVICIOS",
+    "subtitle": "Soluciones innovadoras para impulsar tu transformación digital",
+    "items": {
+      "ia_consultoria": {
+        "title": "Consultoría IA",
+        "description": "Estrategias personalizadas de IA para optimizar tus procesos de negocio."
+      },
+      "automacao": {
+        "title": "Automatización",
+        "description": "Automatización inteligente de procesos para mayor eficiencia operativa."
+      },
+      "machine_learning": {
+        "title": "Machine Learning",
+        "description": "Soluciones de aprendizaje automático para análisis predictivo."
+      },
+      "big_data": {
+        "title": "Big Data",
+        "description": "Análisis y procesamiento de grandes volúmenes de datos."
+      },
+      "desenvolvimento": {
+        "title": "Desarrollo",
+        "description": "Desarrollo de software y aplicaciones personalizadas."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Insights basados en datos para la toma de decisiones."
+      }
+    }
+  },
+  "advantages": {
+    "title": "NUESTRA VENTAJA",
+    "subtitle": "POR QUÉ LAS EMPRESAS PROSPERAN CON NOSOTROS",
+    "description": "Nuestras soluciones impulsadas por IA están diseñadas para optimizar tus flujos de trabajo, mejorar la satisfacción del cliente e impulsar un crecimiento medible.",
+    "items": {
+      "efficiency": {
+        "title": "EFICIENCIA AUMENTADA",
+        "description": "Los agentes de IA personalizados simplifican las tareas repetitivas, liberando recursos humanos para concentrarse en actividades de alto impacto."
+      },
+      "experience": {
+        "title": "EXPERIENCIA MEJORADA DEL CLIENTE",
+        "description": "Los agentes de IA proporcionan respuestas rápidas y precisas e interacciones personalizadas, aumentando la satisfacción y lealtad del cliente."
+      },
+      "insights": {
+        "title": "INSIGHTS BASADOS EN DATOS",
+        "description": "Al analizar interacciones y resultados, estos agentes proporcionan insights valiosos para una mejor toma de decisiones y refinamiento de estrategia."
+      },
+      "scalability": {
+        "title": "ESCALABILIDAD",
+        "description": "Los agentes personalizados se adaptan fácilmente a medida que tu negocio crece, permitiendo una expansión perfecta de los procesos automatizados de soporte, marketing y ventas."
+      },
+      "integration": {
+        "title": "INTEGRACIÓN PERFECTA",
+        "description": "Los agentes de IA se integran fácilmente con tus sistemas existentes, asegurando una adopción suave sin interrumpir los flujos de trabajo actuales."
+      },
+      "growth": {
+        "title": "CRECIMIENTO ACELERADO",
+        "description": "Aprovecha la automatización impulsada por IA para aumentar la productividad, optimizar el rendimiento y alcanzar tus objetivos de negocio más rápido que nunca."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contáctanos",
+    "name": "Nombre",
+    "email": "Correo",
+    "message": "Mensaje",
+    "send": "Enviar"
+  },
+  "faq": {
+    "title": "PREGUNTAS FRECUENTES",
+    "questions": [
+      {
+        "question": "¿Es costosa la implementación de agentes de IA personalizados?",
+        "answer": "Existe una inversión inicial, pero los beneficios compensan a largo plazo. Nuestros agentes de IA reducen los costos operativos y aumentan la eficiencia, garantizando un buen retorno de la inversión."
+      },
+      {
+        "question": "¿Será demasiado compleja la integración de agentes de IA para nuestros sistemas existentes?",
+        "answer": "No. Nuestros agentes están diseñados para una integración simple con su infraestructura, garantizando una implementación fluida con el soporte completo de nuestro equipo."
+      },
+      {
+        "question": "¿Qué tan seguros están nuestros datos al usar agentes de IA?",
+        "answer": "Priorizamos la seguridad con protocolos robustos, cumpliendo con todos los estándares de la industria y ofreciendo monitoreo continuo para proteger su información."
+      },
+      {
+        "question": "¿Los agentes de IA reemplazarán a nuestros empleados?",
+        "answer": "No. Los agentes están diseñados para complementar a su equipo, automatizando tareas rutinarias para que los empleados puedan concentrarse en actividades estratégicas."
+      },
+      {
+        "question": "¿Cuánto tiempo podemos esperar para ver un retorno de la inversión (ROI)?",
+        "answer": "Las empresas suelen ver mejoras significativas en los primeros meses de implementación, con un ROI que varía según el alcance del proyecto."
+      },
+      {
+        "question": "¿Se pueden personalizar los agentes de IA para satisfacer nuestras necesidades comerciales únicas?",
+        "answer": "Sí. Desarrollamos soluciones totalmente personalizadas, adaptadas a sus procesos y objetivos específicos."
+      },
+      {
+        "question": "¿Qué tipo de soporte y mantenimiento continuo se requiere?",
+        "answer": "Ofrecemos soporte completo post-implementación, incluyendo actualizaciones, monitoreo y ajustes según sea necesario."
+      },
+      {
+        "question": "¿Podemos confiar en que los agentes de IA tendrán un rendimiento consistente y sin errores?",
+        "answer": "Nuestros agentes son rigurosamente probados y cuentan con protocolos de mejora continua, garantizando alta confiabilidad y precisión."
+      },
+      {
+        "question": "¿Cómo impactarán los agentes de IA en nuestras relaciones con los clientes?",
+        "answer": "Los agentes mejoran el servicio con respuestas rápidas y precisas, aumentando la satisfacción del cliente mientras su equipo se enfoca en interacciones más estratégicas."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Transformando negocios a través de la innovación digital y soluciones de IA personalizadas.",
+    "quickLinks": {
+      "title": "Enlaces Rápidos",
+      "services": "Servicios",
+      "about": "Sobre Nosotros",
+      "portfolio": "Portafolio",
+      "faq": "FAQ"
+    },
+    "ourServices": {
+      "title": "Nuestros Servicios",
+      "aiConsulting": "Consultoría IA",
+      "automation": "Automatización",
+      "machineLearning": "Machine Learning",
+      "development": "Desarrollo"
+    },
+    "contact": {
+      "title": "Contacto"
+    },
+    "copyright": "© 2025 Devloper.eu. Todos los derechos reservados.",
+    "legal": {
+      "privacy": "Privacidad",
+      "terms": "Términos",
+      "cookies": "Cookies"
+    },
+    "cookieBanner": {
+      "title": "Tus opciones de privacidad",
+      "description": "Utilizamos cookies para mejorar tu experiencia de navegación. Solicitamos tu consentimiento para:",
+      "categories": {
+        "essential": "Cookies Esenciales (Obligatorio)",
+        "preferences": "Preferencias",
+        "analytics": "Análisis",
+        "marketing": "Marketing"
+      },
+      "buttons": {
+        "acceptAll": "Aceptar Todo",
+        "acceptSelected": "Aceptar Seleccionados",
+        "rejectAll": "Rechazar Todo"
+      }
+    }
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización: {{date}}",
+    "sections": {
+      "dataController": {
+        "title": "1. CONTROLADOR DE DATOS",
+        "company": "devloper.eu",
+        "location": "Braga, Portugal",
+        "email": "Email: contato@devlopereu.com",
+        "dpo": "DPO (Delegado de Protección de Datos): [Gabriel Kevin]"
+      },
+      "personalData": {
+        "title": "2. DATOS PERSONALES QUE PROCESAMOS",
+        "categories": {
+          "title": "2.1. Categorías de datos personales:",
+          "items": [
+            "Datos de identificación (nombre, email)",
+            "Datos técnicos (IP, cookies, dispositivo)",
+            "Datos de uso (comportamiento en el sitio)",
+            "Datos de comunicación"
+          ]
+        },
+        "legalBasis": {
+          "title": "2.2. Base legal para el procesamiento:",
+          "items": [
+            "Consentimiento explícito",
+            "Obligación contractual",
+            "Intereses legítimos",
+            "Obligación legal"
+          ]
+        }
+      },
+      "processingPurposes": {
+        "title": "3. FINALIDADES DEL PROCESAMIENTO",
+        "purposes": {
+          "title": "3.1. Procesamos sus datos para:",
+          "items": [
+            "Proporcionar nuestros servicios",
+            "Mejorar la experiencia del usuario",
+            "Cumplir con obligaciones legales",
+            "Marketing (con consentimiento)"
+          ]
+        },
+        "automated": "3.2. No tomamos decisiones automatizadas que afecten significativamente a los usuarios."
+      },
+      "dataRetention": {
+        "title": "4. RETENCIÓN DE DATOS",
+        "periods": {
+          "title": "4.1. Períodos de retención:",
+          "items": [
+            "Datos de cuenta: Durante la existencia de la cuenta",
+            "Datos de transacciones: 5 años",
+            "Cookies: Según configuración del usuario"
+          ]
+        }
+      },
+      "gdprRights": {
+        "title": "5. SUS DERECHOS GDPR",
+        "intro": "Usted tiene derecho a:",
+        "rights": [
+          "Acceso a sus datos",
+          "Rectificación de datos",
+          "Supresión (\"derecho al olvido\")",
+          "Restricción del procesamiento",
+          "Portabilidad de datos",
+          "Oposición al procesamiento",
+          "Retirada del consentimiento",
+          "Presentar una reclamación ante la autoridad supervisora"
+        ]
+      },
+      "internationalTransfers": {
+        "title": "6. TRANSFERENCIAS INTERNACIONALES",
+        "transfers": {
+          "title": "6.1. Transferencias fuera de la UE/EEE:",
+          "items": [
+            "Medidas de protección adecuadas",
+            "Cláusulas contractuales estándar",
+            "Decisiones de adecuación"
+          ]
+        }
+      },
+      "securityMeasures": {
+        "title": "7. MEDIDAS DE SEGURIDAD",
+        "measures": [
+          "Cifrado de datos",
+          "Controles de acceso",
+          "Copias de seguridad regulares",
+          "Monitoreo de seguridad"
+        ]
+      }
+    }
+  },
+  "terms": {
+    "title": "Términos de Uso",
+    "lastUpdated": "Última actualización: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "1. ACEPTACIÓN DE LOS TÉRMINOS",
+        "content": "Al acceder y utilizar los servicios de Devloper.eu, usted acepta cumplir y estar sujeto a estos Términos de Uso. Si no está de acuerdo con alguna parte de estos términos, no podrá utilizar nuestros servicios."
+      },
+      "services": {
+        "title": "2. DESCRIPCIÓN DE LOS SERVICIOS",
+        "content": "Devloper.eu proporciona servicios de consultoría en IA, desarrollo de software y soluciones tecnológicas personalizadas.",
+        "items": [
+          "Consultoría en IA",
+          "Desarrollo de Software",
+          "Automatización de Procesos",
+          "Machine Learning"
+        ]
+      },
+      "userResponsibilities": {
+        "title": "3. RESPONSABILIDADES DEL USUARIO",
+        "intro": "Al usar nuestros servicios, usted acepta:",
+        "items": [
+          "Proporcionar información verdadera y precisa",
+          "Mantener la confidencialidad de sus credenciales de acceso",
+          "No utilizar los servicios para fines ilegales",
+          "Respetar los derechos de propiedad intelectual"
+        ]
+      },
+      "intellectualProperty": {
+        "title": "4. PROPIEDAD INTELECTUAL",
+        "content": "Todo el contenido, marcas, logotipos, software y tecnologías utilizadas en la plataforma son propiedad de Devloper.eu o de sus licenciantes y están protegidos por las leyes de propiedad intelectual."
+      },
+      "liability": {
+        "title": "5. LIMITACIÓN DE RESPONSABILIDAD",
+        "content": "Devloper.eu no será responsable por daños indirectos, incidentales o consecuentes resultantes del uso o la imposibilidad de usar los servicios."
+      },
+      "modifications": {
+        "title": "6. MODIFICACIONES DE LOS TÉRMINOS",
+        "content": "Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios entrarán en vigor tras la publicación de los términos actualizados en nuestra plataforma."
+      },
+      "termination": {
+        "title": "7. TERMINACIÓN",
+        "content": "Podemos terminar o suspender su acceso a los servicios inmediatamente, sin previo aviso, por cualquier violación de estos términos."
+      },
+      "applicableLaw": {
+        "title": "8. LEY APLICABLE",
+        "content": "Estos términos se rigen por las leyes de Portugal. Cualquier disputa será sometida a la jurisdicción exclusiva de los tribunales de Portugal."
+      }
+    },
+    "footer": {
+      "moreInfo": "Para más información, consulte nuestra:"
+    }
+  },
+  "cookies": {
+    "title": "Política de Cookies",
+    "lastUpdated": "Última actualización: {{date}}",
+    "sections": {
+      "consent": {
+        "title": "1. GESTIÓN DE CONSENTIMIENTO",
+        "categoriesTitle": "1.1. Categorías de Cookies:",
+        "categories": {
+          "necessary": {
+            "title": "Estrictamente Necesarias:",
+            "items": [
+              "Esenciales para el funcionamiento",
+              "No pueden ser desactivadas",
+              "Base legal: interés legítimo"
+            ]
+          },
+          "preferences": {
+            "title": "Preferencias:",
+            "items": [
+              "Almacenan preferencias",
+              "Pueden ser desactivadas",
+              "Base legal: consentimiento"
+            ]
+          },
+          "statistics": {
+            "title": "Estadísticas:",
+            "items": [
+              "Análisis de uso",
+              "Anónimas",
+              "Base legal: consentimiento"
+            ]
+          },
+          "marketing": {
+            "title": "Marketing:",
+            "items": [
+              "Seguimiento",
+              "Publicidad dirigida",
+              "Base legal: consentimiento"
+            ]
+          }
+        }
+      },
+      "thirdParty": {
+        "title": "2. COOKIES DE TERCEROS",
+        "subtitle": "2.1. Utilizamos servicios de:",
+        "services": [
+          "Google Analytics",
+          "Facebook Pixel",
+          "LinkedIn Insight Tag"
+        ]
+      },
+      "storage": {
+        "title": "3. PERÍODO DE ALMACENAMIENTO",
+        "periods": [
+          "Sesión: hasta cerrar el navegador",
+          "Persistentes: máximo 12 meses",
+          "Marketing: máximo 13 meses"
+        ]
+      },
+      "settings": {
+        "title": "4. CONFIGURACIÓN DE COOKIES",
+        "description": "Puede gestionar sus preferencias de cookies en cualquier momento a través de nuestro panel de configuración de cookies, que ofrece:",
+        "features": [
+          "Opciones por categoría",
+          "Descripción clara",
+          "Fácil opt-out"
+        ],
+        "manageButton": "Gestionar Cookies"
+      }
+    },
+    "footer": {
+      "moreInfo": "Para más información sobre cómo protegemos sus datos, consulte nuestra:",
+      "privacyLink": "Política de Privacidad"
+    }
+  }
+}

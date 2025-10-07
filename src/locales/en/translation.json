@@ -1,0 +1,331 @@
+{
+  "nav": {
+    "inicio": "Home",
+    "servicos": "Services",
+    "portfolio": "Portfolio",
+    "sobre": "About",
+    "faq": "FAQ",
+    "contato": "Contact"
+  },
+  "hero": {
+    "title": "DIGITAL TRANSFORMATION & AI AUTOMATION",
+    "subtitle": "Empowering your business with artificial intelligence",
+    "cta": "Start Project"
+  },
+  "about": {
+    "title": "WHO WE ARE",
+    "paragraphs": [
+      "Founded in {foundingYear} in Portugal, Devloper.eu was born from the vision of revolutionizing the business automation market through artificial intelligence. We are pioneers in integrating custom AI agents that transform complex processes into efficient and scalable solutions.",
+      "Our unique approach combines cutting-edge technology with a deep understanding of each client's specific needs. We develop solutions that not only automate tasks but continuously evolve and adapt, providing a real competitive advantage in the European market."
+    ],
+    "stats": {
+      "projects": {
+        "value": "100+",
+        "label": "Projects Delivered"
+      },
+      "satisfaction": {
+        "value": "95%",
+        "label": "Client Satisfaction"
+      },
+      "support": {
+        "value": "24/7",
+        "label": "AI Support"
+      }
+    }
+  },
+  "services": {
+    "title": "OUR SERVICES",
+    "subtitle": "Innovative solutions to drive your digital transformation",
+    "items": {
+      "ia_consultoria": {
+        "title": "AI Consulting",
+        "description": "Personalized AI strategies to optimize your business processes."
+      },
+      "automacao": {
+        "title": "Automation",
+        "description": "Intelligent process automation for greater operational efficiency."
+      },
+      "machine_learning": {
+        "title": "Machine Learning",
+        "description": "Machine learning solutions for predictive analysis."
+      },
+      "big_data": {
+        "title": "Big Data",
+        "description": "Analysis and processing of large volumes of data."
+      },
+      "desenvolvimento": {
+        "title": "Development",
+        "description": "Custom software and application development."
+      },
+      "analytics": {
+        "title": "Analytics",
+        "description": "Data-driven insights for decision making."
+      }
+    }
+  },
+  "advantages": {
+    "title": "OUR ADVANTAGE",
+    "subtitle": "WHY COMPANIES THRIVE WITH US",
+    "description": "Our AI-powered solutions are designed to streamline your workflows, enhance customer satisfaction, and drive measurable growth.",
+    "items": {
+      "efficiency": {
+        "title": "INCREASED EFFICIENCY",
+        "description": "Custom AI agents simplify repetitive tasks, freeing up human resources to focus on high-impact activities."
+      },
+      "experience": {
+        "title": "ENHANCED CUSTOMER EXPERIENCE",
+        "description": "AI agents provide quick and accurate responses and personalized interactions, increasing customer satisfaction and loyalty."
+      },
+      "insights": {
+        "title": "DATA-DRIVEN INSIGHTS",
+        "description": "By analyzing interactions and outcomes, these agents provide valuable insights for better decision-making and strategy refinement."
+      },
+      "scalability": {
+        "title": "SCALABILITY",
+        "description": "Custom agents adapt easily as your business grows, enabling seamless expansion of automated support, marketing, and sales processes."
+      },
+      "integration": {
+        "title": "SEAMLESS INTEGRATION",
+        "description": "AI agents integrate easily with your existing systems, ensuring smooth adoption without disrupting current workflows."
+      },
+      "growth": {
+        "title": "ACCELERATED GROWTH",
+        "description": "Leverage AI-powered automation to increase productivity, optimize performance, and achieve your business goals faster than ever."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send"
+  },
+  "faq": {
+    "title": "FREQUENTLY ASKED QUESTIONS",
+    "questions": [
+      {
+        "question": "Is implementing custom AI agents expensive?",
+        "answer": "There is an initial investment, but the benefits pay off in the long run. Our AI agents reduce operational costs and increase efficiency, ensuring a good return on investment."
+      },
+      {
+        "question": "Will AI agent integration be too complex for our existing systems?",
+        "answer": "No. Our agents are designed for simple integration with your infrastructure, ensuring smooth implementation with full support from our team."
+      },
+      {
+        "question": "How secure is our data when using AI agents?",
+        "answer": "We prioritize security with robust protocols, meeting all industry standards and offering continuous monitoring to protect your information."
+      },
+      {
+        "question": "Will AI agents replace our employees?",
+        "answer": "No. The agents are designed to complement your team, automating routine tasks so employees can focus on strategic activities."
+      },
+      {
+        "question": "How soon can we expect to see a return on investment (ROI)?",
+        "answer": "Companies typically see significant improvements in the first few months of deployment, with ROI varying according to project scope."
+      },
+      {
+        "question": "Can AI agents be customized to meet our unique business needs?",
+        "answer": "Yes. We develop fully customized solutions, tailored to your specific processes and objectives."
+      },
+      {
+        "question": "What kind of ongoing support and maintenance is required?",
+        "answer": "We provide comprehensive post-implementation support, including updates, monitoring, and adjustments as needed."
+      },
+      {
+        "question": "Can we trust that AI agents will perform consistently and error-free?",
+        "answer": "Our agents are rigorously tested and have continuous improvement protocols, ensuring high reliability and accuracy."
+      },
+      {
+        "question": "How will AI agents impact our customer relationships?",
+        "answer": "Agents enhance service with quick and accurate responses, increasing customer satisfaction while your team focuses on more strategic interactions."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Transforming businesses through digital innovation and customized AI solutions.",
+    "quickLinks": {
+      "title": "Quick Links",
+      "services": "Services",
+      "about": "About Us",
+      "portfolio": "Portfolio",
+      "faq": "FAQ"
+    },
+    "ourServices": {
+      "title": "Our Services",
+      "aiConsulting": "AI Consulting",
+      "automation": "Automation",
+      "machineLearning": "Machine Learning",
+      "development": "Development"
+    },
+    "contact": {
+      "title": "Contact"
+    },
+    "copyright": "© 2025 Devloper.eu. All rights reserved.",
+    "legal": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "cookies": "Cookies"
+    },
+    "cookieBanner": {
+      "title": "Your Privacy Choices",
+      "description": "We use cookies to enhance your browsing experience. We request your consent for:",
+      "categories": {
+        "essential": "Essential Cookies (Required)",
+        "preferences": "Preferences",
+        "analytics": "Analytics",
+        "marketing": "Marketing"
+      },
+      "buttons": {
+        "acceptAll": "Accept All",
+        "acceptSelected": "Accept Selected",
+        "rejectAll": "Reject All"
+      }
+    }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: {{date}}",
+    "sections": {
+      "dataController": {
+        "title": "1. DATA CONTROLLER",
+        "company": "devloper.eu",
+        "location": "Braga, Portugal",
+        "email": "Email: contato@devlopereu.com",
+        "dpo": "DPO (Data Protection Officer): [Gabriel Kevin]"
+      },
+      "personalData": {
+        "title": "2. PERSONAL DATA WE PROCESS",
+        "categories": {
+          "title": "2.1. Categories of personal data:",
+          "items": [
+            "Identification data (name, email)",
+            "Technical data (IP, cookies, device)",
+            "Usage data (site behavior)",
+            "Communication data"
+          ]
+        },
+        "legalBasis": {
+          "title": "2.2. Legal basis for processing:",
+          "items": [
+            "Explicit consent",
+            "Contractual obligation",
+            "Legitimate interests",
+            "Legal obligation"
+          ]
+        }
+      },
+      "processingPurposes": {
+        "title": "3. PROCESSING PURPOSES",
+        "purposes": {
+          "title": "3.1. We process your data to:",
+          "items": [
+            "Provide our services",
+            "Improve user experience",
+            "Comply with legal obligations",
+            "Marketing (with consent)"
+          ]
+        },
+        "automated": "3.2. We do not make automated decisions that significantly affect users."
+      },
+      "dataRetention": {
+        "title": "4. DATA RETENTION",
+        "periods": {
+          "title": "4.1. Retention periods:",
+          "items": [
+            "Account data: During account existence",
+            "Transaction data: 5 years",
+            "Cookies: According to user settings"
+          ]
+        }
+      },
+      "gdprRights": {
+        "title": "5. YOUR GDPR RIGHTS",
+        "intro": "You have the right to:",
+        "rights": [
+          "Access your data",
+          "Data rectification",
+          "Erasure (\"right to be forgotten\")",
+          "Processing restriction",
+          "Data portability",
+          "Object to processing",
+          "Withdraw consent",
+          "Lodge a complaint with supervisory authority"
+        ]
+      },
+      "internationalTransfers": {
+        "title": "6. INTERNATIONAL TRANSFERS",
+        "transfers": {
+          "title": "6.1. Transfers outside the EU/EEA:",
+          "items": [
+            "Adequate protection measures",
+            "Standard contractual clauses",
+            "Adequacy decisions"
+          ]
+        }
+      },
+      "securityMeasures": {
+        "title": "7. SECURITY MEASURES",
+        "measures": [
+          "Data encryption",
+          "Access controls",
+          "Regular backups",
+          "Security monitoring"
+        ]
+      }
+    }
+  },
+  "terms": {
+    "title": "Terms of Use",
+    "lastUpdated": "Last updated: {{date}}",
+    "sections": {
+      "acceptance": {
+        "title": "1. ACCEPTANCE OF TERMS",
+        "content": "By accessing and using Devloper.eu's services, you agree to comply with and be bound by these Terms of Use. If you do not agree with any part of these terms, you may not use our services."
+      },
+      "services": {
+        "title": "2. DESCRIPTION OF SERVICES",
+        "content": "Devloper.eu provides AI consulting, software development, and customized technology solutions.",
+        "items": [
+          "AI Consulting",
+          "Software Development",
+          "Process Automation",
+          "Machine Learning"
+        ]
+      },
+      "userResponsibilities": {
+        "title": "3. USER RESPONSIBILITIES",
+        "intro": "When using our services, you agree to:",
+        "items": [
+          "Provide true and accurate information",
+          "Maintain the confidentiality of your access credentials",
+          "Not use the services for illegal purposes",
+          "Respect intellectual property rights"
+        ]
+      },
+      "intellectualProperty": {
+        "title": "4. INTELLECTUAL PROPERTY",
+        "content": "All content, trademarks, logos, software, and technologies used on the platform are the property of Devloper.eu or its licensors and are protected by intellectual property laws."
+      },
+      "liability": {
+        "title": "5. LIMITATION OF LIABILITY",
+        "content": "Devloper.eu shall not be liable for indirect, incidental, or consequential damages resulting from the use or inability to use the services."
+      },
+      "modifications": {
+        "title": "6. MODIFICATIONS TO TERMS",
+        "content": "We reserve the right to modify these terms at any time. Changes will take effect upon posting of the updated terms on our platform."
+      },
+      "termination": {
+        "title": "7. TERMINATION",
+        "content": "We may terminate or suspend your access to the services immediately, without prior notice, for any breach of these terms."
+      },
+      "applicableLaw": {
+        "title": "8. APPLICABLE LAW",
+        "content": "These terms are governed by the laws of Portugal. Any dispute shall be submitted to the exclusive jurisdiction of the courts of Portugal."
+      }
+    },
+    "footer": {
+      "moreInfo": "For more information, please consult our:"
+    }
+  }
+}
