@@ -42,13 +42,16 @@ const Services = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {services.map((service, index) => (
-            <div key={index} className="card group p-6 sm:p-8">
-              <service.icon className="w-10 h-10 sm:w-12 sm:h-12 text-gold mb-4" />
-              <h3 className="text-lg sm:text-xl font-anton mb-2">{t(`services.items.${service.key}.title`)}</h3>
-              <p className="text-sm sm:text-base text-gray-light">{t(`services.items.${service.key}.description`)}</p>
-            </div>
-          ))}
+          {services.map((service, index) => {
+            const slug = service.key.replace(/_/g, '-');
+            return (
+              <div id={slug} key={index} className="card group p-6 sm:p-8">
+                <service.icon className="w-10 h-10 sm:w-12 sm:h-12 text-gold mb-4" />
+                <h3 className="text-lg sm:text-xl font-anton mb-2">{t(`services.items.${service.key}.title`)}</h3>
+                <p className="text-sm sm:text-base text-gray-light">{t(`services.items.${service.key}.description`)}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

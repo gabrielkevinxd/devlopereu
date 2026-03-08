@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { SplineRobot } from './SplineRobot';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 const HeroContainer = styled.section`
@@ -9,34 +9,62 @@ const HeroContainer = styled.section`
   width: 100%;
   display: flex;
   align-items: center;
-  background-color: #000000;
+  background-color: #0d0d0d;
   overflow: hidden;
 `;
 
-const HeroOverlay = styled.div`
+const GlowingOrb = styled(motion.div)`
   position: absolute;
-  inset: 0;
-  background-color: rgba(var(--primary-rgb), 0.75);
-  z-index: 2;
-  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 1;
+  opacity: 0.4;
 `;
+
+const BackgroundElements = () => {
+  return (
+    <>
+      <GlowingOrb
+        className="bg-gold"
+        style={{ width: '40vw', height: '40vw', top: '-10%', left: '-10%' }}
+        animate={{
+          x: [0, 100, 0],
+          y: [0, 50, 0],
+          scale: [1, 1.2, 1],
+        }}
+        transition={{
+          duration: 15,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+      />
+      <GlowingOrb
+        className="bg-gold/40"
+        style={{ width: '30vw', height: '30vw', bottom: '-10%', right: '-5%' }}
+        animate={{
+          x: [0, -80, 0],
+          y: [0, -60, 0],
+          scale: [1, 1.3, 1],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+      />
+      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay z-[2] pointer-events-none"></div>
+    </>
+  );
+};
 
 const HeroContent = styled.div`
   position: relative;
-  z-index: 3;
+  z-index: 10;
   width: 100%;
   max-width: 80rem;
   margin: 0 auto;
   padding: 0 1rem;
   pointer-events: auto;
-  opacity: 0;
-  animation: fadeIn 0.5s ease-in-out forwards;
-  animation-delay: 0.5s;
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
 
   @media (min-width: 640px) {
     padding: 0 1.5rem;
@@ -56,25 +84,45 @@ const Hero = () => {
 
   return (
     <HeroContainer>
-      <SplineRobot />
-      <HeroOverlay />
+      <BackgroundElements />
       <HeroContent>
-        <div className="text-center space-y-8">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-anton text-white leading-tight">
+        <motion.div
+          className="text-center space-y-8"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        >
+          <motion.h1
+            className="text-4xl sm:text-5xl lg:text-7xl font-anton text-white leading-tight tracking-wide uppercase"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
+          >
             {t('hero.title')}
-          </h1>
-          <p className="text-lg sm:text-xl text-white/90 max-w-xl mx-auto">
+          </motion.h1>
+          <motion.p
+            className="text-lg sm:text-2xl text-white/90 max-w-2xl mx-auto font-montserrat font-light"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
             {t('hero.subtitle')}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          </motion.p>
+          <motion.div
+            className="flex flex-col sm:flex-row gap-4 justify-center pt-8"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+          >
             <button
               onClick={openWhatsApp}
-              className="px-8 py-3 bg-gold text-primary hover:bg-transparent hover:text-gold border-2 border-gold transition-colors rounded-md text-lg font-medium"
+              className="group relative px-8 py-4 bg-gold text-primary hover:text-white border-2 border-gold transition-all duration-300 rounded-md text-xl font-bold font-montserrat tracking-wide overflow-hidden"
             >
-              {t('hero.cta')}
+              <div className="absolute inset-0 w-full h-full bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out z-0"></div>
+              <span className="relative z-10">{t('hero.cta')}</span>
             </button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </HeroContent>
     </HeroContainer>
   );

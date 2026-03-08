@@ -30,6 +30,22 @@ const Footer: React.FC = () => {
     }
   };
 
+  const scrollToSection = (sectionId: string) => {
+    const doScroll = () => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
+
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(doScroll, 150);
+    } else {
+      doScroll();
+    }
+  };
+
   return (
     <footer className="bg-gray-dark text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -72,10 +88,42 @@ const Footer: React.FC = () => {
           <div className="text-center md:text-right">
             <h3 className="text-xl font-anton text-white mb-3">{t('footer.quickLinks.title')}</h3>
             <ul className="space-y-2">
-              <li><a href="#servicos" className="text-sm hover:text-gold transition-colors">{t('footer.quickLinks.services')}</a></li>
-              <li><a href="#sobre" className="text-sm hover:text-gold transition-colors">{t('footer.quickLinks.about')}</a></li>
-              <li><a href="#portfolio" className="text-sm hover:text-gold transition-colors">{t('footer.quickLinks.portfolio')}</a></li>
-              <li><a href="#faq" className="text-sm hover:text-gold transition-colors">{t('footer.quickLinks.faq')}</a></li>
+              <li>
+                <a
+                  href="#servicos"
+                  onClick={(e) => { e.preventDefault(); scrollToSection('servicos'); }}
+                  className="text-sm hover:text-gold transition-colors"
+                >
+                  {t('footer.quickLinks.services')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#sobre"
+                  onClick={(e) => { e.preventDefault(); scrollToSection('sobre'); }}
+                  className="text-sm hover:text-gold transition-colors"
+                >
+                  {t('footer.quickLinks.about')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#portfolio"
+                  onClick={(e) => { e.preventDefault(); scrollToSection('portfolio'); }}
+                  className="text-sm hover:text-gold transition-colors"
+                >
+                  {t('footer.quickLinks.portfolio')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#faq"
+                  onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }}
+                  className="text-sm hover:text-gold transition-colors"
+                >
+                  {t('footer.quickLinks.faq')}
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -83,10 +131,42 @@ const Footer: React.FC = () => {
           <div className="text-center">
             <h3 className="text-xl font-anton text-white mb-3">{t('footer.ourServices.title')}</h3>
             <ul className="space-y-2">
-              <li><a href="#ia-consultoria" className="text-sm hover:text-gold transition-colors">{t('footer.ourServices.aiConsulting')}</a></li>
-              <li><a href="#automacao" className="text-sm hover:text-gold transition-colors">{t('footer.ourServices.automation')}</a></li>
-              <li><a href="#machine-learning" className="text-sm hover:text-gold transition-colors">{t('footer.ourServices.machineLearning')}</a></li>
-              <li><a href="#desenvolvimento" className="text-sm hover:text-gold transition-colors">{t('footer.ourServices.development')}</a></li>
+              <li>
+                <a
+                  href="#ia-consultoria"
+                  onClick={(e) => { e.preventDefault(); scrollToSection('ia-consultoria'); }}
+                  className="text-sm hover:text-gold transition-colors"
+                >
+                  {t('footer.ourServices.aiConsulting')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#automacao"
+                  onClick={(e) => { e.preventDefault(); scrollToSection('automacao'); }}
+                  className="text-sm hover:text-gold transition-colors"
+                >
+                  {t('footer.ourServices.automation')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#machine-learning"
+                  onClick={(e) => { e.preventDefault(); scrollToSection('machine-learning'); }}
+                  className="text-sm hover:text-gold transition-colors"
+                >
+                  {t('footer.ourServices.machineLearning')}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#desenvolvimento"
+                  onClick={(e) => { e.preventDefault(); scrollToSection('desenvolvimento'); }}
+                  className="text-sm hover:text-gold transition-colors"
+                >
+                  {t('footer.ourServices.development')}
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -191,4 +271,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default Footer; 
+export default Footer;
