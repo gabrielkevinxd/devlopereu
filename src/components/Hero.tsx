@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { NeuralNetwork } from './NeuralNetwork';
 
 const HeroContainer = styled.section`
   position: relative;
@@ -13,50 +14,6 @@ const HeroContainer = styled.section`
   overflow: hidden;
 `;
 
-const GlowingOrb = styled(motion.div)`
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  z-index: 1;
-  opacity: 0.4;
-`;
-
-const BackgroundElements = () => {
-  return (
-    <>
-      <GlowingOrb
-        className="bg-gold"
-        style={{ width: '40vw', height: '40vw', top: '-10%', left: '-10%' }}
-        animate={{
-          x: [0, 100, 0],
-          y: [0, 50, 0],
-          scale: [1, 1.2, 1],
-        }}
-        transition={{
-          duration: 15,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
-      <GlowingOrb
-        className="bg-gold/40"
-        style={{ width: '30vw', height: '30vw', bottom: '-10%', right: '-5%' }}
-        animate={{
-          x: [0, -80, 0],
-          y: [0, -60, 0],
-          scale: [1, 1.3, 1],
-        }}
-        transition={{
-          duration: 20,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay z-[2] pointer-events-none"></div>
-    </>
-  );
-};
-
 const HeroContent = styled.div`
   position: relative;
   z-index: 10;
@@ -64,7 +21,12 @@ const HeroContent = styled.div`
   max-width: 80rem;
   margin: 0 auto;
   padding: 0 1rem;
-  pointer-events: auto;
+  pointer-events: none; /* Let clicks pass to neural network underneath */
+
+  /* Fix for letting text/buttons be interactive while passing events on the empty space */
+  & > * {
+      pointer-events: auto;
+  }
 
   @media (min-width: 640px) {
     padding: 0 1.5rem;
@@ -84,7 +46,7 @@ const Hero = () => {
 
   return (
     <HeroContainer>
-      <BackgroundElements />
+      <NeuralNetwork />
       <HeroContent>
         <motion.div
           className="text-center space-y-8"
