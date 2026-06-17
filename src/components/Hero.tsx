@@ -90,11 +90,6 @@ const TitlePart2 = styled.span`
   display: block;
   font-size: 2.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #D4AF37 0%, #FFF3B0 50%, #D4AF37 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine 6s linear infinite;
 
   @media (min-width: 640px) {
     font-size: 4rem;
@@ -103,8 +98,17 @@ const TitlePart2 = styled.span`
   @media (min-width: 1024px) {
     font-size: 5.75rem;
   }
+`;
 
-  @keyframes shine {
+const GradientLetter = styled(motion.span)`
+  display: inline-block;
+  background: linear-gradient(135deg, #D4AF37 0%, #FFF3B0 50%, #D4AF37 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine-letter 6s linear infinite;
+
+  @keyframes shine-letter {
     0% {
       background-position: 0% 50%;
     }
@@ -184,15 +188,17 @@ const AnimatedLetters: React.FC<AnimatedLettersProps> = ({ text, delayOffset, ho
               transition: { type: 'spring', stiffness: 400, damping: 8 },
             };
 
+        const Component = isGradient ? GradientLetter : motion.span;
+
         return (
-          <motion.span
+          <Component
             key={index}
             className="inline-block cursor-default origin-center select-none"
             variants={letterVariants}
             whileHover={hoverState}
           >
             {char}
-          </motion.span>
+          </Component>
         );
       })}
     </motion.span>
