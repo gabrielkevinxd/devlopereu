@@ -86,7 +86,6 @@ const TitleConnector = styled.span`
     font-size: 2.5rem;
   }
 `;
-
 const TitlePart2 = styled.span`
   display: block;
   font-size: 2.5rem;
@@ -96,7 +95,6 @@ const TitlePart2 = styled.span`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 6s linear infinite;
-  text-shadow: 0 0 30px rgba(212, 175, 55, 0.35);
 
   @media (min-width: 640px) {
     font-size: 4rem;
@@ -176,7 +174,6 @@ const AnimatedLetters: React.FC<AnimatedLettersProps> = ({ text, delayOffset, ho
           ? {
               y: -12,
               scale: 1.2,
-              filter: 'drop-shadow(0 0 10px rgba(212, 175, 55, 0.8))',
               transition: { type: 'spring', stiffness: 400, damping: 8 },
             }
           : {
