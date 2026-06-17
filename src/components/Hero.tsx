@@ -171,19 +171,28 @@ const AnimatedLetters: React.FC<AnimatedLettersProps> = ({ text, delayOffset, ho
         if (char === ' ') {
           return <span key={index}>&nbsp;</span>;
         }
+        
+        const hoverState = isGradient
+          ? {
+              y: -12,
+              scale: 1.2,
+              filter: 'drop-shadow(0 0 10px rgba(212, 175, 55, 0.8))',
+              transition: { type: 'spring', stiffness: 400, damping: 8 },
+            }
+          : {
+              y: -12,
+              scale: 1.2,
+              color: hoverColor || '#D4AF37',
+              textShadow: '0 0 20px #D4AF37, 0 0 35px #FFF3B0',
+              transition: { type: 'spring', stiffness: 400, damping: 8 },
+            };
+
         return (
           <motion.span
             key={index}
             className="inline-block cursor-default origin-center select-none"
             variants={letterVariants}
-            whileHover={{
-              y: -12,
-              scale: 1.2,
-              color: hoverColor || '#D4AF37',
-              textShadow: '0 0 20px #D4AF37, 0 0 35px #FFF3B0',
-              filter: isGradient ? 'drop-shadow(0 0 8px rgba(255,255,255,0.8))' : 'none',
-              transition: { type: 'spring', stiffness: 400, damping: 8 },
-            }}
+            whileHover={hoverState}
           >
             {char}
           </motion.span>
