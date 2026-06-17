@@ -37,6 +37,87 @@ const HeroContent = styled.div`
   }
 `;
 
+const TitleContainer = styled(motion.h1)`
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+`;
+
+const TitlePart1 = styled.span`
+  color: #ffffff;
+  font-size: 2.25rem; /* text-4xl equivalent */
+  font-weight: normal;
+  display: block;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+  @media (min-width: 640px) {
+    font-size: 3.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 5rem;
+  }
+`;
+
+const TitleConnector = styled.span`
+  color: #D4AF37;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  text-transform: lowercase;
+  font-size: 1.5rem;
+  margin: 0.25rem 0;
+  display: block;
+  opacity: 0.85;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+
+  @media (min-width: 640px) {
+    font-size: 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 2.5rem;
+  }
+`;
+
+const TitlePart2 = styled.span`
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #D4AF37 0%, #FFF3B0 50%, #D4AF37 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 6s linear infinite;
+  text-shadow: 0 0 30px rgba(212, 175, 55, 0.35);
+
+  @media (min-width: 640px) {
+    font-size: 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: 5.75rem;
+  }
+
+  @keyframes shine {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+`;
+
 const Hero = () => {
   const { t } = useTranslation();
 
@@ -54,14 +135,15 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
-          <motion.h1
-            className="text-4xl sm:text-5xl lg:text-7xl font-anton text-white leading-tight tracking-wide uppercase"
+          <TitleContainer
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
           >
-            {t('hero.title')}
-          </motion.h1>
+            <TitlePart1>{t('hero.title_part1')}</TitlePart1>
+            <TitleConnector>{t('hero.title_connector')}</TitleConnector>
+            <TitlePart2>{t('hero.title_part2')}</TitlePart2>
+          </TitleContainer>
           <motion.p
             className="text-lg sm:text-2xl text-white/90 max-w-2xl mx-auto font-montserrat font-light"
             initial={{ opacity: 0 }}

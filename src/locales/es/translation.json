@@ -8,7 +8,9 @@
     "contato": "Contacto"
   },
   "hero": {
-    "title": "TRANSFORMACIÓN DIGITAL & AUTOMATIZACIÓN IA",
+    "title_part1": "TRANSFORMACIÓN DIGITAL",
+    "title_connector": "e",
+    "title_part2": "HIPERAUTOMATIZACIÓN",
     "subtitle": "Potenciando tu negocio con inteligencia artificial",
     "cta": "Iniciar Proyecto"
   },

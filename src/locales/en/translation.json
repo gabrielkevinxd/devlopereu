@@ -8,7 +8,9 @@
     "contato": "Contact"
   },
   "hero": {
-    "title": "DIGITAL TRANSFORMATION & AI AUTOMATION",
+    "title_part1": "DIGITAL TRANSFORMATION",
+    "title_connector": "&",
+    "title_part2": "HYPERAUTOMATION",
     "subtitle": "Empowering your business with artificial intelligence",
     "cta": "Start Project"
   },

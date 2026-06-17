@@ -8,7 +8,9 @@
     "contato": "Kontakt"
   },
   "hero": {
-    "title": "DIGITAL TRANSFORMATION & AI-AUTOMATION",
+    "title_part1": "DIGITAL TRANSFORMATION",
+    "title_connector": "&",
+    "title_part2": "HYPERAUTOMATISERING",
     "subtitle": "Stärk ditt företag med artificiell intelligens",
     "cta": "Starta Projekt"
   },

@@ -8,7 +8,9 @@
     "contato": "Kontakt"
   },
   "hero": {
-    "title": "DIGITALE TRANSFORMATION & KI-AUTOMATISIERUNG",
+    "title_part1": "DIGITALE TRANSFORMATION",
+    "title_connector": "&",
+    "title_part2": "HYPERAUTOMATISIERUNG",
     "subtitle": "Stärken Sie Ihr Unternehmen mit künstlicher Intelligenz",
     "cta": "Projekt starten"
   },
