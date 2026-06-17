@@ -48,6 +48,7 @@ const TitleContainer = styled(motion.h1)`
   align-items: center;
   justify-content: center;
   margin-bottom: 2rem;
+  perspective: 1000px; /* Enable 3D perspective for flip animations */
 `;
 
 const TitlePart1 = styled.span`
@@ -118,6 +119,80 @@ const TitlePart2 = styled.span`
   }
 `;
 
+interface AnimatedLettersProps {
+  text: string;
+  delayOffset: number;
+  hoverColor?: string;
+  isGradient?: boolean;
+}
+
+const AnimatedLetters: React.FC<AnimatedLettersProps> = ({ text, delayOffset, hoverColor, isGradient }) => {
+  const letters = Array.from(text);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.03,
+        delayChildren: delayOffset,
+      },
+    },
+  };
+
+  const letterVariants = {
+    hidden: {
+      opacity: 0,
+      y: 40,
+      rotateX: -75,
+      scale: 0.85,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      scale: 1,
+      transition: {
+        type: 'spring',
+        damping: 12,
+        stiffness: 100,
+      },
+    },
+  };
+
+  return (
+    <motion.span
+      className="inline-flex flex-wrap justify-center"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      {letters.map((char, index) => {
+        if (char === ' ') {
+          return <span key={index}>&nbsp;</span>;
+        }
+        return (
+          <motion.span
+            key={index}
+            className="inline-block cursor-default origin-center select-none"
+            variants={letterVariants}
+            whileHover={{
+              y: -12,
+              scale: 1.2,
+              color: hoverColor || '#D4AF37',
+              textShadow: '0 0 20px #D4AF37, 0 0 35px #FFF3B0',
+              filter: isGradient ? 'drop-shadow(0 0 8px rgba(255,255,255,0.8))' : 'none',
+              transition: { type: 'spring', stiffness: 400, damping: 8 },
+            }}
+          >
+            {char}
+          </motion.span>
+        );
+      })}
+    </motion.span>
+  );
+};
+
 const Hero = () => {
   const { t } = useTranslation();
 
@@ -135,20 +210,22 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
-          <TitleContainer
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-          >
-            <TitlePart1>{t('hero.title_part1')}</TitlePart1>
-            <TitleConnector>{t('hero.title_connector')}</TitleConnector>
-            <TitlePart2>{t('hero.title_part2')}</TitlePart2>
+          <TitleContainer>
+            <TitlePart1>
+              <AnimatedLetters text={t('hero.title_part1')} delayOffset={0.3} />
+            </TitlePart1>
+            <TitleConnector>
+              <AnimatedLetters text={t('hero.title_connector')} delayOffset={0.9} hoverColor="#ffffff" />
+            </TitleConnector>
+            <TitlePart2>
+              <AnimatedLetters text={t('hero.title_part2')} delayOffset={1.2} hoverColor="#ffffff" isGradient={true} />
+            </TitlePart2>
           </TitleContainer>
           <motion.p
             className="text-lg sm:text-2xl text-white/90 max-w-2xl mx-auto font-montserrat font-light"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            transition={{ duration: 0.8, delay: 1.8 }}
           >
             {t('hero.subtitle')}
           </motion.p>
@@ -156,7 +233,7 @@ const Hero = () => {
             className="flex flex-col sm:flex-row gap-4 justify-center pt-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
+            transition={{ duration: 0.8, delay: 2.1 }}
           >
             <button
               onClick={openWhatsApp}
