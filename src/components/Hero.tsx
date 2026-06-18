@@ -106,7 +106,16 @@ const GradientLetter = styled(motion.span)`
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   animation: shine-letter 6s linear infinite;
+  
+  /* Force compositing layer to bypass Chromium subpixel background-clip rendering bug */
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+  padding: 0.05em 0.08em;
+  margin: -0.05em -0.08em;
+  overflow: visible;
 
   @keyframes shine-letter {
     0% {
