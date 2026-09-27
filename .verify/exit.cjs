@@ -1,0 +1,12 @@
+const { chromium } = require("C:/Users/User1/Overclock/Meu Primeiro Projeto/node_modules/playwright");
+(async()=>{const b=await chromium.launch({executablePath:"C:/Program Files/Google/Chrome/Application/chrome.exe"});
+const ctx=await b.newContext({viewport:{width:1440,height:900},locale:"pt-PT"});const p=await ctx.newPage();
+await p.goto("http://localhost:4173/",{waitUntil:"networkidle"});await p.waitForTimeout(16000);
+await p.mouse.move(700,400);
+await p.evaluate(()=>{const e=new MouseEvent("mouseout",{clientY:-2,clientX:500,relatedTarget:null,bubbles:true});document.dispatchEvent(e);});
+await p.waitForTimeout(500);
+console.log("dialog:",await p.locator("[role=dialog]").count(), "ss:", await p.evaluate(()=>sessionStorage.getItem("devloper:exit-shown")));
+await p.screenshot({path:".verify/redesign/desktop-12-exit-intent.png"});
+await p.keyboard.press("Escape");await p.waitForTimeout(200);
+console.log("after Esc:",await p.locator("[role=dialog]").count());
+await b.close()})();
