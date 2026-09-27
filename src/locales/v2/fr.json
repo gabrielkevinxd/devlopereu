@@ -1,0 +1,102 @@
+{
+  "v2": {
+    "skip": "Aller au contenu",
+    "nav": { "services": "Services", "diagnostic": "Diagnostic", "process": "Méthode", "about": "À propos", "faq": "FAQ", "book": "Réserver un rendez-vous", "menu": "Ouvrir le menu", "close": "Fermer le menu", "home": "DevloperEU — accueil", "lang": "Langue" },
+    "hero": {
+      "kicker": "IA & Hyperautomatisation · Braga, Portugal",
+      "l1": "Des agents IA qui", "l2": "travaillent pour vous.",
+      "sub": "Transformation digitale et hyperautomatisation sur mesure : nous concevons, intégrons et maintenons des agents IA pour que votre équipe se concentre sur ce qui fait croître l'entreprise.",
+      "cta": "Réserver un rendez-vous", "cta2": "Faire le diagnostic",
+      "trust": ["Fondée en 2024", "Braga, Portugal", "Support après déploiement"]
+    },
+    "eyebrow": { "services": "01 — Services", "diagnostic": "02 — Diagnostic", "process": "03 — Méthode", "why": "04 — Avantages", "about": "05 — À propos", "faq": "06 — Questions", "book": "07 — Réserver" },
+    "serviceCta": "Parler de ce service",
+    "diag": {
+      "title": "Dessinez votre carte d'automatisation",
+      "intro": "Trois questions. À la fin, vous voyez la carte d'agents et d'automatisations que nous recommandons et vous l'emportez au rendez-vous.",
+      "step": "Étape {{n}} sur 3",
+      "q1": "Où votre équipe perd-elle le plus de temps ?", "q1hint": "Choisissez un ou plusieurs domaines.",
+      "q2": "Quels systèmes utilisez-vous aujourd'hui ?", "q3": "Quelle est la priorité ?",
+      "areas": {
+        "support": { "label": "Support client", "module": "Agent IA de support" },
+        "sales": { "label": "Ventes et leads", "module": "Qualification et relance de leads" },
+        "ops": { "label": "Processus internes", "module": "Automatisation des flux opérationnels" },
+        "data": { "label": "Données et rapports", "module": "Analytics et rapports automatiques" },
+        "software": { "label": "Logiciel sur mesure", "module": "Applications personnalisées" }
+      },
+      "systems": { "few": "Peu d'outils (tableurs, email)", "several": "Plusieurs outils (CRM, ERP, etc.)", "legacy": "Systèmes internes ou anciens" },
+      "urgency": { "now": "Démarrer tout de suite avec un pilote", "plan": "Planifier calmement", "explore": "Simplement explorer" },
+      "next": "Continuer", "back": "Retour", "needOne": "Choisissez au moins un domaine pour continuer.",
+      "result": "Votre carte d'automatisation", "core": "Devloper.eu", "scope": "Périmètre estimé",
+      "tiers": {
+        "pilot": { "name": "Pilote ciblé", "desc": "Un cas d'usage bien défini pour prouver la valeur rapidement." },
+        "integrated": { "name": "Projet intégré", "desc": "Plusieurs modules connectés à vos systèmes actuels." },
+        "program": { "name": "Programme de transformation", "desc": "Une approche par phases avec plusieurs volets et intégrations." }
+      },
+      "investment": "L'investissement se définit lors du rendez-vous, une fois vos processus compris.",
+      "disclaimer": "Estimation indicative du périmètre, pas une proposition commerciale.",
+      "book": "Réserver avec cette carte", "restart": "Refaire le diagnostic",
+      "graphLabel": "Carte d'automatisation avec {{count}} modules reliés à Devloper.eu"
+    },
+    "process": {
+      "title": "Du diagnostic au support continu",
+      "steps": [
+        { "t": "Diagnostic", "d": "Nous cartographions les processus et repérons où l'IA apporte le plus de valeur." },
+        { "t": "Proposition", "d": "Nous définissons avec vous périmètre, intégrations et priorités." },
+        { "t": "Mise en œuvre", "d": "Nous construisons et intégrons les agents dans les systèmes que vous utilisez déjà." },
+        { "t": "Support continu", "d": "Mises à jour, suivi et ajustements après la mise en production." }
+      ]
+    },
+    "why": { "title": "Pourquoi les entreprises grandissent avec nous" },
+    "about": { "video": "Voir la vidéo de présentation", "videoLabel": "Vidéo de présentation de DevloperEU" },
+    "faqCta": { "text": "Une question ? Parlez-nous directement.", "cta": "Réserver un rendez-vous" },
+    "book": {
+      "title": "Réservez votre rendez-vous",
+      "intro": "Choisissez un jour et une heure. Nous confirmons par WhatsApp ou email.",
+      "s1": "1. Quand cela vous convient-il ?", "s2": "2. Comment vous contacter ?",
+      "day": "Jour", "time": "Heure (Lisbonne)", "next": "Continuer", "back": "Retour",
+      "name": "Nom", "email": "Email", "phone": "Mobile / WhatsApp (facultatif)", "company": "Entreprise (facultatif)", "topic": "Que souhaitez-vous résoudre ? (facultatif)",
+      "consent": "J'accepte que DevloperEU utilise ces données pour me contacter au sujet de ce rendez-vous.", "privacy": "Politique de confidentialité",
+      "send": "Demander un rendez-vous",
+      "errDay": "Choisissez un jour et une heure.", "errName": "Indiquez votre nom.", "errEmail": "Indiquez un email valide.", "errConsent": "Le consentement est nécessaire pour continuer.",
+      "diagIncluded": "Inclut votre carte d'automatisation",
+      "slotsNote": "Horaires sous réserve de confirmation.",
+      "doneTitle": "Demande prête",
+      "doneText": "Nous avons ouvert WhatsApp avec votre demande remplie — il suffit de l'envoyer. Si la fenêtre ne s'est pas ouverte, utilisez un des boutons.",
+      "wa": "Envoyer par WhatsApp", "mail": "Envoyer par email", "calendar": "Réserver dans le calendrier", "again": "Nouvelle demande",
+      "direct": "Vous préférez parler tout de suite ?"
+    },
+    "lead": {
+      "title": "Checklist : 10 processus à automatiser",
+      "text": "Un guide pratique pour repérer où l'automatisation par IA est la plus rentable dans votre entreprise.",
+      "email": "Votre email", "cta": "Télécharger la checklist", "consent": "J'accepte d'être contacté par DevloperEU à ce sujet.",
+      "errEmail": "Indiquez un email valide.", "errConsent": "Le consentement est nécessaire pour télécharger.", "thanks": "Checklist téléchargée. Envie de l'appliquer à votre activité ?",
+      "file": "checklist-10-processus-a-automatiser.txt",
+      "docTitle": "CHECKLIST : 10 PROCESSUS À AUTOMATISER — DevloperEU",
+      "docIntro": "Cochez chaque processus présent dans votre entreprise. Plus vous cochez, plus le potentiel d'automatisation est grand.",
+      "items": [
+        "Répondre aux mêmes questions clients par email, chat ou téléphone",
+        "Saisir à la main contacts et demandes dans des tableurs",
+        "Qualifier et répondre aux nouveaux leads hors des heures de bureau",
+        "Envoyer manuellement rappels, confirmations ou factures",
+        "Copier des données d'un système à un autre",
+        "Compiler des rapports hebdomadaires ou mensuels à partir de plusieurs sources",
+        "Trier et orienter les demandes internes (support, achats, RH)",
+        "Suivre les propositions et relancer les clients",
+        "Extraire des informations de documents, emails ou formulaires",
+        "Surveiller des indicateurs et alerter l'équipe en cas d'anomalie"
+      ],
+      "docOutro": "Envie de transformer cette liste en plan ? Réservez un rendez-vous : {{url}}"
+    },
+    "sticky": { "book": "Réserver", "wa": "WhatsApp" },
+    "exit": {
+      "title": "Avant de partir…", "text": "Emportez la checklist des 10 processus à automatiser ou réservez un rendez-vous quand cela vous convient.",
+      "checklist": "Voir la checklist", "book": "Réserver un rendez-vous", "close": "Fermer"
+    },
+    "footerCta": { "title": "Prêt à automatiser ?", "cta": "Réserver un rendez-vous" },
+    "seo": {
+      "title": "DevloperEU — Agents IA et Automatisation pour Entreprises | Braga, Portugal",
+      "description": "Transformation digitale et hyperautomatisation avec des agents IA sur mesure. Conseil, automatisation, machine learning et développement. Réservez un rendez-vous avec DevloperEU."
+    }
+  }
+}

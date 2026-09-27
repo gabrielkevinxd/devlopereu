@@ -1,0 +1,102 @@
+{
+  "v2": {
+    "skip": "Zum Inhalt springen",
+    "nav": { "services": "Leistungen", "diagnostic": "Diagnose", "process": "Methode", "about": "Über uns", "faq": "FAQ", "book": "Termin buchen", "menu": "Menü öffnen", "close": "Menü schließen", "home": "DevloperEU — Startseite", "lang": "Sprache" },
+    "hero": {
+      "kicker": "KI & Hyperautomatisierung · Braga, Portugal",
+      "l1": "KI-Agenten, die", "l2": "für Sie arbeiten.",
+      "sub": "Maßgeschneiderte digitale Transformation und Hyperautomatisierung: Wir entwerfen, integrieren und betreiben KI-Agenten, damit sich Ihr Team auf das Wachstum konzentrieren kann.",
+      "cta": "Termin buchen", "cta2": "Diagnose starten",
+      "trust": ["Gegründet 2024", "Braga, Portugal", "Support nach dem Go-live"]
+    },
+    "eyebrow": { "services": "01 — Leistungen", "diagnostic": "02 — Diagnose", "process": "03 — Methode", "why": "04 — Vorteile", "about": "05 — Über uns", "faq": "06 — Fragen", "book": "07 — Buchen" },
+    "serviceCta": "Über diese Leistung sprechen",
+    "diag": {
+      "title": "Entwerfen Sie Ihre Automatisierungskarte",
+      "intro": "Drei Fragen. Am Ende sehen Sie die empfohlene Karte aus Agenten und Automatisierungen und nehmen sie mit zum Termin.",
+      "step": "Schritt {{n}} von 3",
+      "q1": "Wo verliert Ihr Team die meiste Zeit?", "q1hint": "Wählen Sie einen oder mehrere Bereiche.",
+      "q2": "Welche Systeme nutzen Sie heute?", "q3": "Was hat Priorität?",
+      "areas": {
+        "support": { "label": "Kundenservice", "module": "KI-Agent für den Kundenservice" },
+        "sales": { "label": "Vertrieb und Leads", "module": "Lead-Qualifizierung und Nachfassen" },
+        "ops": { "label": "Interne Prozesse", "module": "Automatisierung operativer Abläufe" },
+        "data": { "label": "Daten und Berichte", "module": "Analytics und automatische Berichte" },
+        "software": { "label": "Individuelle Software", "module": "Maßgeschneiderte Anwendungen" }
+      },
+      "systems": { "few": "Wenige Tools (Tabellen, E-Mail)", "several": "Mehrere Tools (CRM, ERP usw.)", "legacy": "Eigene oder ältere Systeme" },
+      "urgency": { "now": "Sofort mit einem Pilotprojekt starten", "plan": "In Ruhe planen", "explore": "Nur Möglichkeiten erkunden" },
+      "next": "Weiter", "back": "Zurück", "needOne": "Wählen Sie mindestens einen Bereich.",
+      "result": "Ihre Automatisierungskarte", "core": "Devloper.eu", "scope": "Geschätzter Umfang",
+      "tiers": {
+        "pilot": { "name": "Fokussierter Pilot", "desc": "Ein klar abgegrenzter Anwendungsfall, um schnell Nutzen zu zeigen." },
+        "integrated": { "name": "Integriertes Projekt", "desc": "Mehrere Module, verbunden mit Ihren bestehenden Systemen." },
+        "program": { "name": "Transformationsprogramm", "desc": "Ein phasenweiser Ansatz mit mehreren Bereichen und Integrationen." }
+      },
+      "investment": "Die Investition legen wir im Termin fest, nachdem wir Ihre Prozesse verstanden haben.",
+      "disclaimer": "Unverbindliche Umfangsschätzung, kein Angebot.",
+      "book": "Termin mit dieser Karte buchen", "restart": "Diagnose wiederholen",
+      "graphLabel": "Automatisierungskarte mit {{count}} Modulen, verbunden mit Devloper.eu"
+    },
+    "process": {
+      "title": "Von der Diagnose bis zum laufenden Support",
+      "steps": [
+        { "t": "Diagnose", "d": "Wir erfassen Prozesse und finden heraus, wo KI den größten Nutzen bringt." },
+        { "t": "Angebot", "d": "Wir legen gemeinsam Umfang, Integrationen und Prioritäten fest." },
+        { "t": "Umsetzung", "d": "Wir bauen die Agenten und binden sie in Ihre vorhandenen Systeme ein." },
+        { "t": "Laufender Support", "d": "Updates, Monitoring und Anpassungen nach dem Go-live." }
+      ]
+    },
+    "why": { "title": "Warum Unternehmen mit uns wachsen" },
+    "about": { "video": "Unternehmensvideo ansehen", "videoLabel": "Unternehmensvideo von DevloperEU" },
+    "faqCta": { "text": "Noch Fragen? Sprechen Sie uns direkt an.", "cta": "Termin buchen" },
+    "book": {
+      "title": "Buchen Sie Ihren Termin",
+      "intro": "Wählen Sie Tag und Uhrzeit. Wir bestätigen per WhatsApp oder E-Mail.",
+      "s1": "1. Wann passt es Ihnen?", "s2": "2. Wie erreichen wir Sie?",
+      "day": "Tag", "time": "Uhrzeit (Lissabon)", "next": "Weiter", "back": "Zurück",
+      "name": "Name", "email": "E-Mail", "phone": "Mobil / WhatsApp (optional)", "company": "Unternehmen (optional)", "topic": "Was möchten Sie lösen? (optional)",
+      "consent": "Ich stimme zu, dass DevloperEU diese Daten nutzt, um mich zu diesem Termin zu kontaktieren.", "privacy": "Datenschutzerklärung",
+      "send": "Termin anfragen",
+      "errDay": "Wählen Sie Tag und Uhrzeit.", "errName": "Geben Sie Ihren Namen an.", "errEmail": "Geben Sie eine gültige E-Mail an.", "errConsent": "Zum Fortfahren ist die Zustimmung nötig.",
+      "diagIncluded": "Enthält Ihre Automatisierungskarte",
+      "slotsNote": "Zeiten vorbehaltlich Bestätigung.",
+      "doneTitle": "Anfrage vorbereitet",
+      "doneText": "Wir haben WhatsApp mit Ihrer ausgefüllten Anfrage geöffnet — einfach absenden. Falls sich das Fenster nicht öffnete, nutzen Sie einen der Buttons.",
+      "wa": "Per WhatsApp senden", "mail": "Per E-Mail senden", "calendar": "Im Kalender buchen", "again": "Neue Anfrage",
+      "direct": "Lieber gleich sprechen?"
+    },
+    "lead": {
+      "title": "Checkliste: 10 Prozesse zum Automatisieren",
+      "text": "Ein praktischer Leitfaden, um zu erkennen, wo sich KI-Automatisierung in Ihrem Unternehmen zuerst lohnt.",
+      "email": "Ihre E-Mail", "cta": "Checkliste herunterladen", "consent": "Ich stimme zu, dass DevloperEU mich zu diesem Thema kontaktiert.",
+      "errEmail": "Geben Sie eine gültige E-Mail an.", "errConsent": "Zum Herunterladen ist die Zustimmung nötig.", "thanks": "Checkliste heruntergeladen. Möchten Sie sie auf Ihr Unternehmen anwenden?",
+      "file": "checkliste-10-prozesse-automatisieren.txt",
+      "docTitle": "CHECKLISTE: 10 PROZESSE ZUM AUTOMATISIEREN — DevloperEU",
+      "docIntro": "Haken Sie jeden Prozess ab, den es in Ihrem Unternehmen gibt. Je mehr, desto größer das Automatisierungspotenzial.",
+      "items": [
+        "Immer gleiche Kundenfragen per E-Mail, Chat oder Telefon beantworten",
+        "Kontakte und Anfragen von Hand in Tabellen erfassen",
+        "Neue Leads außerhalb der Geschäftszeiten qualifizieren und beantworten",
+        "Erinnerungen, Bestätigungen oder Rechnungen manuell versenden",
+        "Daten von einem System in ein anderes kopieren",
+        "Wöchentliche oder monatliche Berichte aus mehreren Quellen erstellen",
+        "Interne Anfragen sortieren und weiterleiten (Support, Einkauf, HR)",
+        "Angebote nachverfolgen und Kunden nachfassen",
+        "Informationen aus Dokumenten, E-Mails oder Formularen extrahieren",
+        "Kennzahlen überwachen und das Team bei Abweichungen alarmieren"
+      ],
+      "docOutro": "Möchten Sie aus dieser Liste einen Plan machen? Termin buchen: {{url}}"
+    },
+    "sticky": { "book": "Termin buchen", "wa": "WhatsApp" },
+    "exit": {
+      "title": "Bevor Sie gehen …", "text": "Nehmen Sie die Checkliste mit den 10 Prozessen mit oder buchen Sie einen Termin, wann es Ihnen passt.",
+      "checklist": "Checkliste ansehen", "book": "Termin buchen", "close": "Schließen"
+    },
+    "footerCta": { "title": "Bereit zu automatisieren?", "cta": "Termin buchen" },
+    "seo": {
+      "title": "DevloperEU — KI-Agenten & Automatisierung für Unternehmen | Braga, Portugal",
+      "description": "Digitale Transformation und Hyperautomatisierung mit maßgeschneiderten KI-Agenten. Beratung, Automatisierung, Machine Learning und Entwicklung. Buchen Sie einen Termin mit DevloperEU."
+    }
+  }
+}

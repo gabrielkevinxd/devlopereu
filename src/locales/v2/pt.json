@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "inicio": "Início", "servicos": "Serviços", "portfolio": "Vantagens", "sobre": "Sobre", "faq": "FAQ", "contato": "Contacto"
+  },
+  "hero": {
+    "title_part1": "TRANSFORMAÇÃO DIGITAL", "title_connector": "e", "title_part2": "HIPERAUTOMAÇÃO",
+    "subtitle": "Potenciamos o seu negócio com inteligência artificial", "cta": "Agendar reunião"
+  },
+  "about": {
+    "title": "QUEM SOMOS",
+    "paragraphs": [
+      "Fundada em 2024 em Portugal, a Devloper.eu nasceu da visão de revolucionar o mercado da automação empresarial através da inteligência artificial. Somos pioneiros na integração de agentes de IA personalizados que transformam processos complexos em soluções eficientes e escaláveis.",
+      "A nossa abordagem combina tecnologia de ponta com um profundo entendimento das necessidades específicas de cada cliente. Desenvolvemos soluções que não só automatizam tarefas, como evoluem e se adaptam continuamente, criando um diferencial competitivo real no mercado europeu."
+    ],
+    "stats": {
+      "projects": { "value": "100+", "label": "Projetos Entregues" },
+      "satisfaction": { "value": "95%", "label": "Satisfação do Cliente" },
+      "support": { "value": "24/7", "label": "Suporte IA" }
+    }
+  },
+  "services": {
+    "title": "OS NOSSOS SERVIÇOS",
+    "subtitle": "Soluções inovadoras para impulsionar a sua transformação digital",
+    "items": {
+      "ia_consultoria": { "title": "IA Consultoria", "description": "Estratégias de IA personalizadas para otimizar os processos do seu negócio." },
+      "automacao": { "title": "Automação", "description": "Automatização inteligente de processos para maior eficiência operacional." },
+      "machine_learning": { "title": "Machine Learning", "description": "Soluções de aprendizagem automática para análise preditiva." },
+      "big_data": { "title": "Big Data", "description": "Análise e processamento de grandes volumes de dados." },
+      "desenvolvimento": { "title": "Desenvolvimento", "description": "Desenvolvimento de software e aplicações à medida." },
+      "analytics": { "title": "Analytics", "description": "Informação baseada em dados para decisões mais seguras." }
+    }
+  },
+  "advantages": {
+    "title": "A NOSSA VANTAGEM",
+    "subtitle": "PORQUE É QUE AS EMPRESAS PROSPERAM CONNOSCO",
+    "description": "As nossas soluções com tecnologia de IA foram pensadas para simplificar os seus fluxos de trabalho, aumentar a satisfação dos clientes e impulsionar um crescimento mensurável.",
+    "items": {
+      "efficiency": { "title": "MAIS EFICIÊNCIA", "description": "Agentes de IA personalizados simplificam tarefas repetitivas e libertam a sua equipa para atividades de maior impacto." },
+      "experience": { "title": "MELHOR EXPERIÊNCIA DO CLIENTE", "description": "Respostas rápidas e precisas e interações personalizadas aumentam a satisfação e a fidelização." },
+      "insights": { "title": "DECISÕES COM DADOS", "description": "Ao analisar interações e resultados, os agentes oferecem informação valiosa para decidir melhor e afinar a estratégia." },
+      "scalability": { "title": "ESCALABILIDADE", "description": "Os agentes adaptam-se ao crescimento do negócio, permitindo expandir os processos automatizados de suporte, marketing e vendas." },
+      "integration": { "title": "INTEGRAÇÃO SIMPLES", "description": "Integram-se com os sistemas que já usa, para uma adoção tranquila e sem interromper os fluxos de trabalho." },
+      "growth": { "title": "CRESCIMENTO ACELERADO", "description": "Use a automação com IA para aumentar a produtividade, otimizar o desempenho e atingir os seus objetivos mais depressa." }
+    }
+  },
+  "faq": {
+    "title": "PERGUNTAS FREQUENTES",
+    "questions": [
+      { "question": "Implementar agentes de IA personalizados é caro?", "answer": "Existe um investimento inicial, mas os benefícios compensam a longo prazo. Os nossos agentes reduzem custos operacionais e aumentam a eficiência, garantindo um bom retorno." },
+      { "question": "A integração vai ser muito complexa para os nossos sistemas atuais?", "answer": "Não. Os nossos agentes são pensados para se integrarem de forma simples na sua infraestrutura, com implementação tranquila e apoio completo da equipa." },
+      { "question": "Quão seguros ficam os nossos dados?", "answer": "Damos prioridade à segurança, com protocolos robustos, respeito pelos padrões do setor e monitorização contínua para proteger a sua informação." },
+      { "question": "Os agentes de IA vão substituir os nossos colaboradores?", "answer": "Não. Os agentes complementam a equipa, automatizando tarefas rotineiras para que as pessoas se concentrem em atividades estratégicas." },
+      { "question": "Em quanto tempo podemos ver retorno do investimento (ROI)?", "answer": "As empresas costumam ver melhorias significativas nos primeiros meses após a implementação; o ROI varia consoante o âmbito do projeto." },
+      { "question": "Os agentes podem ser adaptados às nossas necessidades específicas?", "answer": "Sim. Desenvolvemos soluções totalmente personalizadas, adaptadas aos seus processos e objetivos." },
+      { "question": "Que suporte e manutenção contínuos são necessários?", "answer": "Oferecemos suporte completo pós-implementação, incluindo atualizações, monitorização e ajustes sempre que necessário." },
+      { "question": "Podemos confiar num desempenho consistente e sem erros?", "answer": "Os nossos agentes são rigorosamente testados e beneficiam de protocolos de melhoria contínua, garantindo elevada fiabilidade e precisão." },
+      { "question": "Como é que os agentes vão afetar a relação com os nossos clientes?", "answer": "Melhoram o atendimento com respostas rápidas e precisas, aumentando a satisfação enquanto a equipa se dedica a interações mais estratégicas." }
+    ]
+  },
+  "v2": {
+    "skip": "Saltar para o conteúdo",
+    "nav": { "services": "Serviços", "diagnostic": "Diagnóstico", "process": "Método", "about": "Sobre", "faq": "FAQ", "book": "Agendar reunião", "menu": "Abrir menu", "close": "Fechar menu", "home": "DevloperEU — início", "lang": "Idioma" },
+    "hero": {
+      "kicker": "IA & Hiperautomação · Braga, Portugal",
+      "l1": "Agentes de IA que", "l2": "trabalham por si.",
+      "sub": "Transformação digital e hiperautomação à medida: desenhamos, integramos e mantemos agentes de IA para que a sua equipa se concentre no que faz o negócio crescer.",
+      "cta": "Agendar reunião", "cta2": "Fazer o diagnóstico",
+      "trust": ["Fundada em 2024", "Braga, Portugal", "Suporte pós-implementação"]
+    },
+    "eyebrow": { "services": "01 — Serviços", "diagnostic": "02 — Diagnóstico", "process": "03 — Método", "why": "04 — Vantagens", "about": "05 — Sobre", "faq": "06 — Perguntas", "book": "07 — Agendar" },
+    "serviceCta": "Falar sobre este serviço",
+    "diag": {
+      "title": "Desenhe o seu mapa de automação",
+      "intro": "Três perguntas. No fim vê o mapa de agentes e automações que recomendamos e leva-o consigo para a reunião.",
+      "step": "Passo {{n}} de 3",
+      "q1": "Onde é que a sua equipa perde mais tempo?", "q1hint": "Escolha uma ou mais áreas.",
+      "q2": "Que sistemas usa hoje?", "q3": "Qual é a prioridade?",
+      "areas": {
+        "support": { "label": "Atendimento a clientes", "module": "Agente de IA de atendimento" },
+        "sales": { "label": "Vendas e leads", "module": "Qualificação e follow-up de leads" },
+        "ops": { "label": "Processos internos", "module": "Automação de fluxos operacionais" },
+        "data": { "label": "Dados e relatórios", "module": "Analytics e relatórios automáticos" },
+        "software": { "label": "Software à medida", "module": "Aplicações personalizadas" }
+      },
+      "systems": { "few": "Poucas ferramentas (folhas de cálculo, email)", "several": "Várias ferramentas (CRM, ERP, etc.)", "legacy": "Sistemas próprios ou antigos" },
+      "urgency": { "now": "Começar já, com um piloto", "plan": "Planear com calma", "explore": "Só explorar possibilidades" },
+      "next": "Continuar", "back": "Voltar", "needOne": "Escolha pelo menos uma área para continuar.",
+      "result": "O seu mapa de automação", "core": "Devloper.eu", "scope": "Âmbito estimado",
+      "tiers": {
+        "pilot": { "name": "Piloto focado", "desc": "Um caso de uso bem delimitado, para provar valor depressa." },
+        "integrated": { "name": "Projeto integrado", "desc": "Vários módulos ligados aos seus sistemas atuais." },
+        "program": { "name": "Programa de transformação", "desc": "Uma abordagem faseada, com várias frentes e integrações." }
+      },
+      "investment": "O investimento define-se na reunião, depois de percebermos os seus processos.",
+      "disclaimer": "Estimativa orientativa de âmbito, não é uma proposta comercial.",
+      "book": "Agendar reunião com este mapa", "restart": "Refazer diagnóstico",
+      "graphLabel": "Mapa de automação com {{count}} módulos ligados à Devloper.eu"
+    },
+    "process": {
+      "title": "Do diagnóstico ao suporte contínuo",
+      "steps": [
+        { "t": "Diagnóstico", "d": "Mapeamos os processos e identificamos onde a IA gera mais valor." },
+        { "t": "Proposta", "d": "Definimos consigo o âmbito, as integrações e as prioridades." },
+        { "t": "Implementação", "d": "Construímos e integramos os agentes nos sistemas que já usa." },
+        { "t": "Suporte contínuo", "d": "Atualizações, monitorização e ajustes depois de entrar em produção." }
+      ]
+    },
+    "why": { "title": "Porque é que as empresas crescem connosco" },
+    "about": { "video": "Ver vídeo institucional", "videoLabel": "Vídeo institucional da DevloperEU" },
+    "faqCta": { "text": "Ficou com alguma dúvida? Fale diretamente connosco.", "cta": "Agendar reunião" },
+    "book": {
+      "title": "Agende a sua reunião",
+      "intro": "Escolha um dia e uma hora. Confirmamos por WhatsApp ou email.",
+      "s1": "1. Quando lhe dá jeito?", "s2": "2. Como o contactamos?",
+      "day": "Dia", "time": "Hora (Lisboa)", "next": "Continuar", "back": "Voltar",
+      "name": "Nome", "email": "Email", "phone": "Telemóvel / WhatsApp (opcional)", "company": "Empresa (opcional)", "topic": "O que quer resolver? (opcional)",
+      "consent": "Aceito que a DevloperEU use estes dados para me contactar sobre esta reunião.", "privacy": "Política de Privacidade",
+      "send": "Pedir reunião",
+      "errDay": "Escolha um dia e uma hora.", "errName": "Indique o seu nome.", "errEmail": "Indique um email válido.", "errConsent": "É necessário aceitar para continuarmos.",
+      "diagIncluded": "Inclui o seu mapa de automação",
+      "slotsNote": "Horários sujeitos a confirmação.",
+      "doneTitle": "Pedido preparado",
+      "doneText": "Abrimos o WhatsApp com o pedido preenchido — basta enviar. Se a janela não abriu, use um dos botões.",
+      "wa": "Enviar por WhatsApp", "mail": "Enviar por email", "calendar": "Marcar no calendário", "again": "Novo pedido",
+      "direct": "Prefere falar já?"
+    },
+    "lead": {
+      "title": "Checklist: 10 processos para automatizar",
+      "text": "Um guia prático para identificar, na sua empresa, onde a automação com IA compensa primeiro.",
+      "email": "O seu email", "cta": "Descarregar checklist", "consent": "Aceito receber contacto da DevloperEU sobre este tema.",
+      "errEmail": "Indique um email válido.", "errConsent": "É necessário aceitar para descarregar.", "thanks": "Checklist descarregada. Quer aplicá-la ao seu negócio?",
+      "file": "checklist-10-processos-para-automatizar.txt",
+      "docTitle": "CHECKLIST: 10 PROCESSOS PARA AUTOMATIZAR — DevloperEU",
+      "docIntro": "Assinale cada processo que existe na sua empresa. Quantos mais assinalar, maior o potencial de automação.",
+      "items": [
+        "Responder às mesmas perguntas de clientes por email, chat ou telefone",
+        "Registar contactos e pedidos em folhas de cálculo à mão",
+        "Qualificar e responder a novos leads fora do horário de expediente",
+        "Enviar lembretes, confirmações ou faturas manualmente",
+        "Copiar dados de um sistema para outro",
+        "Compilar relatórios semanais ou mensais a partir de várias fontes",
+        "Triar e encaminhar pedidos internos (suporte, compras, RH)",
+        "Acompanhar propostas e fazer follow-up de clientes",
+        "Extrair informação de documentos, emails ou formulários",
+        "Monitorizar indicadores e alertar a equipa quando algo foge ao normal"
+      ],
+      "docOutro": "Quer transformar esta lista num plano? Agende uma reunião: {{url}}"
+    },
+    "sticky": { "book": "Agendar reunião", "wa": "WhatsApp" },
+    "exit": {
+      "title": "Antes de sair…", "text": "Leve a checklist de 10 processos para automatizar ou agende uma reunião quando lhe der jeito.",
+      "checklist": "Ver a checklist", "book": "Agendar reunião", "close": "Fechar"
+    },
+    "footerCta": { "title": "Pronto para automatizar?", "cta": "Agendar reunião" },
+    "seo": {
+      "title": "DevloperEU — Agentes de IA e Automação para Empresas | Braga, Portugal",
+      "description": "Transformação digital e hiperautomação com agentes de IA à medida. Consultoria, automação, machine learning e desenvolvimento. Agende uma reunião com a DevloperEU."
+    }
+  }
+}

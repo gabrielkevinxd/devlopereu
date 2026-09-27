@@ -1,0 +1,102 @@
+{
+  "v2": {
+    "skip": "Skip to content",
+    "nav": { "services": "Services", "diagnostic": "Diagnostic", "process": "Method", "about": "About", "faq": "FAQ", "book": "Book a meeting", "menu": "Open menu", "close": "Close menu", "home": "DevloperEU — home", "lang": "Language" },
+    "hero": {
+      "kicker": "AI & Hyperautomation · Braga, Portugal",
+      "l1": "AI agents that", "l2": "work for you.",
+      "sub": "Tailor-made digital transformation and hyperautomation: we design, integrate and maintain AI agents so your team can focus on what grows the business.",
+      "cta": "Book a meeting", "cta2": "Take the diagnostic",
+      "trust": ["Founded in 2024", "Braga, Portugal", "Post-launch support"]
+    },
+    "eyebrow": { "services": "01 — Services", "diagnostic": "02 — Diagnostic", "process": "03 — Method", "why": "04 — Advantages", "about": "05 — About", "faq": "06 — Questions", "book": "07 — Book" },
+    "serviceCta": "Talk about this service",
+    "diag": {
+      "title": "Design your automation map",
+      "intro": "Three questions. At the end you see the map of agents and automations we recommend and take it to the meeting.",
+      "step": "Step {{n}} of 3",
+      "q1": "Where does your team lose the most time?", "q1hint": "Pick one or more areas.",
+      "q2": "Which systems do you use today?", "q3": "What is the priority?",
+      "areas": {
+        "support": { "label": "Customer support", "module": "AI customer-support agent" },
+        "sales": { "label": "Sales and leads", "module": "Lead qualification and follow-up" },
+        "ops": { "label": "Internal processes", "module": "Operational workflow automation" },
+        "data": { "label": "Data and reports", "module": "Analytics and automatic reports" },
+        "software": { "label": "Custom software", "module": "Tailor-made applications" }
+      },
+      "systems": { "few": "Few tools (spreadsheets, email)", "several": "Several tools (CRM, ERP, etc.)", "legacy": "In-house or legacy systems" },
+      "urgency": { "now": "Start now with a pilot", "plan": "Plan calmly", "explore": "Just exploring" },
+      "next": "Continue", "back": "Back", "needOne": "Pick at least one area to continue.",
+      "result": "Your automation map", "core": "Devloper.eu", "scope": "Estimated scope",
+      "tiers": {
+        "pilot": { "name": "Focused pilot", "desc": "One well-defined use case to prove value fast." },
+        "integrated": { "name": "Integrated project", "desc": "Several modules connected to your current systems." },
+        "program": { "name": "Transformation programme", "desc": "A phased approach with several fronts and integrations." }
+      },
+      "investment": "Investment is defined in the meeting, once we understand your processes.",
+      "disclaimer": "Indicative scope estimate, not a commercial proposal.",
+      "book": "Book a meeting with this map", "restart": "Redo diagnostic",
+      "graphLabel": "Automation map with {{count}} modules connected to Devloper.eu"
+    },
+    "process": {
+      "title": "From diagnostic to ongoing support",
+      "steps": [
+        { "t": "Diagnostic", "d": "We map processes and find where AI creates the most value." },
+        { "t": "Proposal", "d": "We define scope, integrations and priorities with you." },
+        { "t": "Implementation", "d": "We build and integrate agents into the systems you already use." },
+        { "t": "Ongoing support", "d": "Updates, monitoring and adjustments after go-live." }
+      ]
+    },
+    "why": { "title": "Why companies grow with us" },
+    "about": { "video": "Watch company video", "videoLabel": "DevloperEU company video" },
+    "faqCta": { "text": "Still have questions? Talk to us directly.", "cta": "Book a meeting" },
+    "book": {
+      "title": "Book your meeting",
+      "intro": "Pick a day and time. We confirm by WhatsApp or email.",
+      "s1": "1. When suits you?", "s2": "2. How do we reach you?",
+      "day": "Day", "time": "Time (Lisbon)", "next": "Continue", "back": "Back",
+      "name": "Name", "email": "Email", "phone": "Mobile / WhatsApp (optional)", "company": "Company (optional)", "topic": "What do you want to solve? (optional)",
+      "consent": "I agree that DevloperEU uses this data to contact me about this meeting.", "privacy": "Privacy Policy",
+      "send": "Request meeting",
+      "errDay": "Pick a day and a time.", "errName": "Enter your name.", "errEmail": "Enter a valid email.", "errConsent": "Consent is required to proceed.",
+      "diagIncluded": "Includes your automation map",
+      "slotsNote": "Times subject to confirmation.",
+      "doneTitle": "Request ready",
+      "doneText": "We opened WhatsApp with your request filled in — just send it. If the window did not open, use one of the buttons.",
+      "wa": "Send via WhatsApp", "mail": "Send by email", "calendar": "Book in calendar", "again": "New request",
+      "direct": "Prefer to talk now?"
+    },
+    "lead": {
+      "title": "Checklist: 10 processes to automate",
+      "text": "A practical guide to find where AI automation pays off first in your company.",
+      "email": "Your email", "cta": "Download checklist", "consent": "I agree to be contacted by DevloperEU about this topic.",
+      "errEmail": "Enter a valid email.", "errConsent": "Consent is required to download.", "thanks": "Checklist downloaded. Want to apply it to your business?",
+      "file": "checklist-10-processes-to-automate.txt",
+      "docTitle": "CHECKLIST: 10 PROCESSES TO AUTOMATE — DevloperEU",
+      "docIntro": "Tick every process that exists in your company. The more you tick, the greater the automation potential.",
+      "items": [
+        "Answering the same customer questions by email, chat or phone",
+        "Logging contacts and requests in spreadsheets by hand",
+        "Qualifying and answering new leads outside office hours",
+        "Sending reminders, confirmations or invoices manually",
+        "Copying data from one system to another",
+        "Compiling weekly or monthly reports from several sources",
+        "Triaging and routing internal requests (support, purchasing, HR)",
+        "Tracking proposals and following up with customers",
+        "Extracting information from documents, emails or forms",
+        "Monitoring indicators and alerting the team when something is off"
+      ],
+      "docOutro": "Want to turn this list into a plan? Book a meeting: {{url}}"
+    },
+    "sticky": { "book": "Book a meeting", "wa": "WhatsApp" },
+    "exit": {
+      "title": "Before you go…", "text": "Take the checklist of 10 processes to automate, or book a meeting whenever suits you.",
+      "checklist": "See the checklist", "book": "Book a meeting", "close": "Close"
+    },
+    "footerCta": { "title": "Ready to automate?", "cta": "Book a meeting" },
+    "seo": {
+      "title": "DevloperEU — AI Agents & Automation for Business | Braga, Portugal",
+      "description": "Digital transformation and hyperautomation with tailor-made AI agents. Consulting, automation, machine learning and development. Book a meeting with DevloperEU."
+    }
+  }
+}

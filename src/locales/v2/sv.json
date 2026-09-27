@@ -1,0 +1,102 @@
+{
+  "v2": {
+    "skip": "Hoppa till innehållet",
+    "nav": { "services": "Tjänster", "diagnostic": "Diagnos", "process": "Metod", "about": "Om oss", "faq": "FAQ", "book": "Boka möte", "menu": "Öppna menyn", "close": "Stäng menyn", "home": "DevloperEU — startsida", "lang": "Språk" },
+    "hero": {
+      "kicker": "AI & Hyperautomatisering · Braga, Portugal",
+      "l1": "AI-agenter som", "l2": "arbetar åt dig.",
+      "sub": "Skräddarsydd digital transformation och hyperautomatisering: vi utformar, integrerar och underhåller AI-agenter så att ditt team kan fokusera på det som får verksamheten att växa.",
+      "cta": "Boka möte", "cta2": "Gör diagnosen",
+      "trust": ["Grundat 2024", "Braga, Portugal", "Support efter lansering"]
+    },
+    "eyebrow": { "services": "01 — Tjänster", "diagnostic": "02 — Diagnos", "process": "03 — Metod", "why": "04 — Fördelar", "about": "05 — Om oss", "faq": "06 — Frågor", "book": "07 — Boka" },
+    "serviceCta": "Prata om den här tjänsten",
+    "diag": {
+      "title": "Rita din automatiseringskarta",
+      "intro": "Tre frågor. Till sist ser du kartan över de agenter och automationer vi rekommenderar och tar med den till mötet.",
+      "step": "Steg {{n}} av 3",
+      "q1": "Var förlorar ditt team mest tid?", "q1hint": "Välj ett eller flera områden.",
+      "q2": "Vilka system använder ni idag?", "q3": "Vad är prioriteten?",
+      "areas": {
+        "support": { "label": "Kundtjänst", "module": "AI-agent för kundtjänst" },
+        "sales": { "label": "Försäljning och leads", "module": "Kvalificering och uppföljning av leads" },
+        "ops": { "label": "Interna processer", "module": "Automatisering av operativa flöden" },
+        "data": { "label": "Data och rapporter", "module": "Analytics och automatiska rapporter" },
+        "software": { "label": "Skräddarsydd programvara", "module": "Skräddarsydda applikationer" }
+      },
+      "systems": { "few": "Få verktyg (kalkylblad, e-post)", "several": "Flera verktyg (CRM, ERP m.m.)", "legacy": "Egna eller äldre system" },
+      "urgency": { "now": "Starta nu med en pilot", "plan": "Planera i lugn och ro", "explore": "Bara utforska" },
+      "next": "Fortsätt", "back": "Tillbaka", "needOne": "Välj minst ett område för att fortsätta.",
+      "result": "Din automatiseringskarta", "core": "Devloper.eu", "scope": "Uppskattad omfattning",
+      "tiers": {
+        "pilot": { "name": "Fokuserad pilot", "desc": "Ett väl avgränsat användningsfall för att snabbt visa värde." },
+        "integrated": { "name": "Integrerat projekt", "desc": "Flera moduler kopplade till era nuvarande system." },
+        "program": { "name": "Transformationsprogram", "desc": "Ett stegvis upplägg med flera spår och integrationer." }
+      },
+      "investment": "Investeringen fastställs på mötet, när vi förstått era processer.",
+      "disclaimer": "Vägledande uppskattning av omfattning, inte en offert.",
+      "book": "Boka möte med den här kartan", "restart": "Gör om diagnosen",
+      "graphLabel": "Automatiseringskarta med {{count}} moduler kopplade till Devloper.eu"
+    },
+    "process": {
+      "title": "Från diagnos till löpande support",
+      "steps": [
+        { "t": "Diagnos", "d": "Vi kartlägger processer och ser var AI ger mest värde." },
+        { "t": "Förslag", "d": "Vi definierar omfattning, integrationer och prioriteringar tillsammans med dig." },
+        { "t": "Genomförande", "d": "Vi bygger och integrerar agenterna i de system du redan använder." },
+        { "t": "Löpande support", "d": "Uppdateringar, övervakning och justeringar efter driftsättning." }
+      ]
+    },
+    "why": { "title": "Därför växer företag med oss" },
+    "about": { "video": "Se företagsvideon", "videoLabel": "DevloperEU:s företagsvideo" },
+    "faqCta": { "text": "Fler frågor? Prata direkt med oss.", "cta": "Boka möte" },
+    "book": {
+      "title": "Boka ditt möte",
+      "intro": "Välj dag och tid. Vi bekräftar via WhatsApp eller e-post.",
+      "s1": "1. När passar det dig?", "s2": "2. Hur når vi dig?",
+      "day": "Dag", "time": "Tid (Lissabon)", "next": "Fortsätt", "back": "Tillbaka",
+      "name": "Namn", "email": "E-post", "phone": "Mobil / WhatsApp (valfritt)", "company": "Företag (valfritt)", "topic": "Vad vill du lösa? (valfritt)",
+      "consent": "Jag godkänner att DevloperEU använder dessa uppgifter för att kontakta mig om mötet.", "privacy": "Integritetspolicy",
+      "send": "Begär möte",
+      "errDay": "Välj en dag och en tid.", "errName": "Ange ditt namn.", "errEmail": "Ange en giltig e-postadress.", "errConsent": "Samtycke krävs för att fortsätta.",
+      "diagIncluded": "Inkluderar din automatiseringskarta",
+      "slotsNote": "Tider bekräftas separat.",
+      "doneTitle": "Förfrågan klar",
+      "doneText": "Vi öppnade WhatsApp med din förfrågan ifylld — skicka bara. Om fönstret inte öppnades, använd en av knapparna.",
+      "wa": "Skicka via WhatsApp", "mail": "Skicka via e-post", "calendar": "Boka i kalendern", "again": "Ny förfrågan",
+      "direct": "Vill du hellre prata direkt?"
+    },
+    "lead": {
+      "title": "Checklista: 10 processer att automatisera",
+      "text": "En praktisk guide för att se var AI-automatisering lönar sig först i ditt företag.",
+      "email": "Din e-post", "cta": "Ladda ner checklistan", "consent": "Jag godkänner att DevloperEU kontaktar mig om det här ämnet.",
+      "errEmail": "Ange en giltig e-postadress.", "errConsent": "Samtycke krävs för att ladda ner.", "thanks": "Checklistan är nedladdad. Vill du tillämpa den på din verksamhet?",
+      "file": "checklista-10-processer-att-automatisera.txt",
+      "docTitle": "CHECKLISTA: 10 PROCESSER ATT AUTOMATISERA — DevloperEU",
+      "docIntro": "Kryssa i varje process som finns i ditt företag. Ju fler du kryssar, desto större automatiseringspotential.",
+      "items": [
+        "Besvara samma kundfrågor via e-post, chatt eller telefon",
+        "Föra in kontakter och ärenden för hand i kalkylblad",
+        "Kvalificera och besvara nya leads utanför kontorstid",
+        "Skicka påminnelser, bekräftelser eller fakturor manuellt",
+        "Kopiera data från ett system till ett annat",
+        "Ta fram vecko- eller månadsrapporter från flera källor",
+        "Sortera och vidarebefordra interna ärenden (support, inköp, HR)",
+        "Följa upp offerter och kunder",
+        "Hämta information ur dokument, e-post eller formulär",
+        "Övervaka nyckeltal och varna teamet när något avviker"
+      ],
+      "docOutro": "Vill du göra listan till en plan? Boka ett möte: {{url}}"
+    },
+    "sticky": { "book": "Boka möte", "wa": "WhatsApp" },
+    "exit": {
+      "title": "Innan du går …", "text": "Ta med checklistan över 10 processer att automatisera, eller boka ett möte när det passar dig.",
+      "checklist": "Se checklistan", "book": "Boka möte", "close": "Stäng"
+    },
+    "footerCta": { "title": "Redo att automatisera?", "cta": "Boka möte" },
+    "seo": {
+      "title": "DevloperEU — AI-agenter och automatisering för företag | Braga, Portugal",
+      "description": "Digital transformation och hyperautomatisering med skräddarsydda AI-agenter. Rådgivning, automatisering, maskininlärning och utveckling. Boka ett möte med DevloperEU."
+    }
+  }
+}
