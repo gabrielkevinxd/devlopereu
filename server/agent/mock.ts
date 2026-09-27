@@ -95,11 +95,14 @@ export function mockReply(history: ChatMsg[], system = ''): MockOut {
         {
           name: 'unlock_capabilities',
           args: {
-            ids: ['automacao', 'desenvolvimento', 'consultoria'],
+            ids: ['agente-voz', 'whatsapp', 'integracoes-mcp'],
             reasons: [
-              'O agente atende e marca por WhatsApp e telefone, 24/7.',
+              'Atende e marca por telefone, 24/7, sem sobrecarregar a receção.',
+              'Responde e confirma marcações no WhatsApp.',
               'Liga o agente ao software de agenda que já usam.',
-              'Define regras, exceções e o que fica com a receção.',
+            ],
+            flows: [
+              { id: 'agente-voz', steps: ['Paciente liga para marcar consulta', 'Agente de voz percebe o pedido', 'Consulta a agenda da clínica', 'Consulta marcada e confirmação enviada'] },
             ],
           },
         },

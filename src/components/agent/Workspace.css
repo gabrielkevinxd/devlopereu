@@ -21,9 +21,15 @@
   /* «tapete»: a conversa que passa por baixo não espreita à volta do palco fixo */
   box-shadow: 0 0 0 0.75rem var(--ink);
 }
-.ws[data-phase='sim'] > .stage,
-.ws[data-phase='caps'] > .stage {
+.ws[data-phase='sim'] > .stage {
   height: clamp(300px, 62svh, 560px);
+}
+/* Mega Brain no telemóvel: palco com altura natural (a conversa segue por baixo) */
+.ws[data-phase='caps'] > .stage {
+  position: relative;
+  top: 0;
+  height: auto;
+  box-shadow: none;
 }
 /* Agendamento em ecrã estreito: o formulário segue a conversa (logo abaixo da última mensagem). */
 .ws[data-phase='booking'] > .stage,

@@ -9,6 +9,10 @@ export function Awake() {
   return (
     <div className="awake">
       <div className="awake__glow" aria-hidden="true" />
+      <svg className="awake__rings" viewBox="0 0 100 100" aria-hidden="true">
+        <circle className="hud-ring hud-ring--ticks" cx="50" cy="50" r="48" />
+        <circle className="hud-ring hud-ring--dash" cx="50" cy="50" r="42" />
+      </svg>
       <div className="awake__logo shimmer" style={{ '--mask': `url(${maskUrl('stacked')})` } as CSSProperties}>
         <Logo
           variant="stacked"

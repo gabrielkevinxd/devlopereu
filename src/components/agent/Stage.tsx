@@ -1,13 +1,15 @@
-import { forwardRef } from 'react';
+import { forwardRef, lazy, Suspense } from 'react';
 import { useI18n } from '../../i18n/context';
 import { BookingForm } from '../booking/BookingForm';
 import { Awake } from './stage/Awake';
-import { Capabilities } from './stage/Capabilities';
 import { Closed, Done } from './stage/Done';
 import { Profile } from './stage/Profile';
 import { Simulation } from './stage/Simulation';
 import type { Action, AgentState } from './useAgent';
 import './Stage.css';
+
+// Mega Brain: carregado só quando a conversa chega às capacidades (fora do bundle inicial).
+const CommandCenter = lazy(() => import('./stage/CommandCenter'));
 
 interface Props {
   state: AgentState;
@@ -74,7 +76,11 @@ export const Stage = forwardRef<HTMLElement, Props>(function Stage({ state, act 
         {view === 'awake' && <Awake />}
         {view === 'profile' && <Profile state={state} />}
         {view === 'sim' && (pain || state.simX) && <Simulation state={state} onDone={() => act({ type: 'simDone' })} />}
-        {view === 'caps' && <Capabilities state={state} act={act} />}
+        {view === 'caps' && (
+          <Suspense fallback={<p className="mono stage__loading">Mega Brain…</p>}>
+            <CommandCenter state={state} act={act} />
+          </Suspense>
+        )}
         {view === 'booking' && (
           <BookingForm
             idPrefix="ag"

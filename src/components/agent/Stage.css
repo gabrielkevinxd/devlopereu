@@ -1,4 +1,5 @@
 .stage {
+  position: relative;
   container: stage / inline-size;
   display: flex;
   flex-direction: column;
@@ -15,6 +16,31 @@
     0 24px 40px -24px rgb(0 0 0 / 0.9),
     inset 0 1px 0 rgb(255 255 255 / 0.04);
   scroll-margin-top: calc(var(--topbar) + 8px);
+}
+/* moldura HUD: cantos dourados discretos */
+.stage::after {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0.6;
+  --c: rgb(226 184 66 / 0.8);
+  background:
+    linear-gradient(var(--c), var(--c)) top left / 16px 1px no-repeat,
+    linear-gradient(var(--c), var(--c)) top left / 1px 16px no-repeat,
+    linear-gradient(var(--c), var(--c)) top right / 16px 1px no-repeat,
+    linear-gradient(var(--c), var(--c)) top right / 1px 16px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom left / 16px 1px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom left / 1px 16px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom right / 16px 1px no-repeat,
+    linear-gradient(var(--c), var(--c)) bottom right / 1px 16px no-repeat;
+}
+.stage__loading {
+  padding: 2rem;
+  text-align: center;
+  color: var(--gold);
+  letter-spacing: 0.2em;
 }
 .stage__bar {
   flex: none;
@@ -110,6 +136,39 @@
   animation: breathe 4s ease-in-out infinite;
   pointer-events: none;
 }
+/* anéis HUD à volta do logótipo no arranque */
+.awake__rings {
+  position: absolute;
+  left: 22%;
+  top: 50%;
+  width: min(46cqi, 300px);
+  aspect-ratio: 1;
+  translate: -50% -50%;
+  pointer-events: none;
+  overflow: visible;
+}
+.hud-ring {
+  fill: none;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.hud-ring--ticks {
+  stroke: rgb(226 184 66 / 0.3);
+  stroke-width: 0.45;
+  stroke-dasharray: 0.3 1.9;
+  animation: hud-rot 80s linear infinite;
+}
+.hud-ring--dash {
+  stroke: rgb(226 184 66 / 0.22);
+  stroke-width: 0.35;
+  stroke-dasharray: 10 4 2 4;
+  animation: hud-rot 36s linear infinite reverse;
+}
+@keyframes hud-rot {
+  to {
+    transform: rotate(360deg);
+  }
+}
 @keyframes breathe {
   50% {
     opacity: 0.55;
@@ -174,6 +233,11 @@
   .awake__glow {
     left: 50%;
     top: 42%;
+  }
+  .awake__rings {
+    left: 50%;
+    top: 38%;
+    width: clamp(300px, 58cqi, 520px);
   }
   .awake__logo {
     width: clamp(220px, 44cqi, 400px);
@@ -447,89 +511,6 @@
   .sim__grid {
     grid-template-columns: 1.5fr 1fr;
     align-items: start;
-  }
-}
-
-/* ───────── Capacidades ───────── */
-.caps__grid {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.5rem;
-}
-.cap {
-  min-width: 0;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: rgb(7 6 5 / 0.6);
-  animation: msg-in 0.4s var(--ease) both;
-  transition: border-color 0.2s;
-}
-.cap.is-on {
-  border-color: var(--gold);
-  background:
-    linear-gradient(160deg, rgb(226 184 66 / 0.16), transparent 60%),
-    rgb(7 6 5 / 0.6);
-  box-shadow: 0 0 34px -14px rgb(226 184 66 / 0.7);
-}
-.cap.is-open {
-  grid-column: 1 / -1;
-}
-.cap button {
-  display: grid;
-  gap: 0.25rem;
-  width: 100%;
-  min-height: var(--tap);
-  padding: 0.7rem 0.8rem;
-  border: 0;
-  background: none;
-  text-align: left;
-}
-.cap__state {
-  font-size: 0.66rem;
-  letter-spacing: 0.04em;
-  color: var(--dim);
-}
-.cap.is-on .cap__state {
-  color: var(--gold);
-}
-.cap__name {
-  font-size: clamp(0.9rem, 0.75rem + 1cqi, 1.2rem);
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-.cap__short {
-  display: none;
-  font-size: var(--fs-sm);
-  color: var(--muted);
-  line-height: 1.45;
-}
-.cap__more {
-  display: grid;
-  gap: 0.5rem;
-  padding: 0 0.8rem 0.8rem;
-  font-size: var(--fs-sm);
-  color: var(--muted);
-}
-.cap__more ul {
-  padding-left: 1.1rem;
-}
-.cap__more strong {
-  color: var(--gold-hi);
-}
-@container stage (min-width: 560px) {
-  .caps__grid {
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
-    gap: 0.75rem;
-  }
-  .cap button {
-    padding: 1rem;
-  }
-  .cap__short {
-    display: block;
-  }
-  .cap.is-open {
-    grid-column: auto;
   }
 }
 

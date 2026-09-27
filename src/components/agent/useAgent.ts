@@ -55,7 +55,7 @@ export interface AgentState {
   streamingId?: number;
   profileX?: AiProfile;
   simX?: AiSim;
-  capsX?: { ids: string[]; reasons: Record<string, string> };
+  capsX?: { ids: string[]; reasons: Record<string, string>; flows: Record<string, string[]> };
   bookingX?: AiBooking;
   /** muda sempre que o LLM gera nova simulação / novo pré-preenchimento (remonta o componente) */
   stageKey: number;
@@ -87,8 +87,6 @@ export type Action =
 
 /** Cenário honesto: o agente assume uma fração (por omissão metade) das horas que o próprio visitante indicou. */
 export const scenarioHours = (people: number, hours: number, share = 0.5) => Math.round(people * hours * share);
-
-export const CAP_IDS = ['consultoria', 'automacao', 'machine_learning', 'big_data', 'desenvolvimento', 'analytics'];
 
 /* Saneamento defensivo dos argumentos das tool calls (vêm de um modelo, não do nosso código). */
 const str = (v: unknown, max = 80) => (typeof v === 'string' && v.trim() ? v.trim().slice(0, max) : undefined);
@@ -256,12 +254,19 @@ function applyTool(s: AgentState, name: string, a: Record<string, unknown>): Age
       return { ...s, simX, phase: 'sim', simDone: true, stageKey: s.stageKey + 1 };
     }
     case 'unlock_capabilities': {
+      // ids validados contra o catálogo (src/data/capabilities.ts) no próprio palco; aqui só formato
       const raw = Array.isArray(a.ids) ? a.ids : [];
-      const ids = raw.filter((x): x is string => typeof x === 'string' && CAP_IDS.includes(x)).slice(0, 6);
+      const ids = raw.filter((x): x is string => typeof x === 'string' && /^[a-z_-]{2,40}$/.test(x)).slice(0, 6);
       if (!ids.length) return s;
       const why = list(a.reasons, 6, 160);
       const reasons = Object.fromEntries(ids.map((id, i) => [id, why[i]]).filter(([, r]) => r));
-      return { ...s, capsX: { ids, reasons }, phase: 'caps', openCap: undefined };
+      const flows: Record<string, string[]> = {};
+      for (const f of Array.isArray(a.flows) ? a.flows.slice(0, 6) : []) {
+        const id = str((f as { id?: unknown })?.id, 40);
+        const steps = list((f as { steps?: unknown })?.steps, 4, 80);
+        if (id && steps.length === 4) flows[id] = steps;
+      }
+      return { ...s, capsX: { ids, reasons, flows }, phase: 'caps', openCap: undefined };
     }
     case 'open_booking': {
       const bookingX = defined({

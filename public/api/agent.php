@@ -974,10 +974,12 @@ function mock_reply(array $history, string $system = ''): array
     }
     if (preg_match('/(servic|capacidad|capabilit|usariam|would you use|tecnolog)/', $u)) {
         return ['Para o seu caso usaria três capacidades — destaquei-as no palco com o porquê de cada uma. Quer ver isto com os seus dados numa conversa de 30 minutos?',
-            [['unlock_capabilities', ['ids' => ['automacao', 'desenvolvimento', 'consultoria'], 'reasons' => [
-                'O agente atende e marca por WhatsApp e telefone, 24/7.',
+            [['unlock_capabilities', ['ids' => ['agente-voz', 'whatsapp', 'integracoes-mcp'], 'reasons' => [
+                'Atende e marca por telefone, 24/7, sem sobrecarregar a receção.',
+                'Responde e confirma marcações no WhatsApp.',
                 'Liga o agente ao software de agenda que já usam.',
-                'Define regras, exceções e o que fica com a receção.',
+            ], 'flows' => [
+                ['id' => 'agente-voz', 'steps' => ['Paciente liga para marcar consulta', 'Agente de voz percebe o pedido', 'Consulta a agenda da clínica', 'Consulta marcada e confirmação enviada']],
             ]]], $suggest(['Sim, quero marcar', 'Quanto custa?'])]];
     }
     if (preg_match('/(quanto custa|preco|price|orcamento)/', $u)) {
