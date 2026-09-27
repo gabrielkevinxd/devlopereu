@@ -1,0 +1,36 @@
+.cookie {
+  position: fixed;
+  z-index: 60;
+  inset: auto 12px 12px 12px;
+  max-width: 34rem;
+  margin-inline: auto;
+  display: grid;
+  gap: 0.8rem;
+  padding: 1rem 1.1rem;
+  background: rgb(21 18 12 / 0.97);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  box-shadow: 0 20px 60px -20px #000;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  animation: cookie-in 0.4s var(--ease) both;
+}
+.cookie a {
+  color: var(--gold-hi);
+}
+.cookie__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+}
+@media (min-width: 900px) {
+  .cookie {
+    inset: auto auto 20px 20px;
+  }
+}
+@keyframes cookie-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}

@@ -1,34 +1,44 @@
-# DevloperEU
+# DevloperEU — site v2 («o site é o agente»)
 
-Aplicação React + TypeScript construída com Vite e Tailwind, com suporte a i18n e PWA.
+Conceito, jornada e momentos-chave: ver [`CONCEPT.md`](CONCEPT.md).
 
-## Requisitos
-- Node.js 18+
-- npm 9+
+## Stack
 
-## Instalação e execução
+- Vite 5 + TypeScript + componentes React (runtime **Preact** via `preact/compat`, ~10 kB)
+- CSS próprio (tokens, `clamp()`, container queries), sem framework
+- **SSG próprio**: cada idioma × página é pré-renderizado para HTML estático (`scripts/prerender.mjs`)
+- i18n tipado: `src/i18n/pt.ts` é a fonte; `en/fr/es/de/sv` implementam o tipo `Dict`
+
+## Comandos
+
 ```bash
 npm ci
-npm run dev
+npm run dev        # http://localhost:5173
+npm run build      # typecheck → build cliente → build SSR → pré-render (dist/)
+npm run preview    # serve dist/ em http://localhost:4173
+npm run brand      # regenera logótipos/ícones a partir de scripts/brand-src (Python + Pillow)
 ```
 
-## Build de produção
-```bash
-npm run build
+## Estrutura
+
 ```
-Os arquivos gerados ficam em `dist/`. Para conveniência de deploy manual, um `dist.zip` pode ser criado com:
-```powershell
-Compress-Archive -Path .\\dist\\* -DestinationPath .\\dist.zip -Force
+src/
+  config.ts            contactos, CALENDAR_URL (TODO), Meta Pixel, CASE_STUDIES (TODO)
+  routes.ts  seo.ts    rotas por idioma, <head>, JSON-LD
+  i18n/                dicionários tipados (pt fonte)
+  components/
+    agent/             Workspace, Chat, Stage (+ stage/: Awake, Profile, Simulation, Capabilities, Done)
+    booking/           BookingForm + lógica (dias úteis, mensagem WhatsApp/email)
+    classic/           modo clássico (documento indexável)
+    consent/           banner RGPD + Meta Pixel só após consentimento
+    conversion/        exit-intent (1×, desktop, fechável)
+    layout/ brand/     topbar, rodapé, idiomas, logótipo real responsivo
+  pages/               páginas legais e checklist (lead magnet)
+public/brand/          logótipo real (PNG/WebP/AVIF), gerado por scripts/brand.py
 ```
 
-## Internacionalização
-As traduções usam i18next. Placeholders devem seguir o padrão `{{variavel}}` (ex.: `{{date}}`).
+## TODO do dono
 
-## Estrutura principal
-- `src/pages`: páginas (Home, Termos, Privacidade, Cookies)
-- `src/components`: componentes reutilizáveis
-- `src/locales`: traduções por idioma
-- `vite.config.ts`: configuração Vite
-
-## Deploy
-Consulte `DEPLOYMENT.md` para instruções detalhadas de Vercel, Netlify e GitHub Pages.
+- `src/config.ts → CALENDAR_URL`: link de agendamento (Cal.com/Calendly). Vazio = WhatsApp/email.
+- `src/config.ts → CASE_STUDIES`: casos reais autorizados. Vazio = não aparece nada.
+- Não existem preços, clientes nem testemunhos no site — por decisão, até haver dados reais.

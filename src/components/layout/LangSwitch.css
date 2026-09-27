@@ -1,0 +1,35 @@
+.lang {
+  position: relative;
+  display: inline-flex;
+}
+.lang select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 3.6rem;
+  min-height: var(--tap);
+  padding: 0 0.5rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: transparent;
+  text-align: center;
+  cursor: pointer;
+}
+.lang select option {
+  color: var(--text);
+  background: var(--ink-2);
+}
+.lang select:hover {
+  border-color: var(--gold);
+}
+.lang__code {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--mono);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text);
+  pointer-events: none;
+}

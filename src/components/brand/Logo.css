@@ -1,0 +1,31 @@
+.logo {
+  display: block;
+}
+.logo img {
+  width: 100%;
+  height: auto;
+}
+
+/* Feixe de luz que percorre apenas as linhas do logótipo real (máscara = PNG real). */
+.shimmer {
+  position: relative;
+  isolation: isolate;
+}
+.shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 38%, rgb(255 246 214 / 0.95) 50%, transparent 62%) 0 0 / 260% 100%;
+  -webkit-mask: var(--mask) center / contain no-repeat;
+  mask: var(--mask) center / contain no-repeat;
+  animation: shimmer 2.8s var(--ease) infinite;
+  pointer-events: none;
+}
+@keyframes shimmer {
+  from {
+    background-position: 130% 0;
+  }
+  to {
+    background-position: -30% 0;
+  }
+}

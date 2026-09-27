@@ -1,0 +1,63 @@
+/*
+ * Área de trabalho do agente.
+ * Telemóvel (base): palco fixo no topo (sticky) + conversa a fluir por baixo + respostas fixas em baixo.
+ * ≥900px: duas colunas com altura do ecrã, cada painel com scroll próprio.
+ */
+.ws {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 1920px;
+  margin-inline: auto;
+  padding: 0.75rem clamp(0.75rem, 0.4rem + 1.5vw, 1.75rem) 0;
+}
+.ws > .stage {
+  order: -1;
+  position: sticky;
+  top: calc(var(--topbar) + 0.5rem);
+  z-index: 5;
+  height: clamp(250px, 44svh, 420px);
+  /* «tapete»: a conversa que passa por baixo não espreita à volta do palco fixo */
+  box-shadow: 0 0 0 0.75rem var(--ink);
+}
+.ws[data-phase='sim'] > .stage,
+.ws[data-phase='caps'] > .stage {
+  height: clamp(300px, 62svh, 560px);
+}
+/* Agendamento em ecrã estreito: o formulário segue a conversa (logo abaixo da última mensagem). */
+.ws[data-phase='booking'] > .stage,
+.ws[data-phase='done'] > .stage {
+  order: 1;
+  position: relative;
+  top: 0;
+  height: auto;
+  box-shadow: none;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 900px) {
+  .ws {
+    display: grid;
+    grid-template-columns: minmax(320px, 0.78fr) minmax(0, 1.35fr);
+    gap: clamp(0.9rem, 0.5rem + 1vw, 1.5rem);
+    height: calc(100svh - var(--topbar));
+    min-height: 560px;
+    padding-block: clamp(0.9rem, 0.5rem + 1vw, 1.5rem);
+  }
+  .ws > .stage,
+  .ws[data-phase] > .stage {
+    order: 0;
+    margin-bottom: 0;
+    box-shadow: none;
+    position: relative;
+    top: 0;
+    height: auto;
+    min-height: 0;
+  }
+}
+@media (min-width: 1600px) {
+  .ws {
+    grid-template-columns: minmax(420px, 0.7fr) minmax(0, 1.4fr);
+  }
+}

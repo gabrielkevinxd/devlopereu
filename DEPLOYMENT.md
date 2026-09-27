@@ -1,39 +1,19 @@
-# Guia de Deploy
+# Deploy
 
-Este projeto é uma SPA gerada por Vite com saída em `dist/`. Abaixo, as opções recomendadas de deploy.
+O `npm run build` gera um **site estático** em `dist/`: uma pasta com `index.html` por rota e idioma
+(`/`, `/en/`, `/fr/`, `/es/`, `/de/`, `/sv/`, `…/privacy-policy/`, `…/cookie-policy/`, `…/terms/`,
+`…/checklist/`), mais `sitemap.xml`, `robots.txt`, `404.html` e `.htaccess`. Não é preciso
+servidor Node nem regras de SPA.
 
-## Vercel
-- Framework: `Vite`
-- Comando de build: `npm run build`
-- Diretório de saída: `dist`
-- Node: `18`
-- Variáveis de ambiente: não requerem configuração especial.
-- Passos:
-  1. Crie novo projeto no Vercel e conecte ao repositório GitHub.
-  2. Vercel detectará Vite automaticamente; confirme `Output Directory: dist`.
-  3. Deploy será automático a cada push em `main`.
+## Apache / hosting partilhado
+1. `npm ci && npm run build`
+2. Enviar o conteúdo de `dist/` (inclui `.htaccess`: HTTPS + domínio canónico, 404, cache, MIME AVIF/WebP).
 
-## Netlify
-- Build command: `npm run build`
-- Publish directory: `dist`
-- Node: `18`
-- Passos:
-  1. Crie novo site a partir do repositório.
-  2. Configure build e publish conforme acima.
+## Vercel / Netlify / Cloudflare Pages
+- Build: `npm run build` · Output: `dist` · Node 18+.
+- Não configurar rewrites para `index.html` (cada rota tem o seu HTML).
 
-## GitHub Pages
-Para GitHub Pages servir corretamente rotas de SPA, ajuste o `base` do Vite se publicar em um subcaminho.
-
-### Passos
-1. Se o repositório for `usuario/DevloperEU`, ative Pages em `Settings > Pages` e escolha ação de deploy do `dist`.
-2. Caso precise publicar em `https://usuario.github.io/DevloperEU/`, defina `base: '/DevloperEU/'` no `vite.config.ts`.
-3. Faça push para `main` e aguarde o build.
-
-## Deploy manual (Apache/Nginx)
-1. Gere o build: `npm run build`.
-2. Faça upload do conteúdo de `dist/` (ou `dist.zip` e descompacte) para o servidor.
-3. Configure rewrite para SPA (rotas internas redirecionadas para `index.html`).
-
-## Dicas
-- Sempre gere build antes de publicar (`npm run build`).
-- Verifique que `{{date}}` e outros placeholders estejam interpolados nas traduções.
+## Notas
+- `public/sw.js` é um «kill switch»: remove o service worker do site antigo (vite-plugin-pwa) nos
+  browsers de visitantes antigos. Pode ser apagado ao fim de alguns meses.
+- O Meta Pixel só é carregado depois de o visitante clicar «Aceitar» no banner de cookies.

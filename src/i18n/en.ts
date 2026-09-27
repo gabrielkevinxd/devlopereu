@@ -1,0 +1,492 @@
+import type { Dict } from './pt';
+
+export const en: Dict = {
+  meta: {
+    title: 'DevloperEU — AI agents and automation for businesses | Braga, Portugal',
+    description:
+      'AI agents and hyperautomation for businesses in Portugal and across Europe. Talk to our agent, watch a simulation of your case and book 30 minutes. Braga, since 2024.',
+    ogAlt: 'DevloperEU logo — golden neural-network head',
+    ogLocale: 'en_GB',
+  },
+
+  ui: {
+    skip: 'Skip to content',
+    modeLabel: 'View mode',
+    modeChat: 'Talk',
+    modeRead: 'Browse',
+    book: 'Book a meeting',
+    bookShort: 'Book',
+    language: 'Language',
+    status: 'agent online',
+    location: 'Braga, PT',
+    restart: 'Start over',
+    skipToBooking: 'Go straight to booking',
+    toClassic: 'Classic mode',
+    toChat: 'Talk to the agent',
+    simulation: 'Illustrative simulation',
+    typing: 'The agent is typing…',
+    stageLabel: 'Agent stage',
+    chatLabel: 'Conversation with the agent',
+    answersLabel: 'Suggested answers',
+    close: 'Close',
+    you: 'You',
+    agent: 'DevloperEU Agent',
+    home: 'Home page',
+  },
+
+  boot: ['starting devloper.eu agent', 'loading capabilities · 6/6', 'context · businesses in Portugal and Europe', 'ready'],
+
+  chat: {
+    intro: "Hi. I'm the DevloperEU agent.",
+    introSub:
+      "In under a minute I'll show you what an AI agent would do in your business — with a simulation of your case. No forms.",
+    introYes: 'Show me in my business',
+    introNo: "I'd rather browse the site",
+    askSector: 'To start: which sector is your business in?',
+    askPain: 'Got it — {sector}. Where does your team lose the most time today?',
+    askTeam: 'Last question. How many people handle this, and how many hours a week does each spend on it?',
+    people: 'People involved',
+    hours: 'Hours per person, per week',
+    confirmTeam: 'Build my agent',
+    teamAnswer: '{people} people · {hours} h/week each',
+    building: 'Perfect. Building a {pain} agent for {sector}… watch the stage.',
+    simDone:
+      'This is the agent working on your case. If it takes over half of the repetitive tasks, your team gets back about {result} hours a week.',
+    simNote: "It's an illustrative simulation using the numbers you gave me — in the meeting we measure with your real data.",
+    toCaps: 'Which capabilities would it use?',
+    capsIntro:
+      'For your case I switched on {count} capabilities. The others are available too — tap any of them to learn more.',
+    capsOpened: '{name}: {short}',
+    toBook: 'I want to see this with my data',
+    askBook:
+      "I suggest a 30-minute video call: we understand the process, show you the agent with your data and tell you what's feasible. Pick a day and time on the stage.",
+    bookedWhatsapp: "Request ready and opened in WhatsApp. As soon as you send it, we'll confirm the time.",
+    bookedEmail: "Request ready in your email client. As soon as you send it, we'll confirm the time.",
+    bookedCalendar: 'I opened our calendar in a new window so you can confirm the time.',
+    afterBook: 'While you wait, grab the free checklist of 12 tasks an AI agent can take over right now.',
+    magnetCta: 'Open the checklist',
+    jumpBook: "Let's go straight to booking. Pick a day and time on the stage — I'll take care of the rest.",
+  },
+
+  sectors: [
+    { id: 'comercio', label: 'Retail and e-commerce', who: 'shop customers' },
+    { id: 'servicos', label: 'Professional services', who: 'clients' },
+    { id: 'industria', label: 'Manufacturing and logistics', who: 'customers and suppliers' },
+    { id: 'saude', label: 'Healthcare and clinics', who: 'patients' },
+    { id: 'imobiliario', label: 'Real estate', who: 'prospects' },
+    { id: 'turismo', label: 'Tourism and hospitality', who: 'guests and customers' },
+  ],
+
+  pains: [
+    {
+      id: 'atendimento',
+      label: 'Customer service and messages',
+      agentName: 'customer service',
+      flow: ['WhatsApp, email and website', 'Agent understands the request', 'Checks your systems', 'Replies and logs it'],
+      log: [
+        'New WhatsApp message — “Do you still have availability this week?”',
+        'Intent detected: availability · confidence 0.94',
+        'Internal calendar checked → 3 free slots',
+        'Reply sent with 3 time options',
+        'Choice confirmed → record created in the CRM',
+        'Daily summary sent to the team',
+      ],
+      services: ['automacao', 'consultoria', 'desenvolvimento'],
+    },
+    {
+      id: 'documentos',
+      label: 'Invoices and documents',
+      agentName: 'documents',
+      flow: ['Email and scans', 'Agent reads the document', 'Validates and cross-checks', 'Posts to the ERP'],
+      log: [
+        'Invoice received by email — PDF, 2 pages',
+        'Fields extracted: VAT no., date, total, VAT',
+        'Validation: supplier VAT number matches',
+        'Cross-checked with the purchase order → amounts match',
+        'Entry prepared in the ERP for approval',
+        'Exception flagged: 1 document without a purchase order',
+      ],
+      services: ['automacao', 'machine_learning', 'desenvolvimento'],
+    },
+    {
+      id: 'agenda',
+      label: 'Bookings and scheduling',
+      agentName: 'bookings',
+      flow: ['Booking requests', 'Agent proposes times', 'Syncs the calendar', 'Confirms and reminds'],
+      log: [
+        'Booking request received via the website',
+        'Preference detected: late afternoon',
+        'Team calendar checked → 2 options',
+        'Booking confirmed and added to the calendar',
+        'Reminder scheduled for the day before',
+        'Cancellation received → slot reopened automatically',
+      ],
+      services: ['automacao', 'desenvolvimento'],
+    },
+    {
+      id: 'leads',
+      label: 'Leads and sales',
+      agentName: 'sales',
+      flow: ['Forms and ads', 'Agent qualifies', 'Updates the CRM', 'Follows up'],
+      log: [
+        'New contact via the website form',
+        'Enrichment: sector and company size identified',
+        'Qualification score: 82/100',
+        'Opportunity created in the CRM with a summary',
+        'Personalised first reply sent',
+        'Follow-up scheduled in 3 days',
+      ],
+      services: ['automacao', 'analytics', 'machine_learning'],
+    },
+    {
+      id: 'relatorios',
+      label: 'Reports and data',
+      agentName: 'reporting',
+      flow: ['Sheets, ERP and CRM', 'Agent merges the data', 'Calculates KPIs', 'Sends the report'],
+      log: [
+        'Collection: 4 data sources connected',
+        'Cleaning: 37 duplicate rows removed',
+        'Weekly KPIs calculated',
+        'Deviation detected: northern region sales −12%',
+        'PDF report generated and dashboard updated',
+        'Alert sent to management',
+      ],
+      services: ['analytics', 'big_data', 'automacao'],
+    },
+    {
+      id: 'operacoes',
+      label: 'Orders and stock',
+      agentName: 'operations',
+      flow: ['Orders and sales', 'Agent forecasts demand', 'Checks stock', 'Prepares restocking'],
+      log: [
+        'Order received — 3 items',
+        'Stock checked in 2 warehouses',
+        'Forecast: item A out of stock in 9 days',
+        'Restocking proposal generated',
+        'Supplier order prepared for approval',
+        'Customer informed of the delivery date',
+      ],
+      services: ['machine_learning', 'big_data', 'automacao'],
+    },
+  ],
+
+  profile: {
+    title: 'Company profile',
+    subtitle: 'generated live by the agent',
+    sector: 'Sector',
+    pain: 'Priority',
+    team: 'Team',
+    hours: 'Time spent',
+    pending: 'waiting…',
+    peopleUnit: 'people',
+    hoursUnit: 'h/week each',
+  },
+
+  sim: {
+    title: 'Agent · {pain}',
+    running: 'running',
+    events: 'Event log',
+    tasks: 'Tasks handled',
+    response: 'Response',
+    responseValue: '< 5 s',
+    scenario: 'Scenario: hours freed per week',
+    formula: '{people} people × {hours} h × 50% = {result} h',
+    disclaimer: 'Illustrative simulation. Real figures depend on your process and are measured in the meeting.',
+  },
+
+  services: [
+    {
+      id: 'consultoria',
+      name: 'AI Consulting',
+      short: 'Strategy and assessment: where AI pays off in your business.',
+      bullets: ['Process and opportunity map', 'Phased plan with priorities', 'Tool choice and risks (GDPR, AI Act)'],
+      why: 'Defines where to start and what is not worth automating.',
+    },
+    {
+      id: 'automacao',
+      name: 'Automation',
+      short: 'AI agents and hyperautomation that handle repetitive tasks end to end.',
+      bullets: ['Agents on WhatsApp, email and website', 'Integration with ERP, CRM and spreadsheets', 'Human in the loop when needed'],
+      why: 'It is the engine of the agent you saw in the simulation.',
+    },
+    {
+      id: 'machine_learning',
+      name: 'Machine Learning',
+      short: 'Models that classify, extract and forecast from your data.',
+      bullets: ['Document reading', 'Demand and risk forecasting', 'Request classification'],
+      why: 'Gives the agent the ability to read, classify and forecast.',
+    },
+    {
+      id: 'big_data',
+      name: 'Big Data',
+      short: 'Collecting, cleaning and organising data scattered across sources.',
+      bullets: ['Data pipelines', 'Quality and deduplication', 'Scalable architecture'],
+      why: 'Brings together the data sources the agent needs.',
+    },
+    {
+      id: 'desenvolvimento',
+      name: 'Development',
+      short: 'Custom software: portals, integrations, APIs and applications.',
+      bullets: ['Integrations and APIs', 'Portals and internal dashboards', 'Web and mobile apps'],
+      why: 'Connects the agent to the systems you already use.',
+    },
+    {
+      id: 'analytics',
+      name: 'Analytics',
+      short: 'Dashboards and KPIs to make data-driven decisions.',
+      bullets: ['Real-time dashboards', 'Automatic reports', 'Deviation alerts'],
+      why: "Shows you the agent's impact in numbers.",
+    },
+  ],
+
+  caps: {
+    title: 'Capabilities',
+    unlocked: 'switched on for your case',
+    available: 'available',
+    why: 'Why',
+  },
+
+  booking: {
+    title: 'Book 30 minutes',
+    duration: '30 min · video call · no commitment',
+    day: 'Day',
+    time: 'Time (Lisbon)',
+    name: 'Name',
+    company: 'Company (optional)',
+    contact: 'Email or phone',
+    contactHint: 'Only so we can confirm the meeting.',
+    notes: 'Anything we should know? (optional)',
+    consent: 'I agree that DevloperEU may use this data only to respond to this request, in accordance with the',
+    consentLink: 'Privacy Policy',
+    whatsapp: 'Send request via WhatsApp',
+    email: 'Send by email',
+    calendar: 'Open calendar',
+    preview: 'Message the agent prepared',
+    errors: {
+      day: 'Pick a day.',
+      time: 'Pick a time.',
+      name: 'Please enter your name.',
+      contact: 'Please enter a valid email or phone number.',
+      consent: 'We need your consent to send the request.',
+    },
+    message: {
+      greeting: "Hello DevloperEU! I'd like to book a 30-min meeting.",
+      when: 'When: {day} at {time} (Lisbon time)',
+      name: 'Name: {name}',
+      company: 'Company: {company}',
+      contact: 'Contact: {contact}',
+      case: 'Case: {sector} · {pain} · {people} people × {hours} h/week',
+      notes: 'Notes: {notes}',
+      subject: 'Meeting request — {day} {time}',
+    },
+    done: 'Request ready',
+    doneBody: "If the window didn't open, use the contacts below.",
+  },
+
+  classic: {
+    eyebrow: 'AI agents · Hyperautomation · Braga, Portugal',
+    h1: 'AI agents that take care of the repetitive work in your business',
+    lead:
+      'DevloperEU designs, integrates and supports custom AI agents and automations — connected to the systems you already use, with a person in the loop whenever it matters.',
+    ctaPrimary: 'Book 30 minutes',
+    ctaSecondary: 'Talk to the agent',
+    servicesTitle: 'What we do',
+    servicesLead: 'Six capabilities we combine to fit the problem — not the other way round.',
+    processTitle: 'How we work',
+    process: [
+      { t: '30-min conversation', d: 'We understand the process, the systems and where time is lost.' },
+      { t: 'Assessment', d: "We map the workflow and tell you what's feasible, with risks and priorities." },
+      { t: 'Prototype', d: 'A first agent running on a real case, validated with your team.' },
+      { t: 'Implementation and support', d: 'Full integration, training and continuous improvement.' },
+    ],
+    aboutTitle: 'About DevloperEU',
+    about: [
+      'Founded in 2024 in Braga, Portugal, DevloperEU builds AI agents and automation solutions for businesses in Portugal and across Europe.',
+      'We work in six languages and focus on what can be measured: fewer manual tasks, faster responses and more reliable data — always GDPR-compliant.',
+    ],
+    faqTitle: 'Frequently asked questions',
+    bookingTitle: 'Book a meeting',
+    bookingLead: 'Pick a day and time. Your request goes out via WhatsApp or email, already filled in.',
+    contactTitle: 'Contacts',
+  },
+
+  faq: [
+    {
+      q: 'What is an AI agent?',
+      a: 'A program that understands requests in natural language, checks your systems and carries out tasks — replying to customers, reading documents, updating the CRM — within rules we define with you.',
+    },
+    {
+      q: 'Do we have to change the systems we already use?',
+      a: 'Usually not. We connect the agent to what you already have (email, WhatsApp, ERP, CRM, spreadsheets) through integrations and APIs.',
+    },
+    {
+      q: 'Is the data secure and GDPR-compliant?',
+      a: 'Yes. We only process the data that is needed, with controlled access and a log of the agent’s actions. In the meeting we explain where data is hosted for each solution.',
+    },
+    {
+      q: 'How much does it cost?',
+      a: 'It depends on the scope. After the initial conversation and assessment, we present a proposal with phases and fixed prices.',
+    },
+    {
+      q: 'How long until an agent is up and running?',
+      a: 'It depends on complexity and integrations. We start with a prototype on a specific case to validate early; the exact timeline is set in the assessment.',
+    },
+    {
+      q: 'Does the agent replace people?',
+      a: 'The goal is to free your team from repetitive work. Sensitive decisions stay with a person, whom the agent prepares and keeps informed.',
+    },
+    {
+      q: 'Do you only work in Braga?',
+      a: "We're based in Braga, but we work remotely with businesses across Portugal and Europe.",
+    },
+    {
+      q: 'Is there any commitment in the first meeting?',
+      a: 'No. It’s 30 minutes to understand your case and tell you honestly whether and how AI can help.',
+    },
+  ],
+
+  magnet: {
+    title: 'Checklist: 12 tasks an AI agent can take over right now',
+    lead: 'Tick the ones that happen in your business. If you ticked three or more, there’s an agent waiting to save you time.',
+    cta: 'See the free checklist',
+    print: 'Save as PDF / print',
+    back: 'Back to the agent',
+    footer: 'Want to know where to start? Book 30 minutes with us.',
+    items: [
+      'Answering repeated customer questions (opening hours, prices, availability)',
+      'Sorting and routing emails to the right person',
+      'Booking, confirming and reminding meetings or appointments',
+      'Extracting data from invoices, receipts and contracts',
+      'Posting documents to the ERP or accounting',
+      'Qualifying leads from the website or ads',
+      'Updating the CRM after every conversation',
+      'Following up on unanswered proposals',
+      'Merging data from several spreadsheets into a weekly report',
+      'Detecting deviations in sales, costs or stock',
+      'Forecasting stock-outs and preparing supplier orders',
+      'Answering internal information requests (HR, procedures)',
+    ],
+  },
+
+  exit: {
+    title: 'Before you go…',
+    body: 'Take the free checklist of 12 tasks an AI agent can take over right now. No sign-up.',
+    cta: 'See the checklist',
+    alt: 'Book 30 minutes',
+    close: 'No, thanks',
+  },
+
+  cookies: {
+    text: 'We use essential storage for the site to work. With your permission, we also use the Meta Pixel to measure campaigns. You can change your mind at any time.',
+    accept: 'Accept',
+    reject: 'Reject',
+    policy: 'Cookie Policy',
+    manage: 'Cookie preferences',
+  },
+
+  footer: {
+    tagline: 'AI agents and hyperautomation for businesses. Braga, Portugal — since 2024.',
+    contact: 'Contact',
+    follow: 'Social',
+    legal: 'Legal',
+    languages: 'Languages',
+    rights: 'All rights reserved.',
+  },
+
+  legal: {
+    updated: 'Last updated: 27 September 2026',
+    privacy: {
+      title: 'Privacy Policy',
+      sections: [
+        {
+          h: '1. Data controller',
+          p: ['DevloperEU (devloper.eu), Braga, Portugal. Contact: contato@devlopereu.com.'],
+        },
+        {
+          h: '2. What data we process',
+          items: [
+            'Data you send us when requesting a meeting: name, company, email or phone, preferred day and time, and notes.',
+            'Answers you give the site’s agent (sector, priority, team size) — they stay in your browser only, unless you include them in your request.',
+            'Campaign measurement data (Meta Pixel), only if you accept marketing cookies.',
+          ],
+        },
+        {
+          h: '3. Purposes and legal basis',
+          items: [
+            'Responding to your request and scheduling the meeting — pre-contractual steps at your request.',
+            'Campaign measurement — consent, which you can withdraw at any time.',
+            'Compliance with legal obligations, where applicable.',
+          ],
+        },
+        {
+          h: '4. Retention',
+          p: ['Contact requests are kept for as long as needed to follow them up and, at most, 24 months without further interaction.'],
+        },
+        {
+          h: '5. Sharing and transfers',
+          p: [
+            'Requests travel through the channel you choose (WhatsApp or email), subject to those services’ policies. With your consent, Meta Platforms receives browsing data for measurement; transfers outside the EEA may occur under standard contractual clauses.',
+          ],
+        },
+        {
+          h: '6. Your rights',
+          items: [
+            'Access, rectification and erasure of your data.',
+            'Restriction of and objection to processing, and portability.',
+            'Withdrawing consent at any time, without affecting prior processing.',
+            'Lodging a complaint with the CNPD (www.cnpd.pt).',
+          ],
+        },
+      ],
+    },
+    cookies: {
+      title: 'Cookie Policy',
+      sections: [
+        {
+          h: '1. What we use',
+          items: [
+            'Essential (local storage): stores your cookie choice, language and view mode. No consent required.',
+            'Marketing (Meta Pixel, id 998154455530660): only loaded after you click “Accept”. Measures campaign visits and conversions.',
+          ],
+        },
+        {
+          h: '2. How to manage them',
+          p: [
+            'You can change your choice at any time via the “Cookie preferences” link in the footer, or delete the site’s data in your browser settings.',
+          ],
+        },
+        {
+          h: '3. Duration',
+          items: ['Your choice is kept until you change it or clear your browser data.', 'Meta cookies follow the periods set by Meta (up to 90 days).'],
+        },
+      ],
+    },
+    terms: {
+      title: 'Terms of Use',
+      sections: [
+        {
+          h: '1. Acceptance',
+          p: ['By using devloper.eu you accept these terms. If you do not agree, please do not use the site.'],
+        },
+        {
+          h: '2. The site',
+          p: [
+            'The agent and the simulations shown are illustrative and do not constitute a commercial offer. Actual results depend on each case and are assessed in a meeting.',
+          ],
+        },
+        {
+          h: '3. Intellectual property',
+          p: ['The brand, logo, texts and code of the site belong to DevloperEU and may not be reused without permission.'],
+        },
+        {
+          h: '4. Liability',
+          p: ['We strive to keep the information accurate and up to date, but we do not guarantee it is free from errors or interruptions.'],
+        },
+        {
+          h: '5. Governing law',
+          p: ['These terms are governed by Portuguese law. The courts of the district of Braga have jurisdiction, without prejudice to mandatory consumer protection rules.'],
+        },
+      ],
+    },
+  },
+};

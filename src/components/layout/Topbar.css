@@ -1,0 +1,84 @@
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  height: var(--topbar);
+  padding: 0 clamp(0.75rem, 0.4rem + 1.5vw, 1.75rem);
+  background: rgb(7 6 5 / 0.97);
+  border-bottom: 1px solid var(--line);
+}
+.topbar__brand {
+  display: flex;
+  align-items: center;
+  flex: 0 1 auto;
+  min-width: 0;
+  height: 100%;
+}
+/* Altura fixa → o header nunca cresce; a largura do logótipo real segue a proporção. */
+.topbar__brand .logo img {
+  width: auto;
+  height: calc(var(--topbar) - 14px);
+  max-width: 100%;
+  object-fit: contain;
+}
+.topbar__status {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-xs);
+  color: var(--muted);
+  white-space: nowrap;
+}
+.pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ok);
+  box-shadow: 0 0 0 0 rgb(159 214 138 / 0.6);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  70% {
+    box-shadow: 0 0 0 8px rgb(159 214 138 / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(159 214 138 / 0);
+  }
+}
+.topbar__actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.topbar__mode {
+  display: none;
+}
+.topbar__cta {
+  white-space: nowrap;
+  padding-inline: 1em;
+}
+.topbar__cta-long {
+  display: none;
+}
+
+@media (min-width: 720px) {
+  .topbar__mode {
+    display: inline-flex;
+  }
+  .topbar__cta-long {
+    display: inline;
+  }
+  .topbar__cta-short {
+    display: none;
+  }
+}
+@media (min-width: 1180px) {
+  .topbar__status {
+    display: inline-flex;
+    margin-left: 0.5rem;
+  }
+}

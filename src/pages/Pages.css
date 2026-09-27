@@ -1,0 +1,122 @@
+.doc {
+  padding: clamp(1.5rem, 1rem + 3vw, 4rem) var(--pad) clamp(3rem, 2rem + 4vw, 6rem);
+}
+.doc__inner {
+  max-width: 46rem;
+  margin-inline: auto;
+}
+.doc__back {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  margin-bottom: 1rem;
+  color: var(--gold-hi);
+  font-weight: 600;
+  text-decoration: none;
+}
+.doc h1 {
+  font-size: var(--fs-2xl);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+.doc__updated {
+  margin-top: 0.75rem;
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+.doc__lead {
+  margin-top: 1.25rem;
+  font-size: var(--fs-lg);
+  color: var(--muted);
+}
+.doc section {
+  margin-top: 2.25rem;
+}
+.doc h2 {
+  margin-bottom: 0.6rem;
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+.doc section p + p {
+  margin-top: 0.6rem;
+}
+.doc ul {
+  display: grid;
+  gap: 0.4rem;
+  padding-left: 1.2rem;
+}
+
+.checklist__brand {
+  width: 220px;
+  margin-bottom: 1.5rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 14px;
+  background: var(--ink);
+}
+.checklist__items {
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+.checklist__items label {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 3.25rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--ink-1);
+  cursor: pointer;
+}
+.checklist__items input {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+  accent-color: var(--gold-lo);
+}
+.checklist__items .mono {
+  font-size: var(--fs-xs);
+  color: var(--gold-lo);
+}
+.checklist__items label:has(input:checked) {
+  border-color: var(--gold-lo);
+  background: #fff6dc;
+}
+.checklist__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 2rem;
+}
+.checklist__print-footer {
+  display: none;
+}
+
+@media print {
+  .topbar,
+  .footer,
+  .cookie,
+  .exit,
+  .no-print {
+    display: none !important;
+  }
+  body,
+  .paper {
+    background: #fff !important;
+  }
+  .doc {
+    padding: 0;
+  }
+  .checklist__items label {
+    break-inside: avoid;
+  }
+  .checklist__print-footer {
+    display: block;
+    margin-top: 2rem;
+    font-size: 10pt;
+  }
+}

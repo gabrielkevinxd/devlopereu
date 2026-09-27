@@ -1,0 +1,215 @@
+/* Modo clássico: papel marfim, tinta quase-preta, ouro como acento. */
+.classic,
+.paper {
+  --text: var(--paper-ink);
+  --muted: var(--paper-muted);
+  --dim: #7a715f;
+  --line: rgb(22 19 13 / 0.12);
+  --line-strong: rgb(22 19 13 / 0.26);
+  --ink-1: #fffdf8;
+  --ink-2: #fffaf0;
+  --ink-3: var(--paper-2);
+  --gold-hi: #8a6a12;
+  color-scheme: light;
+  background: var(--paper);
+  color: var(--text);
+}
+.classic {
+  padding: clamp(1.5rem, 1rem + 3vw, 4.5rem) var(--pad) clamp(3rem, 2rem + 4vw, 6rem);
+}
+.classic > * {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+.classic .btn--gold {
+  background: linear-gradient(135deg, #f5de8c, #e2b842 45%, #9c7a1c);
+  color: #140f04;
+}
+
+.classic__hero {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+  padding-bottom: clamp(2rem, 1rem + 4vw, 5rem);
+  border-bottom: 1px solid var(--line);
+}
+.classic__eyebrow {
+  margin-bottom: 1rem;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-lo);
+}
+.classic h1 {
+  max-width: 18ch;
+  font-size: var(--fs-2xl);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+}
+.classic__lead {
+  max-width: 40rem;
+  margin-top: 1.25rem;
+  font-size: var(--fs-lg);
+  color: var(--muted);
+}
+.classic__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+}
+.classic__logo {
+  width: min(60vw, 340px);
+  justify-self: center;
+  padding: 1.5rem;
+  border-radius: 28px;
+  background: var(--ink); /* o logótipo dourado vive melhor em preto */
+  box-shadow: 0 30px 60px -30px rgb(22 19 13 / 0.6);
+}
+@media (min-width: 900px) {
+  .classic__hero {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+.classic__section {
+  padding-block: clamp(2rem, 1rem + 4vw, 5rem);
+  border-bottom: 1px solid var(--line);
+}
+.classic__section:last-child {
+  border-bottom: 0;
+}
+.classic h2 {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+.classic__sub {
+  margin-top: 0.6rem;
+  color: var(--muted);
+}
+.classic__num {
+  font-size: var(--fs-xs);
+  color: var(--gold-lo);
+}
+.classic__services,
+.classic__process {
+  list-style: none;
+  display: grid;
+  gap: 1px;
+  margin-top: 2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: var(--line);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+}
+.classic__services > li,
+.classic__process > li {
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+  padding: clamp(1.1rem, 0.8rem + 1vw, 1.75rem);
+  background: var(--paper);
+}
+.classic h3 {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+.classic__services p,
+.classic__process p {
+  color: var(--muted);
+  font-size: var(--fs-sm);
+}
+.classic__services ul {
+  padding-left: 1.1rem;
+  font-size: var(--fs-sm);
+}
+.classic__about p {
+  max-width: 44rem;
+  margin-top: 1rem;
+  font-size: var(--fs-lg);
+  color: var(--muted);
+}
+.classic__faq {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--line);
+}
+.classic__faq details {
+  border-bottom: 1px solid var(--line);
+}
+.classic__faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3.5rem;
+  padding-block: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+}
+.classic__faq summary::-webkit-details-marker {
+  display: none;
+}
+.classic__faq summary::after {
+  content: '+';
+  flex: none;
+  font-family: var(--mono);
+  font-size: 1.3rem;
+  color: var(--gold-lo);
+  transition: transform 0.2s;
+}
+.classic__faq details[open] summary::after {
+  transform: rotate(45deg);
+}
+.classic__faq details p {
+  max-width: 48rem;
+  padding-bottom: 1.1rem;
+  color: var(--muted);
+}
+
+.classic__book {
+  display: grid;
+  gap: 2rem;
+}
+.classic__book-intro {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+}
+.classic__book-intro > p {
+  color: var(--muted);
+}
+.classic__magnet {
+  padding: 1rem 1.1rem;
+  border: 1px dashed var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--ink-1);
+}
+.classic__magnet a,
+.classic__contact a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tap);
+  color: var(--gold-hi);
+  font-weight: 600;
+}
+.classic__contact {
+  display: grid;
+  font-style: normal;
+}
+.classic__book-form {
+  padding: clamp(1rem, 0.6rem + 2vw, 2rem);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--ink-1);
+}
+@media (min-width: 960px) {
+  .classic__book {
+    grid-template-columns: 1fr 1.6fr;
+  }
+}
