@@ -190,7 +190,7 @@ export const sv: Dict = {
     response: 'Svarstid',
     responseValue: '< 5 s',
     scenario: 'Scenario: frigjorda timmar per vecka',
-    formula: '{people} personer × {hours} h × 50 % = {result} h',
+    formula: '{people} personer × {hours} h × {share}% = {result} h',
     disclaimer: 'Illustrativ simulering. De verkliga värdena beror på din process och mäts på mötet.',
   },
 
@@ -368,6 +368,31 @@ export const sv: Dict = {
     ],
   },
 
+  ai: {
+    placeholder: 'Skriv till agenten…',
+    send: 'Skicka',
+    mic: 'Prata med agenten',
+    micStop: 'Stoppa och skicka',
+    listening: 'Jag lyssnar…',
+    transcribing: 'Transkriberar…',
+    speaking: 'Pratar…',
+    mute: 'Stäng av rösten',
+    unmute: 'Slå på rösten',
+    thinking: 'Tänker…',
+    consentTitle: 'Innan vi pratar',
+    consentText: 'För att kunna svara behandlas dina meddelanden av en AI-modell ({provider}). Dela inga känsliga uppgifter. Mer i',
+    consentLink: 'Integritetspolicyn',
+    consentAccept: 'Godkänn och fortsätt',
+    consentDecline: 'Jag föredrar de guidade valen',
+    fallback: 'Tills vidare fortsätter jag med de guidade valen — välj ett nedan.',
+    micDenied: 'Jag kom inte åt mikrofonen. Du kan skriva ditt meddelande.',
+    caseLine: 'Fall: {summary}',
+    live: 'Live-AI',
+    company: 'Företag',
+    systems: 'System',
+    peopleUnit: 'personer',
+  },
+
   exit: {
     title: 'Innan du går…',
     body: 'Ta med dig den kostnadsfria checklistan med 12 uppgifter som en AI-agent kan ta över direkt. Ingen registrering.',
@@ -408,6 +433,7 @@ export const sv: Dict = {
             'Uppgifter du skickar när du begär ett möte: namn, företag, e-post eller telefon, önskad dag och tid samt anteckningar.',
             'Dina svar till webbplatsens agent (bransch, prioritet, teamstorlek) — de stannar endast i din webbläsare, om du inte tar med dem i förfrågan.',
             'Data för kampanjmätning (Meta Pixel), endast om du godkänner marknadsföringscookies.',
+            'Meddelanden som skrivs eller sägs till webbplatsens agent: efter meddelandet i chatten skickas de till den konfigurerade AI-leverantören (t.ex. Google Gemini) enbart för att skapa svaret; vi sparar dem inte på servern. Rösten transkriberas i webbläsaren eller vid behov av samma leverantör.',
           ],
         },
         {

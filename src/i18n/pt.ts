@@ -201,7 +201,7 @@ export const pt = {
     response: 'Resposta',
     responseValue: '< 5 s',
     scenario: 'Cenário: horas libertadas por semana',
-    formula: '{people} pessoas × {hours} h × 50% = {result} h',
+    formula: '{people} pessoas × {hours} h × {share}% = {result} h',
     disclaimer: 'Simulação ilustrativa. Os valores reais dependem do seu processo e são medidos na reunião.',
   },
 
@@ -379,6 +379,31 @@ export const pt = {
     ],
   },
 
+  ai: {
+    placeholder: 'Escreva ao agente…',
+    send: 'Enviar',
+    mic: 'Falar com o agente',
+    micStop: 'Parar e enviar',
+    listening: 'A ouvir… fale à vontade',
+    transcribing: 'A transcrever…',
+    speaking: 'A falar…',
+    mute: 'Silenciar voz',
+    unmute: 'Ativar voz',
+    thinking: 'A pensar…',
+    consentTitle: 'Antes de conversarmos',
+    consentText: 'Para lhe responder, as suas mensagens são processadas por um modelo de IA ({provider}). Não partilhe dados sensíveis. Detalhes na',
+    consentLink: 'Política de Privacidade',
+    consentAccept: 'Aceitar e continuar',
+    consentDecline: 'Prefiro as opções guiadas',
+    fallback: 'Para já sigo pelas opções guiadas — escolha uma abaixo.',
+    micDenied: 'Não consegui aceder ao microfone. Pode escrever a sua mensagem.',
+    caseLine: 'Caso: {summary}',
+    live: 'IA em direto',
+    company: 'Empresa',
+    systems: 'Sistemas',
+    peopleUnit: 'pessoas',
+  },
+
   exit: {
     title: 'Antes de ir…',
     body: 'Leve a checklist gratuita das 12 tarefas que um agente de IA pode assumir já. Sem registo.',
@@ -419,6 +444,7 @@ export const pt = {
             'Dados que nos envia ao pedir uma reunião: nome, empresa, email ou telefone, dia e hora preferidos e notas.',
             'Respostas que dá ao agente do site (setor, prioridade, dimensão da equipa) — ficam apenas no seu navegador, salvo se as incluir no pedido.',
             'Dados de medição de campanhas (Meta Pixel), apenas se aceitar cookies de marketing.',
+            'Mensagens escritas ou ditas ao agente do site: depois do aviso no chat, são enviadas ao fornecedor de IA configurado (p. ex. Google Gemini) apenas para gerar a resposta; não as guardamos no servidor. A voz é transcrita no browser ou, se necessário, pelo mesmo fornecedor.',
           ],
         },
         {

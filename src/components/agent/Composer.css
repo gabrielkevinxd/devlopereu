@@ -1,0 +1,133 @@
+.composer-wrap {
+  display: grid;
+  gap: 0.5rem;
+  width: 100%;
+}
+.composer {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-width: 0;
+  padding: 4px 4px 4px 1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--ink-1);
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.composer:focus-within {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgb(226 184 66 / 0.18);
+}
+.composer__input {
+  flex: 1;
+  min-width: 0;
+  min-height: var(--tap);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 16px; /* evita zoom no iOS */
+  outline: none;
+}
+.composer__input::placeholder {
+  color: var(--dim);
+}
+.composer__icon {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: var(--tap);
+  height: var(--tap);
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  transition:
+    background-color 0.2s,
+    color 0.2s;
+}
+.composer__icon:hover {
+  background: var(--ink-3);
+  color: var(--gold-hi);
+}
+.composer__icon[aria-pressed='true'] {
+  color: var(--gold-hi);
+}
+.composer__send {
+  background: linear-gradient(135deg, var(--gold-hi), var(--gold) 45%, var(--gold-lo));
+  color: #140f04;
+}
+.composer__send:hover {
+  color: #140f04;
+  background: linear-gradient(135deg, var(--gold-hi), var(--gold));
+}
+.composer__send[disabled] {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.composer__mic.is-on {
+  background: rgb(226 184 66 / 0.18);
+  color: var(--gold-hi);
+  animation: mic-pulse 1.4s ease-out infinite;
+}
+@keyframes mic-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(226 184 66 / 0.55);
+  }
+  100% {
+    box-shadow: 0 0 0 14px rgb(226 184 66 / 0);
+  }
+}
+.composer__status {
+  min-height: 1.1em;
+  margin: 0;
+  padding-left: 1rem;
+  font-size: var(--fs-xs);
+  color: var(--gold);
+}
+.composer__status:empty {
+  display: none;
+}
+
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.suggestions > .btn {
+  flex: 1 1 auto;
+}
+
+.ai-consent {
+  display: grid;
+  gap: 0.6rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: var(--ink-2);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  animation: msg-in 0.3s var(--ease) both;
+}
+.ai-consent__title {
+  color: var(--text);
+  font-weight: 600;
+}
+.ai-consent a {
+  color: var(--gold-hi);
+}
+.ai-consent__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.ai-consent__actions .btn {
+  flex: 1 1 auto;
+}
+
+/* Com o aviso RGPD aberto, as opções guiadas saem de cena (a barra fixa em baixo não cresce demais). */
+.chat__answers:has(.ai-consent) > .btn,
+.chat__answers:has(.ai-consent) .suggestions {
+  display: none;
+}

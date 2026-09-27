@@ -41,6 +41,8 @@ export interface BookingData {
   contact: string;
   notes: string;
   caseSummary?: CaseSummary;
+  /** resumo livre do caso (conversa com o LLM) */
+  caseText?: string;
 }
 
 export function composeMessage(t: Dict, b: BookingData): string {
@@ -49,6 +51,7 @@ export function composeMessage(t: Dict, b: BookingData): string {
   if (b.company.trim()) lines.push(fill(m.company, { company: b.company.trim() }));
   lines.push(fill(m.contact, { contact: b.contact.trim() }));
   if (b.caseSummary) lines.push(fill(m.case, { ...b.caseSummary }));
+  else if (b.caseText) lines.push(fill(t.ai.caseLine, { summary: b.caseText }));
   if (b.notes.trim()) lines.push(fill(m.notes, { notes: b.notes.trim() }));
   return lines.join('\n');
 }

@@ -12,6 +12,32 @@ export interface Msg {
   tone?: 'title' | 'note';
 }
 
+/** Dados que o LLM escreve no palco através de tool calls (texto livre, já saneado). */
+export interface AiProfile {
+  company?: string;
+  sector?: string;
+  pain?: string;
+  systems?: string;
+  team?: number;
+  hours?: number;
+}
+export interface AiSim {
+  title: string;
+  flow: string[];
+  events: string[];
+  people?: number;
+  hours?: number;
+  share: number;
+}
+export interface AiBooking {
+  day?: string;
+  time?: string;
+  name?: string;
+  contact?: string;
+  company?: string;
+  notes?: string;
+}
+
 export interface AgentState {
   phase: Phase;
   sectorId?: string;
@@ -23,6 +49,17 @@ export interface AgentState {
   openCap?: string;
   simDone: boolean;
   seq: number;
+  /** true = conversa livre com o LLM (o palco segue as tool calls). */
+  ai: boolean;
+  /** id da mensagem do agente que está a chegar em streaming */
+  streamingId?: number;
+  profileX?: AiProfile;
+  simX?: AiSim;
+  capsX?: { ids: string[]; reasons: Record<string, string> };
+  bookingX?: AiBooking;
+  /** muda sempre que o LLM gera nova simulação / novo pré-preenchimento (remonta o componente) */
+  stageKey: number;
+  suggestions: string[];
 }
 
 export type Action =
@@ -38,10 +75,29 @@ export type Action =
   | { type: 'book'; fromCta?: boolean }
   | { type: 'booked'; via: BookVia }
   | { type: 'restart' }
-  | { type: 'deliver' };
+  | { type: 'deliver' }
+  | { type: 'user_text'; text: string }
+  | { type: 'ai_start' }
+  | { type: 'ai_delta'; text: string }
+  | { type: 'ai_tool'; name: string; args: Record<string, unknown> }
+  | { type: 'ai_end' }
+  | { type: 'ai_fallback' }
+  | { type: 'say'; text: string };
 
-/** Cenário honesto: o agente assume metade das horas que o próprio visitante indicou. */
-export const scenarioHours = (people: number, hours: number) => Math.round(people * hours * 0.5);
+/** Cenário honesto: o agente assume uma fração (por omissão metade) das horas que o próprio visitante indicou. */
+export const scenarioHours = (people: number, hours: number, share = 0.5) => Math.round(people * hours * share);
+
+export const CAP_IDS = ['consultoria', 'automacao', 'machine_learning', 'big_data', 'desenvolvimento', 'analytics'];
+
+/* Saneamento defensivo dos argumentos das tool calls (vêm de um modelo, não do nosso código). */
+const str = (v: unknown, max = 80) => (typeof v === 'string' && v.trim() ? v.trim().slice(0, max) : undefined);
+const int = (v: unknown, min: number, max: number) => {
+  const n = Math.round(Number(v));
+  return Number.isFinite(n) && v !== null && v !== '' && v !== undefined ? Math.min(max, Math.max(min, n)) : undefined;
+};
+const list = (v: unknown, n: number, max: number) =>
+  Array.isArray(v) ? v.map((x) => str(x, max)).filter((x): x is string => !!x).slice(0, n) : [];
+const defined = <T extends object>(o: T) => Object.fromEntries(Object.entries(o).filter(([, v]) => v !== undefined)) as Partial<T>;
 
 export function initialState(t: Dict): AgentState {
   return {
@@ -55,6 +111,9 @@ export function initialState(t: Dict): AgentState {
     queue: [],
     simDone: false,
     seq: 3,
+    ai: false,
+    stageKey: 0,
+    suggestions: [],
   };
 }
 
@@ -92,7 +151,7 @@ function makeReducer(t: Dict) {
           { phase: 'sim', simDone: false },
         );
       case 'simDone':
-        if (s.simDone || s.phase !== 'sim') return s;
+        if (s.ai || s.simDone || s.phase !== 'sim') return s;
         return say(null, [[fill(t.chat.simDone, { result: scenarioHours(s.people, s.hours) })], [t.chat.simNote, 'note']], {
           simDone: true,
         });
@@ -120,8 +179,98 @@ function makeReducer(t: Dict) {
         const [next, ...rest] = s.queue;
         return next ? { ...s, messages: [...s.messages, next], queue: rest } : s;
       }
+
+      /* ───── conversa livre (LLM) ───── */
+      case 'user_text':
+        return { ...say(a.text, [], {}), suggestions: [] };
+      case 'ai_start': {
+        const m = msg('agent', '');
+        return { ...s, ai: true, messages: [...s.messages, ...s.queue, m], queue: [], streamingId: m.id, seq, suggestions: [] };
+      }
+      case 'ai_delta':
+        return {
+          ...s,
+          messages: s.messages.map((m) => (m.id === s.streamingId ? { ...m, text: m.text + a.text } : m)),
+        };
+      case 'ai_end':
+        return { ...s, streamingId: undefined, messages: s.messages.filter((m) => m.id !== s.streamingId || m.text.trim()) };
+      case 'ai_tool':
+        return applyTool(s, a.name, a.args);
+      case 'ai_fallback': {
+        const messages = s.messages.filter((m) => m.id !== s.streamingId || m.text.trim());
+        const base = { ...s, ai: false, streamingId: undefined, messages, suggestions: [] };
+        const next: Array<[string, Msg['tone']?]> = [[t.ai.fallback, 'note']];
+        let phase = s.phase;
+        if (!s.sectorId) {
+          phase = 'sector';
+          next.push([t.chat.askSector]);
+        } else if (!s.painId) {
+          phase = 'pain';
+          next.push([fill(t.chat.askPain, { sector: sectorLabel(s.sectorId) })]);
+        }
+        const queue = next.map(([text, tone]) => msg('agent', text, tone));
+        return { ...base, phase, simDone: true, queue: [...s.queue, ...queue], seq };
+      }
+      case 'say':
+        return say(null, [[a.text]], {});
     }
   };
+}
+
+/** Efeito de cada tool call do LLM no palco. Ferramentas desconhecidas são ignoradas. */
+function applyTool(s: AgentState, name: string, a: Record<string, unknown>): AgentState {
+  const early = s.phase === 'intro' || s.phase === 'sector' || s.phase === 'pain' || s.phase === 'team';
+  switch (name) {
+    case 'update_profile': {
+      const patch = defined({
+        company: str(a.company, 60),
+        sector: str(a.sector, 60),
+        pain: str(a.pain, 80),
+        systems: str(a.systems, 80),
+        team: int(a.team_size, 1, 500),
+        hours: int(a.hours_per_week, 1, 60),
+      });
+      return { ...s, profileX: { ...s.profileX, ...patch }, phase: early ? 'team' : s.phase };
+    }
+    case 'show_simulation': {
+      const flow = list(a.flow, 5, 40);
+      const events = list(a.events, 7, 140);
+      if (flow.length < 2 || !events.length) return s;
+      const share = Number(a.share);
+      const simX: AiSim = {
+        title: str(a.title, 60) ?? '',
+        flow,
+        events,
+        people: int(a.people, 1, 500) ?? s.profileX?.team,
+        hours: int(a.hours, 1, 60) ?? s.profileX?.hours,
+        share: Number.isFinite(share) && share > 0 ? Math.min(0.8, Math.max(0.1, share)) : 0.5,
+      };
+      return { ...s, simX, phase: 'sim', simDone: true, stageKey: s.stageKey + 1 };
+    }
+    case 'unlock_capabilities': {
+      const raw = Array.isArray(a.ids) ? a.ids : [];
+      const ids = raw.filter((x): x is string => typeof x === 'string' && CAP_IDS.includes(x)).slice(0, 6);
+      if (!ids.length) return s;
+      const why = list(a.reasons, 6, 160);
+      const reasons = Object.fromEntries(ids.map((id, i) => [id, why[i]]).filter(([, r]) => r));
+      return { ...s, capsX: { ids, reasons }, phase: 'caps', openCap: undefined };
+    }
+    case 'open_booking': {
+      const bookingX = defined({
+        day: /^\d{4}-\d{2}-\d{2}$/.test(String(a.day ?? '')) ? String(a.day) : undefined,
+        time: /^\d{2}:\d{2}$/.test(String(a.time ?? '')) ? String(a.time) : undefined,
+        name: str(a.name, 80),
+        contact: str(a.contact, 120),
+        company: str(a.company, 80) ?? s.profileX?.company,
+        notes: str(a.notes, 200),
+      });
+      return { ...s, bookingX, phase: 'booking', stageKey: s.stageKey + 1 };
+    }
+    case 'suggest_replies':
+      return { ...s, suggestions: list(a.options, 3, 60) };
+    default:
+      return s;
+  }
 }
 
 /** Máquina de estados da conversa + entrega das mensagens com «a escrever…». */

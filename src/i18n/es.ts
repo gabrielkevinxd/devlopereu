@@ -190,7 +190,7 @@ export const es: Dict = {
     response: 'Respuesta',
     responseValue: '< 5 s',
     scenario: 'Escenario: horas liberadas por semana',
-    formula: '{people} personas × {hours} h × 50 % = {result} h',
+    formula: '{people} personas × {hours} h × {share}% = {result} h',
     disclaimer: 'Simulación ilustrativa. Los valores reales dependen de su proceso y se miden en la reunión.',
   },
 
@@ -368,6 +368,31 @@ export const es: Dict = {
     ],
   },
 
+  ai: {
+    placeholder: 'Escriba al agente…',
+    send: 'Enviar',
+    mic: 'Hablar con el agente',
+    micStop: 'Parar y enviar',
+    listening: 'Le escucho…',
+    transcribing: 'Transcribiendo…',
+    speaking: 'Hablando…',
+    mute: 'Silenciar voz',
+    unmute: 'Activar voz',
+    thinking: 'Pensando…',
+    consentTitle: 'Antes de hablar',
+    consentText: 'Para responderle, sus mensajes los procesa un modelo de IA ({provider}). No comparta datos sensibles. Detalles en la',
+    consentLink: 'Política de Privacidad',
+    consentAccept: 'Aceptar y continuar',
+    consentDecline: 'Prefiero las opciones guiadas',
+    fallback: 'Por ahora sigo con las opciones guiadas: elija una abajo.',
+    micDenied: 'No he podido acceder al micrófono. Puede escribir su mensaje.',
+    caseLine: 'Caso: {summary}',
+    live: 'IA en directo',
+    company: 'Empresa',
+    systems: 'Sistemas',
+    peopleUnit: 'personas',
+  },
+
   exit: {
     title: 'Antes de irse…',
     body: 'Llévese la checklist gratuita de 12 tareas que un agente de IA puede asumir ya. Sin registro.',
@@ -408,6 +433,7 @@ export const es: Dict = {
             'Los datos que nos envía al solicitar una reunión: nombre, empresa, email o teléfono, día y hora preferidos y notas.',
             'Las respuestas que da al agente del sitio (sector, prioridad, tamaño del equipo): se quedan solo en su navegador, salvo que las incluya en la solicitud.',
             'Datos de medición de campañas (Meta Pixel), solo si acepta las cookies de marketing.',
+            'Mensajes escritos o dictados al agente del sitio: tras el aviso en el chat, se envían al proveedor de IA configurado (p. ej. Google Gemini) solo para generar la respuesta; no los guardamos en el servidor. La voz se transcribe en el navegador o, si es necesario, por el mismo proveedor.',
           ],
         },
         {

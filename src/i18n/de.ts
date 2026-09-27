@@ -190,7 +190,7 @@ export const de: Dict = {
     response: 'Antwortzeit',
     responseValue: '< 5 s',
     scenario: 'Szenario: freigewordene Stunden pro Woche',
-    formula: '{people} Personen × {hours} h × 50 % = {result} h',
+    formula: '{people} Personen × {hours} h × {share}% = {result} h',
     disclaimer: 'Beispielhafte Simulation. Die tatsächlichen Werte hängen von Ihrem Prozess ab und werden im Termin ermittelt.',
   },
 
@@ -368,6 +368,31 @@ export const de: Dict = {
     ],
   },
 
+  ai: {
+    placeholder: 'Schreiben Sie dem Agenten…',
+    send: 'Senden',
+    mic: 'Mit dem Agenten sprechen',
+    micStop: 'Stoppen und senden',
+    listening: 'Ich höre zu…',
+    transcribing: 'Wird transkribiert…',
+    speaking: 'Spricht…',
+    mute: 'Stimme stummschalten',
+    unmute: 'Stimme einschalten',
+    thinking: 'Denkt nach…',
+    consentTitle: 'Bevor wir sprechen',
+    consentText: 'Für die Antwort werden Ihre Nachrichten von einem KI-Modell ({provider}) verarbeitet. Bitte teilen Sie keine sensiblen Daten. Details in der',
+    consentLink: 'Datenschutzerklärung',
+    consentAccept: 'Akzeptieren und fortfahren',
+    consentDecline: 'Lieber die geführten Optionen',
+    fallback: 'Vorerst mache ich mit den geführten Optionen weiter — wählen Sie unten eine aus.',
+    micDenied: 'Ich konnte nicht auf das Mikrofon zugreifen. Sie können Ihre Nachricht tippen.',
+    caseLine: 'Fall: {summary}',
+    live: 'Live-KI',
+    company: 'Unternehmen',
+    systems: 'Systeme',
+    peopleUnit: 'Personen',
+  },
+
   exit: {
     title: 'Bevor Sie gehen…',
     body: 'Nehmen Sie die kostenlose Checkliste mit 12 Aufgaben mit, die ein KI-Agent sofort übernehmen kann. Ohne Anmeldung.',
@@ -408,6 +433,7 @@ export const de: Dict = {
             'Daten, die Sie uns bei einer Terminanfrage senden: Name, Unternehmen, E-Mail oder Telefon, gewünschter Tag und Uhrzeit sowie Hinweise.',
             'Ihre Antworten an den Agenten der Website (Branche, Priorität, Teamgröße) — sie bleiben nur in Ihrem Browser, sofern Sie sie nicht in die Anfrage übernehmen.',
             'Daten zur Kampagnenmessung (Meta Pixel), nur wenn Sie Marketing-Cookies akzeptieren.',
+            'An den Agenten der Website geschriebene oder gesprochene Nachrichten: Nach dem Hinweis im Chat werden sie nur zur Erstellung der Antwort an den konfigurierten KI-Anbieter (z. B. Google Gemini) gesendet; wir speichern sie nicht auf dem Server. Sprache wird im Browser oder bei Bedarf vom selben Anbieter transkribiert.',
           ],
         },
         {

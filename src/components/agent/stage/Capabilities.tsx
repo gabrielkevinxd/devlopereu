@@ -4,7 +4,8 @@ import type { Action, AgentState } from '../useAgent';
 /** Momento «uau» 4: os serviços como capacidades que o agente liga para o caso concreto. */
 export function Capabilities({ state, act }: { state: AgentState; act: (a: Action) => void }) {
   const { t } = useI18n();
-  const unlocked = t.pains.find((p) => p.id === state.painId)?.services ?? [];
+  const unlocked = state.capsX?.ids ?? t.pains.find((p) => p.id === state.painId)?.services ?? [];
+  const reasons = state.capsX?.reasons ?? {};
   const ordered = [...t.services].sort((a, b) => Number(unlocked.includes(b.id)) - Number(unlocked.includes(a.id)));
 
   return (
@@ -35,7 +36,7 @@ export function Capabilities({ state, act }: { state: AgentState; act: (a: Actio
                   </ul>
                   {on && (
                     <p>
-                      <strong>{t.caps.why}:</strong> {s.why}
+                      <strong>{t.caps.why}:</strong> {reasons[s.id] ?? s.why}
                     </p>
                   )}
                 </div>

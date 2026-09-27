@@ -44,6 +44,14 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.chat__live {
+  margin-left: 0.5rem;
+  padding: 0 0.4rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  font-style: normal;
+  color: var(--gold-hi);
+}
 .chat__tools {
   margin-left: auto;
   display: flex;

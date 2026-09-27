@@ -190,7 +190,7 @@ export const fr: Dict = {
     response: 'Réponse',
     responseValue: '< 5 s',
     scenario: 'Scénario : heures libérées par semaine',
-    formula: '{people} personnes × {hours} h × 50 % = {result} h',
+    formula: '{people} personnes × {hours} h × {share}% = {result} h',
     disclaimer: 'Simulation illustrative. Les valeurs réelles dépendent de votre processus et sont mesurées en rendez-vous.',
   },
 
@@ -368,6 +368,31 @@ export const fr: Dict = {
     ],
   },
 
+  ai: {
+    placeholder: 'Écrivez à l’agent…',
+    send: 'Envoyer',
+    mic: 'Parler à l’agent',
+    micStop: 'Arrêter et envoyer',
+    listening: 'Je vous écoute…',
+    transcribing: 'Transcription…',
+    speaking: 'Je parle…',
+    mute: 'Couper la voix',
+    unmute: 'Activer la voix',
+    thinking: 'Réflexion…',
+    consentTitle: 'Avant de discuter',
+    consentText: 'Pour vous répondre, vos messages sont traités par un modèle d’IA ({provider}). Ne partagez pas de données sensibles. Détails dans la',
+    consentLink: 'Politique de confidentialité',
+    consentAccept: 'Accepter et continuer',
+    consentDecline: 'Je préfère les options guidées',
+    fallback: 'Pour l’instant, je continue avec les options guidées — choisissez-en une ci-dessous.',
+    micDenied: 'Je n’ai pas pu accéder au micro. Vous pouvez écrire votre message.',
+    caseLine: 'Cas : {summary}',
+    live: 'IA en direct',
+    company: 'Entreprise',
+    systems: 'Systèmes',
+    peopleUnit: 'personnes',
+  },
+
   exit: {
     title: 'Avant de partir…',
     body: 'Emportez la checklist gratuite des 12 tâches qu’un agent IA peut reprendre dès maintenant. Sans inscription.',
@@ -408,6 +433,7 @@ export const fr: Dict = {
             'Les données que vous nous envoyez en demandant un rendez-vous : nom, entreprise, e-mail ou téléphone, jour et heure souhaités et notes.',
             'Vos réponses à l’agent du site (secteur, priorité, taille de l’équipe) — elles restent uniquement dans votre navigateur, sauf si vous les incluez dans la demande.',
             'Données de mesure des campagnes (Meta Pixel), uniquement si vous acceptez les cookies marketing.',
+            'Messages écrits ou dictés à l’agent du site : après l’avis affiché dans le chat, ils sont envoyés au fournisseur d’IA configuré (p. ex. Google Gemini) uniquement pour générer la réponse ; nous ne les conservons pas sur le serveur. La voix est transcrite dans le navigateur ou, si nécessaire, par ce même fournisseur.',
           ],
         },
         {

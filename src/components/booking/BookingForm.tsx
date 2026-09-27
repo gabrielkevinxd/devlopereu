@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { CALENDAR_URL } from '../../config';
 import { fill } from '../../i18n';
 import { useI18n } from '../../i18n/context';
+import type { AiBooking } from '../agent/useAgent';
 import { useAppState } from '../../lib/app-state';
 import { pathFor } from '../../routes';
 import { track } from '../consent/pixel';
@@ -23,29 +24,36 @@ export type BookVia = 'whatsapp' | 'email' | 'calendar';
 interface Props {
   idPrefix: string;
   caseSummary?: CaseSummary;
+  caseText?: string;
+  /** pré-preenchimento vindo do agente (open_booking) — o visitante confirma sempre */
+  prefill?: AiBooking;
   onDone?: (via: BookVia) => void;
 }
 
 type Field = 'day' | 'time' | 'name' | 'contact' | 'consent';
 
-export function BookingForm({ idPrefix, caseSummary, onDone }: Props) {
+export function BookingForm({ idPrefix, caseSummary, caseText, prefill, onDone }: Props) {
   const { t, lang } = useI18n();
   const { markBooked } = useAppState();
   const b = t.booking;
   // Datas só no cliente: o HTML pré-renderizado não pode fixar «amanhã».
   const [days, setDays] = useState<Date[] | null>(null);
   const [day, setDay] = useState('');
-  const [time, setTime] = useState('');
-  const [name, setName] = useState('');
-  const [company, setCompany] = useState('');
-  const [contact, setContact] = useState('');
-  const [notes, setNotes] = useState('');
+  const [time, setTime] = useState(prefill?.time && (TIMES as readonly string[]).includes(prefill.time) ? prefill.time : '');
+  const [name, setName] = useState(prefill?.name ?? '');
+  const [company, setCompany] = useState(prefill?.company ?? '');
+  const [contact, setContact] = useState(prefill?.contact ?? '');
+  const [notes, setNotes] = useState(prefill?.notes ?? '');
   const [consent, setConsent] = useState(false);
   const [errors, setErrors] = useState<Field[]>([]);
   const [sent, setSent] = useState<BookVia | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
-  useEffect(() => setDays(nextWorkdays(10)), []);
+  useEffect(() => {
+    const list = nextWorkdays(10);
+    setDays(list);
+    if (prefill?.day && list.some((d) => dayKey(d) === prefill.day)) setDay(prefill.day);
+  }, [prefill?.day]);
 
   const dayLabel = useMemo(() => {
     const d = days?.find((x) => dayKey(x) === day);
@@ -60,6 +68,7 @@ export function BookingForm({ idPrefix, caseSummary, onDone }: Props) {
     contact: contact || '—',
     notes,
     caseSummary,
+    caseText,
   });
 
   const validate = (): Field[] => {

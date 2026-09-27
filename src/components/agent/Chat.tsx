@@ -4,6 +4,7 @@ import { useAppState } from '../../lib/app-state';
 import { pathFor } from '../../routes';
 import { Logo, maskUrl } from '../brand/Logo';
 import type { Action, AgentState } from './useAgent';
+import { Composer } from './Composer';
 import { TeamInput } from './TeamInput';
 import './Chat.css';
 
@@ -39,9 +40,13 @@ export function Chat({ state, typing, act }: Props) {
     if (last && answers && last.bottom > answers.top - 12) {
       window.scrollBy({ top: last.bottom - answers.top + 24, behavior: 'smooth' });
     }
-  }, [state.messages.length, typing, state.phase]);
+  }, [state.messages.length, typing, state.phase, state.streamingId]);
 
-  const busy = typing || state.queue.length > 0;
+  // «A escrever…» enquanto há mensagens em fila ou o LLM ainda não mandou a primeira palavra.
+  const streaming = state.messages.find((m) => m.id === state.streamingId);
+  const waitingAi = !!streaming && !streaming.text;
+  const busy = typing || state.queue.length > 0 || waitingAi;
+  const aiActive = state.ai || state.streamingId !== undefined;
 
   return (
     <section className="chat" aria-label={t.ui.chatLabel}>
@@ -51,7 +56,10 @@ export function Chat({ state, typing, act }: Props) {
         </span>
         <p className="chat__who">
           <strong>{t.ui.agent}</strong>
-          <span className="mono">{busy ? t.ui.typing : `● ${t.ui.status}`}</span>
+          <span className="mono">
+            {busy ? t.ui.typing : `● ${t.ui.status}`}
+            {aiActive && <em className="chat__live">{t.ai.live}</em>}
+          </span>
         </p>
         <div className="chat__tools">
           {state.phase !== 'intro' && (
@@ -67,7 +75,7 @@ export function Chat({ state, typing, act }: Props) {
 
       <div className="chat__log" ref={logRef} role="log" aria-live="polite" aria-relevant="additions">
         {state.messages.map((m) =>
-          m.tone === 'title' ? (
+          !m.text ? null : m.tone === 'title' ? (
             <h1 key={m.id} className="msg msg--agent msg--title">
               {m.text}
             </h1>
@@ -87,13 +95,14 @@ export function Chat({ state, typing, act }: Props) {
         )}
       </div>
 
-      <div ref={answersRef} className="chat__answers" aria-label={t.ui.answersLabel} role="group" data-busy={busy}>
-        {!busy && <Answers state={state} act={act} />}
+      <div ref={answersRef} className="chat__answers" aria-label={t.ui.answersLabel} role="group" data-busy={busy} data-streaming={state.streamingId !== undefined}>
+        {!busy && !aiActive && <Answers state={state} act={act} />}
         {!busy && state.phase === 'done' && (
           <a className="btn btn--gold" href={pathFor(lang, 'checklist')}>
             {t.chat.magnetCta}
           </a>
         )}
+        <Composer state={state} act={act} busy={busy || state.streamingId !== undefined} />
       </div>
     </section>
   );

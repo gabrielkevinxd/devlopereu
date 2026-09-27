@@ -5,14 +5,20 @@ import type { AgentState } from '../useAgent';
 export function Profile({ state }: { state: AgentState }) {
   const { t } = useI18n();
   const p = t.profile;
-  const sector = t.sectors.find((s) => s.id === state.sectorId)?.label;
-  const pain = t.pains.find((x) => x.id === state.painId)?.label;
-  const teamKnown = state.phase === 'team';
+  const x = state.profileX ?? {};
+  const sector = x.sector ?? t.sectors.find((s) => s.id === state.sectorId)?.label;
+  const pain = x.pain ?? t.pains.find((y) => y.id === state.painId)?.label;
+  // No fluxo guiado os valores vêm dos sliders; na conversa livre, do LLM (update_profile).
+  const sliders = state.phase === 'team' && !state.ai;
+  const team = x.team ?? (sliders ? state.people : undefined);
+  const hours = x.hours ?? (sliders ? state.hours : undefined);
   const rows: Array<[string, string | undefined]> = [
+    ...(x.company ? ([[t.ai.company, x.company]] as Array<[string, string]>) : []),
     [p.sector, sector],
     [p.pain, pain],
-    [p.team, teamKnown ? `${state.people} ${p.peopleUnit}` : undefined],
-    [p.hours, teamKnown ? `${state.hours} ${p.hoursUnit}` : undefined],
+    ...(x.systems ? ([[t.ai.systems, x.systems]] as Array<[string, string]>) : []),
+    [p.team, team !== undefined ? `${team} ${p.peopleUnit}` : undefined],
+    [p.hours, hours !== undefined ? `${hours} ${p.hoursUnit}` : undefined],
   ];
   return (
     <div className="profile">

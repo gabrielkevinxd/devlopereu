@@ -190,7 +190,7 @@ export const en: Dict = {
     response: 'Response',
     responseValue: '< 5 s',
     scenario: 'Scenario: hours freed per week',
-    formula: '{people} people × {hours} h × 50% = {result} h',
+    formula: '{people} people × {hours} h × {share}% = {result} h',
     disclaimer: 'Illustrative simulation. Real figures depend on your process and are measured in the meeting.',
   },
 
@@ -368,6 +368,31 @@ export const en: Dict = {
     ],
   },
 
+  ai: {
+    placeholder: 'Write to the agent…',
+    send: 'Send',
+    mic: 'Talk to the agent',
+    micStop: 'Stop and send',
+    listening: 'Listening… go ahead',
+    transcribing: 'Transcribing…',
+    speaking: 'Speaking…',
+    mute: 'Mute voice',
+    unmute: 'Turn voice on',
+    thinking: 'Thinking…',
+    consentTitle: 'Before we talk',
+    consentText: 'To reply, your messages are processed by an AI model ({provider}). Please don’t share sensitive data. Details in the',
+    consentLink: 'Privacy Policy',
+    consentAccept: 'Accept and continue',
+    consentDecline: 'I prefer the guided options',
+    fallback: 'For now I’ll continue with the guided options — pick one below.',
+    micDenied: 'I couldn’t access the microphone. You can type your message.',
+    caseLine: 'Case: {summary}',
+    live: 'Live AI',
+    company: 'Company',
+    systems: 'Systems',
+    peopleUnit: 'people',
+  },
+
   exit: {
     title: 'Before you go…',
     body: 'Take the free checklist of 12 tasks an AI agent can take over right now. No sign-up.',
@@ -408,6 +433,7 @@ export const en: Dict = {
             'Data you send us when requesting a meeting: name, company, email or phone, preferred day and time, and notes.',
             'Answers you give the site’s agent (sector, priority, team size) — they stay in your browser only, unless you include them in your request.',
             'Campaign measurement data (Meta Pixel), only if you accept marketing cookies.',
+            'Messages written or spoken to the site’s agent: after the notice in the chat, they are sent to the configured AI provider (e.g. Google Gemini) only to generate the reply; we do not store them on the server. Voice is transcribed in the browser or, if needed, by the same provider.',
           ],
         },
         {

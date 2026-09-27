@@ -41,7 +41,11 @@ export const Stage = forwardRef<HTMLElement, Props>(function Stage({ state, act 
   const sector = t.sectors.find((s) => s.id === state.sectorId);
   const pain = t.pains.find((p) => p.id === state.painId);
   const caseSummary =
-    sector && pain ? { sector: sector.label, pain: pain.label, people: state.people, hours: state.hours } : undefined;
+    !state.ai && sector && pain ? { sector: sector.label, pain: pain.label, people: state.people, hours: state.hours } : undefined;
+  const x = state.profileX;
+  const caseText = x
+    ? [x.company, x.sector, x.pain, x.team && `${x.team} ${t.ai.peopleUnit}`, x.hours && `${x.hours} h`].filter(Boolean).join(' · ')
+    : undefined;
 
   const path = {
     awake: 'boot',
@@ -63,13 +67,19 @@ export const Stage = forwardRef<HTMLElement, Props>(function Stage({ state, act 
         <span className="stage__path">devloper.eu/agente/{path}</span>
         {view === 'sim' && <span className="stage__badge">{t.ui.simulation}</span>}
       </div>
-      <div className="stage__body" key={view}>
+      <div className="stage__body" key={`${view}-${state.stageKey}`}>
         {view === 'awake' && <Awake />}
         {view === 'profile' && <Profile state={state} />}
-        {view === 'sim' && pain && <Simulation state={state} onDone={() => act({ type: 'simDone' })} />}
+        {view === 'sim' && (pain || state.simX) && <Simulation state={state} onDone={() => act({ type: 'simDone' })} />}
         {view === 'caps' && <Capabilities state={state} act={act} />}
         {view === 'booking' && (
-          <BookingForm idPrefix="ag" caseSummary={caseSummary} onDone={(via) => act({ type: 'booked', via })} />
+          <BookingForm
+            idPrefix="ag"
+            caseSummary={caseSummary}
+            caseText={caseSummary ? undefined : caseText || undefined}
+            prefill={state.bookingX}
+            onDone={(via) => act({ type: 'booked', via })}
+          />
         )}
         {view === 'done' && <Done />}
       </div>
