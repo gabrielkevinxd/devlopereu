@@ -1,0 +1,16 @@
+{
+  "name": "DevloperEU — Agentes de IA e automação",
+  "short_name": "DevloperEU",
+  "description": "Agentes de IA e hiperautomação para empresas. Braga, Portugal.",
+  "lang": "pt-PT",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#070605",
+  "theme_color": "#070605",
+  "icons": [
+    { "src": "/pwa-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/pwa-512x512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/pwa-maskable-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
