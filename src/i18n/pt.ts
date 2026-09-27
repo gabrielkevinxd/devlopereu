@@ -42,7 +42,7 @@ export const pt = {
 
   boot: [
     'a iniciar agente devloper.eu',
-    'a carregar capacidades · 6/6',
+    'a carregar capacidades · {n}/{n}',
     'contexto · empresas em Portugal e na Europa',
     'pronto',
   ],

@@ -8,27 +8,14 @@
  *   {sector} → o setor/empresa (ex.: «clínica dentária»), vindo da conversa
  * Os fluxos são SEMPRE exemplos ilustrativos — não citar clientes, números ou resultados reais.
  *
- * Se mudar os ids, atualize também a lista `enum` da ferramenta unlock_capabilities em
+ * Se mudar os ids, atualize também src/data/capIds.ts (ids na ordem da órbita; dá o «N/N» do arranque)
+ * e a lista `enum` da ferramenta unlock_capabilities em
  * public/api/agent-brain.json (o teste .verify/v5/catalog-check.cjs confirma que batem certo).
  */
 import type { Lang } from '../i18n';
+import type { CapId } from './capIds';
 
-export type CapId =
-  | 'agentes-autonomos'
-  | 'agente-voz'
-  | 'whatsapp'
-  | 'multi-agente'
-  | 'rag-documentos'
-  | 'visao-ocr'
-  | 'copiloto-interno'
-  | 'integracoes-mcp'
-  | 'processos-rpa'
-  | 'dados-pipelines'
-  | 'previsao-ml'
-  | 'dashboards'
-  | 'conteudo'
-  | 'leads'
-  | 'estrategia';
+export type { CapId };
 
 export type GroupId = 'agentes' | 'conhecimento' | 'integracao' | 'crescimento' | 'estrategia';
 export type IconId =

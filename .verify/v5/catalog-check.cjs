@@ -17,6 +17,8 @@ const t = (name, cond, detail = '') => {
   ok = ok && cond;
 };
 t(`catálogo tem ${catIds.length} capacidades`, catIds.length === 15, catIds.join(', '));
+const listIds = [...fs.readFileSync(path.join(root, 'src/data/capIds.ts'), 'utf8').matchAll(/^\s{2}'([a-z-]+)',$/gm)].map((m) => m[1]);
+t('src/data/capIds.ts = catálogo, pela mesma ordem (dá o «N/N» do arranque)', listIds.join() === catIds.join(), `${listIds.length} ids`);
 t('enum de unlock_capabilities = catálogo', same(catIds, enumIds));
 t('enum dos fluxos = catálogo', same(catIds, flowEnum));
 t('system prompt lista todas as capacidades', catIds.every((id) => promptIds.includes(id)));

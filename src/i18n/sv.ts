@@ -34,7 +34,7 @@ export const sv: Dict = {
     home: 'Startsida',
   },
 
-  boot: ['startar devloper.eu-agenten', 'laddar förmågor · 6/6', 'kontext · företag i Portugal och Europa', 'redo'],
+  boot: ['startar devloper.eu-agenten', 'laddar förmågor · {n}/{n}', 'kontext · företag i Portugal och Europa', 'redo'],
 
   chat: {
     intro: 'Hej. Jag är DevloperEU:s agent.',

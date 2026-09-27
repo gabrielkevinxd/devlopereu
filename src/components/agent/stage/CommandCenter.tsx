@@ -1,10 +1,11 @@
-import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { CAPABILITIES, CAP_BY_ID, GROUPS, PAIN_CAPS, adaptFlow, resolveCaps, type CapId, type IconId } from '../../../data/capabilities';
 import { fill } from '../../../i18n';
 import { useI18n } from '../../../i18n/context';
 import { prefersReducedMotion, readStore, writeStore } from '../../../lib/storage';
 import { Logo, maskUrl } from '../../brand/Logo';
 import type { Action, AgentState } from '../useAgent';
+import { layoutTags, shortName } from './labelLayout';
 import './CommandCenter.css';
 
 /**
@@ -90,6 +91,7 @@ export default function CommandCenter({ state, act }: { state: AgentState; act: 
   const [sound, setSound] = useState(false);
   const [reduced, setReduced] = useState(false);
   const panelRef = useRef<HTMLElement>(null);
+  const reactorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setReduced(prefersReducedMotion());
@@ -136,6 +138,20 @@ export default function CommandCenter({ state, act }: { state: AgentState; act: 
     const a = (-90 + (i * 360) / n) * (Math.PI / 180);
     return { x: 50 + 41 * Math.cos(a), y: 50 + 41 * Math.sin(a) };
   };
+  // Etiquetas da órbita (módulos ativos + selecionado), colocadas sem colisões depois de medidas.
+  const tagged = CAPABILITIES.map((c, i) => ({ c, i })).filter(({ c }) => active.includes(c.id) || c.id === sel);
+  const tagKey = `${lang}|${tagged.map(({ c }) => c.id).join()}`;
+  useLayoutEffect(() => {
+    const root = reactorRef.current;
+    if (!root) return;
+    const run = () => layoutTags(root);
+    run();
+    const ro = typeof ResizeObserver === 'function' ? new ResizeObserver(run) : null;
+    ro?.observe(root);
+    void document.fonts?.ready.then(run);
+    return () => ro?.disconnect();
+  }, [tagKey]);
+
   const lower = (s: string) => (lang === 'de' ? s : s.charAt(0).toLowerCase() + s.slice(1));
   const title = ctx.sector ? fill(h.title, { sector: lower(ctx.sector) }) : h.titleGeneric;
 
@@ -182,7 +198,7 @@ export default function CommandCenter({ state, act }: { state: AgentState; act: 
       </ul>
 
       <div className="mb__grid">
-        <div className="mb__reactor">
+        <div className="mb__reactor" ref={reactorRef}>
           <svg className="mb__svg" viewBox="0 0 100 100" aria-hidden="true">
             <circle className="mb-ring mb-ring--ticks" cx="50" cy="50" r="48" />
             <circle className="mb-ring mb-ring--orbit" cx="50" cy="50" r="41" />
@@ -228,6 +244,13 @@ export default function CommandCenter({ state, act }: { state: AgentState; act: 
               </button>
             );
           })}
+
+          {tagged.map(({ c, i }) => (
+            <span key={c.id} className={`mb-tag mono${c.id === sel ? ' is-sel' : ''}`} data-i={i} data-name={c.text[lang].name} aria-hidden="true">
+              <span className="mb-tag__full">{c.text[lang].name}</span>
+              <span className="mb-tag__short">{shortName(c.text[lang].name)}</span>
+            </span>
+          ))}
         </div>
 
         <section className="mb-panel" ref={panelRef} aria-live="polite" key={cap.id}>

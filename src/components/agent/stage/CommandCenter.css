@@ -221,23 +221,73 @@
   text-align: center;
   letter-spacing: 0.02em;
 }
-/* etiquetas só nos módulos ativos/selecionado (os outros ao passar o rato ou com foco) → órbita limpa */
+/* módulos não ativos: nome como tooltip ao passar o rato ou com foco */
 @container mb (min-width: 520px) {
-  .mb-node.is-on .mb-node__label,
-  .mb-node.is-sel .mb-node__label,
-  .mb-node:hover .mb-node__label,
-  .mb-node:focus-visible .mb-node__label {
+  .mb-node:not(.is-on):not(.is-sel):hover .mb-node__label,
+  .mb-node:not(.is-on):not(.is-sel):focus-visible .mb-node__label {
     display: block;
-  }
-  .mb-node:hover .mb-node__label,
-  .mb-node:focus-visible .mb-node__label {
     position: absolute;
     top: 100%;
     margin-top: 0.3rem;
     padding: 0.15rem 0.4rem;
     border-radius: 6px;
     background: rgb(7 6 5 / 0.92);
-    z-index: 3;
+    z-index: 4;
+  }
+}
+
+/* etiquetas dos módulos ativos/selecionado: posição calculada sem colisões (labelLayout.ts) */
+.mb-tag {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 3;
+  width: max-content;
+  max-width: 7.6rem;
+  min-width: min-content; /* uma palavra longa alarga a caixa em vez de transbordar */
+  padding: 0.12rem 0.4rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: rgb(7 6 5 / 0.82);
+  color: var(--gold-hi);
+  font-size: 0.6rem;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  text-align: center;
+  pointer-events: none;
+}
+.mb-tag[data-fit='narrow'] {
+  max-width: 5.2rem;
+}
+.mb-tag[data-fit='compact'] {
+  max-width: 4.2rem;
+  padding-inline: 0.25rem;
+  font-size: 0.56rem;
+}
+.mb-tag__short,
+.mb-tag[data-fit='short'] .mb-tag__full {
+  display: none;
+}
+.mb-tag[data-fit='short'] .mb-tag__short {
+  display: inline;
+}
+.mb-tag[data-align='left'] {
+  text-align: left;
+}
+.mb-tag[data-align='right'] {
+  text-align: right;
+}
+.mb-tag.is-sel {
+  border-color: rgb(226 184 66 / 0.55);
+  color: #fff6d6;
+}
+@container mb (min-width: 520px) {
+  .mb-tag {
+    display: block;
+  }
+  .mb-tag[data-hidden] {
+    display: none;
   }
 }
 .mb-node.is-on .mb-node__dot {

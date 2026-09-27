@@ -1,0 +1,3594 @@
+{
+  "phase": "depois",
+  "catalog": 15,
+  "checks": [
+    {
+      "name": "1024 topo-0-3: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Agentes autónomos"
+    },
+    {
+      "name": "1024 topo-0-3: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 topo-0-3: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 topo-0-3: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 topo-0-3: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 direita-3-6: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Orquestração multi-agente"
+    },
+    {
+      "name": "1024 direita-3-6: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 direita-3-6: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 direita-3-6: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 direita-3-6: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 baixo-6-9: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Copiloto interno"
+    },
+    {
+      "name": "1024 baixo-6-9: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 baixo-6-9: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 baixo-6-9: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 baixo-6-9: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 esquerda-10-13: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Previsão e machine learning"
+    },
+    {
+      "name": "1024 esquerda-10-13: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 esquerda-10-13: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 esquerda-10-13: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 esquerda-10-13: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 volta-13-1: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Qualificação de leads"
+    },
+    {
+      "name": "1024 volta-13-1: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 volta-13-1: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 volta-13-1: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 volta-13-1: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 clinica-1-2-7: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Agente de voz e telefone"
+    },
+    {
+      "name": "1024 clinica-1-2-7: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 clinica-1-2-7: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 clinica-1-2-7: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 clinica-1-2-7: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 selecionado-inativo-2-entre-1-3: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 selecionado-inativo-2-entre-1-3: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 selecionado-inativo-2-entre-1-3: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 selecionado-inativo-2-entre-1-3: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 selecionado-inativo-2-entre-1-3: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 1 [0,10,12,4,8]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 1 [0,10,12,4,8]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 1 [0,10,12,4,8]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 1 [0,10,12,4,8]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 1 [0,10,12,4,8]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 2 [7,3,9,11,6]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 2 [7,3,9,11,6]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 2 [7,3,9,11,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 2 [7,3,9,11,6]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 2 [7,3,9,11,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 3 [11,10,14,8,7,3]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 3 [11,10,14,8,7,3]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 3 [11,10,14,8,7,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 3 [11,10,14,8,7,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 3 [11,10,14,8,7,3]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 4 [9,8,6,13,12]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 4 [9,8,6,13,12]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 4 [9,8,6,13,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 4 [9,8,6,13,12]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 4 [9,8,6,13,12]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 5 [11,1,14]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 5 [11,1,14]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 5 [11,1,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 5 [11,1,14]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 5 [11,1,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 6 [2,11,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 6 [2,11,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 6 [2,11,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 6 [2,11,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 6 [2,11,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 7 [6,3,13,7,0,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 7 [6,3,13,7,0,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 7 [6,3,13,7,0,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 7 [6,3,13,7,0,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 7 [6,3,13,7,0,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 8 [12,13,9,8,3,10]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 8 [12,13,9,8,3,10]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 8 [12,13,9,8,3,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 8 [12,13,9,8,3,10]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 8 [12,13,9,8,3,10]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 9 [0,11,3]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 9 [0,11,3]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 9 [0,11,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 9 [0,11,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 9 [0,11,3]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 10 [12,7,1]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 10 [12,7,1]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 10 [12,7,1]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 10 [12,7,1]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 10 [12,7,1]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 11 [7,0,8,3]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 11 [7,0,8,3]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 11 [7,0,8,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 11 [7,0,8,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 11 [7,0,8,3]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 12 [14,3,8,4,12]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 12 [14,3,8,4,12]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 12 [14,3,8,4,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 12 [14,3,8,4,12]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 12 [14,3,8,4,12]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 13 [10,5,7,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 13 [10,5,7,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 13 [10,5,7,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 13 [10,5,7,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 13 [10,5,7,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 14 [3,12,1,11,6]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 14 [3,12,1,11,6]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 14 [3,12,1,11,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 14 [3,12,1,11,6]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 14 [3,12,1,11,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 15 [2,7,14,11,5,8]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 15 [2,7,14,11,5,8]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 15 [2,7,14,11,5,8]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 15 [2,7,14,11,5,8]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 15 [2,7,14,11,5,8]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 16 [11,12,3,8,14,6]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 16 [11,12,3,8,14,6]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 16 [11,12,3,8,14,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 16 [11,12,3,8,14,6]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 16 [11,12,3,8,14,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 17 [7,11,4,10]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 17 [7,11,4,10]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 17 [7,11,4,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 17 [7,11,4,10]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 17 [7,11,4,10]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 18 [12,2,9,11,13]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 18 [12,2,9,11,13]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 18 [12,2,9,11,13]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 18 [12,2,9,11,13]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 18 [12,2,9,11,13]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 19 [7,14,11,0]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 19 [7,14,11,0]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 19 [7,14,11,0]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 19 [7,14,11,0]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 19 [7,14,11,0]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 20 [2,8,6,12,10,13]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 20 [2,8,6,12,10,13]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 20 [2,8,6,12,10,13]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 20 [2,8,6,12,10,13]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 20 [2,8,6,12,10,13]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 21 [6,12,14]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 21 [6,12,14]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 21 [6,12,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 21 [6,12,14]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 21 [6,12,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 22 [7,14,2,10,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 22 [7,14,2,10,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 22 [7,14,2,10,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 22 [7,14,2,10,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 22 [7,14,2,10,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 23 [14,5,4,3,1]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 23 [14,5,4,3,1]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 23 [14,5,4,3,1]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 23 [14,5,4,3,1]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 23 [14,5,4,3,1]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 24 [3,11,13,12,7]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 24 [3,11,13,12,7]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 24 [3,11,13,12,7]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 24 [3,11,13,12,7]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 24 [3,11,13,12,7]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 25 [13,5,10,1,12,7]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 25 [13,5,10,1,12,7]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 25 [13,5,10,1,12,7]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 25 [13,5,10,1,12,7]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 25 [13,5,10,1,12,7]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 26 [2,10,6,0,14]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 26 [2,10,6,0,14]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 26 [2,10,6,0,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 26 [2,10,6,0,14]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 26 [2,10,6,0,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 27 [6,12,10,5,11]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 27 [6,12,10,5,11]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 27 [6,12,10,5,11]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 27 [6,12,10,5,11]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 27 [6,12,10,5,11]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 28 [10,14,11,9,0,13]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 28 [10,14,11,9,0,13]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 28 [10,14,11,9,0,13]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 28 [10,14,11,9,0,13]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 28 [10,14,11,9,0,13]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 29 [7,13,11,2,12,4]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 29 [7,13,11,2,12,4]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 29 [7,13,11,2,12,4]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 29 [7,13,11,2,12,4]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 29 [7,13,11,2,12,4]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 30 [0,6,10,4,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 30 [0,6,10,4,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 30 [0,6,10,4,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 30 [0,6,10,4,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 30 [0,6,10,4,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 31 [12,5,7,10,14]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 31 [12,5,7,10,14]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 31 [12,5,7,10,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 31 [12,5,7,10,14]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 31 [12,5,7,10,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 32 [11,10,6,8,5]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 32 [11,10,6,8,5]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 32 [11,10,6,8,5]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 32 [11,10,6,8,5]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 32 [11,10,6,8,5]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 33 [0,8,5,4,3]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 33 [0,8,5,4,3]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 33 [0,8,5,4,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 33 [0,8,5,4,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 33 [0,8,5,4,3]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 34 [12,11,10]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 34 [12,11,10]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 34 [12,11,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 34 [12,11,10]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 34 [12,11,10]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 35 [14,13,6]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 35 [14,13,6]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 35 [14,13,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 35 [14,13,6]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 35 [14,13,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 36 [2,8,6,7]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 36 [2,8,6,7]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 36 [2,8,6,7]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 36 [2,8,6,7]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 36 [2,8,6,7]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 37 [11,14,10]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 37 [11,14,10]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 37 [11,14,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 37 [11,14,10]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 37 [11,14,10]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 38 [4,3,6,5,8,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 38 [4,3,6,5,8,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 38 [4,3,6,5,8,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 38 [4,3,6,5,8,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 38 [4,3,6,5,8,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 39 [3,7,12]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 39 [3,7,12]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 39 [3,7,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 39 [3,7,12]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 39 [3,7,12]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 40 [0,13,8]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 40 [0,13,8]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 40 [0,13,8]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 40 [0,13,8]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 40 [0,13,8]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 sem erros JS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 topo-0-3: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Agentes autónomos"
+    },
+    {
+      "name": "1440 topo-0-3: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 topo-0-3: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 topo-0-3: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 topo-0-3: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 direita-3-6: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Orquestração multi-agente"
+    },
+    {
+      "name": "1440 direita-3-6: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 direita-3-6: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 direita-3-6: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 direita-3-6: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 baixo-6-9: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Copiloto interno"
+    },
+    {
+      "name": "1440 baixo-6-9: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 baixo-6-9: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 baixo-6-9: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 baixo-6-9: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 esquerda-10-13: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Previsão e machine learning"
+    },
+    {
+      "name": "1440 esquerda-10-13: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 esquerda-10-13: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 esquerda-10-13: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 esquerda-10-13: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 volta-13-1: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Qualificação de leads"
+    },
+    {
+      "name": "1440 volta-13-1: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 volta-13-1: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 volta-13-1: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 volta-13-1: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 clinica-1-2-7: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Agente de voz e telefone"
+    },
+    {
+      "name": "1440 clinica-1-2-7: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 clinica-1-2-7: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 clinica-1-2-7: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 clinica-1-2-7: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 selecionado-inativo-2-entre-1-3: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 selecionado-inativo-2-entre-1-3: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 selecionado-inativo-2-entre-1-3: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 selecionado-inativo-2-entre-1-3: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 selecionado-inativo-2-entre-1-3: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 1 [0,10,12,4,8]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 1 [0,10,12,4,8]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 1 [0,10,12,4,8]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 1 [0,10,12,4,8]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 1 [0,10,12,4,8]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 2 [7,3,9,11,6]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 2 [7,3,9,11,6]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 2 [7,3,9,11,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 2 [7,3,9,11,6]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 2 [7,3,9,11,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 3 [11,10,14,8,7,3]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 3 [11,10,14,8,7,3]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 3 [11,10,14,8,7,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 3 [11,10,14,8,7,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 3 [11,10,14,8,7,3]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 4 [9,8,6,13,12]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 4 [9,8,6,13,12]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 4 [9,8,6,13,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 4 [9,8,6,13,12]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 4 [9,8,6,13,12]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 5 [11,1,14]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 5 [11,1,14]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 5 [11,1,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 5 [11,1,14]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 5 [11,1,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 6 [2,11,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 6 [2,11,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 6 [2,11,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 6 [2,11,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 6 [2,11,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 7 [6,3,13,7,0,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 7 [6,3,13,7,0,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 7 [6,3,13,7,0,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 7 [6,3,13,7,0,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 7 [6,3,13,7,0,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 8 [12,13,9,8,3,10]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 8 [12,13,9,8,3,10]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 8 [12,13,9,8,3,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 8 [12,13,9,8,3,10]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 8 [12,13,9,8,3,10]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 9 [0,11,3]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 9 [0,11,3]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 9 [0,11,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 9 [0,11,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 9 [0,11,3]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 10 [12,7,1]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 10 [12,7,1]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 10 [12,7,1]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 10 [12,7,1]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 10 [12,7,1]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 11 [7,0,8,3]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 11 [7,0,8,3]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 11 [7,0,8,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 11 [7,0,8,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 11 [7,0,8,3]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 12 [14,3,8,4,12]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 12 [14,3,8,4,12]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 12 [14,3,8,4,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 12 [14,3,8,4,12]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 12 [14,3,8,4,12]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 13 [10,5,7,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 13 [10,5,7,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 13 [10,5,7,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 13 [10,5,7,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 13 [10,5,7,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 14 [3,12,1,11,6]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 14 [3,12,1,11,6]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 14 [3,12,1,11,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 14 [3,12,1,11,6]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 14 [3,12,1,11,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 15 [2,7,14,11,5,8]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 15 [2,7,14,11,5,8]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 15 [2,7,14,11,5,8]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 15 [2,7,14,11,5,8]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 15 [2,7,14,11,5,8]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 16 [11,12,3,8,14,6]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 16 [11,12,3,8,14,6]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 16 [11,12,3,8,14,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 16 [11,12,3,8,14,6]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 16 [11,12,3,8,14,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 17 [7,11,4,10]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 17 [7,11,4,10]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 17 [7,11,4,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 17 [7,11,4,10]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 17 [7,11,4,10]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 18 [12,2,9,11,13]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 18 [12,2,9,11,13]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 18 [12,2,9,11,13]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 18 [12,2,9,11,13]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 18 [12,2,9,11,13]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 19 [7,14,11,0]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 19 [7,14,11,0]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 19 [7,14,11,0]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 19 [7,14,11,0]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 19 [7,14,11,0]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 20 [2,8,6,12,10,13]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 20 [2,8,6,12,10,13]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 20 [2,8,6,12,10,13]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 20 [2,8,6,12,10,13]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 20 [2,8,6,12,10,13]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 21 [6,12,14]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 21 [6,12,14]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 21 [6,12,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 21 [6,12,14]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 21 [6,12,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 22 [7,14,2,10,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 22 [7,14,2,10,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 22 [7,14,2,10,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 22 [7,14,2,10,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 22 [7,14,2,10,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 23 [14,5,4,3,1]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 23 [14,5,4,3,1]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 23 [14,5,4,3,1]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 23 [14,5,4,3,1]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 23 [14,5,4,3,1]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 24 [3,11,13,12,7]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 24 [3,11,13,12,7]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 24 [3,11,13,12,7]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 24 [3,11,13,12,7]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 24 [3,11,13,12,7]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 25 [13,5,10,1,12,7]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 25 [13,5,10,1,12,7]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 25 [13,5,10,1,12,7]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 25 [13,5,10,1,12,7]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 25 [13,5,10,1,12,7]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 26 [2,10,6,0,14]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 26 [2,10,6,0,14]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 26 [2,10,6,0,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 26 [2,10,6,0,14]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 26 [2,10,6,0,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 27 [6,12,10,5,11]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 27 [6,12,10,5,11]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 27 [6,12,10,5,11]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 27 [6,12,10,5,11]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 27 [6,12,10,5,11]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 28 [10,14,11,9,0,13]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 28 [10,14,11,9,0,13]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 28 [10,14,11,9,0,13]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 28 [10,14,11,9,0,13]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 28 [10,14,11,9,0,13]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 29 [7,13,11,2,12,4]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 29 [7,13,11,2,12,4]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 29 [7,13,11,2,12,4]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 29 [7,13,11,2,12,4]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 29 [7,13,11,2,12,4]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 30 [0,6,10,4,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 30 [0,6,10,4,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 30 [0,6,10,4,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 30 [0,6,10,4,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 30 [0,6,10,4,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 31 [12,5,7,10,14]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 31 [12,5,7,10,14]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 31 [12,5,7,10,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 31 [12,5,7,10,14]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 31 [12,5,7,10,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 32 [11,10,6,8,5]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 32 [11,10,6,8,5]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 32 [11,10,6,8,5]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 32 [11,10,6,8,5]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 32 [11,10,6,8,5]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 33 [0,8,5,4,3]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 33 [0,8,5,4,3]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 33 [0,8,5,4,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 33 [0,8,5,4,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 33 [0,8,5,4,3]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 34 [12,11,10]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 34 [12,11,10]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 34 [12,11,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 34 [12,11,10]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 34 [12,11,10]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 35 [14,13,6]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 35 [14,13,6]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 35 [14,13,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 35 [14,13,6]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 35 [14,13,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 36 [2,8,6,7]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 36 [2,8,6,7]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 36 [2,8,6,7]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 36 [2,8,6,7]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 36 [2,8,6,7]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 37 [11,14,10]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 37 [11,14,10]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 37 [11,14,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 37 [11,14,10]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 37 [11,14,10]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 38 [4,3,6,5,8,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 38 [4,3,6,5,8,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 38 [4,3,6,5,8,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 38 [4,3,6,5,8,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 38 [4,3,6,5,8,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 39 [3,7,12]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 39 [3,7,12]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 39 [3,7,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 39 [3,7,12]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 39 [3,7,12]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 40 [0,13,8]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1440 aleatória 40 [0,13,8]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 40 [0,13,8]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 40 [0,13,8]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 40 [0,13,8]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 sem erros JS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 topo-0-3: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Agentes autónomos"
+    },
+    {
+      "name": "1920 topo-0-3: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 topo-0-3: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 topo-0-3: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 topo-0-3: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 direita-3-6: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Orquestração multi-agente"
+    },
+    {
+      "name": "1920 direita-3-6: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 direita-3-6: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 direita-3-6: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 direita-3-6: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 baixo-6-9: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Copiloto interno"
+    },
+    {
+      "name": "1920 baixo-6-9: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 baixo-6-9: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 baixo-6-9: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 baixo-6-9: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 esquerda-10-13: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Previsão e machine learning"
+    },
+    {
+      "name": "1920 esquerda-10-13: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 esquerda-10-13: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 esquerda-10-13: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 esquerda-10-13: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 volta-13-1: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Qualificação de leads"
+    },
+    {
+      "name": "1920 volta-13-1: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 volta-13-1: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 volta-13-1: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 volta-13-1: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 clinica-1-2-7: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Agente de voz e telefone"
+    },
+    {
+      "name": "1920 clinica-1-2-7: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 clinica-1-2-7: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 clinica-1-2-7: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 clinica-1-2-7: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 selecionado-inativo-2-entre-1-3: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 selecionado-inativo-2-entre-1-3: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 selecionado-inativo-2-entre-1-3: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 selecionado-inativo-2-entre-1-3: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 selecionado-inativo-2-entre-1-3: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 1 [0,10,12,4,8]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 1 [0,10,12,4,8]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 1 [0,10,12,4,8]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 1 [0,10,12,4,8]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 1 [0,10,12,4,8]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 2 [7,3,9,11,6]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 2 [7,3,9,11,6]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 2 [7,3,9,11,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 2 [7,3,9,11,6]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 2 [7,3,9,11,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 3 [11,10,14,8,7,3]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 3 [11,10,14,8,7,3]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 3 [11,10,14,8,7,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 3 [11,10,14,8,7,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 3 [11,10,14,8,7,3]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 4 [9,8,6,13,12]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 4 [9,8,6,13,12]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 4 [9,8,6,13,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 4 [9,8,6,13,12]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 4 [9,8,6,13,12]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 5 [11,1,14]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 5 [11,1,14]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 5 [11,1,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 5 [11,1,14]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 5 [11,1,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 6 [2,11,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 6 [2,11,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 6 [2,11,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 6 [2,11,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 6 [2,11,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 7 [6,3,13,7,0,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 7 [6,3,13,7,0,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 7 [6,3,13,7,0,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 7 [6,3,13,7,0,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 7 [6,3,13,7,0,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 8 [12,13,9,8,3,10]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 8 [12,13,9,8,3,10]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 8 [12,13,9,8,3,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 8 [12,13,9,8,3,10]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 8 [12,13,9,8,3,10]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 9 [0,11,3]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 9 [0,11,3]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 9 [0,11,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 9 [0,11,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 9 [0,11,3]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 10 [12,7,1]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 10 [12,7,1]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 10 [12,7,1]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 10 [12,7,1]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 10 [12,7,1]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 11 [7,0,8,3]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 11 [7,0,8,3]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 11 [7,0,8,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 11 [7,0,8,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 11 [7,0,8,3]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 12 [14,3,8,4,12]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 12 [14,3,8,4,12]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 12 [14,3,8,4,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 12 [14,3,8,4,12]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 12 [14,3,8,4,12]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 13 [10,5,7,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 13 [10,5,7,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 13 [10,5,7,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 13 [10,5,7,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 13 [10,5,7,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 14 [3,12,1,11,6]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 14 [3,12,1,11,6]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 14 [3,12,1,11,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 14 [3,12,1,11,6]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 14 [3,12,1,11,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 15 [2,7,14,11,5,8]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 15 [2,7,14,11,5,8]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 15 [2,7,14,11,5,8]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 15 [2,7,14,11,5,8]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 15 [2,7,14,11,5,8]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 16 [11,12,3,8,14,6]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 16 [11,12,3,8,14,6]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 16 [11,12,3,8,14,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 16 [11,12,3,8,14,6]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 16 [11,12,3,8,14,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 17 [7,11,4,10]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 17 [7,11,4,10]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 17 [7,11,4,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 17 [7,11,4,10]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 17 [7,11,4,10]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 18 [12,2,9,11,13]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 18 [12,2,9,11,13]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 18 [12,2,9,11,13]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 18 [12,2,9,11,13]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 18 [12,2,9,11,13]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 19 [7,14,11,0]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 19 [7,14,11,0]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 19 [7,14,11,0]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 19 [7,14,11,0]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 19 [7,14,11,0]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 20 [2,8,6,12,10,13]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 20 [2,8,6,12,10,13]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 20 [2,8,6,12,10,13]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 20 [2,8,6,12,10,13]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 20 [2,8,6,12,10,13]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 21 [6,12,14]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 21 [6,12,14]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 21 [6,12,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 21 [6,12,14]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 21 [6,12,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 22 [7,14,2,10,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 22 [7,14,2,10,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 22 [7,14,2,10,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 22 [7,14,2,10,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 22 [7,14,2,10,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 23 [14,5,4,3,1]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 23 [14,5,4,3,1]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 23 [14,5,4,3,1]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 23 [14,5,4,3,1]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 23 [14,5,4,3,1]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 24 [3,11,13,12,7]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 24 [3,11,13,12,7]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 24 [3,11,13,12,7]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 24 [3,11,13,12,7]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 24 [3,11,13,12,7]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 25 [13,5,10,1,12,7]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 25 [13,5,10,1,12,7]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 25 [13,5,10,1,12,7]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 25 [13,5,10,1,12,7]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 25 [13,5,10,1,12,7]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 26 [2,10,6,0,14]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 26 [2,10,6,0,14]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 26 [2,10,6,0,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 26 [2,10,6,0,14]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 26 [2,10,6,0,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 27 [6,12,10,5,11]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 27 [6,12,10,5,11]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 27 [6,12,10,5,11]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 27 [6,12,10,5,11]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 27 [6,12,10,5,11]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 28 [10,14,11,9,0,13]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 28 [10,14,11,9,0,13]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 28 [10,14,11,9,0,13]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 28 [10,14,11,9,0,13]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 28 [10,14,11,9,0,13]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 29 [7,13,11,2,12,4]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 29 [7,13,11,2,12,4]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 29 [7,13,11,2,12,4]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 29 [7,13,11,2,12,4]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 29 [7,13,11,2,12,4]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 30 [0,6,10,4,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 30 [0,6,10,4,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 30 [0,6,10,4,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 30 [0,6,10,4,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 30 [0,6,10,4,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 31 [12,5,7,10,14]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 31 [12,5,7,10,14]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 31 [12,5,7,10,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 31 [12,5,7,10,14]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 31 [12,5,7,10,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 32 [11,10,6,8,5]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 32 [11,10,6,8,5]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 32 [11,10,6,8,5]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 32 [11,10,6,8,5]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 32 [11,10,6,8,5]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 33 [0,8,5,4,3]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 33 [0,8,5,4,3]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 33 [0,8,5,4,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 33 [0,8,5,4,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 33 [0,8,5,4,3]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 34 [12,11,10]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 34 [12,11,10]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 34 [12,11,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 34 [12,11,10]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 34 [12,11,10]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 35 [14,13,6]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 35 [14,13,6]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 35 [14,13,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 35 [14,13,6]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 35 [14,13,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 36 [2,8,6,7]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 36 [2,8,6,7]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 36 [2,8,6,7]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 36 [2,8,6,7]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 36 [2,8,6,7]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 37 [11,14,10]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 37 [11,14,10]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 37 [11,14,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 37 [11,14,10]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 37 [11,14,10]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 38 [4,3,6,5,8,9]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 38 [4,3,6,5,8,9]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 38 [4,3,6,5,8,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 38 [4,3,6,5,8,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 38 [4,3,6,5,8,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 39 [3,7,12]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 39 [3,7,12]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 39 [3,7,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 39 [3,7,12]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 39 [3,7,12]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 40 [0,13,8]: o módulo selecionado tem sempre etiqueta",
+      "ok": true,
+      "detail": "Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 40 [0,13,8]: texto cabe na caixa",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 40 [0,13,8]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 40 [0,13,8]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 40 [0,13,8]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 sem erros JS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "390 mobile: sem etiquetas na órbita (como antes)",
+      "ok": true,
+      "detail": "0 visíveis"
+    },
+    {
+      "name": "360 mobile: sem etiquetas na órbita (como antes)",
+      "ok": true,
+      "detail": "0 visíveis"
+    },
+    {
+      "name": "arranque pt: 15/15",
+      "ok": true,
+      "detail": "› a iniciar agente devloper.eu› a carregar capacidades · 15/15› contexto · empresas em Portugal e na Europa✓ pronto"
+    },
+    {
+      "name": "arranque en: 15/15",
+      "ok": true,
+      "detail": "› starting devloper.eu agent› loading capabilities · 15/15› context · businesses in Portugal and Europe✓ ready"
+    },
+    {
+      "name": "arranque fr: 15/15",
+      "ok": true,
+      "detail": "› démarrage de l'agent devloper.eu› chargement des capacités · 15/15› contexte · entreprises au Portugal et en Europe✓ prêt"
+    },
+    {
+      "name": "arranque es: 15/15",
+      "ok": true,
+      "detail": "› iniciando agente devloper.eu› cargando capacidades · 15/15› contexto · empresas en Portugal y Europa✓ listo"
+    },
+    {
+      "name": "arranque de: 15/15",
+      "ok": true,
+      "detail": "› devloper.eu-Agent wird gestartet› Fähigkeiten werden geladen · 15/15› Kontext · Unternehmen in Portugal und Europa✓ bereit"
+    },
+    {
+      "name": "arranque sv: 15/15",
+      "ok": true,
+      "detail": "› startar devloper.eu-agenten› laddar förmågor · 15/15› kontext · företag i Portugal och Europa✓ redo"
+    }
+  ],
+  "failures": [],
+  "hidden": 0,
+  "shortened": 6,
+  "total": 732,
+  "labelsShown": {
+    "named": 69,
+    "wanted": 69
+  }
+}

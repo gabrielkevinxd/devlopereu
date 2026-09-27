@@ -1,0 +1,2354 @@
+{
+  "phase": "antes",
+  "catalog": 15,
+  "checks": [
+    {
+      "name": "1024 topo-0-3: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 topo-0-3: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp"
+    },
+    {
+      "name": "1024 topo-0-3: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 direita-3-6: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 direita-3-6: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Visão computacional e OCR» tapa Copiloto interno"
+    },
+    {
+      "name": "1024 direita-3-6: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "IA sobre os seus documentos (RAG)"
+    },
+    {
+      "name": "1024 baixo-6-9: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Integrações MCP e API» × «Hiperautomação de processos»"
+    },
+    {
+      "name": "1024 baixo-6-9: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 baixo-6-9: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 esquerda-10-13: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 esquerda-10-13: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 esquerda-10-13: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1024 volta-13-1: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 volta-13-1: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp; «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1024 volta-13-1: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 clinica-1-2-7: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 clinica-1-2-7: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp"
+    },
+    {
+      "name": "1024 clinica-1-2-7: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 selecionado-inativo-2-entre-1-3: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 selecionado-inativo-2-entre-1-3: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente"
+    },
+    {
+      "name": "1024 selecionado-inativo-2-entre-1-3: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "IA sobre os seus documentos (RAG)"
+    },
+    {
+      "name": "1024 aleatória 1 [0,10,12,4,8]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 1 [0,10,12,4,8]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 1 [0,10,12,4,8]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "IA sobre os seus documentos (RAG)"
+    },
+    {
+      "name": "1024 aleatória 2 [7,3,9,11,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 2 [7,3,9,11,6]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 2 [7,3,9,11,6]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 3 [11,10,14,8,7,3]: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Integrações MCP e API» × «Hiperautomação de processos»"
+    },
+    {
+      "name": "1024 aleatória 3 [11,10,14,8,7,3]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1024 aleatória 3 [11,10,14,8,7,3]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 4 [9,8,6,13,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 4 [9,8,6,13,12]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 4 [9,8,6,13,12]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 5 [11,1,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 5 [11,1,14]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp; «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1024 aleatória 5 [11,1,14]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 6 [2,11,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 6 [2,11,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 6 [2,11,9]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 7 [6,3,13,7,0,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 7 [6,3,13,7,0,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 7 [6,3,13,7,0,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 8 [12,13,9,8,3,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 8 [12,13,9,8,3,10]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Previsão e machine learning» tapa Dados e pipelines (Big Data)"
+    },
+    {
+      "name": "1024 aleatória 8 [12,13,9,8,3,10]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 9 [0,11,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 9 [0,11,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 9 [0,11,3]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 10 [12,7,1]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 10 [12,7,1]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 10 [12,7,1]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 11 [7,0,8,3]: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Integrações MCP e API» × «Hiperautomação de processos»"
+    },
+    {
+      "name": "1024 aleatória 11 [7,0,8,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 11 [7,0,8,3]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 12 [14,3,8,4,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 12 [14,3,8,4,12]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1024 aleatória 12 [14,3,8,4,12]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "IA sobre os seus documentos (RAG)"
+    },
+    {
+      "name": "1024 aleatória 13 [10,5,7,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 13 [10,5,7,9]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Previsão e machine learning» tapa Dados e pipelines (Big Data)"
+    },
+    {
+      "name": "1024 aleatória 13 [10,5,7,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 14 [3,12,1,11,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 14 [3,12,1,11,6]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 14 [3,12,1,11,6]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 15 [2,7,14,11,5,8]: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Integrações MCP e API» × «Hiperautomação de processos»"
+    },
+    {
+      "name": "1024 aleatória 15 [2,7,14,11,5,8]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1024 aleatória 15 [2,7,14,11,5,8]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 16 [11,12,3,8,14,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 16 [11,12,3,8,14,6]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1024 aleatória 16 [11,12,3,8,14,6]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 17 [7,11,4,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 17 [7,11,4,10]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 17 [7,11,4,10]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "IA sobre os seus documentos (RAG); Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 18 [12,2,9,11,13]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 18 [12,2,9,11,13]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 18 [12,2,9,11,13]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 19 [7,14,11,0]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 19 [7,14,11,0]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1024 aleatória 19 [7,14,11,0]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 20 [2,8,6,12,10,13]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 20 [2,8,6,12,10,13]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 20 [2,8,6,12,10,13]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 21 [6,12,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 21 [6,12,14]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1024 aleatória 21 [6,12,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 22 [7,14,2,10,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 22 [7,14,2,10,9]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Previsão e machine learning» tapa Dados e pipelines (Big Data); «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1024 aleatória 22 [7,14,2,10,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 23 [14,5,4,3,1]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 23 [14,5,4,3,1]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp; «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1024 aleatória 23 [14,5,4,3,1]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "IA sobre os seus documentos (RAG)"
+    },
+    {
+      "name": "1024 aleatória 24 [3,11,13,12,7]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 24 [3,11,13,12,7]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 24 [3,11,13,12,7]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 25 [13,5,10,1,12,7]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 25 [13,5,10,1,12,7]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp"
+    },
+    {
+      "name": "1024 aleatória 25 [13,5,10,1,12,7]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 26 [2,10,6,0,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 26 [2,10,6,0,14]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1024 aleatória 26 [2,10,6,0,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 27 [6,12,10,5,11]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 27 [6,12,10,5,11]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Visão computacional e OCR» tapa Copiloto interno"
+    },
+    {
+      "name": "1024 aleatória 27 [6,12,10,5,11]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 28 [10,14,11,9,0,13]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 28 [10,14,11,9,0,13]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Previsão e machine learning» tapa Dados e pipelines (Big Data); «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1024 aleatória 28 [10,14,11,9,0,13]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 29 [7,13,11,2,12,4]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 29 [7,13,11,2,12,4]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 29 [7,13,11,2,12,4]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "IA sobre os seus documentos (RAG); Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 30 [0,6,10,4,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 30 [0,6,10,4,9]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Previsão e machine learning» tapa Dados e pipelines (Big Data)"
+    },
+    {
+      "name": "1024 aleatória 30 [0,6,10,4,9]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "IA sobre os seus documentos (RAG)"
+    },
+    {
+      "name": "1024 aleatória 31 [12,5,7,10,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 31 [12,5,7,10,14]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1024 aleatória 31 [12,5,7,10,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 32 [11,10,6,8,5]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 32 [11,10,6,8,5]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Visão computacional e OCR» tapa Copiloto interno"
+    },
+    {
+      "name": "1024 aleatória 32 [11,10,6,8,5]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 33 [0,8,5,4,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 33 [0,8,5,4,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 33 [0,8,5,4,3]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "IA sobre os seus documentos (RAG)"
+    },
+    {
+      "name": "1024 aleatória 34 [12,11,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 34 [12,11,10]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 34 [12,11,10]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 35 [14,13,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 35 [14,13,6]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1024 aleatória 35 [14,13,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 36 [2,8,6,7]: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Integrações MCP e API» × «Hiperautomação de processos»"
+    },
+    {
+      "name": "1024 aleatória 36 [2,8,6,7]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 36 [2,8,6,7]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 37 [11,14,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 37 [11,14,10]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1024 aleatória 37 [11,14,10]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1024 aleatória 38 [4,3,6,5,8,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 38 [4,3,6,5,8,9]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Visão computacional e OCR» tapa Copiloto interno"
+    },
+    {
+      "name": "1024 aleatória 38 [4,3,6,5,8,9]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "IA sobre os seus documentos (RAG)"
+    },
+    {
+      "name": "1024 aleatória 39 [3,7,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 39 [3,7,12]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 39 [3,7,12]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 40 [0,13,8]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 40 [0,13,8]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 aleatória 40 [0,13,8]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1024 sem erros JS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 topo-0-3: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Agentes autónomos» × «Agente de voz e telefone»"
+    },
+    {
+      "name": "1440 topo-0-3: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente"
+    },
+    {
+      "name": "1440 topo-0-3: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Orquestração multi-agente"
+    },
+    {
+      "name": "1440 direita-3-6: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 direita-3-6: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Orquestração multi-agente» tapa IA sobre os seus documentos (RAG); «IA sobre os seus documentos (RAG)» tapa Visão computacional e OCR; «Visão computacional e OCR» tapa Copiloto interno; «Copiloto interno» tapa Integrações MCP e API"
+    },
+    {
+      "name": "1440 direita-3-6: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Orquestração multi-agente; IA sobre os seus documentos (RAG)"
+    },
+    {
+      "name": "1440 baixo-6-9: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Integrações MCP e API» × «Hiperautomação de processos»"
+    },
+    {
+      "name": "1440 baixo-6-9: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Copiloto interno» tapa Integrações MCP e API; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos"
+    },
+    {
+      "name": "1440 baixo-6-9: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 esquerda-10-13: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 esquerda-10-13: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Previsão e machine learning» tapa Dados e pipelines (Big Data); «Dashboards em tempo real» tapa Previsão e machine learning; «Geração de conteúdo» tapa Dashboards em tempo real; «Qualificação de leads» tapa Geração de conteúdo"
+    },
+    {
+      "name": "1440 esquerda-10-13: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real; Geração de conteúdo"
+    },
+    {
+      "name": "1440 volta-13-1: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Agentes autónomos» × «Agente de voz e telefone»; «Agentes autónomos» × «Diagnóstico e roadmap de IA»"
+    },
+    {
+      "name": "1440 volta-13-1: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Agente de voz e telefone» tapa Automação de WhatsApp; «Qualificação de leads» tapa Geração de conteúdo; «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1440 volta-13-1: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 clinica-1-2-7: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 clinica-1-2-7: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente; «Integrações MCP e API» tapa Hiperautomação de processos"
+    },
+    {
+      "name": "1440 clinica-1-2-7: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 selecionado-inativo-2-entre-1-3: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 selecionado-inativo-2-entre-1-3: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente; «Orquestração multi-agente» tapa IA sobre os seus documentos (RAG)"
+    },
+    {
+      "name": "1440 selecionado-inativo-2-entre-1-3: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Orquestração multi-agente; IA sobre os seus documentos (RAG)"
+    },
+    {
+      "name": "1440 aleatória 1 [0,10,12,4,8]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 1 [0,10,12,4,8]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente; «Hiperautomação de processos» tapa Integrações MCP e API; «Previsão e machine learning» tapa Dados e pipelines (Big Data)"
+    },
+    {
+      "name": "1440 aleatória 1 [0,10,12,4,8]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "IA sobre os seus documentos (RAG); Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 2 [7,3,9,11,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 2 [7,3,9,11,6]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Integrações MCP e API» tapa Hiperautomação de processos; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos"
+    },
+    {
+      "name": "1440 aleatória 2 [7,3,9,11,6]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Orquestração multi-agente; Dashboards em tempo real"
+    },
+    {
+      "name": "1440 aleatória 3 [11,10,14,8,7,3]: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Integrações MCP e API» × «Hiperautomação de processos»"
+    },
+    {
+      "name": "1440 aleatória 3 [11,10,14,8,7,3]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Dashboards em tempo real» tapa Previsão e machine learning; «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1440 aleatória 3 [11,10,14,8,7,3]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Orquestração multi-agente; Dashboards em tempo real"
+    },
+    {
+      "name": "1440 aleatória 4 [9,8,6,13,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 4 [9,8,6,13,12]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Hiperautomação de processos» tapa Integrações MCP e API; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos; «Qualificação de leads» tapa Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 4 [9,8,6,13,12]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 5 [11,1,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 5 [11,1,14]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente; «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1440 aleatória 5 [11,1,14]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1440 aleatória 6 [2,11,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 6 [2,11,9]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos"
+    },
+    {
+      "name": "1440 aleatória 6 [2,11,9]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1440 aleatória 7 [6,3,13,7,0,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 7 [6,3,13,7,0,9]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Integrações MCP e API» tapa Hiperautomação de processos; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos; «Qualificação de leads» tapa Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 7 [6,3,13,7,0,9]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Orquestração multi-agente"
+    },
+    {
+      "name": "1440 aleatória 8 [12,13,9,8,3,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 8 [12,13,9,8,3,10]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Hiperautomação de processos» tapa Integrações MCP e API; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Qualificação de leads» tapa Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 8 [12,13,9,8,3,10]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Orquestração multi-agente; Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 9 [0,11,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 9 [0,11,3]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente"
+    },
+    {
+      "name": "1440 aleatória 9 [0,11,3]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Orquestração multi-agente; Dashboards em tempo real"
+    },
+    {
+      "name": "1440 aleatória 10 [12,7,1]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 10 [12,7,1]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente; «Integrações MCP e API» tapa Hiperautomação de processos"
+    },
+    {
+      "name": "1440 aleatória 10 [12,7,1]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 11 [7,0,8,3]: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Integrações MCP e API» × «Hiperautomação de processos»"
+    },
+    {
+      "name": "1440 aleatória 11 [7,0,8,3]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente"
+    },
+    {
+      "name": "1440 aleatória 11 [7,0,8,3]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Orquestração multi-agente"
+    },
+    {
+      "name": "1440 aleatória 12 [14,3,8,4,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 12 [14,3,8,4,12]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Orquestração multi-agente» tapa IA sobre os seus documentos (RAG); «Hiperautomação de processos» tapa Integrações MCP e API; «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1440 aleatória 12 [14,3,8,4,12]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Orquestração multi-agente; IA sobre os seus documentos (RAG); Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 13 [10,5,7,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 13 [10,5,7,9]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Visão computacional e OCR» tapa Copiloto interno; «Integrações MCP e API» tapa Hiperautomação de processos; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos; «Previsão e machine learning» tapa Dados e pipelines (Big Data)"
+    },
+    {
+      "name": "1440 aleatória 13 [10,5,7,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 14 [3,12,1,11,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 14 [3,12,1,11,6]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Geração de conteúdo» tapa Dashboards em tempo real"
+    },
+    {
+      "name": "1440 aleatória 14 [3,12,1,11,6]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Orquestração multi-agente; Dashboards em tempo real; Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 15 [2,7,14,11,5,8]: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Integrações MCP e API» × «Hiperautomação de processos»"
+    },
+    {
+      "name": "1440 aleatória 15 [2,7,14,11,5,8]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Visão computacional e OCR» tapa Copiloto interno; «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1440 aleatória 15 [2,7,14,11,5,8]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1440 aleatória 16 [11,12,3,8,14,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 16 [11,12,3,8,14,6]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Hiperautomação de processos» tapa Integrações MCP e API; «Geração de conteúdo» tapa Dashboards em tempo real; «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1440 aleatória 16 [11,12,3,8,14,6]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Orquestração multi-agente; Dashboards em tempo real; Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 17 [7,11,4,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 17 [7,11,4,10]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Integrações MCP e API» tapa Hiperautomação de processos; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Dashboards em tempo real» tapa Previsão e machine learning"
+    },
+    {
+      "name": "1440 aleatória 17 [7,11,4,10]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "IA sobre os seus documentos (RAG); Dashboards em tempo real"
+    },
+    {
+      "name": "1440 aleatória 18 [12,2,9,11,13]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 18 [12,2,9,11,13]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos; «Geração de conteúdo» tapa Dashboards em tempo real; «Qualificação de leads» tapa Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 18 [12,2,9,11,13]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real; Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 19 [7,14,11,0]: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Agentes autónomos» × «Diagnóstico e roadmap de IA»"
+    },
+    {
+      "name": "1440 aleatória 19 [7,14,11,0]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente; «Integrações MCP e API» tapa Hiperautomação de processos; «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1440 aleatória 19 [7,14,11,0]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1440 aleatória 20 [2,8,6,12,10,13]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 20 [2,8,6,12,10,13]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Hiperautomação de processos» tapa Integrações MCP e API; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Qualificação de leads» tapa Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 20 [2,8,6,12,10,13]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 21 [6,12,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 21 [6,12,14]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1440 aleatória 21 [6,12,14]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 22 [7,14,2,10,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 22 [7,14,2,10,9]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Integrações MCP e API» tapa Hiperautomação de processos; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1440 aleatória 22 [7,14,2,10,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 23 [14,5,4,3,1]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 23 [14,5,4,3,1]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente; «Orquestração multi-agente» tapa IA sobre os seus documentos (RAG); «IA sobre os seus documentos (RAG)» tapa Visão computacional e OCR; «Visão computacional e OCR» tapa Copiloto interno; «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1440 aleatória 23 [14,5,4,3,1]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Orquestração multi-agente; IA sobre os seus documentos (RAG)"
+    },
+    {
+      "name": "1440 aleatória 24 [3,11,13,12,7]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 24 [3,11,13,12,7]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Integrações MCP e API» tapa Hiperautomação de processos; «Geração de conteúdo» tapa Dashboards em tempo real; «Qualificação de leads» tapa Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 24 [3,11,13,12,7]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Orquestração multi-agente; Dashboards em tempo real; Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 25 [13,5,10,1,12,7]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 25 [13,5,10,1,12,7]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente; «Visão computacional e OCR» tapa Copiloto interno; «Integrações MCP e API» tapa Hiperautomação de processos; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Qualificação de leads» tapa Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 25 [13,5,10,1,12,7]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 26 [2,10,6,0,14]: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Agentes autónomos» × «Diagnóstico e roadmap de IA»"
+    },
+    {
+      "name": "1440 aleatória 26 [2,10,6,0,14]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1440 aleatória 26 [2,10,6,0,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 27 [6,12,10,5,11]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 27 [6,12,10,5,11]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Visão computacional e OCR» tapa Copiloto interno; «Copiloto interno» tapa Integrações MCP e API; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Dashboards em tempo real» tapa Previsão e machine learning; «Geração de conteúdo» tapa Dashboards em tempo real"
+    },
+    {
+      "name": "1440 aleatória 27 [6,12,10,5,11]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real; Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 28 [10,14,11,9,0,13]: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Agentes autónomos» × «Diagnóstico e roadmap de IA»"
+    },
+    {
+      "name": "1440 aleatória 28 [10,14,11,9,0,13]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Dashboards em tempo real» tapa Previsão e machine learning; «Qualificação de leads» tapa Geração de conteúdo; «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1440 aleatória 28 [10,14,11,9,0,13]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1440 aleatória 29 [7,13,11,2,12,4]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 29 [7,13,11,2,12,4]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Integrações MCP e API» tapa Hiperautomação de processos; «Geração de conteúdo» tapa Dashboards em tempo real; «Qualificação de leads» tapa Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 29 [7,13,11,2,12,4]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "IA sobre os seus documentos (RAG); Dashboards em tempo real; Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 30 [0,6,10,4,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 30 [0,6,10,4,9]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos; «Previsão e machine learning» tapa Dados e pipelines (Big Data)"
+    },
+    {
+      "name": "1440 aleatória 30 [0,6,10,4,9]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "IA sobre os seus documentos (RAG)"
+    },
+    {
+      "name": "1440 aleatória 31 [12,5,7,10,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 31 [12,5,7,10,14]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Visão computacional e OCR» tapa Copiloto interno; «Integrações MCP e API» tapa Hiperautomação de processos; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1440 aleatória 31 [12,5,7,10,14]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 32 [11,10,6,8,5]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 32 [11,10,6,8,5]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Visão computacional e OCR» tapa Copiloto interno; «Copiloto interno» tapa Integrações MCP e API; «Hiperautomação de processos» tapa Integrações MCP e API; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Dashboards em tempo real» tapa Previsão e machine learning"
+    },
+    {
+      "name": "1440 aleatória 32 [11,10,6,8,5]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1440 aleatória 33 [0,8,5,4,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 33 [0,8,5,4,3]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente; «Orquestração multi-agente» tapa IA sobre os seus documentos (RAG); «IA sobre os seus documentos (RAG)» tapa Visão computacional e OCR; «Visão computacional e OCR» tapa Copiloto interno; «Hiperautomação de processos» tapa Integrações MCP e API"
+    },
+    {
+      "name": "1440 aleatória 33 [0,8,5,4,3]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Orquestração multi-agente; IA sobre os seus documentos (RAG)"
+    },
+    {
+      "name": "1440 aleatória 34 [12,11,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 34 [12,11,10]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Dashboards em tempo real» tapa Previsão e machine learning; «Geração de conteúdo» tapa Dashboards em tempo real"
+    },
+    {
+      "name": "1440 aleatória 34 [12,11,10]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real; Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 35 [14,13,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 35 [14,13,6]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Qualificação de leads» tapa Geração de conteúdo; «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1440 aleatória 35 [14,13,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 36 [2,8,6,7]: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Integrações MCP e API» × «Hiperautomação de processos»"
+    },
+    {
+      "name": "1440 aleatória 36 [2,8,6,7]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API"
+    },
+    {
+      "name": "1440 aleatória 36 [2,8,6,7]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 37 [11,14,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 37 [11,14,10]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Dashboards em tempo real» tapa Previsão e machine learning; «Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1440 aleatória 37 [11,14,10]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Dashboards em tempo real"
+    },
+    {
+      "name": "1440 aleatória 38 [4,3,6,5,8,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 38 [4,3,6,5,8,9]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Orquestração multi-agente» tapa IA sobre os seus documentos (RAG); «IA sobre os seus documentos (RAG)» tapa Visão computacional e OCR; «Visão computacional e OCR» tapa Copiloto interno; «Copiloto interno» tapa Integrações MCP e API; «Hiperautomação de processos» tapa Integrações MCP e API; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos"
+    },
+    {
+      "name": "1440 aleatória 38 [4,3,6,5,8,9]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Orquestração multi-agente; IA sobre os seus documentos (RAG)"
+    },
+    {
+      "name": "1440 aleatória 39 [3,7,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 39 [3,7,12]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Automação de WhatsApp» tapa Orquestração multi-agente; «Integrações MCP e API» tapa Hiperautomação de processos"
+    },
+    {
+      "name": "1440 aleatória 39 [3,7,12]: etiquetas dentro do reator",
+      "ok": false,
+      "detail": "Orquestração multi-agente; Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 40 [0,13,8]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 aleatória 40 [0,13,8]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente; «Hiperautomação de processos» tapa Integrações MCP e API; «Qualificação de leads» tapa Geração de conteúdo"
+    },
+    {
+      "name": "1440 aleatória 40 [0,13,8]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1440 sem erros JS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 topo-0-3: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 topo-0-3: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 topo-0-3: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 direita-3-6: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 direita-3-6: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Visão computacional e OCR» tapa Copiloto interno"
+    },
+    {
+      "name": "1920 direita-3-6: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 baixo-6-9: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Integrações MCP e API» × «Hiperautomação de processos»"
+    },
+    {
+      "name": "1920 baixo-6-9: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 baixo-6-9: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 esquerda-10-13: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 esquerda-10-13: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 esquerda-10-13: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 volta-13-1: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 volta-13-1: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Diagnóstico e roadmap de IA» tapa Qualificação de leads"
+    },
+    {
+      "name": "1920 volta-13-1: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 clinica-1-2-7: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 clinica-1-2-7: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 clinica-1-2-7: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 selecionado-inativo-2-entre-1-3: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 selecionado-inativo-2-entre-1-3: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente"
+    },
+    {
+      "name": "1920 selecionado-inativo-2-entre-1-3: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 1 [0,10,12,4,8]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 1 [0,10,12,4,8]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 1 [0,10,12,4,8]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 2 [7,3,9,11,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 2 [7,3,9,11,6]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 2 [7,3,9,11,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 3 [11,10,14,8,7,3]: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Integrações MCP e API» × «Hiperautomação de processos»"
+    },
+    {
+      "name": "1920 aleatória 3 [11,10,14,8,7,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 3 [11,10,14,8,7,3]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 4 [9,8,6,13,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 4 [9,8,6,13,12]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 4 [9,8,6,13,12]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 5 [11,1,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 5 [11,1,14]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 5 [11,1,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 6 [2,11,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 6 [2,11,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 6 [2,11,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 7 [6,3,13,7,0,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 7 [6,3,13,7,0,9]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 7 [6,3,13,7,0,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 8 [12,13,9,8,3,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 8 [12,13,9,8,3,10]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Previsão e machine learning» tapa Dados e pipelines (Big Data)"
+    },
+    {
+      "name": "1920 aleatória 8 [12,13,9,8,3,10]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 9 [0,11,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 9 [0,11,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 9 [0,11,3]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 10 [12,7,1]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 10 [12,7,1]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 10 [12,7,1]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 11 [7,0,8,3]: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Integrações MCP e API» × «Hiperautomação de processos»"
+    },
+    {
+      "name": "1920 aleatória 11 [7,0,8,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 11 [7,0,8,3]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 12 [14,3,8,4,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 12 [14,3,8,4,12]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 12 [14,3,8,4,12]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 13 [10,5,7,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 13 [10,5,7,9]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Previsão e machine learning» tapa Dados e pipelines (Big Data)"
+    },
+    {
+      "name": "1920 aleatória 13 [10,5,7,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 14 [3,12,1,11,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 14 [3,12,1,11,6]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 14 [3,12,1,11,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 15 [2,7,14,11,5,8]: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Integrações MCP e API» × «Hiperautomação de processos»"
+    },
+    {
+      "name": "1920 aleatória 15 [2,7,14,11,5,8]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 15 [2,7,14,11,5,8]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 16 [11,12,3,8,14,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 16 [11,12,3,8,14,6]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 16 [11,12,3,8,14,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 17 [7,11,4,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 17 [7,11,4,10]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 17 [7,11,4,10]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 18 [12,2,9,11,13]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 18 [12,2,9,11,13]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 18 [12,2,9,11,13]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 19 [7,14,11,0]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 19 [7,14,11,0]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 19 [7,14,11,0]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 20 [2,8,6,12,10,13]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 20 [2,8,6,12,10,13]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 20 [2,8,6,12,10,13]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 21 [6,12,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 21 [6,12,14]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 21 [6,12,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 22 [7,14,2,10,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 22 [7,14,2,10,9]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Previsão e machine learning» tapa Dados e pipelines (Big Data)"
+    },
+    {
+      "name": "1920 aleatória 22 [7,14,2,10,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 23 [14,5,4,3,1]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 23 [14,5,4,3,1]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 23 [14,5,4,3,1]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 24 [3,11,13,12,7]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 24 [3,11,13,12,7]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 24 [3,11,13,12,7]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 25 [13,5,10,1,12,7]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 25 [13,5,10,1,12,7]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Agente de voz e telefone» tapa Automação de WhatsApp"
+    },
+    {
+      "name": "1920 aleatória 25 [13,5,10,1,12,7]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 26 [2,10,6,0,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 26 [2,10,6,0,14]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 26 [2,10,6,0,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 27 [6,12,10,5,11]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 27 [6,12,10,5,11]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Visão computacional e OCR» tapa Copiloto interno"
+    },
+    {
+      "name": "1920 aleatória 27 [6,12,10,5,11]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 28 [10,14,11,9,0,13]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 28 [10,14,11,9,0,13]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Previsão e machine learning» tapa Dados e pipelines (Big Data)"
+    },
+    {
+      "name": "1920 aleatória 28 [10,14,11,9,0,13]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 29 [7,13,11,2,12,4]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 29 [7,13,11,2,12,4]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 29 [7,13,11,2,12,4]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 30 [0,6,10,4,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 30 [0,6,10,4,9]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Previsão e machine learning» tapa Dados e pipelines (Big Data)"
+    },
+    {
+      "name": "1920 aleatória 30 [0,6,10,4,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 31 [12,5,7,10,14]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 31 [12,5,7,10,14]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 31 [12,5,7,10,14]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 32 [11,10,6,8,5]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 32 [11,10,6,8,5]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Visão computacional e OCR» tapa Copiloto interno"
+    },
+    {
+      "name": "1920 aleatória 32 [11,10,6,8,5]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 33 [0,8,5,4,3]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 33 [0,8,5,4,3]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 33 [0,8,5,4,3]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 34 [12,11,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 34 [12,11,10]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 34 [12,11,10]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 35 [14,13,6]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 35 [14,13,6]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 35 [14,13,6]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 36 [2,8,6,7]: etiquetas não se intersectam",
+      "ok": false,
+      "detail": "«Integrações MCP e API» × «Hiperautomação de processos»"
+    },
+    {
+      "name": "1920 aleatória 36 [2,8,6,7]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 36 [2,8,6,7]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 37 [11,14,10]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 37 [11,14,10]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 37 [11,14,10]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 38 [4,3,6,5,8,9]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 38 [4,3,6,5,8,9]: etiquetas não tapam outros módulos",
+      "ok": false,
+      "detail": "«Visão computacional e OCR» tapa Copiloto interno"
+    },
+    {
+      "name": "1920 aleatória 38 [4,3,6,5,8,9]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 39 [3,7,12]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 39 [3,7,12]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 39 [3,7,12]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 40 [0,13,8]: etiquetas não se intersectam",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 40 [0,13,8]: etiquetas não tapam outros módulos",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 aleatória 40 [0,13,8]: etiquetas dentro do reator",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "1920 sem erros JS",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "arranque pt: 15/15",
+      "ok": false,
+      "detail": "› a iniciar agente devloper.eu› a carregar capacidades · 6/6› contexto · empresas em Portugal e na Europa✓ pronto"
+    },
+    {
+      "name": "arranque en: 15/15",
+      "ok": false,
+      "detail": "› starting devloper.eu agent› loading capabilities · 6/6› context · businesses in Portugal and Europe✓ ready"
+    },
+    {
+      "name": "arranque fr: 15/15",
+      "ok": false,
+      "detail": "› démarrage de l'agent devloper.eu› chargement des capacités · 6/6› contexte · entreprises au Portugal et en Europe✓ prêt"
+    },
+    {
+      "name": "arranque es: 15/15",
+      "ok": false,
+      "detail": "› iniciando agente devloper.eu› cargando capacidades · 6/6› contexto · empresas en Portugal y Europa✓ listo"
+    },
+    {
+      "name": "arranque de: 15/15",
+      "ok": false,
+      "detail": "› devloper.eu-Agent wird gestartet› Fähigkeiten werden geladen · 6/6› Kontext · Unternehmen in Portugal und Europa✓ bereit"
+    },
+    {
+      "name": "arranque sv: 15/15",
+      "ok": false,
+      "detail": "› startar devloper.eu-agenten› laddar förmågor · 6/6› kontext · företag i Portugal och Europa✓ redo"
+    }
+  ],
+  "failures": [
+    "1024 topo-0-3: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp",
+    "1024 direita-3-6: etiquetas não tapam outros módulos «Visão computacional e OCR» tapa Copiloto interno",
+    "1024 direita-3-6: etiquetas dentro do reator IA sobre os seus documentos (RAG)",
+    "1024 baixo-6-9: etiquetas não se intersectam «Integrações MCP e API» × «Hiperautomação de processos»",
+    "1024 esquerda-10-13: etiquetas dentro do reator Dashboards em tempo real",
+    "1024 volta-13-1: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp; «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1024 clinica-1-2-7: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp",
+    "1024 selecionado-inativo-2-entre-1-3: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente",
+    "1024 selecionado-inativo-2-entre-1-3: etiquetas dentro do reator IA sobre os seus documentos (RAG)",
+    "1024 aleatória 1 [0,10,12,4,8]: etiquetas dentro do reator IA sobre os seus documentos (RAG)",
+    "1024 aleatória 2 [7,3,9,11,6]: etiquetas dentro do reator Dashboards em tempo real",
+    "1024 aleatória 3 [11,10,14,8,7,3]: etiquetas não se intersectam «Integrações MCP e API» × «Hiperautomação de processos»",
+    "1024 aleatória 3 [11,10,14,8,7,3]: etiquetas não tapam outros módulos «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1024 aleatória 3 [11,10,14,8,7,3]: etiquetas dentro do reator Dashboards em tempo real",
+    "1024 aleatória 5 [11,1,14]: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp; «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1024 aleatória 5 [11,1,14]: etiquetas dentro do reator Dashboards em tempo real",
+    "1024 aleatória 6 [2,11,9]: etiquetas dentro do reator Dashboards em tempo real",
+    "1024 aleatória 8 [12,13,9,8,3,10]: etiquetas não tapam outros módulos «Previsão e machine learning» tapa Dados e pipelines (Big Data)",
+    "1024 aleatória 9 [0,11,3]: etiquetas dentro do reator Dashboards em tempo real",
+    "1024 aleatória 10 [12,7,1]: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp",
+    "1024 aleatória 11 [7,0,8,3]: etiquetas não se intersectam «Integrações MCP e API» × «Hiperautomação de processos»",
+    "1024 aleatória 12 [14,3,8,4,12]: etiquetas não tapam outros módulos «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1024 aleatória 12 [14,3,8,4,12]: etiquetas dentro do reator IA sobre os seus documentos (RAG)",
+    "1024 aleatória 13 [10,5,7,9]: etiquetas não tapam outros módulos «Previsão e machine learning» tapa Dados e pipelines (Big Data)",
+    "1024 aleatória 14 [3,12,1,11,6]: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp",
+    "1024 aleatória 14 [3,12,1,11,6]: etiquetas dentro do reator Dashboards em tempo real",
+    "1024 aleatória 15 [2,7,14,11,5,8]: etiquetas não se intersectam «Integrações MCP e API» × «Hiperautomação de processos»",
+    "1024 aleatória 15 [2,7,14,11,5,8]: etiquetas não tapam outros módulos «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1024 aleatória 15 [2,7,14,11,5,8]: etiquetas dentro do reator Dashboards em tempo real",
+    "1024 aleatória 16 [11,12,3,8,14,6]: etiquetas não tapam outros módulos «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1024 aleatória 16 [11,12,3,8,14,6]: etiquetas dentro do reator Dashboards em tempo real",
+    "1024 aleatória 17 [7,11,4,10]: etiquetas dentro do reator IA sobre os seus documentos (RAG); Dashboards em tempo real",
+    "1024 aleatória 18 [12,2,9,11,13]: etiquetas dentro do reator Dashboards em tempo real",
+    "1024 aleatória 19 [7,14,11,0]: etiquetas não tapam outros módulos «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1024 aleatória 19 [7,14,11,0]: etiquetas dentro do reator Dashboards em tempo real",
+    "1024 aleatória 21 [6,12,14]: etiquetas não tapam outros módulos «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1024 aleatória 22 [7,14,2,10,9]: etiquetas não tapam outros módulos «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1024 aleatória 23 [14,5,4,3,1]: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp; «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1024 aleatória 23 [14,5,4,3,1]: etiquetas dentro do reator IA sobre os seus documentos (RAG)",
+    "1024 aleatória 24 [3,11,13,12,7]: etiquetas dentro do reator Dashboards em tempo real",
+    "1024 aleatória 25 [13,5,10,1,12,7]: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp",
+    "1024 aleatória 26 [2,10,6,0,14]: etiquetas não tapam outros módulos «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1024 aleatória 27 [6,12,10,5,11]: etiquetas não tapam outros módulos «Visão computacional e OCR» tapa Copiloto interno",
+    "1024 aleatória 27 [6,12,10,5,11]: etiquetas dentro do reator Dashboards em tempo real",
+    "1024 aleatória 28 [10,14,11,9,0,13]: etiquetas não tapam outros módulos «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1024 aleatória 28 [10,14,11,9,0,13]: etiquetas dentro do reator Dashboards em tempo real",
+    "1024 aleatória 29 [7,13,11,2,12,4]: etiquetas dentro do reator IA sobre os seus documentos (RAG); Dashboards em tempo real",
+    "1024 aleatória 30 [0,6,10,4,9]: etiquetas não tapam outros módulos «Previsão e machine learning» tapa Dados e pipelines (Big Data)",
+    "1024 aleatória 30 [0,6,10,4,9]: etiquetas dentro do reator IA sobre os seus documentos (RAG)",
+    "1024 aleatória 31 [12,5,7,10,14]: etiquetas não tapam outros módulos «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1024 aleatória 32 [11,10,6,8,5]: etiquetas não tapam outros módulos «Visão computacional e OCR» tapa Copiloto interno",
+    "1024 aleatória 32 [11,10,6,8,5]: etiquetas dentro do reator Dashboards em tempo real",
+    "1024 aleatória 33 [0,8,5,4,3]: etiquetas dentro do reator IA sobre os seus documentos (RAG)",
+    "1024 aleatória 34 [12,11,10]: etiquetas dentro do reator Dashboards em tempo real",
+    "1024 aleatória 35 [14,13,6]: etiquetas não tapam outros módulos «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1024 aleatória 36 [2,8,6,7]: etiquetas não se intersectam «Integrações MCP e API» × «Hiperautomação de processos»",
+    "1024 aleatória 37 [11,14,10]: etiquetas não tapam outros módulos «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1024 aleatória 37 [11,14,10]: etiquetas dentro do reator Dashboards em tempo real",
+    "1024 aleatória 38 [4,3,6,5,8,9]: etiquetas não tapam outros módulos «Visão computacional e OCR» tapa Copiloto interno",
+    "1024 aleatória 38 [4,3,6,5,8,9]: etiquetas dentro do reator IA sobre os seus documentos (RAG)",
+    "1440 topo-0-3: etiquetas não se intersectam «Agentes autónomos» × «Agente de voz e telefone»",
+    "1440 topo-0-3: etiquetas não tapam outros módulos «Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente",
+    "1440 topo-0-3: etiquetas dentro do reator Orquestração multi-agente",
+    "1440 direita-3-6: etiquetas não tapam outros módulos «Orquestração multi-agente» tapa IA sobre os seus documentos (RAG); «IA sobre os seus documentos (RAG)» tapa Visão computacional e OCR; «Visão computacional e OCR» tapa Copiloto interno; «Copiloto interno» tapa Integrações MCP e API",
+    "1440 direita-3-6: etiquetas dentro do reator Orquestração multi-agente; IA sobre os seus documentos (RAG)",
+    "1440 baixo-6-9: etiquetas não se intersectam «Integrações MCP e API» × «Hiperautomação de processos»",
+    "1440 baixo-6-9: etiquetas não tapam outros módulos «Copiloto interno» tapa Integrações MCP e API; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos",
+    "1440 esquerda-10-13: etiquetas não tapam outros módulos «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Dashboards em tempo real» tapa Previsão e machine learning; «Geração de conteúdo» tapa Dashboards em tempo real; «Qualificação de leads» tapa Geração de conteúdo",
+    "1440 esquerda-10-13: etiquetas dentro do reator Dashboards em tempo real; Geração de conteúdo",
+    "1440 volta-13-1: etiquetas não se intersectam «Agentes autónomos» × «Agente de voz e telefone»; «Agentes autónomos» × «Diagnóstico e roadmap de IA»",
+    "1440 volta-13-1: etiquetas não tapam outros módulos «Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Agente de voz e telefone» tapa Automação de WhatsApp; «Qualificação de leads» tapa Geração de conteúdo; «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1440 clinica-1-2-7: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente; «Integrações MCP e API» tapa Hiperautomação de processos",
+    "1440 selecionado-inativo-2-entre-1-3: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente; «Orquestração multi-agente» tapa IA sobre os seus documentos (RAG)",
+    "1440 selecionado-inativo-2-entre-1-3: etiquetas dentro do reator Orquestração multi-agente; IA sobre os seus documentos (RAG)",
+    "1440 aleatória 1 [0,10,12,4,8]: etiquetas não tapam outros módulos «Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente; «Hiperautomação de processos» tapa Integrações MCP e API; «Previsão e machine learning» tapa Dados e pipelines (Big Data)",
+    "1440 aleatória 1 [0,10,12,4,8]: etiquetas dentro do reator IA sobre os seus documentos (RAG); Geração de conteúdo",
+    "1440 aleatória 2 [7,3,9,11,6]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Integrações MCP e API» tapa Hiperautomação de processos; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos",
+    "1440 aleatória 2 [7,3,9,11,6]: etiquetas dentro do reator Orquestração multi-agente; Dashboards em tempo real",
+    "1440 aleatória 3 [11,10,14,8,7,3]: etiquetas não se intersectam «Integrações MCP e API» × «Hiperautomação de processos»",
+    "1440 aleatória 3 [11,10,14,8,7,3]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Dashboards em tempo real» tapa Previsão e machine learning; «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1440 aleatória 3 [11,10,14,8,7,3]: etiquetas dentro do reator Orquestração multi-agente; Dashboards em tempo real",
+    "1440 aleatória 4 [9,8,6,13,12]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Hiperautomação de processos» tapa Integrações MCP e API; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos; «Qualificação de leads» tapa Geração de conteúdo",
+    "1440 aleatória 4 [9,8,6,13,12]: etiquetas dentro do reator Geração de conteúdo",
+    "1440 aleatória 5 [11,1,14]: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente; «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1440 aleatória 5 [11,1,14]: etiquetas dentro do reator Dashboards em tempo real",
+    "1440 aleatória 6 [2,11,9]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos",
+    "1440 aleatória 6 [2,11,9]: etiquetas dentro do reator Dashboards em tempo real",
+    "1440 aleatória 7 [6,3,13,7,0,9]: etiquetas não tapam outros módulos «Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Integrações MCP e API» tapa Hiperautomação de processos; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos; «Qualificação de leads» tapa Geração de conteúdo",
+    "1440 aleatória 7 [6,3,13,7,0,9]: etiquetas dentro do reator Orquestração multi-agente",
+    "1440 aleatória 8 [12,13,9,8,3,10]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Hiperautomação de processos» tapa Integrações MCP e API; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Qualificação de leads» tapa Geração de conteúdo",
+    "1440 aleatória 8 [12,13,9,8,3,10]: etiquetas dentro do reator Orquestração multi-agente; Geração de conteúdo",
+    "1440 aleatória 9 [0,11,3]: etiquetas não tapam outros módulos «Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente",
+    "1440 aleatória 9 [0,11,3]: etiquetas dentro do reator Orquestração multi-agente; Dashboards em tempo real",
+    "1440 aleatória 10 [12,7,1]: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente; «Integrações MCP e API» tapa Hiperautomação de processos",
+    "1440 aleatória 10 [12,7,1]: etiquetas dentro do reator Geração de conteúdo",
+    "1440 aleatória 11 [7,0,8,3]: etiquetas não se intersectam «Integrações MCP e API» × «Hiperautomação de processos»",
+    "1440 aleatória 11 [7,0,8,3]: etiquetas não tapam outros módulos «Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente",
+    "1440 aleatória 11 [7,0,8,3]: etiquetas dentro do reator Orquestração multi-agente",
+    "1440 aleatória 12 [14,3,8,4,12]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Orquestração multi-agente» tapa IA sobre os seus documentos (RAG); «Hiperautomação de processos» tapa Integrações MCP e API; «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1440 aleatória 12 [14,3,8,4,12]: etiquetas dentro do reator Orquestração multi-agente; IA sobre os seus documentos (RAG); Geração de conteúdo",
+    "1440 aleatória 13 [10,5,7,9]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Visão computacional e OCR» tapa Copiloto interno; «Integrações MCP e API» tapa Hiperautomação de processos; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos; «Previsão e machine learning» tapa Dados e pipelines (Big Data)",
+    "1440 aleatória 14 [3,12,1,11,6]: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Geração de conteúdo» tapa Dashboards em tempo real",
+    "1440 aleatória 14 [3,12,1,11,6]: etiquetas dentro do reator Orquestração multi-agente; Dashboards em tempo real; Geração de conteúdo",
+    "1440 aleatória 15 [2,7,14,11,5,8]: etiquetas não se intersectam «Integrações MCP e API» × «Hiperautomação de processos»",
+    "1440 aleatória 15 [2,7,14,11,5,8]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Visão computacional e OCR» tapa Copiloto interno; «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1440 aleatória 15 [2,7,14,11,5,8]: etiquetas dentro do reator Dashboards em tempo real",
+    "1440 aleatória 16 [11,12,3,8,14,6]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Hiperautomação de processos» tapa Integrações MCP e API; «Geração de conteúdo» tapa Dashboards em tempo real; «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1440 aleatória 16 [11,12,3,8,14,6]: etiquetas dentro do reator Orquestração multi-agente; Dashboards em tempo real; Geração de conteúdo",
+    "1440 aleatória 17 [7,11,4,10]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Integrações MCP e API» tapa Hiperautomação de processos; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Dashboards em tempo real» tapa Previsão e machine learning",
+    "1440 aleatória 17 [7,11,4,10]: etiquetas dentro do reator IA sobre os seus documentos (RAG); Dashboards em tempo real",
+    "1440 aleatória 18 [12,2,9,11,13]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos; «Geração de conteúdo» tapa Dashboards em tempo real; «Qualificação de leads» tapa Geração de conteúdo",
+    "1440 aleatória 18 [12,2,9,11,13]: etiquetas dentro do reator Dashboards em tempo real; Geração de conteúdo",
+    "1440 aleatória 19 [7,14,11,0]: etiquetas não se intersectam «Agentes autónomos» × «Diagnóstico e roadmap de IA»",
+    "1440 aleatória 19 [7,14,11,0]: etiquetas não tapam outros módulos «Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente; «Integrações MCP e API» tapa Hiperautomação de processos; «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1440 aleatória 19 [7,14,11,0]: etiquetas dentro do reator Dashboards em tempo real",
+    "1440 aleatória 20 [2,8,6,12,10,13]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Hiperautomação de processos» tapa Integrações MCP e API; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Qualificação de leads» tapa Geração de conteúdo",
+    "1440 aleatória 20 [2,8,6,12,10,13]: etiquetas dentro do reator Geração de conteúdo",
+    "1440 aleatória 21 [6,12,14]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1440 aleatória 21 [6,12,14]: etiquetas dentro do reator Geração de conteúdo",
+    "1440 aleatória 22 [7,14,2,10,9]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Integrações MCP e API» tapa Hiperautomação de processos; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1440 aleatória 23 [14,5,4,3,1]: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente; «Orquestração multi-agente» tapa IA sobre os seus documentos (RAG); «IA sobre os seus documentos (RAG)» tapa Visão computacional e OCR; «Visão computacional e OCR» tapa Copiloto interno; «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1440 aleatória 23 [14,5,4,3,1]: etiquetas dentro do reator Orquestração multi-agente; IA sobre os seus documentos (RAG)",
+    "1440 aleatória 24 [3,11,13,12,7]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Integrações MCP e API» tapa Hiperautomação de processos; «Geração de conteúdo» tapa Dashboards em tempo real; «Qualificação de leads» tapa Geração de conteúdo",
+    "1440 aleatória 24 [3,11,13,12,7]: etiquetas dentro do reator Orquestração multi-agente; Dashboards em tempo real; Geração de conteúdo",
+    "1440 aleatória 25 [13,5,10,1,12,7]: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente; «Visão computacional e OCR» tapa Copiloto interno; «Integrações MCP e API» tapa Hiperautomação de processos; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Qualificação de leads» tapa Geração de conteúdo",
+    "1440 aleatória 25 [13,5,10,1,12,7]: etiquetas dentro do reator Geração de conteúdo",
+    "1440 aleatória 26 [2,10,6,0,14]: etiquetas não se intersectam «Agentes autónomos» × «Diagnóstico e roadmap de IA»",
+    "1440 aleatória 26 [2,10,6,0,14]: etiquetas não tapam outros módulos «Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1440 aleatória 27 [6,12,10,5,11]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Visão computacional e OCR» tapa Copiloto interno; «Copiloto interno» tapa Integrações MCP e API; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Dashboards em tempo real» tapa Previsão e machine learning; «Geração de conteúdo» tapa Dashboards em tempo real",
+    "1440 aleatória 27 [6,12,10,5,11]: etiquetas dentro do reator Dashboards em tempo real; Geração de conteúdo",
+    "1440 aleatória 28 [10,14,11,9,0,13]: etiquetas não se intersectam «Agentes autónomos» × «Diagnóstico e roadmap de IA»",
+    "1440 aleatória 28 [10,14,11,9,0,13]: etiquetas não tapam outros módulos «Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Dashboards em tempo real» tapa Previsão e machine learning; «Qualificação de leads» tapa Geração de conteúdo; «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1440 aleatória 28 [10,14,11,9,0,13]: etiquetas dentro do reator Dashboards em tempo real",
+    "1440 aleatória 29 [7,13,11,2,12,4]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Integrações MCP e API» tapa Hiperautomação de processos; «Geração de conteúdo» tapa Dashboards em tempo real; «Qualificação de leads» tapa Geração de conteúdo",
+    "1440 aleatória 29 [7,13,11,2,12,4]: etiquetas dentro do reator IA sobre os seus documentos (RAG); Dashboards em tempo real; Geração de conteúdo",
+    "1440 aleatória 30 [0,6,10,4,9]: etiquetas não tapam outros módulos «Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos; «Previsão e machine learning» tapa Dados e pipelines (Big Data)",
+    "1440 aleatória 30 [0,6,10,4,9]: etiquetas dentro do reator IA sobre os seus documentos (RAG)",
+    "1440 aleatória 31 [12,5,7,10,14]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Visão computacional e OCR» tapa Copiloto interno; «Integrações MCP e API» tapa Hiperautomação de processos; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1440 aleatória 31 [12,5,7,10,14]: etiquetas dentro do reator Geração de conteúdo",
+    "1440 aleatória 32 [11,10,6,8,5]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Visão computacional e OCR» tapa Copiloto interno; «Copiloto interno» tapa Integrações MCP e API; «Hiperautomação de processos» tapa Integrações MCP e API; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Dashboards em tempo real» tapa Previsão e machine learning",
+    "1440 aleatória 32 [11,10,6,8,5]: etiquetas dentro do reator Dashboards em tempo real",
+    "1440 aleatória 33 [0,8,5,4,3]: etiquetas não tapam outros módulos «Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente; «Orquestração multi-agente» tapa IA sobre os seus documentos (RAG); «IA sobre os seus documentos (RAG)» tapa Visão computacional e OCR; «Visão computacional e OCR» tapa Copiloto interno; «Hiperautomação de processos» tapa Integrações MCP e API",
+    "1440 aleatória 33 [0,8,5,4,3]: etiquetas dentro do reator Orquestração multi-agente; IA sobre os seus documentos (RAG)",
+    "1440 aleatória 34 [12,11,10]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Dashboards em tempo real» tapa Previsão e machine learning; «Geração de conteúdo» tapa Dashboards em tempo real",
+    "1440 aleatória 34 [12,11,10]: etiquetas dentro do reator Dashboards em tempo real; Geração de conteúdo",
+    "1440 aleatória 35 [14,13,6]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API; «Qualificação de leads» tapa Geração de conteúdo; «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1440 aleatória 36 [2,8,6,7]: etiquetas não se intersectam «Integrações MCP e API» × «Hiperautomação de processos»",
+    "1440 aleatória 36 [2,8,6,7]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Copiloto interno» tapa Integrações MCP e API",
+    "1440 aleatória 37 [11,14,10]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Previsão e machine learning» tapa Dados e pipelines (Big Data); «Dashboards em tempo real» tapa Previsão e machine learning; «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1440 aleatória 37 [11,14,10]: etiquetas dentro do reator Dashboards em tempo real",
+    "1440 aleatória 38 [4,3,6,5,8,9]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Orquestração multi-agente» tapa IA sobre os seus documentos (RAG); «IA sobre os seus documentos (RAG)» tapa Visão computacional e OCR; «Visão computacional e OCR» tapa Copiloto interno; «Copiloto interno» tapa Integrações MCP e API; «Hiperautomação de processos» tapa Integrações MCP e API; «Dados e pipelines (Big Data)» tapa Hiperautomação de processos",
+    "1440 aleatória 38 [4,3,6,5,8,9]: etiquetas dentro do reator Orquestração multi-agente; IA sobre os seus documentos (RAG)",
+    "1440 aleatória 39 [3,7,12]: etiquetas não tapam outros módulos «Automação de WhatsApp» tapa Orquestração multi-agente; «Integrações MCP e API» tapa Hiperautomação de processos",
+    "1440 aleatória 39 [3,7,12]: etiquetas dentro do reator Orquestração multi-agente; Geração de conteúdo",
+    "1440 aleatória 40 [0,13,8]: etiquetas não tapam outros módulos «Agentes autónomos» tapa Agente de voz e telefone; «Agentes autónomos» tapa Diagnóstico e roadmap de IA; «Automação de WhatsApp» tapa Orquestração multi-agente; «Hiperautomação de processos» tapa Integrações MCP e API; «Qualificação de leads» tapa Geração de conteúdo",
+    "1920 direita-3-6: etiquetas não tapam outros módulos «Visão computacional e OCR» tapa Copiloto interno",
+    "1920 baixo-6-9: etiquetas não se intersectam «Integrações MCP e API» × «Hiperautomação de processos»",
+    "1920 volta-13-1: etiquetas não tapam outros módulos «Diagnóstico e roadmap de IA» tapa Qualificação de leads",
+    "1920 selecionado-inativo-2-entre-1-3: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp; «Automação de WhatsApp» tapa Orquestração multi-agente",
+    "1920 aleatória 3 [11,10,14,8,7,3]: etiquetas não se intersectam «Integrações MCP e API» × «Hiperautomação de processos»",
+    "1920 aleatória 5 [11,1,14]: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp",
+    "1920 aleatória 8 [12,13,9,8,3,10]: etiquetas não tapam outros módulos «Previsão e machine learning» tapa Dados e pipelines (Big Data)",
+    "1920 aleatória 10 [12,7,1]: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp",
+    "1920 aleatória 11 [7,0,8,3]: etiquetas não se intersectam «Integrações MCP e API» × «Hiperautomação de processos»",
+    "1920 aleatória 13 [10,5,7,9]: etiquetas não tapam outros módulos «Previsão e machine learning» tapa Dados e pipelines (Big Data)",
+    "1920 aleatória 14 [3,12,1,11,6]: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp",
+    "1920 aleatória 15 [2,7,14,11,5,8]: etiquetas não se intersectam «Integrações MCP e API» × «Hiperautomação de processos»",
+    "1920 aleatória 22 [7,14,2,10,9]: etiquetas não tapam outros módulos «Previsão e machine learning» tapa Dados e pipelines (Big Data)",
+    "1920 aleatória 23 [14,5,4,3,1]: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp",
+    "1920 aleatória 25 [13,5,10,1,12,7]: etiquetas não tapam outros módulos «Agente de voz e telefone» tapa Automação de WhatsApp",
+    "1920 aleatória 27 [6,12,10,5,11]: etiquetas não tapam outros módulos «Visão computacional e OCR» tapa Copiloto interno",
+    "1920 aleatória 28 [10,14,11,9,0,13]: etiquetas não tapam outros módulos «Previsão e machine learning» tapa Dados e pipelines (Big Data)",
+    "1920 aleatória 30 [0,6,10,4,9]: etiquetas não tapam outros módulos «Previsão e machine learning» tapa Dados e pipelines (Big Data)",
+    "1920 aleatória 32 [11,10,6,8,5]: etiquetas não tapam outros módulos «Visão computacional e OCR» tapa Copiloto interno",
+    "1920 aleatória 36 [2,8,6,7]: etiquetas não se intersectam «Integrações MCP e API» × «Hiperautomação de processos»",
+    "1920 aleatória 38 [4,3,6,5,8,9]: etiquetas não tapam outros módulos «Visão computacional e OCR» tapa Copiloto interno",
+    "arranque pt: 15/15 › a iniciar agente devloper.eu› a carregar capacidades · 6/6› contexto · empresas em Portugal e na Europa✓ pronto",
+    "arranque en: 15/15 › starting devloper.eu agent› loading capabilities · 6/6› context · businesses in Portugal and Europe✓ ready",
+    "arranque fr: 15/15 › démarrage de l'agent devloper.eu› chargement des capacités · 6/6› contexte · entreprises au Portugal et en Europe✓ prêt",
+    "arranque es: 15/15 › iniciando agente devloper.eu› cargando capacidades · 6/6› contexto · empresas en Portugal y Europa✓ listo",
+    "arranque de: 15/15 › devloper.eu-Agent wird gestartet› Fähigkeiten werden geladen · 6/6› Kontext · Unternehmen in Portugal und Europa✓ bereit",
+    "arranque sv: 15/15 › startar devloper.eu-agenten› laddar förmågor · 6/6› kontext · företag i Portugal och Europa✓ redo"
+  ],
+  "labelsShown": {
+    "named": 69,
+    "wanted": 69
+  }
+}

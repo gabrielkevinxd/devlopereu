@@ -99,7 +99,7 @@
     "kind": "php",
     "name": "registo: quando, âmbito e quantos — sem IP nem chaves",
     "ok": true,
-    "detail": "[{\"at\":\"2026-09-27T18:10:31Z\",\"scope\":\"mine\",\"clients\":1,\"rateLimits\":1},{\"at\":\"2026-09-27T18:10:33Z\",\"scope\":\"all\",\"clients\":2,\"rateLimits\":2}]"
+    "detail": "[{\"at\":\"2026-09-27T18:56:29Z\",\"scope\":\"mine\",\"clients\":1,\"rateLimits\":1},{\"at\":\"2026-09-27T18:56:31Z\",\"scope\":\"all\",\"clients\":2,\"rateLimits\":2}]"
   },
   {
     "kind": "php",
@@ -213,7 +213,7 @@
     "kind": "vite",
     "name": "registo: quando, âmbito e quantos — sem IP nem chaves",
     "ok": true,
-    "detail": "[{\"at\":\"2026-09-27T18:10:40.447Z\",\"scope\":\"mine\",\"clients\":1,\"rateLimits\":1},{\"at\":\"2026-09-27T18:10:42.829Z\",\"scope\":\"all\",\"clients\":2,\"rateLimits\":2}]"
+    "detail": "[{\"at\":\"2026-09-27T18:56:37.021Z\",\"scope\":\"mine\",\"clients\":1,\"rateLimits\":1},{\"at\":\"2026-09-27T18:56:39.274Z\",\"scope\":\"all\",\"clients\":2,\"rateLimits\":2}]"
   },
   {
     "kind": "vite",

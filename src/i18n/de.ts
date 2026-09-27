@@ -34,7 +34,7 @@ export const de: Dict = {
     home: 'Startseite',
   },
 
-  boot: ['devloper.eu-Agent wird gestartet', 'Fähigkeiten werden geladen · 6/6', 'Kontext · Unternehmen in Portugal und Europa', 'bereit'],
+  boot: ['devloper.eu-Agent wird gestartet', 'Fähigkeiten werden geladen · {n}/{n}', 'Kontext · Unternehmen in Portugal und Europa', 'bereit'],
 
   chat: {
     intro: 'Hallo. Ich bin der Agent von DevloperEU.',

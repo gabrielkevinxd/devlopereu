@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react';
-import { LANGS } from '../../../i18n';
+import { CAP_COUNT } from '../../../data/capIds';
+import { LANGS, fill } from '../../../i18n';
 import { useI18n } from '../../../i18n/context';
 import { Logo, maskUrl } from '../../brand/Logo';
 
@@ -24,7 +25,7 @@ export function Awake() {
       <ol className="awake__boot mono" aria-hidden="true">
         {t.boot.map((line, i) => (
           <li key={line} style={{ '--i': i } as CSSProperties}>
-            <span>{i === t.boot.length - 1 ? '✓' : '›'}</span> {line}
+            <span>{i === t.boot.length - 1 ? '✓' : '›'}</span> {fill(line, { n: CAP_COUNT })}
           </li>
         ))}
       </ol>
