@@ -9,6 +9,7 @@
  *   POST {"action":"tts","lang","sid","text"}                  → áudio (wav/mp3)
  *   POST {"action":"stt","sid","mime","audio"(base64)}         → {"text":..}
  *   POST {"action":"event","sid","type":"booked"}              → 204
+ *   POST {"action":"admin_reset","scope":"mine"|"all"} (Authorization: Bearer TOKEN) → {ok,scope,clients,rateLimits}
  *
  * ORÇAMENTO EM EUROS: antes de cada chamada reserva-se o custo do PIOR caso no ledger (flock);
  * só passa se couber no teto. Depois liquida-se com o usage real devolvido pelo provider.
@@ -77,18 +78,36 @@ $lang = in_array($body['lang'] ?? '', LANGS, true) ? $body['lang'] : 'pt';
 $sid = preg_match('/^[A-Za-z0-9-]{8,64}$/', (string) ($body['sid'] ?? '')) ? (string) $body['sid'] : '';
 $t0 = microtime(true);
 
+// Reinício pedido pelo dono no painel (POST + token). Nunca mexe no gasto, chamadas, dias nem reservas.
+if ($action === 'admin_reset') {
+    if (!admin_allowed($env)) respond_json(401, ['error' => 'unauthorized']);
+    if (!$B['dir']) respond_json(503, ['error' => 'no_data_dir']);
+    $scope = ($body['scope'] ?? '') === 'all' ? 'all' : 'mine';
+    $ip = (string) ($_SERVER['REMOTE_ADDR'] ?? 'unknown');
+    $n = reset_clients($B, $brain, $scope, ip_hash($B, $ip));
+    if ($n === null) respond_json(429, ['error' => 'busy']);
+    $rl = clear_rate_limits($scope === 'all' ? null : $ip);
+    ledger_with($B, $brain, function (&$l) use ($rl) {
+        $i = count($l['adminLog']) - 1;
+        if ($i >= 0) $l['adminLog'][$i]['rateLimits'] = $rl;
+    });
+    agent_log('admin_reset', $cfg['provider'] ?? 'none', 'ok', $t0, " scope=$scope clients=$n rl=$rl");
+    respond_json(200, ['ok' => true, 'scope' => $scope, 'clients' => $n, 'rateLimits' => $rl]);
+}
+
 if (!rate_limit($L)) {
     agent_log($action, $cfg['provider'] ?? 'none', 'rate_limited', $t0);
     if ($action === 'chat') fallback_and_exit('busy');
     respond_json(429, ['error' => 'busy']);
 }
 $key = $B['dir'] ? client_key($B, (string) ($_SERVER['REMOTE_ADDR'] ?? 'unknown'), $sid) : '';
+$ipH = $B['dir'] ? ip_hash($B, (string) ($_SERVER['REMOTE_ADDR'] ?? 'unknown')) : '';
 
 if ($action === 'event') {
     // Agendamento enviado (conta também os do fluxo guiado). Só contadores, sem dados pessoais.
     if (($body['type'] ?? '') === 'booked' && $B['dir']) {
-        ledger_with($B, $brain, function (&$l) use ($key) {
-            if (!isset($l['clients'][$key])) $l['clients'][$key] = new_client();
+        ledger_with($B, $brain, function (&$l) use ($key, $ipH) {
+            touch_client($l, $key, $ipH);
             if (!$l['clients'][$key]['booked']) {
                 $l['clients'][$key]['booked'] = true;
                 $l['booked']++;
@@ -110,7 +129,7 @@ $snap = ledger_with($B, $brain, function (&$l) use ($B, $brain, $key, $nextWorst
 });
 
 /** Medidor ligado ao ledger: reserva o pior caso antes, liquida o usage real depois. */
-function make_meter(array $B, array $brain, string $model, string $kind, string $key, callable $worst): array
+function make_meter(array $B, array $brain, string $model, string $kind, string $key, callable $worst, string $ipH = ''): array
 {
     $st = (object) ['denied' => false, 'eur' => 0.0, 'in' => 0, 'out' => 0, 'resId' => null, 'worstEur' => 0.0];
     $before = function (int $chars, int $maxOut) use ($B, $brain, $model, $worst, $st): bool {
@@ -119,9 +138,9 @@ function make_meter(array $B, array $brain, string $model, string $kind, string 
         if (!$st->resId) $st->denied = true;
         return (bool) $st->resId;
     };
-    $after = function (?array $usage) use ($B, $brain, $model, $kind, $key, $st): void {
+    $after = function (?array $usage) use ($B, $brain, $model, $kind, $key, $st, $ipH): void {
         $eur = $usage ? cost_eur($brain, $model, $usage) : $st->worstEur;
-        budget_settle($B, $brain, (string) $st->resId, $eur, $kind, $key);
+        budget_settle($B, $brain, (string) $st->resId, $eur, $kind, $key, $ipH);
         $st->eur += $eur;
         if ($usage) {
             $st->in += $usage['inText'] + $usage['inAudio'];
@@ -138,7 +157,7 @@ try {
         if ($snap['client']['tts'] >= $brain['budget']['maxProviderTts']) respond_json(429, ['error' => 'tts_quota']);
         $text = trim(mb_substr((string) ($body['text'] ?? ''), 0, $L['ttsMaxChars']));
         if ($text === '') respond_json(400, ['error' => 'text']);
-        [$before, $after, $st] = make_meter($B, $brain, billed_model($cfg, 'tts'), 'tts', $key, fn() => worst_tts($text));
+        [$before, $after, $st] = make_meter($B, $brain, billed_model($cfg, 'tts'), 'tts', $key, fn() => worst_tts($text), $ipH);
         if (!$before(mb_strlen($text), 0)) respond_json(402, ['error' => 'budget']);
         try {
             [$mime, $audio, $usage] = do_tts($cfg, $text, $lang);
@@ -160,7 +179,7 @@ try {
         if (!$audio || strlen($audio) > $L['sttMaxBytes']) respond_json(400, ['error' => 'audio']);
         $mime = preg_match('~^audio/[\w.+-]+~', (string) ($body['mime'] ?? ''), $m) ? $m[0] : 'audio/webm';
         $bytes = strlen($audio);
-        [$before, $after, $st] = make_meter($B, $brain, billed_model($cfg, 'stt'), 'stt', $key, fn() => worst_stt($bytes));
+        [$before, $after, $st] = make_meter($B, $brain, billed_model($cfg, 'stt'), 'stt', $key, fn() => worst_stt($bytes), $ipH);
         if (!$before(0, 0)) respond_json(402, ['error' => 'budget']);
         try {
             [$text, $usage] = do_stt($cfg, $audio, $mime);
@@ -227,7 +246,7 @@ try {
         return $e;
     };
     [$before, $after, $st] = make_meter($B, $brain, billed_model($cfg, 'chat'), 'chat', $key,
-        fn(int $chars, int $maxOut) => worst_chat($brain, $chars, $maxOut));
+        fn(int $chars, int $maxOut) => worst_chat($brain, $chars, $maxOut), $ipH);
     try {
         $fn = 'chat_' . $cfg['provider'];
         $tools = $check ? $brain['tools'] : array_values(array_filter($brain['tools'], fn($t) => $t['name'] !== 'qualify_lead'));
@@ -245,8 +264,8 @@ try {
     if ($check && $turn->outcome === 'qualified' && !$turn->booking) {
         emit(['t' => 'tool', 'name' => 'open_booking', 'args' => ['day' => $slotDay, 'time' => $slotTime]]); // data proposta garantida
     }
-    ledger_with($B, $brain, function (&$l) use ($key, $check, $turn) {
-        if (!isset($l['clients'][$key])) $l['clients'][$key] = new_client();
+    ledger_with($B, $brain, function (&$l) use ($key, $check, $turn, $ipH) {
+        touch_client($l, $key, $ipH);
         $r = &$l['clients'][$key];
         $r['turns']++;
         $r['last'] = time();
@@ -439,15 +458,77 @@ function new_client(): array
 function empty_ledger(string $period): array
 {
     return ['v' => 1, 'period' => $period, 'spentEur' => 0.0, 'reservations' => [], 'calls' => ['chat' => 0, 'tts' => 0, 'stt' => 0, 'denied' => 0],
-        'byDay' => [], 'clients' => [], 'booked' => 0, 'fails' => ['company' => 0, 'pain' => 0, 'automatable' => 0, 'decision' => 0]];
+        'byDay' => [], 'clients' => [], 'booked' => 0, 'fails' => ['company' => 0, 'pain' => 0, 'automatable' => 0, 'decision' => 0],
+        'archived' => ['conversations' => 0, 'turns' => 0, 'eur' => 0.0, 'qualified' => 0, 'disqualified' => 0, 'noAnswer' => 0], 'adminLog' => []];
+}
+
+function salt(array $B): string
+{
+    $f = $B['dir'] . '/salt.txt';
+    if (!is_file($f)) @file_put_contents($f, bin2hex(random_bytes(24)), LOCK_EX);
+    return trim((string) @file_get_contents($f));
+}
+
+/** Hash do IP (com sal secreto) guardado no registo do cliente — nunca o IP em claro. */
+function ip_hash(array $B, string $ip): string
+{
+    return substr(hash('sha256', salt($B) . '|' . $ip), 0, 24);
+}
+
+/** Obtém (ou cria) o registo do cliente e associa-lhe o hash do IP. */
+function touch_client(array &$l, string $key, string $ipH): void
+{
+    if (!isset($l['clients'][$key])) $l['clients'][$key] = new_client();
+    if ($ipH !== '' && empty($l['clients'][$key]['ip'])) $l['clients'][$key]['ip'] = $ipH;
+}
+
+/**
+ * Reinício do dono: apaga os clientes (só do seu IP, ou todos), arquivando os totais.
+ * NUNCA mexe em spentEur, calls, byDay nem nas reservas. null = ação limitada (máx. 10 por 10 min).
+ */
+function reset_clients(array $B, array $brain, string $scope, string $ipH): ?int
+{
+    return ledger_with($B, $brain, function (&$l) use ($scope, $ipH) {
+        $now = time();
+        $recent = array_filter($l['adminLog'], fn($e) => $now - strtotime($e['at']) < 600);
+        if (count($recent) >= 10) return null;
+        $n = 0;
+        foreach ($l['clients'] as $k => $c) {
+            if ($scope !== 'all' && ($c['ip'] ?? '') !== $ipH) continue;
+            if ($c['turns'] > 0) {
+                $l['archived']['conversations']++;
+                $l['archived']['turns'] += $c['turns'];
+                $l['archived']['eur'] += $c['eur'];
+                if ($c['outcome'] === 'qualified') $l['archived']['qualified']++;
+                if ($c['outcome'] === 'disqualified') $l['archived']['disqualified']++;
+                if ($c['mode'] === 'check' && !$c['outcome']) $l['archived']['noAnswer']++;
+            }
+            unset($l['clients'][$k]);
+            $n++;
+        }
+        $l['adminLog'][] = ['at' => gmdate('Y-m-d\TH:i:s\Z', $now), 'scope' => $scope, 'clients' => $n, 'rateLimits' => 0];
+        $l['adminLog'] = array_slice($l['adminLog'], -20);
+        return $n;
+    });
+}
+
+/** Apaga os ficheiros de rate limit de um IP (ou de todos). Devolve quantos foram apagados. */
+function clear_rate_limits(?string $ip): int
+{
+    $dir = sys_get_temp_dir() . '/devloper-agent-rl';
+    if ($ip !== null) {
+        $f = $dir . '/' . substr(hash('sha256', 'devloper-agent:' . $ip . ':' . __FILE__), 0, 24) . '.json';
+        return is_file($f) && @unlink($f) ? 1 : 0;
+    }
+    $n = 0;
+    foreach (glob($dir . '/*.json') ?: [] as $f) if (@unlink($f)) $n++;
+    return $n;
 }
 
 /** Chave do cliente: hash(sal secreto + IP + sessão). Nunca se guarda IP nem id de sessão em claro. */
 function client_key(array $B, string $ip, string $sid): string
 {
-    $f = $B['dir'] . '/salt.txt';
-    if (!is_file($f)) @file_put_contents($f, bin2hex(random_bytes(24)), LOCK_EX);
-    return substr(hash('sha256', trim((string) @file_get_contents($f)) . '|' . $ip . '|' . $sid), 0, 24);
+    return substr(hash('sha256', salt($B) . '|' . $ip . '|' . $sid), 0, 24);
 }
 
 /** Abre o ledger do período com flock exclusivo, aplica $fn(&$ledger) e grava. */
@@ -516,16 +597,16 @@ function budget_reserve(array $B, array $brain, float $eur): ?string
 }
 
 /** Troca a reserva pelo custo real e acumula no período, no dia e no cliente. */
-function budget_settle(array $B, array $brain, string $id, float $eur, string $kind, string $key): void
+function budget_settle(array $B, array $brain, string $id, float $eur, string $kind, string $key, string $ipH = ''): void
 {
-    ledger_with($B, $brain, function (&$l) use ($brain, $id, $eur, $kind, $key) {
+    ledger_with($B, $brain, function (&$l) use ($brain, $id, $eur, $kind, $key, $ipH) {
         unset($l['reservations'][$id]);
         $l['spentEur'] += $eur;
         $l['calls'][$kind]++;
         $day = (new DateTime('now', new DateTimeZone($brain['budget']['timezone'])))->format('Y-m-d');
         $l['byDay'][$day] = ($l['byDay'][$day] ?? 0) + $eur;
         if ($key !== '') {
-            if (!isset($l['clients'][$key])) $l['clients'][$key] = new_client();
+            touch_client($l, $key, $ipH);
             $l['clients'][$key]['eur'] += $eur;
             $l['clients'][$key]['last'] = time();
             if ($kind === 'tts') $l['clients'][$key]['tts']++;
@@ -540,8 +621,9 @@ function budget_summary(array $B, array $brain, float $nextWorst): array
         $convs = array_values(array_filter($l['clients'], fn($c) => $c['turns'] > 0));
         $now = time();
         $stale = fn($c) => $c['mode'] === 'check' && !$c['outcome'] && $now - $c['last'] > $brain['budget']['noAnswerAfterSec'];
-        $n = count($convs);
-        $avg = $n ? array_sum(array_column($convs, 'eur')) / $n : 0.0;
+        $a = $l['archived'];
+        $n = count($convs) + $a['conversations'];
+        $avg = $n ? (array_sum(array_column($convs, 'eur')) + $a['eur']) / $n : 0.0;
         $remaining = max(0.0, $B['eur'] - $l['spentEur']);
         return [
             'period' => $l['period'],
@@ -553,19 +635,21 @@ function budget_summary(array $B, array $brain, float $nextWorst): array
             'nextCallWorstCaseEur' => round($nextWorst, 5),
             'perConversationLimitEur' => round($B['clientEur'], 4),
             'conversations' => $n,
-            'turns' => (int) array_sum(array_column($convs, 'turns')),
+            'activeClients' => count($l['clients']),
+            'turns' => (int) array_sum(array_column($convs, 'turns')) + $a['turns'],
             'avgCostPerConversationEur' => round($avg, 5),
             'conversationsLeftEstimate' => (int) floor($remaining / ($avg > 0 ? $avg : $B['clientEur'])),
             'calls' => $l['calls'],
             'outcomes' => [
-                'qualified' => count(array_filter($convs, fn($c) => $c['outcome'] === 'qualified')),
-                'disqualified' => count(array_filter($convs, fn($c) => $c['outcome'] === 'disqualified')),
-                'noAnswer' => count(array_filter($convs, $stale)),
+                'qualified' => count(array_filter($convs, fn($c) => $c['outcome'] === 'qualified')) + $a['qualified'],
+                'disqualified' => count(array_filter($convs, fn($c) => $c['outcome'] === 'disqualified')) + $a['disqualified'],
+                'noAnswer' => count(array_filter($convs, $stale)) + $a['noAnswer'],
                 'pendingCheckMatch' => count(array_filter($convs, fn($c) => $c['mode'] === 'check' && !$c['outcome'] && !$stale($c))),
             ],
             'disqualifiedBy' => $l['fails'],
             'booked' => $l['booked'],
             'byDay' => $l['byDay'] ?: new stdClass(),
+            'resets' => array_reverse(array_slice($l['adminLog'], -5)),
         ];
     });
 }

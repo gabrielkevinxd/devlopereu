@@ -7,6 +7,7 @@
  *   POST { action:'tts', lang, sid, text }                → áudio (wav/mp3)
  *   POST { action:'stt', sid, mime, audio(base64) }       → { text }
  *   POST { action:'event', sid, type:'booked' }           → 204
+ *   POST { action:'admin_reset', scope:'mine'|'all' } (Authorization: Bearer TOKEN) → { ok, scope, clients, rateLimits }
  */
 import { timingSafeEqual } from 'node:crypto';
 import type { IncomingMessage, ServerResponse } from 'node:http';
@@ -15,6 +16,9 @@ import { buildSystem, loadBrain, safeLang, workdaySlots, type Brain } from './br
 import {
   budgetConfig,
   clientKey,
+  ipHash,
+  resetClients,
+  touchClient,
   nextWorstEur,
   costEur,
   newClient,
@@ -28,7 +32,7 @@ import {
   worstTts,
   type Usage,
 } from './budget';
-import { isInjection, normalizeHistory, originAllowed, rateLimit } from './guard';
+import { clearRateLimit, isInjection, normalizeHistory, originAllowed, rateLimit } from './guard';
 import { billedModel, chat, stt, sttSupported, tts, ttsSupported, type AgentEvent, type Meter, type ProviderConfig, type ProviderId } from './providers';
 
 type Env = Record<string, string | undefined>;
@@ -152,18 +156,31 @@ export function createAgentMiddleware(env: Env) {
     const ip = req.socket.remoteAddress ?? 'unknown';
     const sid = /^[A-Za-z0-9-]{8,64}$/.test(String(body.sid ?? '')) ? String(body.sid) : '';
 
+    // Reinício pedido pelo dono (painel). Antes do rate limit geral: tem o seu próprio limite.
+    if (action === 'admin_reset') {
+      if (!adminAllowed(req, env)) return json(res, 401, { error: 'unauthorized' });
+      const scope = body.scope === 'all' ? 'all' : 'mine';
+      const r = resetClients(B, brain, scope, ipHash(B, ip));
+      if (!r) return json(res, 429, { error: 'busy' });
+      const rateLimits = clearRateLimit(scope === 'all' ? undefined : ip);
+      r.log(rateLimits);
+      log('admin_reset', cfg?.provider ?? 'none', 'ok', t0, ` scope=${scope} clients=${r.clients} rl=${rateLimits}`);
+      return json(res, 200, { ok: true, scope, clients: r.clients, rateLimits });
+    }
+
     if (!rateLimit(ip, brain)) {
       log(action, cfg?.provider ?? 'none', 'rate_limited', t0);
       if (action === 'chat') return ndjson(res, [{ t: 'fallback', reason: 'busy' }]);
       return json(res, 429, { error: 'busy' });
     }
     const key = clientKey(B, ip, sid);
+    const ipH = ipHash(B, ip);
 
     if (action === 'event') {
       // Agendamento enviado (conta também os do fluxo guiado). Só contadores, sem dados pessoais.
       if (body.type === 'booked') {
         withLedger(B, brain, (l) => {
-          const c = (l.clients[key] ??= newClient());
+          const c = touchClient(l, key, ipH);
           if (!c.booked) {
             c.booked = true;
             l.booked++;
@@ -200,7 +217,7 @@ export function createAgentMiddleware(env: Env) {
         },
         after(usage) {
           const eur = usage ? costEur(brain, model, usage) : worstEur;
-          settle(B, brain, resId!, eur, kind, key);
+          settle(B, brain, resId!, eur, kind, key, ipH);
           st.eur += eur;
           if (usage) {
             st.tokensIn += usage.inText + usage.inAudio;
@@ -320,7 +337,7 @@ export function createAgentMiddleware(env: Env) {
         emit({ t: 'tool', name: 'open_booking', args: { day: slotDay, time: slotTime } }); // proposta de data garantida
       }
       withLedger(B, brain, (l) => {
-        const rec = (l.clients[key] ??= newClient());
+        const rec = touchClient(l, key, ipH);
         rec.turns++;
         rec.last = Date.now();
         if (check && rec.mode === 'normal') {

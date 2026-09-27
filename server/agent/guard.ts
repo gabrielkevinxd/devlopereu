@@ -72,6 +72,17 @@ export function rateLimit(ip: string, brain: Brain, now = Date.now()): boolean {
   return true;
 }
 
+/** Limpa o rate limit de um IP (ou de todos). Devolve quantos buckets foram apagados. */
+export function clearRateLimit(ip?: string): number {
+  if (ip === undefined) {
+    const n = buckets.size;
+    buckets.clear();
+    return n;
+  }
+  const key = createHash('sha256').update(`devloper-agent:${ip}`).digest('hex').slice(0, 24);
+  return buckets.delete(key) ? 1 : 0;
+}
+
 export function originAllowed(origin: string | undefined, host: string | undefined, brain: Brain, extra: string[]): boolean {
   if (!origin) return true; // pedidos sem cabeçalho Origin (GET same-origin)
   try {

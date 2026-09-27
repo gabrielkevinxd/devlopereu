@@ -37,6 +37,18 @@ export interface ClientRec {
   checkAt: number | null;
   outcome: Outcome;
   booked: boolean;
+  /** hash(sal|IP) — permite ao dono reiniciar «o meu acesso» sem guardar o IP */
+  ip?: string;
+}
+
+/** Totais de clientes apagados por um reinício do dono (o histórico do painel não se perde). */
+export interface Archived {
+  conversations: number;
+  turns: number;
+  eur: number;
+  qualified: number;
+  disqualified: number;
+  noAnswer: number;
 }
 
 export interface Ledger {
@@ -49,6 +61,9 @@ export interface Ledger {
   clients: Record<string, ClientRec>;
   booked: number;
   fails: { company: number; pain: number; automatable: number; decision: number };
+  archived: Archived;
+  /** registo das ações do dono (sem dados pessoais) */
+  adminLog: { at: string; scope: 'mine' | 'all'; clients: number; rateLimits: number }[];
 }
 
 type Env = Record<string, string | undefined>;
@@ -137,6 +152,8 @@ const emptyLedger = (period: string): Ledger => ({
   clients: {},
   booked: 0,
   fails: { company: 0, pain: 0, automatable: 0, decision: 0 },
+  archived: { conversations: 0, turns: 0, eur: 0, qualified: 0, disqualified: 0, noAnswer: 0 },
+  adminLog: [],
 });
 
 function salt(dir: string): string {
@@ -146,6 +163,19 @@ function salt(dir: string): string {
 }
 
 /** Chave do cliente: hash(sal secreto + IP + sessão). Nunca se guarda IP nem id de sessão em claro. */
+/** Hash do IP (com sal secreto) guardado no registo do cliente — nunca o IP em claro. */
+export function ipHash(cfg: BudgetCfg, ip: string): string {
+  mkdirSync(cfg.dir, { recursive: true });
+  return createHash('sha256').update(`${salt(cfg.dir)}|${ip}`).digest('hex').slice(0, 24);
+}
+
+/** Obtém (ou cria) o registo do cliente e associa-lhe o hash do IP. */
+export function touchClient(l: Ledger, key: string, ipH?: string): ClientRec {
+  const c = (l.clients[key] ??= newClient());
+  if (ipH && !c.ip) c.ip = ipH;
+  return c;
+}
+
 export function clientKey(cfg: BudgetCfg, ip: string, sid: string): string {
   mkdirSync(cfg.dir, { recursive: true });
   return createHash('sha256').update(`${salt(cfg.dir)}|${ip}|${sid}`).digest('hex').slice(0, 24);
@@ -227,7 +257,7 @@ export function reserve(cfg: BudgetCfg, brain: Brain, eur: number): string | nul
 }
 
 /** Troca a reserva pelo custo real e acumula no período, no dia e no cliente. */
-export function settle(cfg: BudgetCfg, brain: Brain, id: string, eur: number, kind: 'chat' | 'tts' | 'stt', key: string | null) {
+export function settle(cfg: BudgetCfg, brain: Brain, id: string, eur: number, kind: 'chat' | 'tts' | 'stt', key: string | null, ipH?: string) {
   withLedger(cfg, brain, (l) => {
     delete l.reservations[id];
     l.spentEur += eur;
@@ -235,11 +265,50 @@ export function settle(cfg: BudgetCfg, brain: Brain, id: string, eur: number, ki
     const day = new Intl.DateTimeFormat('en-CA', { timeZone: brain.budget.timezone }).format(new Date());
     l.byDay[day] = (l.byDay[day] ?? 0) + eur;
     if (key) {
-      const c = (l.clients[key] ??= newClient());
+      const c = touchClient(l, key, ipH);
       c.eur += eur;
       c.last = Date.now();
       if (kind === 'tts') c.tts++;
     }
+  });
+}
+
+const ADMIN_WINDOW_MS = 10 * 60 * 1000;
+const ADMIN_MAX_PER_WINDOW = 10;
+
+/**
+ * Reinício pedido pelo dono no painel: apaga os registos de clientes (só do IP dele, ou todos),
+ * arquivando os totais. NUNCA mexe em spentEur, calls, byDay nem nas reservas — o teto continua a contar.
+ * Devolve null se a própria ação estiver limitada (máx. 10 por 10 min).
+ */
+export function resetClients(cfg: BudgetCfg, brain: Brain, scope: 'mine' | 'all', ipH: string): { clients: number; log: (rl: number) => void } | null {
+  return withLedger(cfg, brain, (l) => {
+    const now = Date.now();
+    if (l.adminLog.filter((e) => now - Date.parse(e.at) < ADMIN_WINDOW_MS).length >= ADMIN_MAX_PER_WINDOW) return null;
+    const keys = Object.keys(l.clients).filter((k) => scope === 'all' || l.clients[k].ip === ipH);
+    for (const k of keys) {
+      const c = l.clients[k];
+      if (c.turns > 0) {
+        l.archived.conversations++;
+        l.archived.turns += c.turns;
+        l.archived.eur += c.eur;
+        if (c.outcome === 'qualified') l.archived.qualified++;
+        if (c.outcome === 'disqualified') l.archived.disqualified++;
+        if (c.mode === 'check' && !c.outcome) l.archived.noAnswer++;
+      }
+      delete l.clients[k];
+    }
+    const entry = { at: new Date(now).toISOString(), scope, clients: keys.length, rateLimits: 0 };
+    l.adminLog = [...l.adminLog, entry].slice(-20);
+    // o número de rate limits limpos só se sabe depois (memória/ficheiros) → atualizado a seguir
+    return {
+      clients: keys.length,
+      log: (rl: number) =>
+        withLedger(cfg, brain, (l2) => {
+          const e = l2.adminLog.find((x) => x.at === entry.at && x.scope === scope);
+          if (e) e.rateLimits = rl;
+        }),
+    };
   });
 }
 
@@ -250,8 +319,10 @@ export function summary(cfg: BudgetCfg, brain: Brain, nextWorst = 0) {
     const convs = clients.filter((c) => c.turns > 0);
     const now = Date.now();
     const staleCheck = (c: ClientRec) => c.mode === 'check' && !c.outcome && now - c.last > brain.budget.noAnswerAfterSec * 1000;
-    const llmSpent = convs.reduce((n, c) => n + c.eur, 0);
-    const avg = convs.length ? llmSpent / convs.length : 0;
+    const a = l.archived;
+    const llmSpent = convs.reduce((n, c) => n + c.eur, 0) + a.eur;
+    const nConvs = convs.length + a.conversations;
+    const avg = nConvs ? llmSpent / nConvs : 0;
     const remaining = Math.max(0, cfg.eur - l.spentEur);
     return {
       period: l.period,
@@ -262,20 +333,22 @@ export function summary(cfg: BudgetCfg, brain: Brain, nextWorst = 0) {
       tier: tierOf(cfg, brain, l, nextWorst),
       nextCallWorstCaseEur: +nextWorst.toFixed(5),
       perConversationLimitEur: +cfg.clientEur.toFixed(4),
-      conversations: convs.length,
-      turns: convs.reduce((n, c) => n + c.turns, 0),
+      conversations: nConvs,
+      activeClients: Object.keys(l.clients).length,
+      turns: convs.reduce((n, c) => n + c.turns, 0) + a.turns,
       avgCostPerConversationEur: +avg.toFixed(5),
       conversationsLeftEstimate: avg > 0 ? Math.floor(remaining / avg) : Math.floor(remaining / cfg.clientEur),
       calls: l.calls,
       outcomes: {
-        qualified: convs.filter((c) => c.outcome === 'qualified').length,
-        disqualified: convs.filter((c) => c.outcome === 'disqualified').length,
-        noAnswer: convs.filter(staleCheck).length,
+        qualified: convs.filter((c) => c.outcome === 'qualified').length + a.qualified,
+        disqualified: convs.filter((c) => c.outcome === 'disqualified').length + a.disqualified,
+        noAnswer: convs.filter(staleCheck).length + a.noAnswer,
         pendingCheckMatch: convs.filter((c) => c.mode === 'check' && !c.outcome && !staleCheck(c)).length,
       },
       disqualifiedBy: l.fails,
       booked: l.booked,
       byDay: l.byDay,
+      resets: l.adminLog.slice(-5).reverse(),
     };
   });
 }

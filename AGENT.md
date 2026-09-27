@@ -143,6 +143,37 @@ com pelo menos 24 caracteres aleatórios). Mostra:
 Só agregados — nada de IP, nomes, contactos ou mensagens. Também se pode consultar em JSON:
 `curl -H "Authorization: Bearer TOKEN" https://devloper.eu/api/agent.php?action=admin`.
 
+### Reiniciar clientes (para voltar a testar o agente)
+No painel, secção **Reiniciar clientes**:
+- **Reiniciar o meu acesso**: apaga só os registos de conversa do IP de quem carrega no botão e limpa
+  o limite de pedidos (rate limit) desse IP. Os outros visitantes não são afetados.
+- **Reiniciar todos os clientes**: pede confirmação e depois apaga os registos de toda a gente e todos
+  os rate limits. É útil em testes.
+
+O painel mostra o resultado («3 clientes reiniciados») e os últimos 5 reinícios. Depois, abra o site num
+separador novo para começar uma conversa limpa. O check match volta a acontecer só ao fim de um novo
+limite de turnos.
+
+- **Não mexe:** gasto do mês (`spentEur`), chamadas, gasto por dia e reservas. O teto de 5 €/mês
+  continua a contar. Os totais das conversas apagadas são arquivados, por isso as estatísticas do
+  painel não se perdem.
+- **Sem PII:** cada registo de cliente guarda `ip` = hash(sal secreto | IP), 24 hex, e nunca o IP em
+  claro. O registo da ação (`adminLog` no ledger) guarda só quando, âmbito, quantos clientes e quantos
+  rate limits foram limpos.
+- **Segurança:** só `POST`, com o token, e sem token responde 401. A ação tem o seu próprio limite
+  (10 por 10 min, depois 429). Não passa pelo rate limit do chat, por isso o dono consegue
+  desbloquear-se.
+- **Registos antigos:** os que são anteriores a esta versão não têm hash de IP e só saem com
+  «todos».
+
+```bash
+curl -X POST -H "Authorization: Bearer TOKEN" -H "Content-Type: application/json" \
+  -d '{"action":"admin_reset","scope":"mine"}' https://devloper.eu/api/agent.php
+# → {"ok":true,"scope":"mine","clients":1,"rateLimits":1}      (scope "all" = todos)
+```
+Mesmo contrato no PHP (produção) e no middleware Vite (dev/preview). O teste é
+`PHP=<php.exe> node .verify/v6/reset-test.cjs`, com os dois backends e dois IPs reais.
+
 ### Onde fica o ledger
 `AGENT_DATA_DIR`, ou por omissão `devloper-agent-data/` UMA pasta acima do `public_html` (ou
 `api/data/`, bloqueada pelo `.htaccess`). Sem pasta gravável o LLM fica desligado — sem controlo de

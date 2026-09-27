@@ -41,6 +41,14 @@
       .err { color: var(--bad); }
       h2 { margin: 28px 0 10px; font-size: 1.05rem; color: var(--gold-hi); }
       p.note { color: var(--muted); font-size: 0.85rem; }
+      .reset { display: flex; flex-wrap: wrap; gap: 8px; }
+      .reset button { background: transparent; color: var(--gold-hi); border: 1px solid var(--gold); }
+      .reset button.danger { color: var(--bad); border-color: var(--bad); }
+      .reset button:disabled { opacity: 0.5; cursor: wait; }
+      .result { margin: 10px 0 0; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--line); background: var(--ink-2); }
+      .result.ok { border-color: var(--ok); }
+      .result strong { color: var(--ok); }
+      .resets { margin: 8px 0 0; padding-left: 18px; color: var(--muted); font-size: 0.85rem; }
     </style>
   </head>
   <body>
@@ -60,6 +68,9 @@
       const out = document.getElementById('out');
       const input = document.getElementById('token');
       try { input.value = sessionStorage.getItem('dev-admin-token') || ''; } catch (e) {}
+      const SCOPES = { mine: 'o meu acesso', all: 'todos os clientes' };
+      const plural = (n) => `${n} cliente${n === 1 ? '' : 's'} reiniciado${n === 1 ? '' : 's'}`;
+      const when = (iso) => new Date(iso).toLocaleString('pt-PT', { dateStyle: 'short', timeStyle: 'short' });
       const card = (label, value, hint = '') => `<div class="card"><dt>${label}</dt><dd>${value}</dd>${hint ? `<small>${hint}</small>` : ''}</div>`;
       async function load() {
         const token = input.value.trim();
@@ -78,7 +89,7 @@
           <div class="bar" role="img" aria-label="${d.pct}% do orçamento"><i style="width:${pct}%"></i></div>
           <dl class="grid">
             ${card('Gasto', eur(d.spentEur), `de ${eur(d.budgetEur)} · ${d.pct}%`)}
-            ${card('Conversas', d.conversations, `${d.turns} respostas do LLM`)}
+            ${card('Conversas', d.conversations, `${d.turns} respostas do LLM · ${d.activeClients ?? 0} clientes ativos`)}
             ${card('Custo médio / conversa', eur(d.avgCostPerConversationEur), `limite por conversa ${eur(d.perConversationLimitEur)}`)}
             ${card('Cabem ainda ≈', d.conversationsLeftEstimate, 'conversas neste período')}
             ${card('Qualificados', d.outcomes.qualified, 'check match → agendamento')}
@@ -88,8 +99,39 @@
           </dl>
           <h2>Gasto por dia</h2>
           <div class="days">${days.map(([k, v]) => `<span title="${k}: ${eur(v)}" style="height:${Math.max(3, (v / max) * 100)}%"></span>`).join('') || '<p class="note">Sem gastos ainda.</p>'}</div>
-          <p class="note">Chamadas: chat ${d.calls.chat} · voz ${d.calls.tts} · transcrição ${d.calls.stt} · recusadas por orçamento ${d.calls.denied}. Pior caso da próxima chamada: ${eur(d.nextCallWorstCaseEur || 0)}.</p>`;
+          <p class="note">Chamadas: chat ${d.calls.chat} · voz ${d.calls.tts} · transcrição ${d.calls.stt} · recusadas por orçamento ${d.calls.denied}. Pior caso da próxima chamada: ${eur(d.nextCallWorstCaseEur || 0)}.</p>
+          <h2>Reiniciar clientes</h2>
+          <p class="note">Apaga o contador de conversa e o limite de pedidos (útil para testar o agente de novo). O gasto do mês e o teto de ${eur(d.budgetEur)} <strong>não</strong> são reiniciados.</p>
+          <div class="reset">
+            <button type="button" data-reset="mine">Reiniciar o meu acesso</button>
+            <button type="button" data-reset="all" class="danger">Reiniciar todos os clientes</button>
+          </div>
+          <div id="reset-result" aria-live="polite">${lastResult}</div>
+          ${(d.resets || []).length ? `<ul class="resets">${d.resets.map((e) => `<li>${when(e.at)} — ${SCOPES[e.scope] || e.scope}: ${plural(e.clients)}</li>`).join('')}</ul>` : ''}`;
       }
+      let lastResult = '';
+      async function reset(scope, btn) {
+        if (scope === 'all' && !confirm('Reiniciar TODOS os clientes? O contador de conversa e o limite de pedidos de toda a gente voltam a zero. O gasto do mês mantém-se.')) return;
+        const token = input.value.trim();
+        btn.disabled = true;
+        const r = await fetch('agent.php', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json', authorization: 'Bearer ' + token, 'x-admin-token': token },
+          body: JSON.stringify({ action: 'admin_reset', scope }),
+          cache: 'no-store',
+        }).catch(() => null);
+        btn.disabled = false;
+        const d = r && r.ok ? await r.json() : null;
+        lastResult = d
+          ? `<p class="result ok"><strong>${plural(d.clients)}</strong> (${SCOPES[d.scope]}). Dica: abra o site num separador novo para começar uma conversa limpa.</p>`
+          : `<p class="result err">${!r ? 'Sem ligação.' : r.status === 401 ? 'Token inválido.' : r.status === 429 ? 'Demasiados reinícios seguidos — tente daqui a uns minutos.' : 'Erro ' + r.status}</p>`;
+        await load();
+        document.getElementById('reset-result')?.scrollIntoView({ block: 'nearest' });
+      }
+      out.addEventListener('click', (e) => {
+        const b = e.target.closest('[data-reset]');
+        if (b) reset(b.dataset.reset, b);
+      });
       document.getElementById('f').addEventListener('submit', (e) => { e.preventDefault(); load(); });
       if (input.value) load();
     </script>
