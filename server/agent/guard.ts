@@ -52,11 +52,8 @@ interface Bucket {
 }
 const buckets = new Map<string, Bucket>();
 
-let globalDay = '';
-let globalCount = 0;
-
-/** true = permitido. Janela deslizante + teto diário por IP + teto diário global. */
-export function rateLimit(ip: string, brain: Brain, now = Date.now(), globalCap = brain.limits.maxGlobalPerDay): boolean {
+/** true = permitido. Proteção anti-abuso por IP (janela + teto diário). Os custos são geridos em euros (budget.ts). */
+export function rateLimit(ip: string, brain: Brain, now = Date.now()): boolean {
   const key = createHash('sha256').update(`devloper-agent:${ip}`).digest('hex').slice(0, 24);
   const day = new Date(now).toISOString().slice(0, 10);
   const b = buckets.get(key) ?? { hits: [], day, dayCount: 0 };
@@ -65,17 +62,12 @@ export function rateLimit(ip: string, brain: Brain, now = Date.now(), globalCap 
     b.dayCount = 0;
   }
   b.hits = b.hits.filter((t) => now - t < brain.limits.windowSec * 1000);
-  if (globalDay !== day) {
-    globalDay = day;
-    globalCount = 0;
-  }
-  if (b.hits.length >= brain.limits.maxPerWindow || b.dayCount >= brain.limits.maxPerDay || globalCount >= globalCap) {
+  if (b.hits.length >= brain.limits.maxPerWindow || b.dayCount >= brain.limits.maxPerDay) {
     buckets.set(key, b);
     return false;
   }
   b.hits.push(now);
   b.dayCount++;
-  globalCount++;
   buckets.set(key, b);
   return true;
 }

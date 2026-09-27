@@ -1,16 +1,19 @@
 /**
  * Camada de providers trocável (AGENT_PROVIDER=gemini|openai|anthropic|mock).
  * Mesmo comportamento que api/agent.php. As chaves só existem aqui, no servidor.
+ * Cada chamada devolve o usage real do provider (tokens) para o orçamento em euros.
  */
 import type { JsonSchema, ToolDef } from './brain';
+import { noUsage, type Usage } from './budget';
 import type { ChatMsg } from './guard';
-import { mockReply } from './mock';
+import { mockReply, mockUsage } from './mock';
 
 export type ProviderId = 'gemini' | 'openai' | 'anthropic' | 'mock';
 
 export type AgentEvent =
   | { t: 'text'; d: string }
   | { t: 'tool'; name: string; args: Record<string, unknown> }
+  | { t: 'meta'; tier: string; check: boolean }
   | { t: 'done'; provider: string }
   | { t: 'fallback'; reason: string };
 
@@ -30,6 +33,15 @@ export class ProviderError extends Error {
   constructor(public status: number) {
     super(`provider status ${status}`);
   }
+}
+
+/**
+ * Medidor de custos: `before` reserva o pior caso (false = orçamento não permite esta ronda);
+ * `after` liquida com o usage real (null = desconhecido → cobra o pior caso reservado).
+ */
+export interface Meter {
+  before(promptChars: number, maxOut: number): boolean;
+  after(usage: Usage | null): void;
 }
 
 type Emit = (e: AgentEvent) => void;
@@ -55,6 +67,33 @@ async function post(url: string, headers: Record<string, string>, body: unknown,
   return res;
 }
 
+/** Executa uma ronda medida: reserva → chamada → liquida. Erros HTTP não são faturados; falhas de rede cobram o pior caso. */
+async function metered<T>(meter: Meter, chars: number, maxOut: number, fn: () => Promise<{ value: T; usage: Usage | null }>): Promise<T | null> {
+  if (!meter.before(chars, maxOut)) return null;
+  try {
+    const { value, usage } = await fn();
+    meter.after(usage);
+    return value;
+  } catch (e) {
+    meter.after(e instanceof ProviderError ? noUsage() : null);
+    throw e;
+  }
+}
+
+interface GeminiUsageMeta {
+  promptTokenCount?: number;
+  candidatesTokenCount?: number;
+  thoughtsTokenCount?: number;
+  promptTokensDetails?: { modality?: string; tokenCount?: number }[];
+}
+/** usageMetadata do Gemini → Usage (tokens de raciocínio são cobrados como saída). */
+function geminiUsage(u: GeminiUsageMeta | undefined, audioOut = false): Usage | null {
+  if (!u || u.promptTokenCount === undefined) return null;
+  const inAudio = (u.promptTokensDetails ?? []).filter((d) => d.modality === 'AUDIO').reduce((n, d) => n + (d.tokenCount ?? 0), 0);
+  const out = (u.candidatesTokenCount ?? 0) + (u.thoughtsTokenCount ?? 0);
+  return { inText: u.promptTokenCount - inAudio, inAudio, outText: audioOut ? 0 : out, outAudio: audioOut ? out : 0 };
+}
+
 /* ───────────────────────── Gemini (streaming SSE) ───────────────────────── */
 
 const toGeminiSchema = (s: JsonSchema): Record<string, unknown> => {
@@ -67,7 +106,7 @@ const toGeminiSchema = (s: JsonSchema): Record<string, unknown> => {
   return out;
 };
 
-async function geminiChat(cfg: ProviderConfig, system: string, history: ChatMsg[], tools: ToolDef[], emit: Emit, signal: AbortSignal) {
+async function geminiChat(cfg: ProviderConfig, system: string, history: ChatMsg[], tools: ToolDef[], emit: Emit, signal: AbortSignal, meter: Meter) {
   const contents: unknown[] = history.map((m) => ({ role: m.role === 'user' ? 'user' : 'model', parts: [{ text: m.text }] }));
   const functionDeclarations = tools.map((t) =>
     Object.keys(t.parameters.properties ?? {}).length
@@ -78,120 +117,135 @@ async function geminiChat(cfg: ProviderConfig, system: string, history: ChatMsg[
   // resposta pode sair vazia. 2.5 Flash/Flash-Lite permitem desligar o raciocínio; os restantes
   // (2.5 Pro, 3.x, aliases *-latest) recebem folga para pensar antes de responder.
   const noThinking = /^gemini-2\.5-flash/.test(cfg.model);
+  const maxOut = noThinking ? cfg.maxTokens : cfg.maxTokens + 2048;
   const generationConfig: Record<string, unknown> = {
-    maxOutputTokens: noThinking ? cfg.maxTokens : cfg.maxTokens + 2048,
+    maxOutputTokens: maxOut,
     temperature: 0.6,
     ...(noThinking ? { thinkingConfig: { thinkingBudget: 0 } } : {}),
   };
+  const toolsJson = JSON.stringify(functionDeclarations);
 
   for (let round = 0; round < cfg.maxRounds; round++) {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(cfg.model)}:streamGenerateContent?alt=sse`;
-    const body = {
-      systemInstruction: { parts: [{ text: system }] },
-      contents,
-      tools: [{ functionDeclarations }],
-      toolConfig: { functionCallingConfig: { mode: 'AUTO' } },
-      generationConfig,
-    };
-    const res = await post(url, { 'x-goog-api-key': cfg.key }, body, signal);
-    const parts: Record<string, unknown>[] = [];
-    const calls: Call[] = [];
-    let text = '';
-    const handle = (block: string) => {
-      for (const line of block.split(/\r?\n/)) {
-        if (!line.startsWith('data:')) continue;
-        let json: { candidates?: { content?: { parts?: Record<string, unknown>[] } }[] };
-        try {
-          json = JSON.parse(line.slice(5).trim());
-        } catch {
-          continue;
+    const chars = system.length + toolsJson.length + JSON.stringify(contents).length;
+    const r = await metered(meter, chars, maxOut, async () => {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(cfg.model)}:streamGenerateContent?alt=sse`;
+      const body = {
+        systemInstruction: { parts: [{ text: system }] },
+        contents,
+        tools: [{ functionDeclarations }],
+        toolConfig: { functionCallingConfig: { mode: 'AUTO' } },
+        generationConfig,
+      };
+      const res = await post(url, { 'x-goog-api-key': cfg.key }, body, signal);
+      const parts: Record<string, unknown>[] = [];
+      const calls: Call[] = [];
+      let text = '';
+      let usage: Usage | null = null;
+      const handle = (block: string) => {
+        for (const line of block.split(/\r?\n/)) {
+          if (!line.startsWith('data:')) continue;
+          let json: { candidates?: { content?: { parts?: Record<string, unknown>[] } }[]; usageMetadata?: GeminiUsageMeta };
+          try {
+            json = JSON.parse(line.slice(5).trim());
+          } catch {
+            continue;
+          }
+          usage = geminiUsage(json.usageMetadata) ?? usage; // o último bloco traz o total
+          for (const part of json.candidates?.[0]?.content?.parts ?? []) {
+            parts.push(part);
+            if (typeof part.text === 'string' && !part.thought) {
+              text += part.text;
+              emit({ t: 'text', d: part.text });
+            }
+            const fc = part.functionCall as { name?: string; args?: unknown } | undefined;
+            if (fc?.name) {
+              const call = { id: fc.name, name: fc.name, args: parseArgs(fc.args) };
+              calls.push(call);
+              emit({ t: 'tool', name: call.name, args: call.args });
+            }
+          }
         }
-        for (const part of json.candidates?.[0]?.content?.parts ?? []) {
-          parts.push(part);
-          if (typeof part.text === 'string' && !part.thought) {
-            text += part.text;
-            emit({ t: 'text', d: part.text });
-          }
-          const fc = part.functionCall as { name?: string; args?: unknown } | undefined;
-          if (fc?.name) {
-            const call = { id: fc.name, name: fc.name, args: parseArgs(fc.args) };
-            calls.push(call);
-            emit({ t: 'tool', name: call.name, args: call.args });
-          }
+      };
+      const reader = res.body!.getReader();
+      const dec = new TextDecoder();
+      let buf = '';
+      for (;;) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buf += dec.decode(value, { stream: true });
+        let m: RegExpMatchArray | null;
+        while ((m = buf.match(/\r?\n\r?\n/)) && m.index !== undefined) {
+          handle(buf.slice(0, m.index));
+          buf = buf.slice(m.index + m[0].length);
         }
       }
-    };
-    const reader = res.body!.getReader();
-    const dec = new TextDecoder();
-    let buf = '';
-    for (;;) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      buf += dec.decode(value, { stream: true });
-      let m: RegExpMatchArray | null;
-      while ((m = buf.match(/\r?\n\r?\n/)) && m.index !== undefined) {
-        handle(buf.slice(0, m.index));
-        buf = buf.slice(m.index + m[0].length);
-      }
-    }
-    handle(buf);
-    if (!calls.length || text.trim()) return;
+      handle(buf);
+      return { value: { parts, calls, text }, usage };
+    });
+    if (!r || !r.calls.length || r.text.trim()) return;
     // Só chamou ferramentas: devolve «ok» e pede o texto para o visitante.
-    contents.push({ role: 'model', parts });
-    contents.push({ role: 'user', parts: calls.map((c) => ({ functionResponse: { name: c.name, response: { ok: true } } })) });
+    contents.push({ role: 'model', parts: r.parts });
+    contents.push({ role: 'user', parts: r.calls.map((c) => ({ functionResponse: { name: c.name, response: { ok: true } } })) });
   }
 }
 
 /* ───────────────────────── OpenAI (Chat Completions) ───────────────────────── */
 
-async function openaiChat(cfg: ProviderConfig, system: string, history: ChatMsg[], tools: ToolDef[], emit: Emit, signal: AbortSignal) {
+async function openaiChat(cfg: ProviderConfig, system: string, history: ChatMsg[], tools: ToolDef[], emit: Emit, signal: AbortSignal, meter: Meter) {
   const messages: Record<string, unknown>[] = [{ role: 'system', content: system }, ...history.map((m) => ({ role: m.role, content: m.text }))];
+  const fns = tools.map((t) => ({ type: 'function', function: { name: t.name, description: t.description, parameters: t.parameters } }));
   for (let round = 0; round < cfg.maxRounds; round++) {
-    const res = await post(
-      'https://api.openai.com/v1/chat/completions',
-      { authorization: `Bearer ${cfg.key}` },
-      {
-        model: cfg.model,
-        messages,
-        tools: tools.map((t) => ({ type: 'function', function: { name: t.name, description: t.description, parameters: t.parameters } })),
-        tool_choice: 'auto',
-        max_completion_tokens: cfg.maxTokens,
-      },
-      signal,
-    );
-    const json = (await res.json()) as {
-      choices?: { message?: { content?: string | null; tool_calls?: { id: string; function: { name: string; arguments: string } }[] } }[];
-    };
-    const msg = json.choices?.[0]?.message ?? {};
-    const text = msg.content ?? '';
+    const chars = JSON.stringify(messages).length + JSON.stringify(fns).length;
+    const r = await metered(meter, chars, cfg.maxTokens, async () => {
+      const res = await post(
+        'https://api.openai.com/v1/chat/completions',
+        { authorization: `Bearer ${cfg.key}` },
+        { model: cfg.model, messages, tools: fns, tool_choice: 'auto', max_completion_tokens: cfg.maxTokens },
+        signal,
+      );
+      const json = (await res.json()) as {
+        choices?: { message?: { content?: string | null; tool_calls?: { id: string; function: { name: string; arguments: string } }[] } }[];
+        usage?: { prompt_tokens?: number; completion_tokens?: number };
+      };
+      const usage = json.usage ? { inText: json.usage.prompt_tokens ?? 0, inAudio: 0, outText: json.usage.completion_tokens ?? 0, outAudio: 0 } : null;
+      return { value: json.choices?.[0]?.message ?? {}, usage };
+    });
+    if (!r) return;
+    const text = r.content ?? '';
     if (text) emit({ t: 'text', d: text });
-    const calls = (msg.tool_calls ?? []).map((c) => ({ id: c.id, name: c.function.name, args: parseArgs(c.function.arguments) }));
+    const calls = (r.tool_calls ?? []).map((c) => ({ id: c.id, name: c.function.name, args: parseArgs(c.function.arguments) }));
     calls.forEach((c) => emit({ t: 'tool', name: c.name, args: c.args }));
     if (!calls.length || text.trim()) return;
-    messages.push(msg as Record<string, unknown>);
+    messages.push(r as Record<string, unknown>);
     calls.forEach((c) => messages.push({ role: 'tool', tool_call_id: c.id, content: '{"ok":true}' }));
   }
 }
 
 /* ───────────────────────── Anthropic (Messages) ───────────────────────── */
 
-async function anthropicChat(cfg: ProviderConfig, system: string, history: ChatMsg[], tools: ToolDef[], emit: Emit, signal: AbortSignal) {
+async function anthropicChat(cfg: ProviderConfig, system: string, history: ChatMsg[], tools: ToolDef[], emit: Emit, signal: AbortSignal, meter: Meter) {
   const messages: Record<string, unknown>[] = history.map((m) => ({ role: m.role, content: m.text }));
+  const defs = tools.map((t) => ({ name: t.name, description: t.description, input_schema: t.parameters }));
   for (let round = 0; round < cfg.maxRounds; round++) {
-    const res = await post(
-      'https://api.anthropic.com/v1/messages',
-      { 'x-api-key': cfg.key, 'anthropic-version': '2023-06-01' },
-      {
-        model: cfg.model,
-        max_tokens: cfg.maxTokens,
-        system,
-        messages,
-        tools: tools.map((t) => ({ name: t.name, description: t.description, input_schema: t.parameters })),
-      },
-      signal,
-    );
-    const json = (await res.json()) as { content?: { type: string; text?: string; id?: string; name?: string; input?: unknown }[] };
-    const blocks = json.content ?? [];
+    const chars = system.length + JSON.stringify(messages).length + JSON.stringify(defs).length;
+    const blocks = await metered(meter, chars, cfg.maxTokens, async () => {
+      const res = await post(
+        'https://api.anthropic.com/v1/messages',
+        { 'x-api-key': cfg.key, 'anthropic-version': '2023-06-01' },
+        { model: cfg.model, max_tokens: cfg.maxTokens, system, messages, tools: defs },
+        signal,
+      );
+      const json = (await res.json()) as {
+        content?: { type: string; text?: string; id?: string; name?: string; input?: unknown }[];
+        usage?: { input_tokens?: number; output_tokens?: number; cache_creation_input_tokens?: number; cache_read_input_tokens?: number };
+      };
+      const u = json.usage;
+      const usage = u
+        ? { inText: (u.input_tokens ?? 0) + (u.cache_creation_input_tokens ?? 0) + (u.cache_read_input_tokens ?? 0), inAudio: 0, outText: u.output_tokens ?? 0, outAudio: 0 }
+        : null;
+      return { value: json.content ?? [], usage };
+    });
+    if (!blocks) return;
     let text = '';
     const calls: Call[] = [];
     for (const b of blocks) {
@@ -213,21 +267,25 @@ async function anthropicChat(cfg: ProviderConfig, system: string, history: ChatM
 
 /* ───────────────────────── Mock (testes, sem chave) ───────────────────────── */
 
-
-async function mockChat(_cfg: ProviderConfig, _system: string, history: ChatMsg[], _tools: ToolDef[], emit: Emit, signal: AbortSignal) {
-  const { text, tools } = mockReply(history);
-  const chunks = text.match(/.{1,24}(\s|$)/g) ?? [text];
-  for (const c of chunks) {
-    if (signal.aborted) return;
-    emit({ t: 'text', d: c });
-    await new Promise((r) => setTimeout(r, 35));
-  }
-  tools.forEach((tc) => emit({ t: 'tool', name: tc.name, args: tc.args }));
+async function mockChat(cfg: ProviderConfig, system: string, history: ChatMsg[], tools: ToolDef[], emit: Emit, signal: AbortSignal, meter: Meter) {
+  const chars = system.length + JSON.stringify(tools).length + JSON.stringify(history).length;
+  await metered(meter, chars, cfg.maxTokens, async () => {
+    const { text, tools: calls } = mockReply(history, system);
+    const chunks = text.match(/.{1,24}(\s|$)/g) ?? [text];
+    for (const c of chunks) {
+      if (signal.aborted) break;
+      emit({ t: 'text', d: c });
+      await new Promise((r) => setTimeout(r, 35));
+    }
+    calls.forEach((tc) => emit({ t: 'tool', name: tc.name, args: tc.args }));
+    // usage sintético realista (≈ 4 caracteres por token), faturado como gemini-2.5-flash
+    return { value: null, usage: mockUsage(chars, text.length + JSON.stringify(calls).length) };
+  });
 }
 
-export async function chat(cfg: ProviderConfig, system: string, history: ChatMsg[], tools: ToolDef[], emit: Emit, signal: AbortSignal) {
+export async function chat(cfg: ProviderConfig, system: string, history: ChatMsg[], tools: ToolDef[], emit: Emit, signal: AbortSignal, meter: Meter) {
   const impl = { gemini: geminiChat, openai: openaiChat, anthropic: anthropicChat, mock: mockChat }[cfg.provider];
-  return impl(cfg, system, history, tools, emit, signal);
+  return impl(cfg, system, history, tools, emit, signal, meter);
 }
 
 /* ───────────────────────── Voz: TTS e transcrição ───────────────────────── */
@@ -263,7 +321,11 @@ const ACCENT: Record<string, string> = {
 export const ttsSupported = (p: ProviderId) => p === 'gemini' || p === 'openai' || p === 'mock';
 export const sttSupported = ttsSupported;
 
-export async function tts(cfg: ProviderConfig, text: string, lang: string, signal: AbortSignal): Promise<{ mime: string; data: Buffer }> {
+/** Modelo usado para faturar cada tipo de chamada. */
+export const billedModel = (cfg: ProviderConfig, kind: 'chat' | 'tts' | 'stt') =>
+  cfg.provider === 'mock' ? (kind === 'tts' ? 'mock-tts' : 'mock') : kind === 'tts' ? cfg.ttsModel : kind === 'stt' && cfg.provider === 'openai' ? cfg.sttModel : cfg.model;
+
+export async function tts(cfg: ProviderConfig, text: string, lang: string, signal: AbortSignal): Promise<{ mime: string; data: Buffer; usage: Usage | null }> {
   const style = `Speak in a warm, clear, professional tone, in ${ACCENT[lang] ?? 'the language of the text'}.`;
   if (cfg.provider === 'gemini') {
     const res = await post(
@@ -275,11 +337,14 @@ export async function tts(cfg: ProviderConfig, text: string, lang: string, signa
       },
       signal,
     );
-    const json = (await res.json()) as { candidates?: { content?: { parts?: { inlineData?: { mimeType?: string; data?: string } }[] } }[] };
+    const json = (await res.json()) as {
+      candidates?: { content?: { parts?: { inlineData?: { mimeType?: string; data?: string } }[] } }[];
+      usageMetadata?: GeminiUsageMeta;
+    };
     const inline = json.candidates?.[0]?.content?.parts?.find((p) => p.inlineData)?.inlineData;
     if (!inline?.data) throw new ProviderError(502);
     const rate = Number(/rate=(\d+)/.exec(inline.mimeType ?? '')?.[1] ?? 24000);
-    return { mime: 'audio/wav', data: pcmToWav(Buffer.from(inline.data, 'base64'), rate) };
+    return { mime: 'audio/wav', data: pcmToWav(Buffer.from(inline.data, 'base64'), rate), usage: geminiUsage(json.usageMetadata, true) };
   }
   if (cfg.provider === 'openai') {
     const res = await post(
@@ -288,20 +353,21 @@ export async function tts(cfg: ProviderConfig, text: string, lang: string, signa
       { model: cfg.ttsModel, voice: cfg.voice, input: text, instructions: style, response_format: 'mp3' },
       signal,
     );
-    return { mime: 'audio/mpeg', data: Buffer.from(await res.arrayBuffer()) };
+    // o endpoint de voz não devolve usage → cobra-se o pior caso reservado
+    return { mime: 'audio/mpeg', data: Buffer.from(await res.arrayBuffer()), usage: null };
   }
   if (cfg.provider === 'mock') {
-    // 0,6 s de tom suave: exercita o caminho de áudio sem custos.
+    // 0,6 s de tom suave: exercita o caminho de áudio sem custos reais.
     const rate = 24000;
     const n = Math.round(rate * 0.6);
     const pcm = Buffer.alloc(n * 2);
     for (let i = 0; i < n; i++) pcm.writeInt16LE(Math.round(Math.sin((2 * Math.PI * 440 * i) / rate) * 2500 * Math.min(1, (n - i) / 2000)), i * 2);
-    return { mime: 'audio/wav', data: pcmToWav(pcm, rate) };
+    return { mime: 'audio/wav', data: pcmToWav(pcm, rate), usage: { inText: Math.ceil(text.length / 4) + 20, inAudio: 0, outText: 0, outAudio: Math.ceil((text.length / 15) * 25) } };
   }
   throw new ProviderError(501);
 }
 
-export async function stt(cfg: ProviderConfig, audio: Buffer, mime: string, signal: AbortSignal): Promise<string> {
+export async function stt(cfg: ProviderConfig, audio: Buffer, mime: string, signal: AbortSignal): Promise<{ text: string; usage: Usage | null }> {
   if (cfg.provider === 'gemini') {
     const res = await post(
       `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(cfg.model)}:generateContent`,
@@ -320,8 +386,8 @@ export async function stt(cfg: ProviderConfig, audio: Buffer, mime: string, sign
       },
       signal,
     );
-    const json = (await res.json()) as { candidates?: { content?: { parts?: { text?: string }[] } }[] };
-    return (json.candidates?.[0]?.content?.parts ?? []).map((p) => p.text ?? '').join('').trim();
+    const json = (await res.json()) as { candidates?: { content?: { parts?: { text?: string }[] } }[]; usageMetadata?: GeminiUsageMeta };
+    return { text: (json.candidates?.[0]?.content?.parts ?? []).map((p) => p.text ?? '').join('').trim(), usage: geminiUsage(json.usageMetadata) };
   }
   if (cfg.provider === 'openai') {
     const form = new FormData();
@@ -334,8 +400,22 @@ export async function stt(cfg: ProviderConfig, audio: Buffer, mime: string, sign
       signal,
     });
     if (!res.ok) throw new ProviderError(res.status);
-    return String(((await res.json()) as { text?: string }).text ?? '').trim();
+    const json = (await res.json()) as {
+      text?: string;
+      usage?: { input_tokens?: number; output_tokens?: number; input_token_details?: { audio_tokens?: number; text_tokens?: number } };
+    };
+    const u = json.usage;
+    const usage =
+      u?.input_tokens !== undefined
+        ? { inText: u.input_token_details?.text_tokens ?? 0, inAudio: u.input_token_details?.audio_tokens ?? u.input_tokens, outText: u.output_tokens ?? 0, outAudio: 0 }
+        : null;
+    return { text: String(json.text ?? '').trim(), usage };
   }
-  if (cfg.provider === 'mock') return 'Tenho uma loja online e perdemos muito tempo a responder a mensagens de clientes';
+  if (cfg.provider === 'mock') {
+    return {
+      text: 'Tenho uma loja online e perdemos muito tempo a responder a mensagens de clientes',
+      usage: { inText: 30, inAudio: Math.ceil((audio.length / 4000) * 32), outText: 25, outAudio: 0 },
+    };
+  }
   throw new ProviderError(501);
 }

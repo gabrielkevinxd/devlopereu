@@ -3,7 +3,16 @@
  * para testar o palco controlado por ferramentas sem chave de LLM. Espelha a lógica de api/agent.php.
  */
 import { workdaySlots } from './brain';
+import type { Usage } from './budget';
 import type { ChatMsg } from './guard';
+
+/** Usage sintético (≈ 4 caracteres por token), faturado como gemini-2.5-flash. */
+export const mockUsage = (promptChars: number, outChars: number): Usage => ({
+  inText: Math.ceil(promptChars / 4),
+  inAudio: 0,
+  outText: Math.ceil(outChars / 4) + 10,
+  outAudio: 0,
+});
 
 interface MockOut {
   text: string;
@@ -16,10 +25,34 @@ const norm = (s: string) =>
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '');
 
-export function mockReply(history: ChatMsg[]): MockOut {
+export function mockReply(history: ChatMsg[], system = ''): MockOut {
   const raw = history[history.length - 1]?.text ?? '';
   const u = norm(raw);
   const all = norm(history.filter((m) => m.role === 'user').map((m) => m.text).join(' '));
+
+  // CHECK MATCH: o servidor avisou que a conversa está perto do limite → resumo + decisão de qualificação.
+  if (system.includes('CHECK MATCH')) {
+    const company = /(clinica|loja|empresa|escritorio|restaurante|fabrica|hotel|imobiliaria|contabilidade)/.test(all);
+    const pain = /(marcac|fatura|mensag|email|stock|encomend|document|agenda|telefone|relatorio)/.test(all);
+    const automatable = pain;
+    const decision = /(sou (o |a )?(dono|dona|socio|socia|gerente|diretor|diretora|responsavel)|decido|este mes|este trimestre|ate ao fim do ano|urgente)/.test(all);
+    const slot = /day (\d{4}-\d{2}-\d{2}) and time (\d{2}:\d{2})/.exec(system);
+    const criteria = { company, pain, automatable, decision };
+    if (company && pain && automatable && decision) {
+      const summary = 'Clínica com marcações manuais por telefone e WhatsApp, equipa de receção sobrecarregada';
+      return {
+        text: `Resumindo: ${summary.toLowerCase()} — um caso claro para um agente. Faz sentido marcarmos 30 minutos? Deixei ${slot?.[1] ?? ''} às ${slot?.[2] ?? ''} pré-preenchido no palco; é só confirmar.`,
+        tools: [
+          { name: 'qualify_lead', args: { qualified: true, ...criteria, reason: 'Todos os critérios cumpridos' } },
+          { name: 'open_booking', args: { day: slot?.[1], time: slot?.[2], notes: summary } },
+        ],
+      };
+    }
+    return {
+      text: 'Obrigado pela conversa! Pelo que me contou, uma reunião ainda não é o melhor próximo passo. Deixo-lhe a checklist gratuita das 12 tarefas e os nossos contactos — WhatsApp +351 929 070 650 ou contato@devlopereu.com — para quando fizer sentido.',
+      tools: [{ name: 'qualify_lead', args: { qualified: false, ...criteria, reason: 'Sem empresa nem processo concreto' } }],
+    };
+  }
   const num = (re: RegExp, s = u) => {
     const m = s.match(re);
     return m ? Number(m[1]) : undefined;
@@ -28,6 +61,10 @@ export function mockReply(history: ChatMsg[]): MockOut {
   const hours = num(/(\d+)\s*(h\b|horas|hours)/);
   const suggest = (options: string[]) => ({ name: 'suggest_replies', args: { options } });
 
+  if (/teste-qualify-fora-de-hora/.test(u)) {
+    // imita o que se viu num teste real: o modelo chama qualify_lead fora do CHECK MATCH
+    return { text: 'Percebo. Em que processo a equipa perde mais tempo?', tools: [{ name: 'qualify_lead', args: { qualified: false, company: false, pain: false, automatable: false, decision: false } }] };
+  }
   if (/(audio|voz|fala comigo|responde a falar|speak|voice)/.test(u)) {
     return {
       text: 'Claro, passo a responder também por voz. Em que processo a sua equipa perde mais tempo?',
@@ -108,7 +145,7 @@ export function mockReply(history: ChatMsg[]): MockOut {
   }
 
   if (/(marcac|agenda|whatsapp|telefone|email|fatura|document|stock|encomend|clinica|loja|restaurante)/.test(u)) {
-    const sector = /clinica/.test(u) ? 'Clínica dentária' : /loja/.test(u) ? 'Loja online' : /restaurante/.test(u) ? 'Restauração' : 'Serviços';
+    const sector = /clinica/.test(all) ? 'Clínica dentária' : /loja/.test(all) ? 'Loja online' : /restaurante/.test(all) ? 'Restauração' : 'Serviços';
     const pain = /marcac|agenda/.test(u) ? 'Marcações por telefone e WhatsApp' : /fatura|document/.test(u) ? 'Faturas e documentos' : 'Mensagens de clientes';
     return {
       text: 'Percebo — é dos processos em que um agente mais ajuda. Quantas pessoas tratam disto e quantas horas por semana gasta cada uma?',

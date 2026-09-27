@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Painel do agente · DevloperEU</title>
+    <style>
+      :root {
+        --ink: #070605;
+        --ink-2: #15120c;
+        --line: rgb(226 184 66 / 0.25);
+        --gold: #e2b842;
+        --gold-hi: #f5de8c;
+        --text: #f4efe3;
+        --muted: #a39b88;
+        --ok: #9fd68a;
+        --warn: #f0b95a;
+        --bad: #f0967a;
+        color-scheme: dark;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--ink); color: var(--text); font: 16px/1.5 system-ui, -apple-system, 'Segoe UI', sans-serif; }
+      main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px; }
+      h1 { margin: 0 0 4px; font-size: clamp(1.4rem, 1rem + 2vw, 2rem); letter-spacing: -0.02em; }
+      .sub { margin: 0 0 20px; color: var(--muted); font-size: 0.9rem; }
+      form { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+      input { flex: 1 1 260px; min-height: 44px; padding: 0 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--ink-2); color: var(--text); font-size: 16px; }
+      button { min-height: 44px; padding: 0 18px; border: 0; border-radius: 999px; background: var(--gold); color: #140f04; font-weight: 700; cursor: pointer; }
+      .grid { display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 200px), 1fr)); }
+      .card { padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--ink-2); }
+      .card dt { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+      .card dd { margin: 4px 0 0; font-size: 1.6rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+      .card small { display: block; color: var(--muted); font-size: 0.8rem; }
+      .bar { height: 12px; margin: 10px 0 20px; border-radius: 999px; background: #2a241a; overflow: hidden; }
+      .bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--ok), var(--gold) 70%, var(--bad)); }
+      .tier { display: inline-block; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--line); font-size: 0.85rem; }
+      .tier.normal { color: var(--ok); } .tier.economy { color: var(--warn); } .tier.reserve { color: var(--bad); } .tier.over { color: var(--bad); font-weight: 700; }
+      .days { display: flex; align-items: flex-end; gap: 3px; height: 90px; margin-top: 8px; }
+      .days span { flex: 1; min-width: 3px; max-width: 28px; background: var(--gold); border-radius: 3px 3px 0 0; }
+      .err { color: var(--bad); }
+      h2 { margin: 28px 0 10px; font-size: 1.05rem; color: var(--gold-hi); }
+      p.note { color: var(--muted); font-size: 0.85rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Painel do agente</h1>
+      <p class="sub">Orçamento em euros do agente com IA. Só números agregados — sem dados pessoais.</p>
+      <form id="f">
+        <label class="sr" for="token" hidden>Token</label>
+        <input id="token" type="password" autocomplete="off" placeholder="AGENT_ADMIN_TOKEN" required />
+        <button>Ver</button>
+      </form>
+      <div id="out" aria-live="polite"></div>
+    </main>
+    <script>
+      const eur = (n) => new Intl.NumberFormat('pt-PT', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2, maximumFractionDigits: 4 }).format(n);
+      const TIERS = { normal: 'normal', economy: 'economia (sem voz do provider)', reserve: 'reserva (só leads qualificados)', over: 'esgotado — só fluxo guiado' };
+      const out = document.getElementById('out');
+      const input = document.getElementById('token');
+      try { input.value = sessionStorage.getItem('dev-admin-token') || ''; } catch (e) {}
+      const card = (label, value, hint = '') => `<div class="card"><dt>${label}</dt><dd>${value}</dd>${hint ? `<small>${hint}</small>` : ''}</div>`;
+      async function load() {
+        const token = input.value.trim();
+        if (!token) return;
+        try { sessionStorage.setItem('dev-admin-token', token); } catch (e) {}
+        out.textContent = 'A carregar…';
+        const r = await fetch('agent.php?action=admin', { headers: { authorization: 'Bearer ' + token, 'x-admin-token': token }, cache: 'no-store' });
+        if (!r.ok) { out.innerHTML = `<p class="err">${r.status === 401 ? 'Token inválido (ou AGENT_ADMIN_TOKEN não configurado).' : 'Erro ' + r.status}</p>`; return; }
+        const d = await r.json();
+        const pct = Math.min(100, d.pct);
+        const days = Object.entries(d.byDay || {}).sort();
+        const max = Math.max(...days.map(([, v]) => v), 0.000001);
+        const dq = d.disqualifiedBy || {};
+        out.innerHTML = `
+          <p>Período <strong>${d.period}</strong> · ${d.provider || '—'} ${d.model ? '(' + d.model + ')' : ''} · <span class="tier ${d.tier}">${TIERS[d.tier] || d.tier}</span></p>
+          <div class="bar" role="img" aria-label="${d.pct}% do orçamento"><i style="width:${pct}%"></i></div>
+          <dl class="grid">
+            ${card('Gasto', eur(d.spentEur), `de ${eur(d.budgetEur)} · ${d.pct}%`)}
+            ${card('Conversas', d.conversations, `${d.turns} respostas do LLM`)}
+            ${card('Custo médio / conversa', eur(d.avgCostPerConversationEur), `limite por conversa ${eur(d.perConversationLimitEur)}`)}
+            ${card('Cabem ainda ≈', d.conversationsLeftEstimate, 'conversas neste período')}
+            ${card('Qualificados', d.outcomes.qualified, 'check match → agendamento')}
+            ${card('Desqualificados', d.outcomes.disqualified, `empresa ${dq.company || 0} · dor ${dq.pain || 0} · automatizável ${dq.automatable || 0} · decisão ${dq.decision || 0}`)}
+            ${card('Sem resposta', d.outcomes.noAnswer, `${d.outcomes.pendingCheckMatch} em curso`)}
+            ${card('Pedidos de reunião', d.booked, 'enviados (WhatsApp/email)')}
+          </dl>
+          <h2>Gasto por dia</h2>
+          <div class="days">${days.map(([k, v]) => `<span title="${k}: ${eur(v)}" style="height:${Math.max(3, (v / max) * 100)}%"></span>`).join('') || '<p class="note">Sem gastos ainda.</p>'}</div>
+          <p class="note">Chamadas: chat ${d.calls.chat} · voz ${d.calls.tts} · transcrição ${d.calls.stt} · recusadas por orçamento ${d.calls.denied}. Pior caso da próxima chamada: ${eur(d.nextCallWorstCaseEur || 0)}.</p>`;
+      }
+      document.getElementById('f').addEventListener('submit', (e) => { e.preventDefault(); load(); });
+      if (input.value) load();
+    </script>
+  </body>
+</html>

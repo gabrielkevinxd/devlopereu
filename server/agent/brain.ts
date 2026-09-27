@@ -28,8 +28,6 @@ export interface Brain {
     windowSec: number;
     maxPerWindow: number;
     maxPerDay: number;
-    /** teto diário para TODO o site (proteção de custos); AGENT_DAILY_CAP no .env sobrepõe */
-    maxGlobalPerDay: number;
     ttsMaxChars: number;
     sttMaxBytes: number;
     maxBodyBytes: number;
@@ -44,7 +42,30 @@ export interface Brain {
   times: string[];
   system: string;
   tools: ToolDef[];
-  guard: { patterns: string[]; redirect: Record<string, string>; busy: Record<string, string> };
+  guard: { patterns: string[]; redirect: Record<string, string>; busy: Record<string, string>; closed: Record<string, string> };
+  budget: {
+    eur: number;
+    period: string;
+    timezone: string;
+    targetConversations: number;
+    maxTurns: number;
+    maxProviderTts: number;
+    checkMatchAt: number;
+    tiers: { economy: number; reserve: number };
+    economyMaxOutputTokens: number;
+    hardCeiling: number;
+    charsPerTokenWorst: number;
+    reservationTtlSec: number;
+    noAnswerAfterSec: number;
+    proposedTime: string;
+  };
+  pricing: {
+    eurPerUsd: number;
+    safetyMargin: number;
+    source: string;
+    models: Record<string, { input?: number; inputAudio?: number; output?: number; outputAudio?: number }>;
+  };
+  prompts: { economy: string; checkMatch: string };
 }
 
 const BRAIN_PATH = fileURLToPath(new URL('../../public/api/agent-brain.json', import.meta.url));
