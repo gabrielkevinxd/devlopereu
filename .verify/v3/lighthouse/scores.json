@@ -1,0 +1,42 @@
+{
+  "mobile-1": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.7\u00a0s",
+    "TBT": "270\u00a0ms",
+    "CLS": "0",
+    "fetchTime": "2026-09-27T13:52:51.267Z"
+  },
+  "mobile-2": {
+    "performance": 87,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.7\u00a0s",
+    "TBT": "280\u00a0ms",
+    "CLS": "0",
+    "fetchTime": "2026-09-27T13:53:20.470Z"
+  },
+  "mobile-3": {
+    "performance": 87,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.7\u00a0s",
+    "TBT": "290\u00a0ms",
+    "CLS": "0",
+    "fetchTime": "2026-09-27T13:53:54.196Z"
+  },
+  "desktop": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "0.6\u00a0s",
+    "TBT": "0\u00a0ms",
+    "CLS": "0",
+    "fetchTime": "2026-09-27T13:54:26.219Z"
+  }
+}
