@@ -44,4 +44,6 @@ ErrorDocument 404 /404.html
   </FilesMatch>
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # O microfone do agente só pode ser usado pelo próprio site (nunca por iframes de terceiros)
+  Header always set Permissions-Policy "microphone=(self), camera=(), geolocation=()"
 </IfModule>

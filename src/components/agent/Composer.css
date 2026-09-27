@@ -79,15 +79,79 @@
     box-shadow: 0 0 0 14px rgb(226 184 66 / 0);
   }
 }
-.composer__status {
-  min-height: 1.1em;
-  margin: 0;
-  padding-left: 1rem;
+.composer__spin {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgb(226 184 66 / 0.3);
+  border-top-color: var(--gold-hi);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.composer.is-listening {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgb(226 184 66 / 0.22), 0 0 30px -8px rgb(226 184 66 / 0.6);
+}
+
+/* Estado da voz: a ouvir (com nível), a transcrever, a falar, erro com ação */
+.voice-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+  padding: 0 0.5rem 0 1rem;
   font-size: var(--fs-xs);
+  font-family: var(--mono);
   color: var(--gold);
 }
-.composer__status:empty {
+.voice-status[data-state='idle'] {
   display: none;
+}
+.voice-status__error {
+  flex: 1 1 14rem;
+  color: #f0b27a;
+  font-family: var(--font);
+  font-size: var(--fs-sm);
+}
+.voice-status__action {
+  min-height: 36px;
+  padding: 0 0.9rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: var(--ink-2);
+  color: var(--gold-hi);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+}
+.voice-status__action:hover {
+  border-color: var(--gold);
+}
+.voice-status__close {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+.voice-meter {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  height: 18px;
+}
+.voice-meter i {
+  width: 3px;
+  height: 18px;
+  border-radius: 2px;
+  background: var(--gold-hi);
+  transform-origin: center;
+  transition: transform 80ms linear;
 }
 
 .suggestions {

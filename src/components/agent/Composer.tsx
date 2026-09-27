@@ -3,6 +3,7 @@ import { fill, LANG_TAGS } from '../../i18n';
 import { useI18n } from '../../i18n/context';
 import { readStore, writeStore } from '../../lib/storage';
 import { pathFor } from '../../routes';
+import type { VoiceError } from '../../ai/voice';
 import type { Action, AgentState } from './useAgent';
 import './Composer.css';
 
@@ -16,7 +17,8 @@ const loadVoice = () => import('../../ai/voice');
 const CONSENT_KEY = 'dev-ai-consent-v1';
 const MUTE_KEY = 'dev-ai-muted';
 type Consent = 'unknown' | 'ok' | 'declined';
-type MicState = 'idle' | 'listening' | 'recording' | 'transcribing';
+type MicState = 'idle' | 'arming' | 'listening' | 'transcribing';
+type Pending = { kind: 'text'; text: string; voice: boolean } | { kind: 'mic' };
 
 const norm = (s: string) =>
   s
@@ -44,21 +46,26 @@ export function Composer({ state, act, busy }: Props) {
   const { t, lang } = useI18n();
   const [text, setText] = useState('');
   const [consent, setConsent] = useState<Consent>('unknown');
-  const [pending, setPending] = useState<{ text: string; voice: boolean } | null>(null);
+  const [pending, setPending] = useState<Pending | null>(null);
   const [provider, setProvider] = useState('');
   const [mic, setMic] = useState<MicState>('idle');
+  const [level, setLevel] = useState(0);
+  const [voiceError, setVoiceError] = useState<VoiceError | null>(null);
   const [speaking, setSpeaking] = useState(false);
+  const [replyToPlay, setReplyToPlay] = useState<{ text: string; tts: boolean } | null>(null);
   const [muted, setMuted] = useState(false);
   /** depois de usar voz, o botão de silenciar fica sempre à mão */
   const [voiceUsed, setVoiceUsed] = useState(false);
   const [sending, setSending] = useState(false);
   const stopRef = useRef<(() => void) | null>(null);
+  const cancelRef = useRef<(() => void) | null>(null);
   const stateRef = useRef(state);
   stateRef.current = state;
 
   useEffect(() => {
     setConsent(readStore<Consent>(CONSENT_KEY, 'unknown'));
     setMuted(readStore<boolean>(MUTE_KEY, false));
+    return () => cancelRef.current?.(); // sai da página/modo a meio de uma gravação → liberta o microfone
   }, []);
 
   const prefetch = () => void loadSession().then((m) => m.health());
@@ -82,9 +89,12 @@ export function Composer({ state, act, busy }: Props) {
     if (!reply || readStore<boolean>(MUTE_KEY, false)) return;
     const v = await loadVoice();
     setVoiceUsed(true);
+    setReplyToPlay(null);
     setSpeaking(true);
-    await v.speak(reply, lang, LANG_TAGS[lang], serverTts);
+    const r = await v.speak(reply, lang, LANG_TAGS[lang], serverTts);
     setSpeaking(false);
+    // o browser bloqueou o som (autoplay) → botão «Ouvir resposta» (um clique conta como interação)
+    if (r === 'blocked') setReplyToPlay({ text: reply, tts: serverTts });
   };
 
   const send = async (value: string, voice = false, consentGiven = consent) => {
@@ -96,7 +106,7 @@ export function Composer({ state, act, busy }: Props) {
     if (!h.llm || consentGiven === 'declined') return scripted(clean);
     if (consentGiven !== 'ok') {
       setProvider(h.provider ?? '');
-      setPending({ text: clean, voice });
+      setPending({ kind: 'text', text: clean, voice });
       return;
     }
     setSending(true);
@@ -106,55 +116,82 @@ export function Composer({ state, act, busy }: Props) {
     if (r.ok && (voice || r.wantVoice)) void speakReply(r.text, h.tts);
   };
 
-  const decide = (c: Consent) => {
-    writeStore(CONSENT_KEY, c);
-    setConsent(c);
-    const p = pending;
-    setPending(null);
-    if (p) void send(p.text, p.voice, c);
-  };
-
-  const onSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    void send(text);
-  };
-
-  const toggleMic = async () => {
-    if (mic === 'listening' || mic === 'recording') return stopRef.current?.();
-    if (mic === 'transcribing') return;
+  /**
+   * Microfone. Caminho principal: gravar + transcrever no servidor (Gemini) — funciona em todos os
+   * browsers modernos. Alternativa: reconhecimento do próprio browser. Todos os erros ficam visíveis.
+   */
+  const startMic = async (consentGiven = consent) => {
+    setVoiceError(null);
+    setReplyToPlay(null);
     const v = await loadVoice();
     v.stopSpeaking();
     setSpeaking(false);
     setVoiceUsed(true);
+    const fail = (reason: VoiceError) => {
+      setMic('idle');
+      setLevel(0);
+      setVoiceError(reason);
+    };
+    if (!v.isSecure()) return fail('insecure');
+    const { health } = await loadSession();
+    const h = await health();
+    const serverStt = h.llm && h.stt && v.canRecord() && consentGiven !== 'declined';
     try {
+      if (serverStt) {
+        if (consentGiven !== 'ok') {
+          // o áudio vai para o fornecedor de IA → primeiro o aviso RGPD
+          setProvider(h.provider ?? '');
+          setPending({ kind: 'mic' });
+          return;
+        }
+        setMic('arming');
+        const rec = await v.record(setLevel);
+        stopRef.current = () => rec.stop();
+        cancelRef.current = () => rec.cancel();
+        setMic('listening');
+        const { blob, spoke } = await rec.done;
+        stopRef.current = cancelRef.current = null;
+        if (!spoke || !blob.size) return fail('no-speech');
+        setMic('transcribing');
+        const heard = await v.transcribe(blob, lang);
+        setMic('idle');
+        if (!heard) return fail('no-speech');
+        return void send(heard, true);
+      }
       if (v.canRecognize()) {
         setMic('listening');
         const l = v.listen(LANG_TAGS[lang], (interim) => setText(interim));
         stopRef.current = () => l.stop();
         const heard = await l.result;
+        stopRef.current = null;
         setMic('idle');
-        if (heard) void send(heard, true);
-        else setText('');
-        return;
+        return void send(heard, true);
       }
-      const { health } = await loadSession();
-      const h = await health();
-      if (!v.canRecord() || !h.stt || consent !== 'ok') throw new Error('no-stt');
-      setMic('recording');
-      const r = await v.record();
-      await new Promise<void>((resolve) => {
-        stopRef.current = () => resolve();
-      });
-      setMic('transcribing');
-      const heard = await v.transcribe(await r.stop(), lang);
-      setMic('idle');
-      if (heard) void send(heard, true);
-    } catch {
-      setMic('idle');
-      act({ type: 'say', text: t.ai.micDenied });
-    } finally {
-      stopRef.current = null;
+      fail('unsupported');
+    } catch (e) {
+      stopRef.current = cancelRef.current = null;
+      fail((e as { reason?: VoiceError }).reason ?? 'unsupported');
     }
+  };
+
+  const toggleMic = () => {
+    if (mic === 'listening' || mic === 'arming') return stopRef.current?.();
+    if (mic === 'transcribing') return;
+    void startMic();
+  };
+
+  const decide = (c: Consent) => {
+    writeStore(CONSENT_KEY, c);
+    setConsent(c);
+    const p = pending;
+    setPending(null);
+    if (p?.kind === 'text') void send(p.text, p.voice, c);
+    if (p?.kind === 'mic') void startMic(c); // o clique em «Aceitar» é o gesto que autoriza o microfone
+  };
+
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    void send(text);
   };
 
   const toggleMute = () => {
@@ -165,7 +202,15 @@ export function Composer({ state, act, busy }: Props) {
     setSpeaking(false);
   };
 
-  const status = mic === 'listening' || mic === 'recording' ? t.ai.listening : mic === 'transcribing' ? t.ai.transcribing : speaking ? t.ai.speaking : '';
+  const ERR: Record<VoiceError, string> = {
+    insecure: t.ai.voiceInsecure,
+    denied: t.ai.voiceDenied,
+    'no-device': t.ai.voiceNoDevice,
+    'no-speech': t.ai.voiceNoSpeech,
+    unsupported: t.ai.voiceUnsupported,
+    'stt-failed': t.ai.voiceSttFailed,
+  };
+  const listening = mic === 'listening' || mic === 'arming';
   const showSuggestions = state.ai && !busy && state.suggestions.length > 0;
 
   return (
@@ -200,7 +245,7 @@ export function Composer({ state, act, busy }: Props) {
         </div>
       )}
 
-      <form className="composer" onSubmit={onSubmit}>
+      <form className={`composer${listening ? ' is-listening' : ''}`} onSubmit={onSubmit}>
         <label className="sr-only" htmlFor="composer-input">
           {t.ai.placeholder}
         </label>
@@ -210,7 +255,7 @@ export function Composer({ state, act, busy }: Props) {
           value={text}
           onChange={(e) => setText(e.target.value)}
           onFocus={prefetch}
-          placeholder={status || t.ai.placeholder}
+          placeholder={listening ? t.ai.listening : mic === 'transcribing' ? t.ai.transcribing : t.ai.placeholder}
           maxLength={600}
           autoComplete="off"
           enterKeyHint="send"
@@ -223,20 +268,56 @@ export function Composer({ state, act, busy }: Props) {
         <button
           type="button"
           className={`composer__icon composer__mic${mic !== 'idle' ? ' is-on' : ''}`}
-          aria-pressed={mic === 'listening' || mic === 'recording'}
+          aria-pressed={listening}
           aria-label={mic === 'idle' ? t.ai.mic : t.ai.micStop}
           title={mic === 'idle' ? t.ai.mic : t.ai.micStop}
-          onClick={() => void toggleMic()}
+          data-state={mic}
+          onClick={toggleMic}
+          disabled={mic === 'transcribing'}
         >
-          {mic === 'idle' ? <IconMic /> : <IconStop />}
+          {mic === 'idle' ? <IconMic /> : mic === 'transcribing' ? <span className="composer__spin" aria-hidden="true" /> : <IconStop />}
         </button>
         <button type="submit" className="composer__icon composer__send" aria-label={t.ai.send} title={t.ai.send} disabled={!text.trim() || sending}>
           <IconSend />
         </button>
       </form>
-      <p className="composer__status mono" aria-live="polite">
-        {status}
-      </p>
+
+      {/* Estado da voz: sempre visível e anunciado (a ouvir / a transcrever / a falar / erro com ação) */}
+      <div className="voice-status" role="status" aria-live="polite" data-state={voiceError ? 'error' : listening ? 'listening' : mic === 'transcribing' ? 'transcribing' : speaking ? 'speaking' : replyToPlay ? 'blocked' : 'idle'}>
+        {listening && (
+          <>
+            <span className="voice-meter" aria-hidden="true">
+              {[0.15, 0.35, 0.6, 0.35, 0.15].map((w, i) => (
+                <i key={i} style={{ transform: `scaleY(${0.2 + Math.min(1, level * (1 + w * 2)) * 0.8})` }} />
+              ))}
+            </span>
+            <span>{t.ai.listening}</span>
+            <button type="button" className="voice-status__action" onClick={() => stopRef.current?.()}>
+              {t.ai.micStop}
+            </button>
+          </>
+        )}
+        {mic === 'transcribing' && <span>{t.ai.transcribing}</span>}
+        {speaking && !listening && <span>{t.ai.speaking}</span>}
+        {voiceError && !listening && (
+          <>
+            <span className="voice-status__error">{ERR[voiceError]}</span>
+            {voiceError !== 'insecure' && voiceError !== 'unsupported' && (
+              <button type="button" className="voice-status__action" onClick={() => void startMic()}>
+                {t.ai.retry}
+              </button>
+            )}
+            <button type="button" className="voice-status__close" aria-label={t.ui.close} onClick={() => setVoiceError(null)}>
+              ×
+            </button>
+          </>
+        )}
+        {replyToPlay && !speaking && !listening && (
+          <button type="button" className="voice-status__action" onClick={() => void speakReply(replyToPlay.text, replyToPlay.tts)}>
+            ▶ {t.ai.playReply}
+          </button>
+        )}
+      </div>
     </div>
   );
 }
