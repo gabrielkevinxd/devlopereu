@@ -1,0 +1,242 @@
+[
+  {
+    "kind": "php",
+    "name": "A esgota 0,01 €: algumas chamadas passam e depois só fallback",
+    "ok": true,
+    "detail": "6 ok, 14 recusadas"
+  },
+  {
+    "kind": "php",
+    "name": "A gasto nunca ultrapassa o orçamento",
+    "ok": true,
+    "detail": "gasto 0.00552 € de 0,01 €"
+  },
+  {
+    "kind": "php",
+    "name": "A com o orçamento esgotado, health diz llm=false e tier=over",
+    "ok": true,
+    "detail": "{\"llm\":false,\"provider\":\"mock\",\"tts\":false,\"stt\":false,\"tier\":\"over\"}"
+  },
+  {
+    "kind": "php",
+    "name": "A TTS também recusado quando esgotado",
+    "ok": true,
+    "detail": "HTTP 403"
+  },
+  {
+    "kind": "php",
+    "name": "B 72 % → economy: sem TTS do provider",
+    "ok": true,
+    "detail": "tier=economy tts=false http=403"
+  },
+  {
+    "kind": "php",
+    "name": "B 72 % → economy: LLM continua (respostas curtas)",
+    "ok": true,
+    "detail": "economy"
+  },
+  {
+    "kind": "php",
+    "name": "B 92 % → reserve: visitante novo sem diagnóstico vai para o fluxo guiado",
+    "ok": true,
+    "detail": "reserve"
+  },
+  {
+    "kind": "php",
+    "name": "B 92 % → reserve: visitante já qualificado pelo diagnóstico guiado continua no LLM",
+    "ok": true,
+    "detail": "reserve"
+  },
+  {
+    "kind": "php",
+    "name": "B ≥ 100 % → over: llm=false e chat em fallback",
+    "ok": true,
+    "detail": "over budget"
+  },
+  {
+    "kind": "php",
+    "name": "C aos 75 % (turno 4/4) entra em CHECK MATCH",
+    "ok": true,
+    "detail": "check turno3=false turno4=true"
+  },
+  {
+    "kind": "php",
+    "name": "C qualificado (4 critérios) → agendamento pré-preenchido com dia e hora",
+    "ok": true,
+    "detail": "{\"day\":\"2026-09-28\",\"time\":\"10:30\",\"notes\":\"Clínica com marcações manuais por telefone e WhatsApp, equipa de receção sobrecarregada\"}"
+  },
+  {
+    "kind": "php",
+    "name": "C limite do cliente atingido → fluxo guiado sem erro",
+    "ok": true,
+    "detail": "client_limit"
+  },
+  {
+    "kind": "php",
+    "name": "D não qualificado → desqualifica com elegância (checklist + contactos)",
+    "ok": true,
+    "detail": "Obrigado pela conversa! Pelo que me contou, uma reunião ainda não é o melhor pró"
+  },
+  {
+    "kind": "php",
+    "name": "D conversa com o LLM termina após desqualificar",
+    "ok": true,
+    "detail": "closed"
+  },
+  {
+    "kind": "php",
+    "name": "E máx. 2 respostas com TTS do provider por cliente",
+    "ok": true,
+    "detail": "200,200,429"
+  },
+  {
+    "kind": "php",
+    "name": "F painel protegido por token (sem/errado → 401)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "kind": "php",
+    "name": "F painel: gasto, %, conversas, qualificados/desqualificados/agendamentos",
+    "ok": true,
+    "detail": "gasto 0.00906 € (0.18 %), conversas 2, média 0.00415 €/conversa"
+  },
+  {
+    "kind": "php",
+    "name": "F sem dados pessoais (sem IP, id de sessão, nomes ou texto das mensagens)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "kind": "php",
+    "name": "F média medida por conversa (mock, preços gemini-2.5-flash)",
+    "ok": true,
+    "detail": "0.00415 €"
+  },
+  {
+    "kind": "php",
+    "name": "G qualify_lead fora do check match é ignorado (conversa continua)",
+    "ok": true,
+    "detail": "ok"
+  },
+  {
+    "kind": "vite",
+    "name": "A esgota 0,01 €: algumas chamadas passam e depois só fallback",
+    "ok": true,
+    "detail": "6 ok, 14 recusadas"
+  },
+  {
+    "kind": "vite",
+    "name": "A gasto nunca ultrapassa o orçamento",
+    "ok": true,
+    "detail": "gasto 0.00564 € de 0,01 €"
+  },
+  {
+    "kind": "vite",
+    "name": "A com o orçamento esgotado, health diz llm=false e tier=over",
+    "ok": true,
+    "detail": "{\"llm\":false,\"provider\":\"mock\",\"tts\":false,\"stt\":false,\"tier\":\"over\"}"
+  },
+  {
+    "kind": "vite",
+    "name": "A TTS também recusado quando esgotado",
+    "ok": true,
+    "detail": "HTTP 403"
+  },
+  {
+    "kind": "vite",
+    "name": "B 72 % → economy: sem TTS do provider",
+    "ok": true,
+    "detail": "tier=economy tts=false http=403"
+  },
+  {
+    "kind": "vite",
+    "name": "B 72 % → economy: LLM continua (respostas curtas)",
+    "ok": true,
+    "detail": "economy"
+  },
+  {
+    "kind": "vite",
+    "name": "B 92 % → reserve: visitante novo sem diagnóstico vai para o fluxo guiado",
+    "ok": true,
+    "detail": "reserve"
+  },
+  {
+    "kind": "vite",
+    "name": "B 92 % → reserve: visitante já qualificado pelo diagnóstico guiado continua no LLM",
+    "ok": true,
+    "detail": "reserve"
+  },
+  {
+    "kind": "vite",
+    "name": "B ≥ 100 % → over: llm=false e chat em fallback",
+    "ok": true,
+    "detail": "over budget"
+  },
+  {
+    "kind": "vite",
+    "name": "C aos 75 % (turno 4/4) entra em CHECK MATCH",
+    "ok": true,
+    "detail": "check turno3=false turno4=true"
+  },
+  {
+    "kind": "vite",
+    "name": "C qualificado (4 critérios) → agendamento pré-preenchido com dia e hora",
+    "ok": true,
+    "detail": "{\"day\":\"2026-09-28\",\"time\":\"10:30\",\"notes\":\"Clínica com marcações manuais por telefone e WhatsApp, equipa de receção sobrecarregada\"}"
+  },
+  {
+    "kind": "vite",
+    "name": "C limite do cliente atingido → fluxo guiado sem erro",
+    "ok": true,
+    "detail": "client_limit"
+  },
+  {
+    "kind": "vite",
+    "name": "D não qualificado → desqualifica com elegância (checklist + contactos)",
+    "ok": true,
+    "detail": "Obrigado pela conversa! Pelo que me contou, uma reunião ainda não é o melhor pró"
+  },
+  {
+    "kind": "vite",
+    "name": "D conversa com o LLM termina após desqualificar",
+    "ok": true,
+    "detail": "closed"
+  },
+  {
+    "kind": "vite",
+    "name": "E máx. 2 respostas com TTS do provider por cliente",
+    "ok": true,
+    "detail": "200,200,429"
+  },
+  {
+    "kind": "vite",
+    "name": "F painel protegido por token (sem/errado → 401)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "kind": "vite",
+    "name": "F painel: gasto, %, conversas, qualificados/desqualificados/agendamentos",
+    "ok": true,
+    "detail": "gasto 0.0092 € (0.18 %), conversas 2, média 0.00422 €/conversa"
+  },
+  {
+    "kind": "vite",
+    "name": "F sem dados pessoais (sem IP, id de sessão, nomes ou texto das mensagens)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "kind": "vite",
+    "name": "F média medida por conversa (mock, preços gemini-2.5-flash)",
+    "ok": true,
+    "detail": "0.00422 €"
+  },
+  {
+    "kind": "vite",
+    "name": "G qualify_lead fora do check match é ignorado (conversa continua)",
+    "ok": true,
+    "detail": "ok"
+  }
+]

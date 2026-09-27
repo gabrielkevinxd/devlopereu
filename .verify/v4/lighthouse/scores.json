@@ -1,0 +1,38 @@
+{
+  "mobile-1": {
+    "performance": 87,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.9\u00a0s",
+    "TBT": "260\u00a0ms",
+    "CLS": "0"
+  },
+  "mobile-2": {
+    "performance": 87,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.8\u00a0s",
+    "TBT": "260\u00a0ms",
+    "CLS": "0"
+  },
+  "mobile-3": {
+    "performance": 87,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.7\u00a0s",
+    "TBT": "350\u00a0ms",
+    "CLS": "0"
+  },
+  "desktop": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "0.6\u00a0s",
+    "TBT": "20\u00a0ms",
+    "CLS": "0"
+  }
+}

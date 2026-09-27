@@ -1,0 +1,23 @@
+{
+  "steps": 12,
+  "overflow": [],
+  "errors": [],
+  "checks": {
+    "390 qualificado: resumo + pergunta de fecho": "ok",
+    "390 qualificado: agendamento com dia e hora já preenchidos": "ok",
+    "390 limite atingido → agendamento guiado sem erro": "ok",
+    "390 pedido de reunião enviado": "ok",
+    "390 desqualificado: agradece + checklist + contactos": "ok",
+    "390 desqualificado: conversa com o LLM termina (sem campo de texto)": "ok",
+    "390 desqualificado: palco com checklist": "ok",
+    "1440 qualificado: resumo + pergunta de fecho": "ok",
+    "1440 qualificado: agendamento com dia e hora já preenchidos": "ok",
+    "1440 limite atingido → agendamento guiado sem erro": "ok",
+    "1440 pedido de reunião enviado": "ok",
+    "1440 desqualificado: agradece + checklist + contactos": "ok",
+    "1440 desqualificado: conversa com o LLM termina (sem campo de texto)": "ok",
+    "1440 desqualificado: palco com checklist": "ok",
+    "390 painel do dono mostra gasto e resultados": "ok",
+    "1440 painel do dono mostra gasto e resultados": "ok"
+  }
+}
