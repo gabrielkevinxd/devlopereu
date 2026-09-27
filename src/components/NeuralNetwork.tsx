@@ -78,6 +78,15 @@ export const NeuralNetwork: React.FC = () => {
             }
         }
 
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let visible = true;
+        const io = new IntersectionObserver(([entry]) => {
+            const was = visible;
+            visible = entry.isIntersecting;
+            if (visible && !was && !reduceMotion) animationFrameId = requestAnimationFrame(animate);
+        });
+        io.observe(canvas);
+
         const init = () => {
             const dpr = window.devicePixelRatio || 1;
             const rect = canvas.parentElement?.getBoundingClientRect();
@@ -99,8 +108,8 @@ export const NeuralNetwork: React.FC = () => {
 
             // Less particles on mobile for performance
             const particleCount = typeof window !== 'undefined' && window.innerWidth < 768
-                ? Math.floor((width * height) / 12000)
-                : Math.floor((width * height) / 6000);
+                ? Math.min(Math.floor((width * height) / 12000), 36)
+                : Math.min(Math.floor((width * height) / 6000), 100);
 
             particles = [];
             for (let i = 0; i < particleCount; i++) {
@@ -152,7 +161,7 @@ export const NeuralNetwork: React.FC = () => {
                 particles[i].draw();
             }
 
-            animationFrameId = requestAnimationFrame(animate);
+            if (visible && !reduceMotion) animationFrameId = requestAnimationFrame(animate);
         };
 
         const handleResize = () => {
@@ -188,6 +197,7 @@ export const NeuralNetwork: React.FC = () => {
             window.removeEventListener('mousemove', handleMouseMove);
             document.removeEventListener('mouseleave', handleMouseLeave);
             cancelAnimationFrame(animationFrameId);
+            io.disconnect();
         };
     }, []);
 

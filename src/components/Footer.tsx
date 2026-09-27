@@ -1,7 +1,8 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Twitter, Instagram, Facebook, Github, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Twitter, Instagram, Facebook, Github } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import Logo from './Logo';
 import { useCookieConsent } from '../contexts/CookieContext';
 
 const Footer: React.FC = () => {
@@ -16,7 +17,6 @@ const Footer: React.FC = () => {
     { icon: Instagram, url: 'https://www.instagram.com/devlopereu/', label: 'Instagram' },
     { icon: Facebook, url: 'https://www.facebook.com/profile.php?id=61569296285202', label: 'Facebook' },
     { icon: Github, url: 'https://github.com/devloper-eu', label: 'GitHub' },
-    { icon: Linkedin, url: 'https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile', label: 'LinkedIn' },
   ];
 
   const scrollToHero = () => {
@@ -47,22 +47,13 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-gray-dark text-white py-12">
+    <footer className="bg-gray-dark text-white py-12 pb-28 sm:pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Logo e Descrição */}
         <div className="flex flex-col items-center mb-8">
-          <img 
-            src="https://i.imgur.com/lwoK4d2.png" 
-            alt="Devloper.eu Logo" 
-            className="hidden lg:block absolute top-[-130px] h-50 w-auto cursor-pointer"
-            onClick={scrollToHero}
-          />
-          <img 
-            src="https://i.imgur.com/lwoK4d2.png" 
-            alt="Devloper.eu Logo" 
-            className="lg:hidden h-64 w-auto mb-4 cursor-pointer"
-            onClick={scrollToHero}
-          />
+          <button type="button" onClick={scrollToHero} aria-label="DevloperEU" className="mb-4 rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-gold">
+            <Logo />
+          </button>
           <p className="text-center max-w-xl text-sm sm:text-base mb-4">
             {t('footer.description')}
           </p>
@@ -73,10 +64,10 @@ const Footer: React.FC = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-gold transition-colors"
+                className="grid place-items-center h-11 w-11 text-white hover:text-gold transition-colors"
                 aria-label={link.label}
               >
-                <link.icon className="h-4 w-4" />
+                <link.icon className="h-5 w-5" />
               </a>
             ))}
           </div>
@@ -108,8 +99,8 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="#portfolio"
-                  onClick={(e) => { e.preventDefault(); scrollToSection('portfolio'); }}
+                  href="#vantagens"
+                  onClick={(e) => { e.preventDefault(); scrollToSection('vantagens'); }}
                   className="text-sm hover:text-gold transition-colors"
                 >
                   {t('footer.quickLinks.portfolio')}
@@ -133,8 +124,8 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#ia-consultoria"
-                  onClick={(e) => { e.preventDefault(); scrollToSection('ia-consultoria'); }}
+                  href="#servicos"
+                  onClick={(e) => { e.preventDefault(); scrollToSection('servicos'); }}
                   className="text-sm hover:text-gold transition-colors"
                 >
                   {t('footer.ourServices.aiConsulting')}
@@ -142,8 +133,8 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="#automacao"
-                  onClick={(e) => { e.preventDefault(); scrollToSection('automacao'); }}
+                  href="#servicos"
+                  onClick={(e) => { e.preventDefault(); scrollToSection('servicos'); }}
                   className="text-sm hover:text-gold transition-colors"
                 >
                   {t('footer.ourServices.automation')}
@@ -151,8 +142,8 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="#machine-learning"
-                  onClick={(e) => { e.preventDefault(); scrollToSection('machine-learning'); }}
+                  href="#servicos"
+                  onClick={(e) => { e.preventDefault(); scrollToSection('servicos'); }}
                   className="text-sm hover:text-gold transition-colors"
                 >
                   {t('footer.ourServices.machineLearning')}
@@ -160,8 +151,8 @@ const Footer: React.FC = () => {
               </li>
               <li>
                 <a
-                  href="#desenvolvimento"
-                  onClick={(e) => { e.preventDefault(); scrollToSection('desenvolvimento'); }}
+                  href="#servicos"
+                  onClick={(e) => { e.preventDefault(); scrollToSection('servicos'); }}
                   className="text-sm hover:text-gold transition-colors"
                 >
                   {t('footer.ourServices.development')}

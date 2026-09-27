@@ -11,6 +11,8 @@ const MetaPixel = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // Carrega o Pixel só depois de a página estar interativa (não bloqueia o LCP)
+    const start = () => {
     // Inicialização do Pixel
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -26,11 +28,17 @@ const MetaPixel = () => {
     
     // Primeiro PageView
     window.fbq('track', 'PageView');
+    };
+    if (document.readyState === 'complete') { const id = window.setTimeout(start, 3000); return () => window.clearTimeout(id); }
+    let id = 0;
+    const onLoad = () => { id = window.setTimeout(start, 3000); };
+    window.addEventListener('load', onLoad, { once: true });
+    return () => { window.removeEventListener('load', onLoad); window.clearTimeout(id); };
   }, []);
 
   // Rastrear PageView em mudanças de rota
   useEffect(() => {
-    window.fbq('track', 'PageView');
+    if (window.fbq) window.fbq('track', 'PageView');
   }, [location]);
 
   return null;

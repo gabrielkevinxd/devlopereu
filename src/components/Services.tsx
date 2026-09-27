@@ -1,58 +1,48 @@
 import React from 'react';
-import { Brain, Notebook as Robot, Cpu, Database, Code, LineChart } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { ArrowUpRight, BarChart3, Brain, Code2, Cpu, Database, Workflow } from 'lucide-react';
+import { Eyebrow, Reveal, SectionTitle } from './ui';
+import { SERVICE_KEYS } from '../config';
+import { scrollToId } from '../lib/booking';
+import { TOPIC_EVENT } from './Booking';
 
-const services = [
-  {
-    icon: Brain,
-    key: 'ia_consultoria'
-  },
-  {
-    icon: Robot,
-    key: 'automacao'
-  },
-  {
-    icon: Cpu,
-    key: 'machine_learning'
-  },
-  {
-    icon: Database,
-    key: 'big_data'
-  },
-  {
-    icon: Code,
-    key: 'desenvolvimento'
-  },
-  {
-    icon: LineChart,
-    key: 'analytics'
-  }
-];
+const ICONS = { ia_consultoria: Brain, automacao: Workflow, machine_learning: Cpu, big_data: Database, desenvolvimento: Code2, analytics: BarChart3 };
 
-const Services = () => {
+const Services: React.FC = () => {
   const { t } = useTranslation();
-
   return (
-    <section id="services" className="section bg-gray-dark">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-anton text-gold mb-4">{t('services.title')}</h2>
-          <p className="text-base sm:text-lg text-gray-light max-w-2xl mx-auto">
-            {t('services.subtitle')}
-          </p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {services.map((service, index) => {
-            const slug = service.key.replace(/_/g, '-');
+    <section id="servicos" aria-labelledby="h-serv" className="section">
+      <div className="max-w-7xl mx-auto">
+        <Reveal>
+          <Eyebrow>{t('v2.eyebrow.services')}</Eyebrow>
+          <SectionTitle id="h-serv">{t('services.title')}</SectionTitle>
+          <p className="mt-5 max-w-2xl text-lg text-gray-light">{t('services.subtitle')}</p>
+        </Reveal>
+        <ul className="mt-12 grid gap-px bg-white/10 border border-white/10 rounded-3xl overflow-hidden sm:grid-cols-2 lg:grid-cols-3">
+          {SERVICE_KEYS.map((k) => {
+            const Icon = ICONS[k];
+            const title = t(`services.items.${k}.title`);
             return (
-              <div id={slug} key={index} className="card group p-6 sm:p-8">
-                <service.icon className="w-10 h-10 sm:w-12 sm:h-12 text-gold mb-4" />
-                <h3 className="text-lg sm:text-xl font-anton mb-2">{t(`services.items.${service.key}.title`)}</h3>
-                <p className="text-sm sm:text-base text-gray-light">{t(`services.items.${service.key}.description`)}</p>
-              </div>
+              <li key={k} className="group relative bg-primary p-7 sm:p-9 transition-colors hover:bg-[#151208]">
+                <Icon className="text-gold" size={34} strokeWidth={1.5} aria-hidden="true" />
+                <h3 className="mt-6 font-anton text-2xl uppercase">{title}</h3>
+                <p className="mt-3 text-gray-light leading-relaxed">{t(`services.items.${k}.description`)}</p>
+                <a
+                  href="#agendar"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.dispatchEvent(new CustomEvent(TOPIC_EVENT, { detail: title }));
+                    scrollToId('agendar');
+                  }}
+                  className="mt-6 inline-flex items-center gap-1 text-gold font-bold min-h-[44px] hover:underline"
+                  aria-label={`${t('v2.serviceCta')}: ${title}`}
+                >
+                  {t('v2.serviceCta')} <ArrowUpRight size={18} aria-hidden="true" />
+                </a>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </section>
   );

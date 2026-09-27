@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { changeLanguage as loadAndChange } from '../i18n';
 
 const languages = [
   { code: 'pt', name: 'Português' },
@@ -11,18 +12,19 @@ const languages = [
 ];
 
 const LanguageSelector: React.FC = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const changeLanguage = (languageCode: string) => {
-    i18n.changeLanguage(languageCode);
+    loadAndChange(languageCode);
   };
 
   return (
     <div className="relative inline-block text-left">
       <select
+        aria-label={t('v2.nav.lang')}
         onChange={(e) => changeLanguage(e.target.value)}
-        value={i18n.language}
-        className="bg-transparent text-white border border-[#FFD700] rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-[#FFD700] appearance-none cursor-pointer hover:bg-[#FFD700] hover:bg-opacity-10 transition-all"
+        value={i18n.resolvedLanguage || 'pt'}
+        className="bg-transparent text-white border border-gold/70 rounded-md px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-gold appearance-none cursor-pointer hover:bg-[#FFD700] hover:bg-opacity-10 transition-all"
       >
         {languages.map((lang) => (
           <option key={lang.code} value={lang.code} className="bg-black">
