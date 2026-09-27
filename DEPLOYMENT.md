@@ -13,6 +13,11 @@ servidor Node nem regras de SPA.
 - Build: `npm run build` · Output: `dist` · Node 18+.
 - Não configurar rewrites para `index.html` (cada rota tem o seu HTML).
 
+## Agente com IA (`/api/agent.php`)
+- Requer PHP ≥ 7.4 com cURL (standard em alojamento partilhado). Vai dentro de `dist/api/`.
+- A chave NÃO vai no `dist/`: criar `devloper-agent.env` uma pasta acima de `public_html` (ver `AGENT.md`).
+- Vercel/Netlify não executam PHP: aí o agente cai no fluxo guiado (seria preciso portar `server/agent` para uma função serverless).
+
 ## Notas
 - `public/sw.js` é um «kill switch»: remove o service worker do site antigo (vite-plugin-pwa) nos
   browsers de visitantes antigos. Pode ser apagado ao fim de alguns meses.
