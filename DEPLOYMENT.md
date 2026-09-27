@@ -16,6 +16,7 @@ servidor Node nem regras de SPA.
 ## Agente com IA (`/api/agent.php`)
 - Requer PHP ≥ 7.4 com cURL (standard em alojamento partilhado). Vai dentro de `dist/api/`.
 - A chave NÃO vai no `dist/`: criar `devloper-agent.env` uma pasta acima de `public_html` (ver `AGENT.md`).
+- Orçamento: o ledger fica em `devloper-agent-data/` uma pasta acima de `public_html` (criado automaticamente; tem de ser gravável). Painel: `/api/admin.html` com `AGENT_ADMIN_TOKEN`.
 - Vercel/Netlify não executam PHP: aí o agente cai no fluxo guiado (seria preciso portar `server/agent` para uma função serverless).
 
 ## Notas
