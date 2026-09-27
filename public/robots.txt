@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://devloper.eu/sitemap.xml
