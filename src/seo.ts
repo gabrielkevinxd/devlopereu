@@ -1,3 +1,4 @@
+import { CAPABILITIES, GROUPS } from './data/capabilities';
 import { CONTACT, SITE_URL, SOCIAL } from './config';
 import { LANGS, LANG_TAGS, type Dict, type Lang } from './i18n';
 import { urlFor, type Page } from './routes';
@@ -73,12 +74,13 @@ export function jsonLd(t: Dict, lang: Lang): object {
         ],
         knowsLanguage: [...LANGS],
       },
-      ...t.services.map((s) => ({
+      // serviços = catálogo único de capacidades (o mesmo do modo clássico e do Mega Brain)
+      ...CAPABILITIES.map((c) => ({
         '@type': 'Service',
-        '@id': `${SITE_URL}/#service-${s.id}`,
-        name: s.name,
-        description: s.short,
-        serviceType: s.name,
+        '@id': `${SITE_URL}/#service-${c.id}`,
+        name: c.text[lang].name,
+        description: c.text[lang].tagline,
+        serviceType: GROUPS[c.group][lang],
         provider: { '@id': bizId },
         areaServed: 'Europe',
         inLanguage: LANG_TAGS[lang],

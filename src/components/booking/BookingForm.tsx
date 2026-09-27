@@ -10,6 +10,7 @@ import {
   TIMES,
   composeMessage,
   dayKey,
+  dayParts,
   formatDay,
   isValidContact,
   mailtoUrl,
@@ -118,8 +119,9 @@ export function BookingForm({ idPrefix, caseSummary, caseText, prefill, onDone }
             ? Array.from({ length: 10 }, (_, i) => <span key={i} className="chip chip--ghost" aria-hidden="true" />)
             : days.map((d, i) => {
                 const k = dayKey(d);
+                const p = dayParts(d, lang);
                 return (
-                  <label key={k} className="chip">
+                  <label key={k} className="chip chip--day">
                     <input
                       type="radio"
                       name={id('day')}
@@ -128,7 +130,11 @@ export function BookingForm({ idPrefix, caseSummary, caseText, prefill, onDone }
                       onChange={() => setDay(k)}
                       data-field={i === 0 ? 'day' : undefined}
                     />
-                    <span>{formatDay(d, lang, 'short')}</span>
+                    <span>
+                      <span className="chip__wd" aria-hidden="true">{p.wd}</span>
+                      <span className="chip__date" aria-hidden="true">{p.date}</span>
+                      <span className="sr-only">{formatDay(d, lang)}</span>
+                    </span>
                   </label>
                 );
               })}

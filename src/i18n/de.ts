@@ -10,6 +10,8 @@ export const de: Dict = {
   },
 
   ui: {
+    themeToDark: 'Zum dunklen Design wechseln',
+    themeToLight: 'Zum hellen Design wechseln',
     skip: 'Zum Inhalt springen',
     modeLabel: 'Ansichtsmodus',
     modeChat: 'Chatten',
@@ -57,13 +59,14 @@ export const de: Dict = {
     capsIntro:
       'Für Ihren Fall habe ich {count} Fähigkeiten aktiviert. Die übrigen sind ebenfalls verfügbar — tippen Sie auf eine, um mehr zu erfahren.',
     capsOpened: '{name}: {short}',
+    capsFocus: 'Hier ist „{name}“ auf der Bühne, mit einem illustrativen Beispielablauf. Tippen Sie auf andere Module zum Vergleich — oder erzählen Sie mir von Ihrem Fall, und ich passe es an.',
     toBook: 'Ich möchte das mit meinen Daten sehen',
     askBook:
       'Ich schlage 30 Minuten per Videocall vor: Wir verstehen den Prozess, zeigen Ihnen den Agenten mit Ihren Daten und sagen Ihnen, was machbar ist. Wählen Sie Tag und Uhrzeit auf der Bühne.',
     bookedWhatsapp: 'Anfrage vorbereitet und in WhatsApp geöffnet. Sobald Sie sie senden, bestätigen wir die Uhrzeit.',
     bookedEmail: 'Anfrage in Ihrem E-Mail-Programm vorbereitet. Sobald Sie sie senden, bestätigen wir die Uhrzeit.',
     bookedCalendar: 'Ich habe unseren Kalender in einem neuen Fenster geöffnet, damit Sie die Uhrzeit bestätigen können.',
-    afterBook: 'Nehmen Sie sich in der Zwischenzeit die kostenlose Checkliste mit 12 Aufgaben mit, die ein KI-Agent sofort übernehmen kann.',
+    afterBook: 'Nehmen Sie sich in der Zwischenzeit die kostenlose Checkliste mit {tasks} Aufgaben mit, die ein KI-Agent sofort übernehmen kann.',
     magnetCta: 'Checkliste öffnen',
     jumpBook: 'Gehen wir direkt zur Buchung. Wählen Sie Tag und Uhrzeit auf der Bühne — um den Rest kümmere ich mich.',
   },
@@ -291,7 +294,7 @@ export const de: Dict = {
     ctaPrimary: '30 Minuten buchen',
     ctaSecondary: 'Mit dem Agenten sprechen',
     servicesTitle: 'Was wir tun',
-    servicesLead: 'Sechs Fähigkeiten, die wir passend zum Problem kombinieren — nicht umgekehrt.',
+    servicesLead: '{caps} KI-Fähigkeiten in {groups} Bereichen. Wir kombinieren die, die Ihr Problem lösen — nicht umgekehrt.',
     processTitle: 'So arbeiten wir',
     process: [
       { t: '30-Minuten-Gespräch', d: 'Wir verstehen den Prozess, die Systeme und wo Zeit verloren geht.' },
@@ -302,12 +305,19 @@ export const de: Dict = {
     aboutTitle: 'Über DevloperEU',
     about: [
       'DevloperEU wurde 2024 in Braga, Portugal, gegründet und entwickelt KI-Agenten und Automatisierungslösungen für Unternehmen in Portugal und Europa.',
-      'Wir arbeiten in sechs Sprachen und konzentrieren uns auf Messbares: weniger manuelle Aufgaben, schnellere Antworten und verlässlichere Daten — stets DSGVO-konform.',
+      'Wir arbeiten in {langs} Sprachen und konzentrieren uns auf Messbares: weniger manuelle Aufgaben, schnellere Antworten und verlässlichere Daten — stets DSGVO-konform.',
     ],
     faqTitle: 'Häufige Fragen',
     bookingTitle: 'Termin buchen',
     bookingLead: 'Wählen Sie Tag und Uhrzeit. Die Anfrage geht bereits ausgefüllt per WhatsApp oder E-Mail raus.',
     contactTitle: 'Kontakt',
+    servicesCta: 'Ablauf im Agenten ansehen',
+    servicesMore: 'Unsicher, wo Sie anfangen sollen? In 30 Minuten sagen wir Ihnen, welche für Sie sinnvoll sind.',
+    processLead: 'Vom ersten Kontakt bis zum Agenten im Betrieb, in {n} Schritten — immer mit Ihrem Team im Prozess.',
+    tags: ['Fähigkeiten', 'Vorgehen', 'Über uns', 'Fragen', 'Termin'],
+    facts: { founded: 'Gegründet', base: 'Sitz', languages: 'Sprachen', capabilities: 'KI-Fähigkeiten', compliance: 'Daten', complianceValue: 'DSGVO' },
+    faqAsk: 'Antwort nicht gefunden?',
+    faqAskCta: 'Fragen Sie den Agenten',
   },
 
   faq: [
@@ -346,7 +356,7 @@ export const de: Dict = {
   ],
 
   magnet: {
-    title: 'Checkliste: 12 Aufgaben, die ein KI-Agent sofort übernehmen kann',
+    title: 'Checkliste: {tasks} Aufgaben, die ein KI-Agent sofort übernehmen kann',
     lead: 'Haken Sie ab, was in Ihrem Unternehmen vorkommt. Bei drei oder mehr Haken wartet ein Agent darauf, Ihnen Zeit zu sparen.',
     cta: 'Kostenlose Checkliste ansehen',
     print: 'Als PDF speichern / drucken',
@@ -392,7 +402,7 @@ export const de: Dict = {
     systems: 'Systeme',
     peopleUnit: 'Personen',
     closedTitle: 'Danke für das Gespräch',
-    closedBody: 'Hier ist die kostenlose Checkliste mit 12 Aufgaben, die ein KI-Agent übernehmen kann — und unsere Kontakte, wenn es passt.',
+    closedBody: 'Hier ist die kostenlose Checkliste mit {tasks} Aufgaben, die ein KI-Agent übernehmen kann — und unsere Kontakte, wenn es passt.',
     limitNote: 'Um weiterzukommen, ist ein 30-minütiges Gespräch mit Ihren Daten der beste Schritt — die Buchung ist auf der Bühne vorbereitet.',
     voiceInsecure: 'Sprache braucht eine sichere Verbindung (https). Öffnen Sie die Website mit https:// oder tippen Sie Ihre Nachricht.',
     voiceDenied: 'Das Mikrofon ist blockiert. Erlauben Sie es über das Schloss-Symbol in der Adressleiste und versuchen Sie es erneut.',
@@ -427,7 +437,7 @@ export const de: Dict = {
 
   exit: {
     title: 'Bevor Sie gehen…',
-    body: 'Nehmen Sie die kostenlose Checkliste mit 12 Aufgaben mit, die ein KI-Agent sofort übernehmen kann. Ohne Anmeldung.',
+    body: 'Nehmen Sie die kostenlose Checkliste mit {tasks} Aufgaben mit, die ein KI-Agent sofort übernehmen kann. Ohne Anmeldung.',
     cta: 'Checkliste ansehen',
     alt: '30 Minuten buchen',
     close: 'Nein, danke',

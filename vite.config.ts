@@ -24,6 +24,8 @@ export default defineConfig(({ mode }) => {
       target: 'es2020',
       cssCodeSplit: false,
       reportCompressedSize: false,
+      // manifesto → a pré-renderização sabe o nome dos chunks do dicionário e do catálogo (modulepreload)
+      manifest: true,
     },
     server: {
       port: 5173,

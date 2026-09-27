@@ -3,7 +3,7 @@
  * com <html lang>, <head> próprio (meta, OG, hreflang, JSON-LD) e o HTML da app.
  * Gera também sitemap.xml (com alternates hreflang) e 404.html.
  */
-import { mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
@@ -20,10 +20,18 @@ const template = readFileSync(join(dist, 'index.html'), 'utf8').replace(
 );
 const { render, allRoutes } = await import(pathToFileURL(ssrEntry).href);
 
-const page = (r) =>
+// modulepreload do dicionário do idioma (+ catálogo na página inicial): descarregam em paralelo com o JS
+// principal em vez de só depois dele → a hidratação começa um round-trip mais cedo.
+const manifestFile = join(dist, '.vite', 'manifest.json');
+const manifest = existsSync(manifestFile) ? JSON.parse(readFileSync(manifestFile, 'utf8')) : {};
+const preload = (src) => (manifest[src] ? `<link rel="modulepreload" crossorigin href="/${manifest[src].file}">` : '');
+const preloads = (route) =>
+  [preload(`src/i18n/${route.lang}.ts`), route.page === 'home' ? preload('src/data/capabilities.ts') : ''].filter(Boolean).join('\n    ');
+
+const page = (r, route) =>
   template
     .replace('<html lang="pt-PT">', `<html lang="${r.htmlLang}">`)
-    .replace('<!--head-->', r.head)
+    .replace('<!--head-->', `${r.head}\n    ${preloads(route)}`)
     .replace('<!--app-->', r.html);
 
 const routes = allRoutes();
@@ -32,7 +40,7 @@ for (const route of routes) {
   const r = await render(route);
   const file = join(dist, r.path, 'index.html');
   mkdirSync(dirname(file), { recursive: true });
-  writeFileSync(file, page(r));
+  writeFileSync(file, page(r, route));
   count++;
 }
 
@@ -40,7 +48,7 @@ for (const route of routes) {
 const notFound = await render({ lang: 'pt', page: 'home' });
 writeFileSync(
   join(dist, '404.html'),
-  page({ ...notFound, head: notFound.head.replace(/<link rel="canonical"[^>]*>/, '') + '\n    <meta name="robots" content="noindex">' }),
+  page({ ...notFound, head: notFound.head.replace(/<link rel="canonical"[^>]*>/, '') + '\n    <meta name="robots" content="noindex">' }, { lang: 'pt', page: 'home' }),
 );
 
 // Sitemap com alternates hreflang.
@@ -67,4 +75,5 @@ writeFileSync(
 );
 
 rmSync(join(root, 'dist-ssr'), { recursive: true, force: true });
+rmSync(join(dist, '.vite'), { recursive: true, force: true }); // o manifesto só serve à pré-renderização
 console.log(`prerender: ${count} páginas + 404.html + sitemap.xml (${routes.length} URLs)`);

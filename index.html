@@ -4,6 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#070605" />
+    <script>
+      /* Tema da superfície de leitura antes da 1.ª pintura (sem flash): escolha guardada → senão, a do sistema. */
+      (function () {
+        var t;
+        try { t = JSON.parse(localStorage.getItem('dev-theme')); } catch (e) {}
+        if (t !== 'light' && t !== 'dark') t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+        // superfície visível: a página inicial abre no palco do agente (sempre escuro); as outras são de leitura
+        var home = /^\/(?:(?:en|fr|es|de|sv)\/?)?$/.test(location.pathname);
+        document.documentElement.setAttribute('data-surface', home ? 'agent' : 'paper');
+      })();
+    </script>
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <!--head-->
     <link rel="icon" href="/favicon.ico" sizes="any" />

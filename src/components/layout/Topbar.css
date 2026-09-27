@@ -10,6 +10,34 @@
   background: rgb(7 6 5 / 0.97);
   border-bottom: 1px solid var(--line);
 }
+/* Superfície de leitura em tema claro (modo clássico, páginas legais): header marfim translúcido.
+   O logótipo dourado é a versão da marca para fundo claro (o original é dourado sobre branco).
+   Com o palco do agente visível (data-surface='agent'), o header fica sempre escuro. */
+:root[data-theme='light'][data-surface='paper'] .topbar {
+  --text: var(--paper-ink);
+  --muted: var(--paper-muted);
+  --line: var(--paper-line);
+  --line-strong: var(--paper-line-strong);
+  --gold-hi: var(--paper-accent);
+  --ink-2: var(--paper-card);
+  --ink-3: var(--paper-2);
+  color-scheme: light;
+  background: var(--paper-bar);
+  -webkit-backdrop-filter: saturate(1.4) blur(12px);
+  backdrop-filter: saturate(1.4) blur(12px);
+  color: var(--text);
+}
+/* logótipo: dourado sobre escuro; dourado-escuro sobre o header claro */
+.topbar .topbar__logo-light,
+:root[data-theme='light'][data-surface='paper'] .topbar__logo-dark {
+  display: none;
+}
+:root[data-theme='light'][data-surface='paper'] .topbar__logo-light {
+  display: block;
+}
+:root[data-theme='dark'][data-surface='paper'] .topbar {
+  background: var(--paper-bar);
+}
 .topbar__brand {
   display: flex;
   align-items: center;

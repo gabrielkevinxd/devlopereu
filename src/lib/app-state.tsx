@@ -11,6 +11,9 @@ interface AppState {
   requestBook: () => void;
   booked: boolean;
   markBooked: () => void;
+  /** Capacidade a mostrar no Mega Brain (vinda do modo clássico ou de ?cap=<id>); n muda a cada pedido. */
+  capFocus: { id: string; n: number } | null;
+  showCap: (id: string) => void;
 }
 
 const Ctx = createContext<AppState | null>(null);
@@ -22,12 +25,19 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   const [mode, setModeState] = useState<Mode>('chat');
   const [bookNonce, setBookNonce] = useState(0);
   const [booked, setBooked] = useState(false);
+  const [capFocus, setCapFocus] = useState<{ id: string; n: number } | null>(null);
 
   useEffect(() => {
     const fromHash = window.location.hash === READ_HASH ? 'read' : null;
     const initial = fromHash ?? readStore<Mode>(MODE_KEY, 'chat');
     if (initial !== 'chat') setModeState(initial);
     if (window.location.hash === '#agendar') setBookNonce((n) => n + 1);
+    // ?cap=<id> → abre o agente com essa capacidade no Mega Brain (links do modo clássico, partilháveis)
+    const cap = new URLSearchParams(window.location.search).get('cap');
+    if (cap && /^[a-z-]{2,40}$/.test(cap)) {
+      setModeState('chat');
+      setCapFocus({ id: cap, n: 1 });
+    }
   }, []);
 
   const setMode = useCallback((m: Mode) => {
@@ -39,11 +49,18 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const requestBook = useCallback(() => setBookNonce((n) => n + 1), []);
+  const showCap = useCallback(
+    (id: string) => {
+      setMode('chat');
+      setCapFocus((c) => ({ id, n: (c?.n ?? 0) + 1 }));
+    },
+    [setMode],
+  );
   const markBooked = useCallback(() => setBooked(true), []);
 
   const value = useMemo(
-    () => ({ mode, setMode, bookNonce, requestBook, booked, markBooked }),
-    [mode, setMode, bookNonce, requestBook, booked, markBooked],
+    () => ({ mode, setMode, bookNonce, requestBook, booked, markBooked, capFocus, showCap }),
+    [mode, setMode, bookNonce, requestBook, booked, markBooked, capFocus, showCap],
   );
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

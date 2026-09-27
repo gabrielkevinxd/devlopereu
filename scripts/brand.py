@@ -5,8 +5,10 @@ Fontes (em scripts/brand-src/):
   - logo-imgur-light.png  -> https://i.imgur.com/lwoK4d2.png (usado no rodapé do site antigo, wordmark claro)
   - logo-stacked-white.png-> captura "Captura de tela 2026-03-19 055143.png" (fundo branco)
 
-Uso: python scripts/brand.py   (requer Pillow >= 11.2 com AVIF)
+Uso: python scripts/brand.py          (requer Pillow >= 11.2 com AVIF)
+     python scripts/brand.py deep     (só a variante dourado-escuro para fundo claro)
 """
+import sys
 from pathlib import Path
 from PIL import Image, ImageFilter
 
@@ -75,9 +77,24 @@ def icon(mark: Image.Image, size: int, fill: float, bg=INK) -> Image.Image:
     return canvas
 
 
+ONLY_DEEP = "deep" in sys.argv[1:]
+
+
+def deepen(im: Image.Image, k: float = 0.56) -> Image.Image:
+    """Mesmo desenho, dourado mais escuro (x k) para fundos claros — o alpha não muda."""
+    r, g, b, a = im.split()
+    r, g, b = (ch.point(lambda v: round(v * k)) for ch in (r, g, b))
+    return Image.merge("RGBA", (r, g, b, a))
+
+
 gold = Image.open(SRC / "logo-imgur-gold.png").convert("RGBA")
 light = Image.open(SRC / "logo-imgur-light.png").convert("RGBA")
 stacked_white = Image.open(SRC / "logo-stacked-white.png")
+
+if ONLY_DEEP:
+    # 7) Horizontal dourado-escuro: header do tema claro (o dourado original fica fraco sobre marfim)
+    save_all(deepen(trim(gold, 4)), "logo-horizontal-deep", [240, 480, 960])
+    sys.exit(0)
 
 # 1) Horizontal dourado (cabeça + wordmark dourados) — funciona em fundo escuro e claro
 horiz = trim(gold, 4)
@@ -113,6 +130,9 @@ icon(head, 180, 0.76).save(PUB / "apple-touch-icon.png", optimize=True)
 fav = icon(head, 64, 0.92, bg=(0, 0, 0, 0))
 fav.save(PUB / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48), (64, 64)])
 icon(head, 32, 0.95, bg=(0, 0, 0, 0)).save(PUB / "favicon-32x32.png", optimize=True)
+
+# 7) Horizontal dourado-escuro para fundo claro (header do tema claro)
+save_all(deepen(horiz), "logo-horizontal-deep", [240, 480, 960])
 
 # 6) Pré-visualização de controlo (compostos sobre preto e branco) — não publicada
 prev = ROOT / ".verify" / "v2" / "brand"

@@ -1,5 +1,6 @@
 import { renderToString } from 'react-dom/server';
 import { App } from './App';
+import { loadCatalog } from './data/catalog';
 import { LANG_TAGS, loadDict } from './i18n';
 import { allRoutes, pathFor, type Route } from './routes';
 import { headTags } from './seo';
@@ -12,7 +13,7 @@ export interface Rendered {
 }
 
 export async function render({ lang, page }: Route): Promise<Rendered> {
-  const dict = await loadDict(lang);
+  const [dict] = await Promise.all([loadDict(lang), loadCatalog()]);
   return {
     path: pathFor(lang, page),
     htmlLang: LANG_TAGS[lang],

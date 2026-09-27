@@ -80,11 +80,11 @@
 }
 .checklist__items .mono {
   font-size: var(--fs-xs);
-  color: var(--gold-lo);
+  color: var(--accent);
 }
 .checklist__items label:has(input:checked) {
   border-color: var(--gold-lo);
-  background: #fff6dc;
+  background: rgb(226 184 66 / 0.14);
 }
 .checklist__actions {
   display: flex;

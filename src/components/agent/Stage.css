@@ -84,12 +84,19 @@
 .stage__body {
   flex: 1;
   min-height: 0;
+  display: flex;
+  flex-direction: column;
   overflow-y: auto;
   overscroll-behavior: contain;
   padding: clamp(0.9rem, 0.5rem + 2cqi, 2.5rem);
   animation: stage-in 0.5s var(--ease) both;
   scrollbar-width: thin;
   scrollbar-color: var(--ink-3) transparent;
+}
+/* conteúdo mais curto do que o palco fica centrado na vertical; mais longo começa em cima e faz scroll */
+.stage__body > * {
+  flex: none;
+  margin-block: auto;
 }
 @keyframes stage-in {
   from {

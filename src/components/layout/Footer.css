@@ -82,6 +82,18 @@
   color: var(--dim);
   font-size: var(--fs-xs);
 }
+/* ecrãs estreitos: idiomas numa linha que quebra (em vez de 6 linhas de 44 px) */
+@media (max-width: 1023px) {
+  .footer__langs {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 1.25rem;
+  }
+  .footer__langs h2 {
+    flex-basis: 100%;
+  }
+}
 @media (min-width: 1024px) {
   .footer__inner {
     grid-template-columns: 1.6fr repeat(4, 1fr);

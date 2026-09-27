@@ -54,7 +54,7 @@ export function Footer({ page }: { page: Page }) {
           </button>
         </nav>
 
-        <nav className="footer__col" aria-label={t.footer.languages}>
+        <nav className="footer__col footer__langs" aria-label={t.footer.languages}>
           <h2>{t.footer.languages}</h2>
           {LANGS.map((l) => (
             <a key={l} href={pathFor(l, page)} lang={l} hrefLang={l} aria-current={l === lang ? 'page' : undefined}>

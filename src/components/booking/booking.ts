@@ -18,6 +18,15 @@ export function nextWorkdays(n = 10, from = new Date()): Date[] {
 export const dayKey = (d: Date) =>
   `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 
+/** Rótulo curto em 2 partes para os chips (dia da semana abreviado · dd/mm), no idioma do site. */
+export function dayParts(d: Date, lang: Lang): { wd: string; date: string } {
+  const tag = LANG_TAGS[lang];
+  return {
+    wd: new Intl.DateTimeFormat(tag, { weekday: 'short' }).format(d).replace(/\.$/, ''),
+    date: new Intl.DateTimeFormat(tag, { day: '2-digit', month: '2-digit' }).format(d),
+  };
+}
+
 export function formatDay(d: Date, lang: Lang, style: 'short' | 'long' = 'long'): string {
   return new Intl.DateTimeFormat(LANG_TAGS[lang], {
     weekday: style === 'long' ? 'long' : 'short',

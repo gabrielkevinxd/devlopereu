@@ -11,6 +11,8 @@
   max-width: 1920px;
   margin-inline: auto;
   padding: 0.75rem clamp(0.75rem, 0.4rem + 1.5vw, 1.75rem) 0;
+  /* ocupa sempre pelo menos um ecrã: o rodapé nunca aparece colado ao 1.º ecrã do agente (e não salta) */
+  min-height: calc(100svh - var(--topbar));
 }
 .ws > .stage {
   order: -1;
@@ -23,6 +25,13 @@
 }
 .ws[data-phase='sim'] > .stage {
   height: clamp(300px, 62svh, 560px);
+}
+/* 1.º ecrã no telemóvel: palco de arranque compacto → a mensagem de boas-vindas e as respostas cabem inteiras */
+.ws[data-phase='intro'] > .stage {
+  height: clamp(180px, 28svh, 250px);
+}
+.ws[data-phase='intro'] .awake__facts {
+  display: none;
 }
 /* Mega Brain no telemóvel: palco com altura natural (a conversa segue por baixo) */
 .ws[data-phase='caps'] > .stage {
@@ -44,6 +53,9 @@
 }
 
 @media (min-width: 900px) {
+  .ws[data-phase='intro'] .awake__facts {
+    display: block;
+  }
   .ws {
     display: grid;
     grid-template-columns: minmax(320px, 0.78fr) minmax(0, 1.35fr);

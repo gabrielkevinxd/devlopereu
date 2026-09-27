@@ -10,6 +10,8 @@ export const en: Dict = {
   },
 
   ui: {
+    themeToDark: 'Switch to dark theme',
+    themeToLight: 'Switch to light theme',
     skip: 'Skip to content',
     modeLabel: 'View mode',
     modeChat: 'Talk',
@@ -57,13 +59,14 @@ export const en: Dict = {
     capsIntro:
       'For your case I switched on {count} capabilities. The others are available too — tap any of them to learn more.',
     capsOpened: '{name}: {short}',
+    capsFocus: 'Here’s “{name}” on the stage, with an illustrative example flow. Tap other modules to compare — or tell me about your case and I’ll adapt it.',
     toBook: 'I want to see this with my data',
     askBook:
       "I suggest a 30-minute video call: we understand the process, show you the agent with your data and tell you what's feasible. Pick a day and time on the stage.",
     bookedWhatsapp: "Request ready and opened in WhatsApp. As soon as you send it, we'll confirm the time.",
     bookedEmail: "Request ready in your email client. As soon as you send it, we'll confirm the time.",
     bookedCalendar: 'I opened our calendar in a new window so you can confirm the time.',
-    afterBook: 'While you wait, grab the free checklist of 12 tasks an AI agent can take over right now.',
+    afterBook: 'While you wait, grab the free checklist of {tasks} tasks an AI agent can take over right now.',
     magnetCta: 'Open the checklist',
     jumpBook: "Let's go straight to booking. Pick a day and time on the stage — I'll take care of the rest.",
   },
@@ -291,7 +294,7 @@ export const en: Dict = {
     ctaPrimary: 'Book 30 minutes',
     ctaSecondary: 'Talk to the agent',
     servicesTitle: 'What we do',
-    servicesLead: 'Six capabilities we combine to fit the problem — not the other way round.',
+    servicesLead: '{caps} AI capabilities across {groups} areas. We combine the ones that solve your problem — not the other way round.',
     processTitle: 'How we work',
     process: [
       { t: '30-min conversation', d: 'We understand the process, the systems and where time is lost.' },
@@ -302,12 +305,19 @@ export const en: Dict = {
     aboutTitle: 'About DevloperEU',
     about: [
       'Founded in 2024 in Braga, Portugal, DevloperEU builds AI agents and automation solutions for businesses in Portugal and across Europe.',
-      'We work in six languages and focus on what can be measured: fewer manual tasks, faster responses and more reliable data — always GDPR-compliant.',
+      'We work in {langs} languages and focus on what can be measured: fewer manual tasks, faster responses and more reliable data — always GDPR-compliant.',
     ],
     faqTitle: 'Frequently asked questions',
     bookingTitle: 'Book a meeting',
     bookingLead: 'Pick a day and time. Your request goes out via WhatsApp or email, already filled in.',
     contactTitle: 'Contacts',
+    servicesCta: 'See the flow in the agent',
+    servicesMore: 'Not sure where to start? In 30 minutes we’ll tell you which ones make sense for you.',
+    processLead: 'From first contact to an agent in production, in {n} steps — always with your team in the loop.',
+    tags: ['Capabilities', 'Method', 'About us', 'Questions', 'Book'],
+    facts: { founded: 'Founded', base: 'Based in', languages: 'Languages', capabilities: 'AI capabilities', compliance: 'Data', complianceValue: 'GDPR' },
+    faqAsk: 'Can’t find the answer?',
+    faqAskCta: 'Ask the agent',
   },
 
   faq: [
@@ -346,7 +356,7 @@ export const en: Dict = {
   ],
 
   magnet: {
-    title: 'Checklist: 12 tasks an AI agent can take over right now',
+    title: 'Checklist: {tasks} tasks an AI agent can take over right now',
     lead: 'Tick the ones that happen in your business. If you ticked three or more, there’s an agent waiting to save you time.',
     cta: 'See the free checklist',
     print: 'Save as PDF / print',
@@ -392,7 +402,7 @@ export const en: Dict = {
     systems: 'Systems',
     peopleUnit: 'people',
     closedTitle: 'Thank you for the chat',
-    closedBody: 'Here is the free checklist of 12 tasks an AI agent can take over — and our contacts for whenever it makes sense.',
+    closedBody: 'Here is the free checklist of {tasks} tasks an AI agent can take over — and our contacts for whenever it makes sense.',
     limitNote: 'To go further, the best next step is a 30-minute call with your data — the booking is ready on the stage.',
     voiceInsecure: 'Voice needs a secure connection (https). Open the site over https:// or type your message.',
     voiceDenied: 'The microphone is blocked. Allow it from the padlock icon in the address bar and try again.',
@@ -427,7 +437,7 @@ export const en: Dict = {
 
   exit: {
     title: 'Before you go…',
-    body: 'Take the free checklist of 12 tasks an AI agent can take over right now. No sign-up.',
+    body: 'Take the free checklist of {tasks} tasks an AI agent can take over right now. No sign-up.',
     cta: 'See the checklist',
     alt: 'Book 30 minutes',
     close: 'No, thanks',

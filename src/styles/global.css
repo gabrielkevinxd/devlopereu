@@ -27,10 +27,23 @@
   --muted: #a39b88;
   --dim: #6f6858;
   --ok: #9fd68a;
+  --bad: #f0967a;
+  --accent: var(--gold); /* texto dourado; na superfície de leitura passa a --paper-accent (AA) */
+
+  /* Superfície de leitura (modo clássico, páginas legais, checklist) — TEMA CLARO por omissão.
+     O modo agente/Mega Brain usa sempre os tokens escuros acima. */
   --paper: #f6f1e6;
   --paper-2: #ece4d2;
+  --paper-card: #fffdf8;
   --paper-ink: #16130d;
-  --paper-muted: #5b5446;
+  --paper-muted: #564f41;
+  --paper-dim: #6b624f;
+  --paper-line: rgb(22 19 13 / 0.12);
+  --paper-line-strong: rgb(22 19 13 / 0.26);
+  --paper-accent: #7a5c0c; /* dourado escuro para texto sobre papel (AA) */
+  --paper-bad: #a8321c;
+  --paper-bar: rgb(246 241 230 / 0.9);
+  --paper-scheme: light;
 
   --font: 'Sora', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Consolas, monospace;
@@ -51,6 +64,22 @@
   --tap: 44px;
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   color-scheme: dark;
+}
+
+/* Tema escuro da superfície de leitura (escolha do visitante ou preferência do sistema — ver index.html). */
+:root[data-theme='dark'] {
+  --paper: #0c0b08;
+  --paper-2: #14110b;
+  --paper-card: #18140d;
+  --paper-ink: #f4efe3;
+  --paper-muted: #b8b09d;
+  --paper-dim: #9a927f;
+  --paper-line: rgb(226 184 66 / 0.14);
+  --paper-line-strong: rgb(226 184 66 / 0.3);
+  --paper-accent: #e8c258;
+  --paper-bad: #f0967a;
+  --paper-bar: rgb(7 6 5 / 0.95);
+  --paper-scheme: dark;
 }
 
 @media (min-width: 900px) {
@@ -81,6 +110,11 @@ body {
   line-height: 1.55;
   overflow-x: clip;
   -webkit-font-smoothing: antialiased;
+}
+/* superfície de leitura visível (modo clássico, páginas de conteúdo): o fundo da página acompanha o tema.
+   html[data-surface] vem do script inline (pela rota) e é atualizado pelo header quando o modo muda. */
+:root[data-surface='paper'] body {
+  background: var(--paper);
 }
 img,
 picture,

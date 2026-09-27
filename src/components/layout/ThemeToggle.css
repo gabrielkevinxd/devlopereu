@@ -1,0 +1,26 @@
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: var(--tap);
+  height: var(--tap);
+  padding: 0;
+  border: 1px solid var(--line-strong);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  transition:
+    border-color 0.2s,
+    background-color 0.2s;
+}
+.theme-toggle:hover {
+  border-color: var(--gold);
+}
+/* claro → mostra a lua (passar a escuro); escuro → mostra o sol */
+.theme-toggle__sun,
+:root[data-theme='dark'] .theme-toggle__moon {
+  display: none;
+}
+:root[data-theme='dark'] .theme-toggle__sun {
+  display: block;
+}

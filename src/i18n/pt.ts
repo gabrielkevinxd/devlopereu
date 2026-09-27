@@ -16,6 +16,8 @@ export const pt = {
   },
 
   ui: {
+    themeToDark: 'Mudar para tema escuro',
+    themeToLight: 'Mudar para tema claro',
     skip: 'Saltar para o conteúdo',
     modeLabel: 'Modo de visualização',
     modeChat: 'Conversar',
@@ -68,13 +70,14 @@ export const pt = {
     capsIntro:
       'Para o seu caso ativei {count} capacidades. As restantes também estão disponíveis — toque em qualquer uma para saber mais.',
     capsOpened: '{name}: {short}',
+    capsFocus: 'Aqui está «{name}» no palco, com um fluxo de exemplo ilustrativo. Toque noutros módulos para comparar — ou conte-me o seu caso e adapto-o.',
     toBook: 'Quero ver isto com os meus dados',
     askBook:
       'Proponho 30 minutos por videochamada: percebemos o processo, mostramos o agente com os seus dados e dizemos-lhe o que é viável. Escolha dia e hora no palco.',
     bookedWhatsapp: 'Pedido preparado e aberto no WhatsApp. Assim que o enviar, confirmamos a hora.',
     bookedEmail: 'Pedido preparado no seu cliente de email. Assim que o enviar, confirmamos a hora.',
     bookedCalendar: 'Abri o nosso calendário numa nova janela para confirmar a hora.',
-    afterBook: 'Enquanto espera, leve a checklist gratuita das 12 tarefas que um agente de IA pode assumir já.',
+    afterBook: 'Enquanto espera, leve a checklist gratuita das {tasks} tarefas que um agente de IA pode assumir já.',
     magnetCta: 'Abrir a checklist',
     jumpBook: 'Vamos direto ao agendamento. Escolha dia e hora no palco — o resto é comigo.',
   },
@@ -302,7 +305,7 @@ export const pt = {
     ctaPrimary: 'Agendar 30 minutos',
     ctaSecondary: 'Conversar com o agente',
     servicesTitle: 'O que fazemos',
-    servicesLead: 'Seis capacidades que combinamos conforme o problema — não o contrário.',
+    servicesLead: '{caps} capacidades de IA em {groups} áreas. Combinamos as que resolvem o seu problema — não o contrário.',
     processTitle: 'Como trabalhamos',
     process: [
       { t: 'Conversa de 30 min', d: 'Percebemos o processo, os sistemas e onde se perde tempo.' },
@@ -313,12 +316,19 @@ export const pt = {
     aboutTitle: 'Sobre a DevloperEU',
     about: [
       'Fundada em 2024 em Braga, Portugal, a DevloperEU cria agentes de IA e soluções de automação para empresas em Portugal e na Europa.',
-      'Trabalhamos em seis idiomas e com foco no que se consegue medir: menos tarefas manuais, respostas mais rápidas e dados mais fiáveis — sempre em conformidade com o RGPD.',
+      'Trabalhamos em {langs} idiomas e com foco no que se consegue medir: menos tarefas manuais, respostas mais rápidas e dados mais fiáveis — sempre em conformidade com o RGPD.',
     ],
     faqTitle: 'Perguntas frequentes',
     bookingTitle: 'Agendar uma reunião',
     bookingLead: 'Escolha dia e hora. O pedido segue por WhatsApp ou email, já preenchido.',
     contactTitle: 'Contactos',
+    servicesCta: 'Ver o fluxo no agente',
+    servicesMore: 'Não sabe por onde começar? Em 30 minutos dizemos-lhe quais fazem sentido para si.',
+    processLead: 'Do primeiro contacto ao agente em produção, em {n} passos — sempre com a sua equipa no circuito.',
+    tags: ['Capacidades', 'Método', 'Quem somos', 'Dúvidas', 'Agendar'],
+    facts: { founded: 'Fundada', base: 'Base', languages: 'Idiomas', capabilities: 'Capacidades de IA', compliance: 'Dados', complianceValue: 'RGPD' },
+    faqAsk: 'Não encontra a resposta?',
+    faqAskCta: 'Pergunte ao agente',
   },
 
   faq: [
@@ -357,7 +367,7 @@ export const pt = {
   ],
 
   magnet: {
-    title: 'Checklist: 12 tarefas que um agente de IA pode assumir já',
+    title: 'Checklist: {tasks} tarefas que um agente de IA pode assumir já',
     lead: 'Marque as que acontecem na sua empresa. Se marcou três ou mais, há um agente a ganhar tempo por si.',
     cta: 'Ver a checklist gratuita',
     print: 'Guardar em PDF / imprimir',
@@ -403,7 +413,7 @@ export const pt = {
     systems: 'Sistemas',
     peopleUnit: 'pessoas',
     closedTitle: 'Obrigado pela conversa',
-    closedBody: 'Deixo-lhe a checklist gratuita das 12 tarefas que um agente de IA pode assumir — e os nossos contactos para quando fizer sentido.',
+    closedBody: 'Deixo-lhe a checklist gratuita das {tasks} tarefas que um agente de IA pode assumir — e os nossos contactos para quando fizer sentido.',
     limitNote: 'Para irmos mais longe, o melhor é falarmos 30 minutos com os seus dados — deixei o agendamento pronto no palco.',
     voiceInsecure: 'A voz precisa de uma ligação segura (https). Abra o site em https:// ou escreva a mensagem.',
     voiceDenied: 'O microfone está bloqueado. Autorize-o no ícone do cadeado, na barra de endereço, e tente de novo.',
@@ -438,7 +448,7 @@ export const pt = {
 
   exit: {
     title: 'Antes de ir…',
-    body: 'Leve a checklist gratuita das 12 tarefas que um agente de IA pode assumir já. Sem registo.',
+    body: 'Leve a checklist gratuita das {tasks} tarefas que um agente de IA pode assumir já. Sem registo.',
     cta: 'Ver a checklist',
     alt: 'Agendar 30 minutos',
     close: 'Não, obrigado',

@@ -10,6 +10,8 @@ export const sv: Dict = {
   },
 
   ui: {
+    themeToDark: 'Byt till mörkt tema',
+    themeToLight: 'Byt till ljust tema',
     skip: 'Hoppa till innehållet',
     modeLabel: 'Visningsläge',
     modeChat: 'Chatta',
@@ -57,13 +59,14 @@ export const sv: Dict = {
     capsIntro:
       'För ditt fall har jag aktiverat {count} förmågor. De övriga finns också — tryck på någon för att läsa mer.',
     capsOpened: '{name}: {short}',
+    capsFocus: 'Här är ”{name}” på scenen, med ett illustrativt exempelflöde. Tryck på andra moduler för att jämföra — eller berätta om ditt fall så anpassar jag det.',
     toBook: 'Jag vill se det här med mina data',
     askBook:
       'Jag föreslår 30 minuter via videosamtal: vi förstår processen, visar agenten med dina data och berättar vad som är möjligt. Välj dag och tid på scenen.',
     bookedWhatsapp: 'Förfrågan är klar och öppnad i WhatsApp. Så fort du skickar den bekräftar vi tiden.',
     bookedEmail: 'Förfrågan är klar i ditt e-postprogram. Så fort du skickar den bekräftar vi tiden.',
     bookedCalendar: 'Jag öppnade vår kalender i ett nytt fönster så att du kan bekräfta tiden.',
-    afterBook: 'Medan du väntar kan du ta med dig den kostnadsfria checklistan med 12 uppgifter som en AI-agent kan ta över direkt.',
+    afterBook: 'Medan du väntar kan du ta med dig den kostnadsfria checklistan med {tasks} uppgifter som en AI-agent kan ta över direkt.',
     magnetCta: 'Öppna checklistan',
     jumpBook: 'Vi går direkt till bokningen. Välj dag och tid på scenen — resten tar jag hand om.',
   },
@@ -291,7 +294,7 @@ export const sv: Dict = {
     ctaPrimary: 'Boka 30 minuter',
     ctaSecondary: 'Prata med agenten',
     servicesTitle: 'Vad vi gör',
-    servicesLead: 'Sex förmågor som vi kombinerar efter problemet — inte tvärtom.',
+    servicesLead: '{caps} AI-förmågor inom {groups} områden. Vi kombinerar de som löser ditt problem — inte tvärtom.',
     processTitle: 'Så arbetar vi',
     process: [
       { t: 'Samtal på 30 min', d: 'Vi förstår processen, systemen och var tiden försvinner.' },
@@ -302,12 +305,19 @@ export const sv: Dict = {
     aboutTitle: 'Om DevloperEU',
     about: [
       'DevloperEU grundades 2024 i Braga, Portugal, och bygger AI-agenter och automatiseringslösningar för företag i Portugal och Europa.',
-      'Vi arbetar på sex språk och fokuserar på det som går att mäta: färre manuella uppgifter, snabbare svar och mer tillförlitliga data — alltid i enlighet med GDPR.',
+      'Vi arbetar på {langs} språk och fokuserar på det som går att mäta: färre manuella uppgifter, snabbare svar och mer tillförlitliga data — alltid i enlighet med GDPR.',
     ],
     faqTitle: 'Vanliga frågor',
     bookingTitle: 'Boka ett möte',
     bookingLead: 'Välj dag och tid. Förfrågan skickas via WhatsApp eller e-post, redan ifylld.',
     contactTitle: 'Kontakt',
+    servicesCta: 'Se flödet i agenten',
+    servicesMore: 'Osäker på var du ska börja? På 30 minuter berättar vi vilka som passar dig.',
+    processLead: 'Från första kontakt till en agent i drift, i {n} steg — alltid med ditt team involverat.',
+    tags: ['Förmågor', 'Metod', 'Om oss', 'Frågor', 'Boka'],
+    facts: { founded: 'Grundat', base: 'Säte', languages: 'Språk', capabilities: 'AI-förmågor', compliance: 'Data', complianceValue: 'GDPR' },
+    faqAsk: 'Hittar du inte svaret?',
+    faqAskCta: 'Fråga agenten',
   },
 
   faq: [
@@ -346,7 +356,7 @@ export const sv: Dict = {
   ],
 
   magnet: {
-    title: 'Checklista: 12 uppgifter som en AI-agent kan ta över direkt',
+    title: 'Checklista: {tasks} uppgifter som en AI-agent kan ta över direkt',
     lead: 'Bocka för de som förekommer i ditt företag. Har du bockat för tre eller fler finns det en agent som kan spara tid åt dig.',
     cta: 'Se den kostnadsfria checklistan',
     print: 'Spara som PDF / skriv ut',
@@ -392,7 +402,7 @@ export const sv: Dict = {
     systems: 'System',
     peopleUnit: 'personer',
     closedTitle: 'Tack för samtalet',
-    closedBody: 'Här är den kostnadsfria checklistan med 12 uppgifter som en AI-agent kan ta över — och våra kontaktuppgifter för när det passar.',
+    closedBody: 'Här är den kostnadsfria checklistan med {tasks} uppgifter som en AI-agent kan ta över — och våra kontaktuppgifter för när det passar.',
     limitNote: 'För att komma vidare är ett 30-minuterssamtal med dina data bästa nästa steg — bokningen ligger redo på scenen.',
     voiceInsecure: 'Röst kräver en säker anslutning (https). Öppna webbplatsen via https:// eller skriv ditt meddelande.',
     voiceDenied: 'Mikrofonen är blockerad. Tillåt den via hänglåsikonen i adressfältet och försök igen.',
@@ -427,7 +437,7 @@ export const sv: Dict = {
 
   exit: {
     title: 'Innan du går…',
-    body: 'Ta med dig den kostnadsfria checklistan med 12 uppgifter som en AI-agent kan ta över direkt. Ingen registrering.',
+    body: 'Ta med dig den kostnadsfria checklistan med {tasks} uppgifter som en AI-agent kan ta över direkt. Ingen registrering.',
     cta: 'Se checklistan',
     alt: 'Boka 30 minuter',
     close: 'Nej tack',

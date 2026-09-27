@@ -10,6 +10,8 @@ export const fr: Dict = {
   },
 
   ui: {
+    themeToDark: 'Passer au thème sombre',
+    themeToLight: 'Passer au thème clair',
     skip: 'Aller au contenu',
     modeLabel: "Mode d'affichage",
     modeChat: 'Discuter',
@@ -57,13 +59,14 @@ export const fr: Dict = {
     capsIntro:
       "Pour votre cas, j'ai activé {count} capacités. Les autres sont aussi disponibles — touchez-en une pour en savoir plus.",
     capsOpened: '{name} : {short}',
+    capsFocus: 'Voici « {name} » sur la scène, avec un flux d’exemple illustratif. Touchez d’autres modules pour comparer — ou décrivez-moi votre cas et je l’adapte.',
     toBook: 'Je veux voir ça avec mes données',
     askBook:
       'Je vous propose 30 minutes en visioconférence : nous comprenons le processus, vous montrons l’agent avec vos données et vous disons ce qui est faisable. Choisissez un jour et une heure sur la scène.',
     bookedWhatsapp: 'Demande prête et ouverte dans WhatsApp. Dès que vous l’envoyez, nous confirmons l’heure.',
     bookedEmail: 'Demande prête dans votre messagerie. Dès que vous l’envoyez, nous confirmons l’heure.',
     bookedCalendar: "J'ai ouvert notre calendrier dans une nouvelle fenêtre pour confirmer l'heure.",
-    afterBook: 'En attendant, emportez la checklist gratuite des 12 tâches qu’un agent IA peut reprendre dès maintenant.',
+    afterBook: 'En attendant, emportez la checklist gratuite des {tasks} tâches qu’un agent IA peut reprendre dès maintenant.',
     magnetCta: 'Ouvrir la checklist',
     jumpBook: 'Allons directement à la réservation. Choisissez un jour et une heure sur la scène — je m’occupe du reste.',
   },
@@ -291,7 +294,7 @@ export const fr: Dict = {
     ctaPrimary: 'Réserver 30 minutes',
     ctaSecondary: "Discuter avec l'agent",
     servicesTitle: 'Ce que nous faisons',
-    servicesLead: 'Six capacités que nous combinons selon le problème — et non l’inverse.',
+    servicesLead: '{caps} capacités d’IA réparties en {groups} domaines. Nous combinons celles qui résolvent votre problème — et non l’inverse.',
     processTitle: 'Notre méthode',
     process: [
       { t: 'Échange de 30 min', d: 'Nous comprenons le processus, les systèmes et où le temps se perd.' },
@@ -302,12 +305,19 @@ export const fr: Dict = {
     aboutTitle: 'À propos de DevloperEU',
     about: [
       'Fondée en 2024 à Braga, au Portugal, DevloperEU crée des agents IA et des solutions d’automatisation pour les entreprises au Portugal et en Europe.',
-      'Nous travaillons en six langues et nous concentrons sur ce qui se mesure : moins de tâches manuelles, des réponses plus rapides et des données plus fiables — toujours en conformité avec le RGPD.',
+      'Nous travaillons en {langs} langues et nous concentrons sur ce qui se mesure : moins de tâches manuelles, des réponses plus rapides et des données plus fiables — toujours en conformité avec le RGPD.',
     ],
     faqTitle: 'Questions fréquentes',
     bookingTitle: 'Prendre rendez-vous',
     bookingLead: 'Choisissez un jour et une heure. La demande part par WhatsApp ou e-mail, déjà remplie.',
     contactTitle: 'Contacts',
+    servicesCta: 'Voir le flux dans l’agent',
+    servicesMore: 'Vous ne savez pas par où commencer ? En 30 minutes, nous vous disons lesquelles ont du sens pour vous.',
+    processLead: 'Du premier contact à l’agent en production, en {n} étapes — toujours avec votre équipe dans la boucle.',
+    tags: ['Capacités', 'Méthode', 'Qui sommes-nous', 'Questions', 'Rendez-vous'],
+    facts: { founded: 'Fondée', base: 'Siège', languages: 'Langues', capabilities: 'Capacités d’IA', compliance: 'Données', complianceValue: 'RGPD' },
+    faqAsk: 'Vous ne trouvez pas la réponse ?',
+    faqAskCta: 'Demandez à l’agent',
   },
 
   faq: [
@@ -346,7 +356,7 @@ export const fr: Dict = {
   ],
 
   magnet: {
-    title: 'Checklist : 12 tâches qu’un agent IA peut reprendre dès maintenant',
+    title: 'Checklist : {tasks} tâches qu’un agent IA peut reprendre dès maintenant',
     lead: 'Cochez celles qui existent dans votre entreprise. Si vous en cochez trois ou plus, un agent peut vous faire gagner du temps.',
     cta: 'Voir la checklist gratuite',
     print: 'Enregistrer en PDF / imprimer',
@@ -392,7 +402,7 @@ export const fr: Dict = {
     systems: 'Systèmes',
     peopleUnit: 'personnes',
     closedTitle: 'Merci pour cet échange',
-    closedBody: 'Voici la checklist gratuite des 12 tâches qu’un agent IA peut reprendre — et nos contacts pour quand ce sera le bon moment.',
+    closedBody: 'Voici la checklist gratuite des {tasks} tâches qu’un agent IA peut reprendre — et nos contacts pour quand ce sera le bon moment.',
     limitNote: 'Pour aller plus loin, le mieux est un échange de 30 minutes avec vos données — la réservation est prête sur la scène.',
     voiceInsecure: 'La voix nécessite une connexion sécurisée (https). Ouvrez le site en https:// ou écrivez votre message.',
     voiceDenied: 'Le micro est bloqué. Autorisez-le via l’icône du cadenas dans la barre d’adresse, puis réessayez.',
@@ -427,7 +437,7 @@ export const fr: Dict = {
 
   exit: {
     title: 'Avant de partir…',
-    body: 'Emportez la checklist gratuite des 12 tâches qu’un agent IA peut reprendre dès maintenant. Sans inscription.',
+    body: 'Emportez la checklist gratuite des {tasks} tâches qu’un agent IA peut reprendre dès maintenant. Sans inscription.',
     cta: 'Voir la checklist',
     alt: 'Réserver 30 minutes',
     close: 'Non, merci',

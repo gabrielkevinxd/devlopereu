@@ -57,6 +57,8 @@ export interface AgentState {
   simX?: AiSim;
   capsX?: { ids: string[]; reasons: Record<string, string>; flows: Record<string, string[]> };
   bookingX?: AiBooking;
+  /** capacidade pedida a partir do modo clássico (?cap=) — o Mega Brain abre já com ela selecionada */
+  focusCap?: string;
   /** muda sempre que o LLM gera nova simulação / novo pré-preenchimento (remonta o componente) */
   stageKey: number;
   suggestions: string[];
@@ -72,6 +74,7 @@ export type Action =
   | { type: 'simDone' }
   | { type: 'caps' }
   | { type: 'openCap'; id: string }
+  | { type: 'showCap'; id: string; name: string }
   | { type: 'book'; fromCta?: boolean }
   | { type: 'booked'; via: BookVia }
   | { type: 'restart' }
@@ -163,6 +166,13 @@ function makeReducer(t: Dict) {
         if (!svc || s.openCap === a.id) return { ...s, openCap: s.openCap === a.id ? undefined : s.openCap };
         return say(null, [[fill(t.chat.capsOpened, { name: svc.name, short: svc.short })]], { openCap: a.id });
       }
+      case 'showCap':
+        return say(null, [[fill(t.chat.capsFocus, { name: a.name })]], {
+          phase: 'caps',
+          capsX: { ids: [a.id], reasons: {}, flows: {} },
+          focusCap: a.id,
+          stageKey: s.stageKey + 1,
+        });
       case 'book':
         if (s.phase === 'booking') return s;
         return a.fromCta

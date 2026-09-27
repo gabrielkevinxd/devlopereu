@@ -7,6 +7,8 @@ import './Logo.css';
 const VARIANTS = {
   horizontal: { file: 'logo-horizontal-gold', w: 1001, h: 306, widths: [240, 480, 960] },
   light: { file: 'logo-horizontal-light', w: 966, h: 306, widths: [240, 480, 960] },
+  /** mesmo desenho em dourado-escuro, para fundos claros (header do tema claro) */
+  deep: { file: 'logo-horizontal-deep', w: 1001, h: 306, widths: [240, 480, 960] },
   stacked: { file: 'logo-stacked-gold', w: 560, h: 486, widths: [280, 560] },
   mark: { file: 'mark-gold', w: 285, h: 302, widths: [64, 128, 285] },
 } as const;

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useI18n } from '../../i18n/context';
+import { catalog } from '../../data/catalog';
 import { useAppState } from '../../lib/app-state';
 import { Chat } from './Chat';
 import { Stage } from './Stage';
@@ -11,8 +12,8 @@ import './Workspace.css';
  * Conversa (guiada, scriptada) + Palco (o que o agente faz pelo visitante, ao vivo).
  */
 export function Workspace({ hidden }: { hidden: boolean }) {
-  const { t } = useI18n();
-  const { bookNonce, mode } = useAppState();
+  const { t, lang } = useI18n();
+  const { bookNonce, mode, capFocus } = useAppState();
   const { state, typing, act } = useAgent(t);
   const stageRef = useRef<HTMLElement>(null);
 
@@ -21,6 +22,12 @@ export function Workspace({ hidden }: { hidden: boolean }) {
     if (bookNonce === 0 || mode !== 'chat') return;
     act({ type: 'book', fromCta: true });
   }, [bookNonce, mode, act]);
+
+  // «Ver o fluxo no agente» (modo clássico / ?cap=) → Mega Brain com essa capacidade selecionada.
+  useEffect(() => {
+    const cap = capFocus && catalog().CAP_BY_ID.get(capFocus.id as never);
+    if (cap) act({ type: 'showCap', id: cap.id, name: cap.text[lang].name });
+  }, [capFocus, act, lang]);
 
   // Em ecrãs estreitos, depois de o agente falar, trazer o formulário (ou a confirmação) à vista.
   const settled = state.queue.length === 0;

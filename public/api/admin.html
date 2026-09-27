@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Painel do agente · DevloperEU</title>
+    <script>
+      /* mesmo tema do site (escolha guardada → senão, a do sistema), antes da 1.ª pintura */
+      (function () {
+        var t;
+        try { t = JSON.parse(localStorage.getItem('dev-theme')); } catch (e) {}
+        if (t !== 'light' && t !== 'dark') t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
     <style>
       :root {
         --ink: #070605;
@@ -19,6 +28,19 @@
         --bad: #f0967a;
         color-scheme: dark;
       }
+      :root[data-theme='light'] {
+        --ink: #f6f1e6;
+        --ink-2: #fffdf8;
+        --line: rgb(22 19 13 / 0.16);
+        --gold-hi: #7a5c0c;
+        --text: #16130d;
+        --muted: #564f41;
+        --ok: #2f6b1f;
+        --warn: #8a5a00;
+        --bad: #a8321c;
+        color-scheme: light;
+      }
+      :root[data-theme='light'] .bar { background: #e4dccb; }
       * { box-sizing: border-box; }
       body { margin: 0; background: var(--ink); color: var(--text); font: 16px/1.5 system-ui, -apple-system, 'Segoe UI', sans-serif; }
       main { max-width: 980px; margin: 0 auto; padding: 24px 16px 48px; }
