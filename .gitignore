@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# segredos locais
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+devloper-agent.env
