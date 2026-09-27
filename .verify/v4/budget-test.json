@@ -3,13 +3,13 @@
     "kind": "php",
     "name": "A esgota 0,01 €: algumas chamadas passam e depois só fallback",
     "ok": true,
-    "detail": "6 ok, 14 recusadas"
+    "detail": "5 ok, 15 recusadas"
   },
   {
     "kind": "php",
     "name": "A gasto nunca ultrapassa o orçamento",
     "ok": true,
-    "detail": "gasto 0.00552 € de 0,01 €"
+    "detail": "gasto 0.00528 € de 0,01 €"
   },
   {
     "kind": "php",
@@ -99,7 +99,7 @@
     "kind": "php",
     "name": "F painel: gasto, %, conversas, qualificados/desqualificados/agendamentos",
     "ok": true,
-    "detail": "gasto 0.00906 € (0.18 %), conversas 2, média 0.00415 €/conversa"
+    "detail": "gasto 0.01014 € (0.2 %), conversas 2, média 0.0047 €/conversa"
   },
   {
     "kind": "php",
@@ -111,7 +111,7 @@
     "kind": "php",
     "name": "F média medida por conversa (mock, preços gemini-2.5-flash)",
     "ok": true,
-    "detail": "0.00415 €"
+    "detail": "0.0047 €"
   },
   {
     "kind": "php",
@@ -123,13 +123,13 @@
     "kind": "vite",
     "name": "A esgota 0,01 €: algumas chamadas passam e depois só fallback",
     "ok": true,
-    "detail": "6 ok, 14 recusadas"
+    "detail": "5 ok, 15 recusadas"
   },
   {
     "kind": "vite",
     "name": "A gasto nunca ultrapassa o orçamento",
     "ok": true,
-    "detail": "gasto 0.00564 € de 0,01 €"
+    "detail": "gasto 0.00538 € de 0,01 €"
   },
   {
     "kind": "vite",
@@ -219,7 +219,7 @@
     "kind": "vite",
     "name": "F painel: gasto, %, conversas, qualificados/desqualificados/agendamentos",
     "ok": true,
-    "detail": "gasto 0.0092 € (0.18 %), conversas 2, média 0.00422 €/conversa"
+    "detail": "gasto 0.01029 € (0.21 %), conversas 2, média 0.00477 €/conversa"
   },
   {
     "kind": "vite",
@@ -231,7 +231,7 @@
     "kind": "vite",
     "name": "F média medida por conversa (mock, preços gemini-2.5-flash)",
     "ok": true,
-    "detail": "0.00422 €"
+    "detail": "0.00477 €"
   },
   {
     "kind": "vite",

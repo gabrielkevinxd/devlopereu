@@ -80,13 +80,13 @@ async function llmFlow(browser, [w, h]) {
   await shot(page, w, '04-llm-simulacao');
 
   await say(page, 'Que serviços usariam?');
-  await page.waitForSelector('.caps');
+  await page.waitForSelector('.mb-panel', { timeout: 15000 });
   await settle(page);
-  await page.click('.cap.is-on button >> nth=0');
-  await page.waitForTimeout(300);
-  const caps = await page.locator('.cap.is-on').count();
-  const why = await page.locator('.cap__more').innerText();
-  check(`${w} unlock_capabilities → 3 capacidades + razão do LLM`, caps === 3 && /Define regras, exceções/.test(why), `${caps} ${why}`);
+  await page.waitForSelector('.mb-panel', { timeout: 15000 });
+  await page.waitForTimeout(400);
+  const caps = await page.locator('.mb-node.is-on').count();
+  const why = await page.locator('.mb-panel__why').innerText();
+  check(`${w} unlock_capabilities → 3 capacidades + razão do LLM`, caps === 3 && /24\/7/.test(why), `${caps} ${why}`);
   await shot(page, w, '05-llm-capacidades');
 
   await say(page, 'Quero marcar reunião, chamo-me Ana Silva, ana@clinica.pt');
@@ -110,8 +110,13 @@ async function llmFlow(browser, [w, h]) {
   await ctx.close();
 }
 
-async function voiceFlow(browser, [w, h]) {
-  const { ctx, page } = await newPage(browser, w, h, { permissions: [] });
+async function voiceFlow(_shared, [w, h]) {
+  // microfone falso (WAV de fala) — o ficheiro é consumido uma vez por processo, por isso um browser por teste
+  const browser = await chromium.launch({
+    args: process.env.SPEECH ? ['--use-fake-device-for-media-stream', '--use-fake-ui-for-media-stream', `--use-file-for-fake-audio-capture=${process.env.SPEECH}%noloop`] : [],
+  });
+  // v5: o caminho principal da voz é microfone real (MediaRecorder) + transcrição no servidor.
+  const { ctx, page } = await newPage(browser, w, h, { permissions: ['microphone'] });
   const actions = [];
   page.on('request', (r) => r.url().includes('/api/agent.php') && r.method() === 'POST' && actions.push(JSON.parse(r.postData() || '{}')));
   // Web Speech API simulada: o microfone «ouve» uma frase (headless não tem microfone real).
@@ -153,6 +158,7 @@ async function voiceFlow(browser, [w, h]) {
   check(`${w} voz: botão silenciar visível`, (await page.locator('.composer__icon[aria-label]').count()) >= 3);
   await shot(page, w, '08-voz-resposta');
   await ctx.close();
+  await browser.close();
 }
 
 async function guardAndFailure(browser, [w, h]) {

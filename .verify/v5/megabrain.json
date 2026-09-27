@@ -1,0 +1,24 @@
+{
+  "steps": 10,
+  "overflow": [],
+  "errors": [],
+  "checks": {
+    "1440 LLM: 15 módulos, 3 ativados pelo modelo": "ok",
+    "1440 LLM: fluxo adaptado gerado pelo modelo + razão": "ok",
+    "1440 LLM: marcado como exemplo ilustrativo": "ok",
+    "1440 LLM: módulo não ativado mostra fluxo adaptado ao caso": "ok",
+    "1440 CTA do Mega Brain → agendamento": "ok",
+    "1440 guiado comércio: fluxo WhatsApp adaptado (clientes da loja)": "ok",
+    "1440 guiado comércio: título com o setor": "ok",
+    "1440 guiado indústria: previsão ML adaptada ao setor": "ok",
+    "390 LLM: 15 módulos, 3 ativados pelo modelo": "ok",
+    "390 LLM: fluxo adaptado gerado pelo modelo + razão": "ok",
+    "390 LLM: marcado como exemplo ilustrativo": "ok",
+    "390 LLM: módulo não ativado mostra fluxo adaptado ao caso": "ok",
+    "390 CTA do Mega Brain → agendamento": "ok",
+    "390 guiado comércio: fluxo WhatsApp adaptado (clientes da loja)": "ok",
+    "390 guiado comércio: título com o setor": "ok",
+    "390 guiado indústria: previsão ML adaptada ao setor": "ok",
+    "reduced-motion: fluxo mostrado completo e estático": "ok"
+  }
+}

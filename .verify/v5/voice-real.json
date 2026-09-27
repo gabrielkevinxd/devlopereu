@@ -1,0 +1,29 @@
+{
+  "checks": {
+    "chrome 1440: botão → «a ouvir» com medidor de nível": "ok",
+    "chrome 1440: fim da fala detetado sozinho → «a transcrever»": "ok",
+    "chrome 1440: áudio gravado enviado para transcrição no servidor e texto enviado ao agente": "ok",
+    "chrome 1440: resposta falada (TTS) reproduzida": "ok",
+    "chrome 390: botão → «a ouvir» com medidor de nível": "ok",
+    "chrome 390: fim da fala detetado sozinho → «a transcrever»": "ok",
+    "chrome 390: áudio gravado enviado para transcrição no servidor e texto enviado ao agente": "ok",
+    "chrome 390: resposta falada (TTS) reproduzida": "ok",
+    "chrome: permissão negada → mensagem e ação visíveis": "ok",
+    "chrome: silêncio → «não ouvi nada» + tentar de novo (sem chamada paga)": "ok",
+    "chrome: 1.ª vez → aviso RGPD → «Aceitar» liga o microfone": "ok",
+    "chrome: http://192.168.1.235 (inseguro) → mensagem «precisa de https»": "ok",
+    "edge 1440: botão → «a ouvir» com medidor de nível": "ok",
+    "edge 1440: fim da fala detetado sozinho → «a transcrever»": "ok",
+    "edge 1440: áudio gravado enviado para transcrição no servidor e texto enviado ao agente": "ok",
+    "edge 1440: resposta falada (TTS) reproduzida": "ok",
+    "edge 390: botão → «a ouvir» com medidor de nível": "ok",
+    "edge 390: fim da fala detetado sozinho → «a transcrever»": "ok",
+    "edge 390: áudio gravado enviado para transcrição no servidor e texto enviado ao agente": "ok",
+    "edge 390: resposta falada (TTS) reproduzida": "ok",
+    "edge: permissão negada → mensagem e ação visíveis": "ok",
+    "edge: silêncio → «não ouvi nada» + tentar de novo (sem chamada paga)": "ok",
+    "edge: 1.ª vez → aviso RGPD → «Aceitar» liga o microfone": "ok",
+    "edge: http://192.168.1.235 (inseguro) → mensagem «precisa de https»": "ok"
+  },
+  "errors": []
+}
