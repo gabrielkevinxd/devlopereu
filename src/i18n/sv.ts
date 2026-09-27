@@ -391,6 +391,9 @@ export const sv: Dict = {
     company: 'Företag',
     systems: 'System',
     peopleUnit: 'personer',
+    closedTitle: 'Tack för samtalet',
+    closedBody: 'Här är den kostnadsfria checklistan med 12 uppgifter som en AI-agent kan ta över — och våra kontaktuppgifter för när det passar.',
+    limitNote: 'För att komma vidare är ett 30-minuterssamtal med dina data bästa nästa steg — bokningen ligger redo på scenen.',
   },
 
   exit: {

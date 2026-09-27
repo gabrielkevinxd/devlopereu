@@ -391,6 +391,9 @@ export const en: Dict = {
     company: 'Company',
     systems: 'Systems',
     peopleUnit: 'people',
+    closedTitle: 'Thank you for the chat',
+    closedBody: 'Here is the free checklist of 12 tasks an AI agent can take over — and our contacts for whenever it makes sense.',
+    limitNote: 'To go further, the best next step is a 30-minute call with your data — the booking is ready on the stage.',
   },
 
   exit: {

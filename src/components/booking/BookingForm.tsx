@@ -95,6 +95,7 @@ export function BookingForm({ idPrefix, caseSummary, caseText, prefill, onDone }
     track(via === 'calendar' ? 'Schedule' : 'Lead', { method: via });
     setSent(via);
     markBooked();
+    void import('../../ai/session').then((m) => m.reportEvent('booked'));
     onDone?.(via);
   };
 

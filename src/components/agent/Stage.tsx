@@ -3,7 +3,7 @@ import { useI18n } from '../../i18n/context';
 import { BookingForm } from '../booking/BookingForm';
 import { Awake } from './stage/Awake';
 import { Capabilities } from './stage/Capabilities';
-import { Done } from './stage/Done';
+import { Closed, Done } from './stage/Done';
 import { Profile } from './stage/Profile';
 import { Simulation } from './stage/Simulation';
 import type { Action, AgentState } from './useAgent';
@@ -14,7 +14,7 @@ interface Props {
   act: (a: Action) => void;
 }
 
-type View = 'awake' | 'profile' | 'sim' | 'caps' | 'booking' | 'done';
+type View = 'awake' | 'profile' | 'sim' | 'caps' | 'booking' | 'done' | 'closed';
 
 const viewFor = (s: AgentState): View => {
   switch (s.phase) {
@@ -32,6 +32,8 @@ const viewFor = (s: AgentState): View => {
       return 'booking';
     case 'done':
       return 'done';
+    case 'closed':
+      return 'closed';
   }
 };
 
@@ -54,6 +56,7 @@ export const Stage = forwardRef<HTMLElement, Props>(function Stage({ state, act 
     caps: 'capacidades',
     booking: 'agendar',
     done: 'ok',
+    closed: 'obrigado',
   }[view];
 
   return (
@@ -82,6 +85,7 @@ export const Stage = forwardRef<HTMLElement, Props>(function Stage({ state, act 
           />
         )}
         {view === 'done' && <Done />}
+        {view === 'closed' && <Closed />}
       </div>
     </section>
   );

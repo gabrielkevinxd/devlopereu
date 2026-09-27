@@ -34,7 +34,7 @@ export function Chat({ state, typing, act }: Props) {
       return;
     }
     // No agendamento quem conduz o scroll é o Workspace (leva ao formulário).
-    if (state.phase === 'booking' || state.phase === 'done') return;
+    if (state.phase === 'booking' || state.phase === 'done' || state.phase === 'closed') return;
     const last = log.lastElementChild?.getBoundingClientRect();
     const answers = answersRef.current?.getBoundingClientRect();
     if (last && answers && last.bottom > answers.top - 12) {
@@ -97,12 +97,14 @@ export function Chat({ state, typing, act }: Props) {
 
       <div ref={answersRef} className="chat__answers" aria-label={t.ui.answersLabel} role="group" data-busy={busy} data-streaming={state.streamingId !== undefined}>
         {!busy && !aiActive && <Answers state={state} act={act} />}
-        {!busy && state.phase === 'done' && (
+        {!busy && (state.phase === 'done' || state.phase === 'closed') && (
           <a className="btn btn--gold" href={pathFor(lang, 'checklist')}>
             {t.chat.magnetCta}
           </a>
         )}
-        <Composer state={state} act={act} busy={busy || state.streamingId !== undefined} />
+        {state.phase !== 'closed' && state.phase !== 'done' && (
+          <Composer state={state} act={act} busy={busy || state.streamingId !== undefined} />
+        )}
       </div>
     </section>
   );

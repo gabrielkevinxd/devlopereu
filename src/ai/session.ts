@@ -7,11 +7,36 @@ import type { Action, AgentState } from '../components/agent/useAgent';
 
 export const ENDPOINT = '/api/agent.php';
 
+/** Id de sessão aleatório (só no separador). No servidor é combinado com o IP num hash — nunca guardado em claro. */
+export function sid(): string {
+  try {
+    let v = sessionStorage.getItem('dev-ai-sid');
+    if (!v) {
+      v = (crypto.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(36).slice(2)}`).replace(/[^A-Za-z0-9-]/g, '');
+      sessionStorage.setItem('dev-ai-sid', v);
+    }
+    return v;
+  } catch {
+    return 'anon-session';
+  }
+}
+
+/** Evento anónimo para o painel do dono (ex.: pedido de reunião enviado). Falhas são ignoradas. */
+export function reportEvent(type: 'booked'): void {
+  void fetch(ENDPOINT, {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ action: 'event', type, sid: sid() }),
+    keepalive: true,
+  }).catch(() => undefined);
+}
+
 export interface Health {
   llm: boolean;
   provider: string | null;
   tts: boolean;
   stt: boolean;
+  tier?: string;
 }
 
 const OFF: Health = { llm: false, provider: null, tts: false, stt: false };
@@ -76,7 +101,7 @@ export async function runTurn(opts: {
     const res = await fetch(ENDPOINT, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ action: 'chat', lang, voice, messages: history(state, text), state: stageSummary(state, t) }),
+      body: JSON.stringify({ action: 'chat', lang, voice, sid: sid(), messages: history(state, text), state: stageSummary(state, t) }),
       signal: ctrl.signal,
     });
     if (!res.ok || !res.body) throw new Error(String(res.status));
@@ -85,7 +110,7 @@ export async function runTurn(opts: {
     let buf = '';
     const handle = (line: string) => {
       if (!line.trim()) return;
-      let e: { t: string; d?: string; name?: string; args?: Record<string, unknown> };
+      let e: { t: string; d?: string; name?: string; args?: Record<string, unknown>; reason?: string };
       try {
         e = JSON.parse(line);
       } catch {
@@ -98,7 +123,8 @@ export async function runTurn(opts: {
         if (e.name === 'reply_with_voice') wantVoice = true;
         else act({ type: 'ai_tool', name: e.name, args: e.args ?? {} });
       } else if (e.t === 'fallback') {
-        throw new Error('fallback');
+        // limite desta conversa ou conversa encerrada → agendamento guiado; restantes → fluxo guiado
+        throw new Error(e.reason ?? 'fallback');
       } else if (e.t === 'done') {
         finished = true;
       }
@@ -115,8 +141,9 @@ export async function runTurn(opts: {
     if (!finished || !reply.trim()) throw new Error('incomplete');
     act({ type: 'ai_end' });
     return { ok: true, text: reply, wantVoice };
-  } catch {
-    act({ type: 'ai_fallback' });
+  } catch (err) {
+    const reason = (err as Error).message;
+    act({ type: reason === 'client_limit' || reason === 'closed' ? 'ai_limit' : 'ai_fallback' });
     return { ok: false, text: '', wantVoice: false };
   } finally {
     window.clearTimeout(timer);

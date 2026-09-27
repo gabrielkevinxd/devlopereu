@@ -3,7 +3,7 @@
  * Entrada: Web Speech API; sem ela, grava e transcreve no servidor (se o provider suportar).
  * Saída: TTS do provider; sem ele, speechSynthesis do browser com voz do idioma (pt-PT, …).
  */
-import { ENDPOINT } from './session';
+import { ENDPOINT, sid } from './session';
 
 interface RecognitionLike {
   lang: string;
@@ -88,7 +88,7 @@ export async function transcribe(blob: Blob, lang: string): Promise<string> {
   const res = await fetch(ENDPOINT, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ action: 'stt', lang, mime: blob.type, audio: btoa(bin) }),
+    body: JSON.stringify({ action: 'stt', lang, sid: sid(), mime: blob.type, audio: btoa(bin) }),
   });
   if (!res.ok) throw new Error(String(res.status));
   return String(((await res.json()) as { text?: string }).text ?? '').trim();
@@ -138,7 +138,7 @@ export async function speak(text: string, lang: string, langTag: string, serverT
       const res = await fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ action: 'tts', lang, text: text.slice(0, 700) }),
+        body: JSON.stringify({ action: 'tts', lang, sid: sid(), text: text.slice(0, 700) }),
       });
       if (!res.ok) throw new Error(String(res.status));
       const url = URL.createObjectURL(await res.blob());

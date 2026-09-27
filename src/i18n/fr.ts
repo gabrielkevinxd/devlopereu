@@ -391,6 +391,9 @@ export const fr: Dict = {
     company: 'Entreprise',
     systems: 'Systèmes',
     peopleUnit: 'personnes',
+    closedTitle: 'Merci pour cet échange',
+    closedBody: 'Voici la checklist gratuite des 12 tâches qu’un agent IA peut reprendre — et nos contacts pour quand ce sera le bon moment.',
+    limitNote: 'Pour aller plus loin, le mieux est un échange de 30 minutes avec vos données — la réservation est prête sur la scène.',
   },
 
   exit: {

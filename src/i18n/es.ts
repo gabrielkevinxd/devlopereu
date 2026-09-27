@@ -391,6 +391,9 @@ export const es: Dict = {
     company: 'Empresa',
     systems: 'Sistemas',
     peopleUnit: 'personas',
+    closedTitle: 'Gracias por la conversación',
+    closedBody: 'Le dejo la checklist gratuita de 12 tareas que un agente de IA puede asumir, y nuestros contactos para cuando tenga sentido.',
+    limitNote: 'Para ir más allá, lo mejor es hablar 30 minutos con sus datos: he dejado la reserva lista en el escenario.',
   },
 
   exit: {

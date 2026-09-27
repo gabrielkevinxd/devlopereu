@@ -3,7 +3,7 @@ import { fill, type Dict } from '../../i18n';
 import { prefersReducedMotion } from '../../lib/storage';
 import type { BookVia } from '../booking/BookingForm';
 
-export type Phase = 'intro' | 'sector' | 'pain' | 'team' | 'sim' | 'caps' | 'booking' | 'done';
+export type Phase = 'intro' | 'sector' | 'pain' | 'team' | 'sim' | 'caps' | 'booking' | 'done' | 'closed';
 
 export interface Msg {
   id: number;
@@ -82,6 +82,7 @@ export type Action =
   | { type: 'ai_tool'; name: string; args: Record<string, unknown> }
   | { type: 'ai_end' }
   | { type: 'ai_fallback' }
+  | { type: 'ai_limit' }
   | { type: 'say'; text: string };
 
 /** Cenário honesto: o agente assume uma fração (por omissão metade) das horas que o próprio visitante indicou. */
@@ -211,6 +212,13 @@ function makeReducer(t: Dict) {
         const queue = next.map(([text, tone]) => msg('agent', text, tone));
         return { ...base, phase, simDone: true, queue: [...s.queue, ...queue], seq };
       }
+      case 'ai_limit': {
+        // limite da conversa atingido (ou encerrada): sem erro — segue para o agendamento guiado
+        const messages = s.messages.filter((m) => m.id !== s.streamingId || m.text.trim());
+        const base = { ...s, ai: false, streamingId: undefined, messages, suggestions: [] };
+        if (s.phase === 'closed' || s.phase === 'done') return base;
+        return { ...base, phase: 'booking', queue: [...s.queue, msg('agent', t.ai.limitNote)], seq };
+      }
       case 'say':
         return say(null, [[a.text]], {});
     }
@@ -268,6 +276,10 @@ function applyTool(s: AgentState, name: string, a: Record<string, unknown>): Age
     }
     case 'suggest_replies':
       return { ...s, suggestions: list(a.options, 3, 60) };
+    case 'qualify_lead':
+      // CHECK MATCH: desqualificado → a conversa com o LLM termina (palco com checklist e contactos);
+      // qualificado → o open_booking que acompanha abre o agendamento pré-preenchido.
+      return a.qualified === false ? { ...s, phase: 'closed', ai: false, suggestions: [] } : s;
     default:
       return s;
   }

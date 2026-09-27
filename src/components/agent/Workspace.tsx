@@ -25,7 +25,7 @@ export function Workspace({ hidden }: { hidden: boolean }) {
   // Em ecrãs estreitos, depois de o agente falar, trazer o formulário (ou a confirmação) à vista.
   const settled = state.queue.length === 0;
   useEffect(() => {
-    if ((state.phase === 'booking' || state.phase === 'done') && settled && window.matchMedia('(max-width: 899px)').matches) {
+    if ((state.phase === 'booking' || state.phase === 'done' || state.phase === 'closed') && settled && window.matchMedia('(max-width: 899px)').matches) {
       stageRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }, [state.phase, settled]);

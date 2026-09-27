@@ -27,7 +27,8 @@
 }
 /* Agendamento em ecrã estreito: o formulário segue a conversa (logo abaixo da última mensagem). */
 .ws[data-phase='booking'] > .stage,
-.ws[data-phase='done'] > .stage {
+.ws[data-phase='done'] > .stage,
+.ws[data-phase='closed'] > .stage {
   order: 1;
   position: relative;
   top: 0;

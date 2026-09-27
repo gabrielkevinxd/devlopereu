@@ -402,6 +402,9 @@ export const pt = {
     company: 'Empresa',
     systems: 'Sistemas',
     peopleUnit: 'pessoas',
+    closedTitle: 'Obrigado pela conversa',
+    closedBody: 'Deixo-lhe a checklist gratuita das 12 tarefas que um agente de IA pode assumir — e os nossos contactos para quando fizer sentido.',
+    limitNote: 'Para irmos mais longe, o melhor é falarmos 30 minutos com os seus dados — deixei o agendamento pronto no palco.',
   },
 
   exit: {

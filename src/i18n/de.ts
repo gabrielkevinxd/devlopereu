@@ -391,6 +391,9 @@ export const de: Dict = {
     company: 'Unternehmen',
     systems: 'Systeme',
     peopleUnit: 'Personen',
+    closedTitle: 'Danke für das Gespräch',
+    closedBody: 'Hier ist die kostenlose Checkliste mit 12 Aufgaben, die ein KI-Agent übernehmen kann — und unsere Kontakte, wenn es passt.',
+    limitNote: 'Um weiterzukommen, ist ein 30-minütiges Gespräch mit Ihren Daten der beste Schritt — die Buchung ist auf der Bühne vorbereitet.',
   },
 
   exit: {
