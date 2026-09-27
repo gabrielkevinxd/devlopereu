@@ -1,0 +1,207 @@
+[
+  {
+    "name": "360: catálogo completo (15 capacidades em 5 grupos)",
+    "ok": true,
+    "detail": "15/5"
+  },
+  {
+    "name": "360 light: «O que fazemos», «Como trabalhamos» e factos sem células vazias",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "360 light: nenhuma célula vazia no DOM",
+    "ok": true,
+    "detail": "0"
+  },
+  {
+    "name": "360: 1…9 itens por grupo nunca deixam buracos",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "360: texto diz 15 capacidades em 5 áreas (derivado)",
+    "ok": true,
+    "detail": "15 capacidades de IA em 5 áreas. Combinamos as que resolvem o seu problema — não o contrário."
+  },
+  {
+    "name": "360: sem «Seis capacidades»/«seis idiomas» escritos à mão",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "768: catálogo completo (15 capacidades em 5 grupos)",
+    "ok": true,
+    "detail": "15/5"
+  },
+  {
+    "name": "768 light: «O que fazemos», «Como trabalhamos» e factos sem células vazias",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "768 light: nenhuma célula vazia no DOM",
+    "ok": true,
+    "detail": "0"
+  },
+  {
+    "name": "768: 1…9 itens por grupo nunca deixam buracos",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "768: texto diz 15 capacidades em 5 áreas (derivado)",
+    "ok": true,
+    "detail": "15 capacidades de IA em 5 áreas. Combinamos as que resolvem o seu problema — não o contrário."
+  },
+  {
+    "name": "768: sem «Seis capacidades»/«seis idiomas» escritos à mão",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "1024: catálogo completo (15 capacidades em 5 grupos)",
+    "ok": true,
+    "detail": "15/5"
+  },
+  {
+    "name": "1024 light: «O que fazemos», «Como trabalhamos» e factos sem células vazias",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "1024 light: nenhuma célula vazia no DOM",
+    "ok": true,
+    "detail": "0"
+  },
+  {
+    "name": "1024: 1…9 itens por grupo nunca deixam buracos",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "1024: texto diz 15 capacidades em 5 áreas (derivado)",
+    "ok": true,
+    "detail": "15 capacidades de IA em 5 áreas. Combinamos as que resolvem o seu problema — não o contrário."
+  },
+  {
+    "name": "1024: sem «Seis capacidades»/«seis idiomas» escritos à mão",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "1440: catálogo completo (15 capacidades em 5 grupos)",
+    "ok": true,
+    "detail": "15/5"
+  },
+  {
+    "name": "1440 light: «O que fazemos», «Como trabalhamos» e factos sem células vazias",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "1440 light: nenhuma célula vazia no DOM",
+    "ok": true,
+    "detail": "0"
+  },
+  {
+    "name": "1440: 1…9 itens por grupo nunca deixam buracos",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "controlo negativo: grelha antiga (6 em 4 colunas) é detetada como buraco",
+    "ok": true,
+    "detail": ".caps__list#0 linha 2: 506 px vazios"
+  },
+  {
+    "name": "1440: texto diz 15 capacidades em 5 áreas (derivado)",
+    "ok": true,
+    "detail": "15 capacidades de IA em 5 áreas. Combinamos as que resolvem o seu problema — não o contrário."
+  },
+  {
+    "name": "1440: sem «Seis capacidades»/«seis idiomas» escritos à mão",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "1920: catálogo completo (15 capacidades em 5 grupos)",
+    "ok": true,
+    "detail": "15/5"
+  },
+  {
+    "name": "1920 light: «O que fazemos», «Como trabalhamos» e factos sem células vazias",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "1920 light: nenhuma célula vazia no DOM",
+    "ok": true,
+    "detail": "0"
+  },
+  {
+    "name": "1920: 1…9 itens por grupo nunca deixam buracos",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "1920: texto diz 15 capacidades em 5 áreas (derivado)",
+    "ok": true,
+    "detail": "15 capacidades de IA em 5 áreas. Combinamos as que resolvem o seu problema — não o contrário."
+  },
+  {
+    "name": "1920: sem «Seis capacidades»/«seis idiomas» escritos à mão",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "360 dark: «O que fazemos», «Como trabalhamos» e factos sem células vazias",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "360 dark: nenhuma célula vazia no DOM",
+    "ok": true,
+    "detail": "0"
+  },
+  {
+    "name": "768 dark: «O que fazemos», «Como trabalhamos» e factos sem células vazias",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "768 dark: nenhuma célula vazia no DOM",
+    "ok": true,
+    "detail": "0"
+  },
+  {
+    "name": "1024 dark: «O que fazemos», «Como trabalhamos» e factos sem células vazias",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "1024 dark: nenhuma célula vazia no DOM",
+    "ok": true,
+    "detail": "0"
+  },
+  {
+    "name": "1440 dark: «O que fazemos», «Como trabalhamos» e factos sem células vazias",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "1440 dark: nenhuma célula vazia no DOM",
+    "ok": true,
+    "detail": "0"
+  },
+  {
+    "name": "1920 dark: «O que fazemos», «Como trabalhamos» e factos sem células vazias",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "1920 dark: nenhuma célula vazia no DOM",
+    "ok": true,
+    "detail": "0"
+  }
+]

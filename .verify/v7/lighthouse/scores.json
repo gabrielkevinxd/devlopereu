@@ -1,0 +1,146 @@
+{
+  "antes/classico-mobile-1": {
+    "performance": 82,
+    "accessibility": 96,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.6 s",
+    "TBT": "430 ms",
+    "CLS": "0"
+  },
+  "antes/classico-mobile-2": {
+    "performance": 84,
+    "accessibility": 96,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.9 s",
+    "TBT": "340 ms",
+    "CLS": "0"
+  },
+  "antes/desktop": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "0.6 s",
+    "TBT": "30 ms",
+    "CLS": "0"
+  },
+  "antes/mobile-1": {
+    "performance": 83,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.6 s",
+    "TBT": "420 ms",
+    "CLS": "0"
+  },
+  "antes/mobile-2": {
+    "performance": 84,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.6 s",
+    "TBT": "390 ms",
+    "CLS": "0"
+  },
+  "antes/mobile-3": {
+    "performance": 85,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.5 s",
+    "TBT": "370 ms",
+    "CLS": "0"
+  },
+  "antes/mobile-4": {
+    "performance": 89,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.7 s",
+    "TBT": "300 ms",
+    "CLS": "0"
+  },
+  "depois/classico-claro-mobile-1": {
+    "performance": 89,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "3.0 s",
+    "TBT": "180 ms",
+    "CLS": "0.002"
+  },
+  "depois/classico-claro-mobile-2": {
+    "performance": 88,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "3.0 s",
+    "TBT": "170 ms",
+    "CLS": "0.002"
+  },
+  "depois/classico-escuro-mobile-1": {
+    "performance": 90,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.9 s",
+    "TBT": "150 ms",
+    "CLS": "0.002"
+  },
+  "depois/classico-escuro-mobile-2": {
+    "performance": 89,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.9 s",
+    "TBT": "160 ms",
+    "CLS": "0.002"
+  },
+  "depois/desktop": {
+    "performance": 100,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "0.6 s",
+    "TBT": "0 ms",
+    "CLS": "0"
+  },
+  "depois/mobile-1": {
+    "performance": 93,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.7 s",
+    "TBT": "90 ms",
+    "CLS": "0"
+  },
+  "depois/mobile-2": {
+    "performance": 95,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.8 s",
+    "TBT": "110 ms",
+    "CLS": "0"
+  },
+  "depois/mobile-3": {
+    "performance": 94,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.7 s",
+    "TBT": "90 ms",
+    "CLS": "0"
+  },
+  "depois/mobile-4": {
+    "performance": 95,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100,
+    "LCP": "2.7 s",
+    "TBT": "90 ms",
+    "CLS": "0"
+  }
+}

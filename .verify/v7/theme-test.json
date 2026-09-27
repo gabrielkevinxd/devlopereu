@@ -1,0 +1,127 @@
+[
+  {
+    "name": "script de tema inline no <head>, antes do CSS",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "sem flash (app bloqueada) · sistema light → pinta light",
+    "ok": true,
+    "detail": "{\"theme\":\"light\",\"body\":\"rgb(246, 241, 230)\",\"meta\":\"#070605\"}"
+  },
+  {
+    "name": "sem flash (app bloqueada) · sistema dark → pinta dark",
+    "ok": true,
+    "detail": "{\"theme\":\"dark\",\"body\":\"rgb(12, 11, 8)\",\"meta\":\"#070605\"}"
+  },
+  {
+    "name": "padrão = sistema (escuro)",
+    "ok": true,
+    "detail": "{\"theme\":\"dark\",\"body\":\"rgb(12, 11, 8)\",\"meta\":\"#0c0b08\"}"
+  },
+  {
+    "name": "alternador visível no header (modo clássico)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "clique → claro, guardado em localStorage, theme-color claro",
+    "ok": true,
+    "detail": "{\"theme\":\"light\",\"body\":\"rgb(246, 241, 230)\",\"meta\":\"#f6f1e6\",\"stored\":\"\\\"light\\\"\"}"
+  },
+  {
+    "name": "nome acessível do alternador acompanha o estado",
+    "ok": true,
+    "detail": "Mudar para tema claro → Mudar para tema escuro"
+  },
+  {
+    "name": "escolha guardada ganha ao sistema depois de recarregar",
+    "ok": true,
+    "detail": "{\"theme\":\"light\",\"body\":\"rgb(246, 241, 230)\",\"meta\":\"#f6f1e6\"}"
+  },
+  {
+    "name": "alternador funciona pelo teclado",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "sem erros JS",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "localStorage bloqueado → tema do sistema, sem erros",
+    "ok": true,
+    "detail": "{\"theme\":\"dark\",\"body\":\"rgb(12, 11, 8)\",\"meta\":\"#0c0b08\",\"errors\":[]}"
+  },
+  {
+    "name": "modo agente com tema claro: palco e header escuros, sem alternador, theme-color escuro",
+    "ok": true,
+    "detail": "{\"toggle\":false,\"stage\":\"rgb(13, 11, 8)\",\"topbar\":\"rgba(7, 6, 5, 0.97)\",\"meta\":\"#070605\"}"
+  },
+  {
+    "name": "«Navegar» aplica o tema escolhido (claro)",
+    "ok": true,
+    "detail": "{\"theme\":\"light\",\"body\":\"rgb(246, 241, 230)\",\"meta\":\"#f6f1e6\"}"
+  },
+  {
+    "name": "axe light 1440 clássico: 0 violações WCAG A/AA",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "axe light 1440 política de privacidade: 0 violações WCAG A/AA",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "axe light 1440 checklist: 0 violações WCAG A/AA",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "axe light 390 clássico: 0 violações WCAG A/AA",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "axe light 390 política de privacidade: 0 violações WCAG A/AA",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "axe light 390 checklist: 0 violações WCAG A/AA",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "axe dark 1440 clássico: 0 violações WCAG A/AA",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "axe dark 1440 política de privacidade: 0 violações WCAG A/AA",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "axe dark 1440 checklist: 0 violações WCAG A/AA",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "axe dark 390 clássico: 0 violações WCAG A/AA",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "axe dark 390 política de privacidade: 0 violações WCAG A/AA",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "axe dark 390 checklist: 0 violações WCAG A/AA",
+    "ok": true,
+    "detail": ""
+  }
+]

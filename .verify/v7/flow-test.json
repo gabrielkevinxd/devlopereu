@@ -1,0 +1,107 @@
+[
+  {
+    "name": "1440 «Ver o fluxo no agente» → modo agente, Mega Brain em «Automação de WhatsApp»",
+    "ok": true,
+    "detail": "{\"mode\":true,\"panel\":\"Automação de WhatsApp\",\"on\":1,\"msg\":\"Agente DevloperEU: Aqui está «Automação de WhatsApp» no palco, com um fluxo de exemplo ilustrativo. Toque noutros módulos para comparar — ou conte-me o seu caso e adapto-o.\"}"
+  },
+  {
+    "name": "1440 nome acessível do CTA inclui a capacidade",
+    "ok": true,
+    "detail": "Ver o fluxo no agente — Automação de WhatsApp"
+  },
+  {
+    "name": "1440 sem erros JS",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "390 «Ver o fluxo no agente» → modo agente, Mega Brain em «Automação de WhatsApp»",
+    "ok": true,
+    "detail": "{\"mode\":true,\"panel\":\"Automação de WhatsApp\",\"on\":1,\"msg\":\"Agente DevloperEU: Aqui está «Automação de WhatsApp» no palco, com um fluxo de exemplo ilustrativo. Toque noutros módulos para comparar — ou conte-me o seu caso e adapto-o.\"}"
+  },
+  {
+    "name": "390 nome acessível do CTA inclui a capacidade",
+    "ok": true,
+    "detail": "Ver o fluxo no agente — Automação de WhatsApp"
+  },
+  {
+    "name": "390 sem erros JS",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "/?cap=previsao-ml abre o Mega Brain nessa capacidade",
+    "ok": true,
+    "detail": "Previsão e machine learning"
+  },
+  {
+    "name": "/?cap=<id inválido> é ignorado (sem erro, palco de arranque)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "pt: «15 capacidades em 5 áreas» no HTML pré-renderizado, sem «seis capacidades»",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "pt: nº de tarefas da checklist derivado (12) e nº de idiomas (6)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "en: «15 capacidades em 5 áreas» no HTML pré-renderizado, sem «seis capacidades»",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "en: nº de tarefas da checklist derivado (12) e nº de idiomas (6)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "fr: «15 capacidades em 5 áreas» no HTML pré-renderizado, sem «seis capacidades»",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "fr: nº de tarefas da checklist derivado (12) e nº de idiomas (6)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "es: «15 capacidades em 5 áreas» no HTML pré-renderizado, sem «seis capacidades»",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "es: nº de tarefas da checklist derivado (12) e nº de idiomas (6)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "de: «15 capacidades em 5 áreas» no HTML pré-renderizado, sem «seis capacidades»",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "de: nº de tarefas da checklist derivado (12) e nº de idiomas (6)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "sv: «15 capacidades em 5 áreas» no HTML pré-renderizado, sem «seis capacidades»",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "sv: nº de tarefas da checklist derivado (12) e nº de idiomas (6)",
+    "ok": true,
+    "detail": ""
+  },
+  {
+    "name": "360/768/1024/1440/1920 × claro/escuro × clássico/agente: sem scroll horizontal",
+    "ok": true,
+    "detail": ""
+  }
+]
