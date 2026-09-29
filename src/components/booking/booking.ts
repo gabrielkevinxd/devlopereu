@@ -1,4 +1,4 @@
-import { CONTACT } from '../../config';
+import { CALENDAR_URL, CONTACT } from '../../config';
 import { fill, LANG_TAGS, type Dict, type Lang } from '../../i18n';
 
 export const TIMES = ['09:30', '10:30', '11:30', '14:00', '15:00', '16:00', '17:00'] as const;
@@ -74,3 +74,20 @@ export const isValidContact = (v: string) => {
   const s = v.trim();
   return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(s) || s.replace(/[^\d]/g, '').length >= 9;
 };
+
+/** URL do Calendly embutido, com o que o visitante já preencheu (email só se o contacto for um email). */
+export function calendlyUrl(o: { name: string; contact: string; day: string; notes: string; company: string }): string {
+  const u = new URL(CALENDAR_URL);
+  u.searchParams.set('embed_domain', location.hostname);
+  u.searchParams.set('embed_type', 'Inline');
+  u.searchParams.set('hide_gdpr_banner', '1');
+  u.searchParams.set('name', o.name.trim());
+  if (o.contact.includes('@')) u.searchParams.set('email', o.contact.trim());
+  if (/^\d{4}-\d{2}-\d{2}$/.test(o.day)) {
+    u.searchParams.set('month', o.day.slice(0, 7));
+    u.searchParams.set('date', o.day);
+  }
+  const note = [o.company.trim(), o.notes.trim()].filter(Boolean).join(' · ');
+  if (note) u.searchParams.set('a1', note);
+  return u.toString();
+}

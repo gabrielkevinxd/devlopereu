@@ -6,7 +6,7 @@ export const SITE_URL = 'https://devloper.eu';
  * TODO(dono): URL de agendamento (Cal.com, Calendly, Google Calendar booking page…).
  * Vazio → o fluxo de agendamento usa WhatsApp/email com o pedido pré-preenchido.
  */
-export const CALENDAR_URL = '';
+export const CALENDAR_URL = 'https://calendly.com/devlopereu/30min';
 
 export const CONTACT = {
   phoneDisplay: '+351 929 070 650',

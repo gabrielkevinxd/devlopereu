@@ -12,12 +12,14 @@ import {
   dayKey,
   dayParts,
   formatDay,
+  calendlyUrl,
   isValidContact,
   mailtoUrl,
   nextWorkdays,
   whatsappUrl,
   type CaseSummary,
 } from './booking';
+import { CalendlyDialog } from './CalendlyDialog';
 import './BookingForm.css';
 
 export type BookVia = 'whatsapp' | 'email' | 'calendar';
@@ -48,6 +50,7 @@ export function BookingForm({ idPrefix, caseSummary, caseText, prefill, onDone }
   const [consent, setConsent] = useState(false);
   const [errors, setErrors] = useState<Field[]>([]);
   const [sent, setSent] = useState<BookVia | null>(null);
+  const [calUrl, setCalUrl] = useState<string | null>(null);
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
@@ -92,7 +95,7 @@ export function BookingForm({ idPrefix, caseSummary, caseText, prefill, onDone }
     }
     if (via === 'whatsapp') window.open(whatsappUrl(message), '_blank', 'noopener');
     if (via === 'email') window.location.href = mailtoUrl(fill(b.message.subject, { day: dayLabel, time }), message);
-    if (via === 'calendar') window.open(CALENDAR_URL, '_blank', 'noopener');
+    if (via === 'calendar') setCalUrl(calendlyUrl({ name, contact, day, notes, company }));
     track(via === 'calendar' ? 'Schedule' : 'Lead', { method: via });
     setSent(via);
     markBooked();
@@ -242,6 +245,7 @@ export function BookingForm({ idPrefix, caseSummary, caseText, prefill, onDone }
           <strong>{b.done}.</strong> {b.doneBody}
         </p>
       )}
+      {calUrl && <CalendlyDialog url={calUrl} title={b.calendar} onClose={() => setCalUrl(null)} />}
     </form>
   );
 }
