@@ -49,7 +49,7 @@ export function mockReply(history: ChatMsg[], system = ''): MockOut {
       };
     }
     return {
-      text: 'Obrigado pela conversa! Pelo que me contou, uma reunião ainda não é o melhor próximo passo. Deixo-lhe a checklist gratuita das 12 tarefas e os nossos contactos — WhatsApp +351 929 070 650 ou contato@devlopereu.com — para quando fizer sentido.',
+      text: 'Obrigado pela conversa! Pelo que me contou, uma reunião ainda não é o melhor próximo passo. Deixo-lhe a checklist gratuita das 12 tarefas e os nossos contactos — WhatsApp +351 929 070 650 ou devlopereu@gmail.com — para quando fizer sentido.',
       tools: [{ name: 'qualify_lead', args: { qualified: false, ...criteria, reason: 'Sem empresa nem processo concreto' } }],
     };
   }

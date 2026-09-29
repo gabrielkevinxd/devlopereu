@@ -3,7 +3,7 @@
 export const SITE_URL = 'https://devloper.eu';
 
 /**
- * TODO(dono): URL de agendamento (Cal.com, Calendly, Google Calendar booking page…).
+ * URL de agendamento (Calendly embutido no site).
  * Vazio → o fluxo de agendamento usa WhatsApp/email com o pedido pré-preenchido.
  */
 export const CALENDAR_URL = 'https://calendly.com/devlopereu/30min';
@@ -12,7 +12,7 @@ export const CONTACT = {
   phoneDisplay: '+351 929 070 650',
   phoneE164: '+351929070650',
   whatsapp: '351929070650',
-  email: 'contato@devlopereu.com',
+  email: 'devlopereu@gmail.com',
   city: 'Braga',
   country: 'PT',
   foundingYear: 2024,

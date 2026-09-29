@@ -467,7 +467,7 @@ export const en: Dict = {
       sections: [
         {
           h: '1. Data controller',
-          p: ['DevloperEU (devloper.eu), Braga, Portugal. Contact: contato@devlopereu.com.'],
+          p: ['DevloperEU (devloper.eu), Braga, Portugal. Contact: devlopereu@gmail.com.'],
         },
         {
           h: '2. What data we process',

@@ -1032,7 +1032,7 @@ function mock_reply(array $history, string $system = ''): array
                 [['qualify_lead', ['qualified' => true] + $crit + ['reason' => 'Todos os critérios cumpridos']],
                     ['open_booking', ['day' => $slot[1] ?? null, 'time' => $slot[2] ?? null, 'notes' => $summary]]]];
         }
-        return ['Obrigado pela conversa! Pelo que me contou, uma reunião ainda não é o melhor próximo passo. Deixo-lhe a checklist gratuita das 12 tarefas e os nossos contactos — WhatsApp +351 929 070 650 ou contato@devlopereu.com — para quando fizer sentido.',
+        return ['Obrigado pela conversa! Pelo que me contou, uma reunião ainda não é o melhor próximo passo. Deixo-lhe a checklist gratuita das 12 tarefas e os nossos contactos — WhatsApp +351 929 070 650 ou devlopereu@gmail.com — para quando fizer sentido.',
             [['qualify_lead', ['qualified' => false] + $crit + ['reason' => 'Sem empresa nem processo concreto']]]];
     }
 

@@ -467,7 +467,7 @@ export const de: Dict = {
       sections: [
         {
           h: '1. Verantwortlicher',
-          p: ['DevloperEU (devloper.eu), Braga, Portugal. Kontakt: contato@devlopereu.com.'],
+          p: ['DevloperEU (devloper.eu), Braga, Portugal. Kontakt: devlopereu@gmail.com.'],
         },
         {
           h: '2. Welche Daten wir verarbeiten',
