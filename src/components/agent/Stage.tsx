@@ -69,7 +69,7 @@ export const Stage = forwardRef<HTMLElement, Props>(function Stage({ state, act 
           <i />
           <i />
         </span>
-        <span className="stage__path">devloper.eu/agente/{path}</span>
+        <span className="stage__path">devlopereu.com/agente/{path}</span>
         {view === 'sim' && <span className="stage__badge">{t.ui.simulation}</span>}
       </div>
       <div className="stage__body" key={`${view}-${state.stageKey}`}>

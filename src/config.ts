@@ -1,6 +1,6 @@
 /** Configuração central do site. Alterar aqui, nunca espalhado pelos componentes. */
 
-export const SITE_URL = 'https://devloper.eu';
+export const SITE_URL = 'https://devlopereu.com';
 
 /**
  * URL de agendamento (Calendly embutido no site).

@@ -1,0 +1,9 @@
+node_modules
+dist
+dist-ssr
+dist.zip
+.git
+.env
+*.env
+.agent-data
+.verify

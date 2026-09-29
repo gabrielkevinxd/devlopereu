@@ -90,7 +90,7 @@ export function ClassicView({ hidden }: { hidden: boolean }) {
             <i />
             <i />
             <i />
-            <span>devloper.eu/agente</span>
+            <span>devlopereu.com/agente</span>
           </div>
           <div className="preview__body">
             <div className="preview__who">

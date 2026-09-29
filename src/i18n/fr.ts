@@ -36,7 +36,7 @@ export const fr: Dict = {
     home: "Page d'accueil",
   },
 
-  boot: ["démarrage de l'agent devloper.eu", 'chargement des capacités · {n}/{n}', 'contexte · entreprises au Portugal et en Europe', 'prêt'],
+  boot: ["démarrage de l'agent devlopereu.com", 'chargement des capacités · {n}/{n}', 'contexte · entreprises au Portugal et en Europe', 'prêt'],
 
   chat: {
     intro: "Bonjour. Je suis l'agent de DevloperEU.",
@@ -467,7 +467,7 @@ export const fr: Dict = {
       sections: [
         {
           h: '1. Responsable du traitement',
-          p: ['DevloperEU (devloper.eu), Braga, Portugal. Contact : devlopereu@gmail.com.'],
+          p: ['DevloperEU (devlopereu.com), Braga, Portugal. Contact : devlopereu@gmail.com.'],
         },
         {
           h: '2. Données traitées',
@@ -534,7 +534,7 @@ export const fr: Dict = {
       sections: [
         {
           h: '1. Acceptation',
-          p: ['En utilisant devloper.eu, vous acceptez ces conditions. Si vous n’êtes pas d’accord, n’utilisez pas le site.'],
+          p: ['En utilisant devlopereu.com, vous acceptez ces conditions. Si vous n’êtes pas d’accord, n’utilisez pas le site.'],
         },
         {
           h: '2. Le site',

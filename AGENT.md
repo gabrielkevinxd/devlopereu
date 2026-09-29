@@ -45,7 +45,7 @@ browser ──POST /api/agent.php──►  produção: public/api/agent.php  (P
    Alternativas: variáveis de ambiente no painel do alojamento, ou `public_html/api/.env`
    (bloqueado pelo `api/.htaccess`). Modelo de exemplo: [`.env.example`](.env.example).
 3. Fazer upload do `dist/` como sempre (inclui `api/agent.php`, `api/agent-brain.json`, `api/.htaccess`).
-4. Testar: abrir `https://devloper.eu/api/agent.php?action=health` → `{"llm":true,...}`.
+4. Testar: abrir `https://devlopereu.com/api/agent.php?action=health` → `{"llm":true,...}`.
 
 Trocar de provider: `AGENT_PROVIDER=openai` + `OPENAI_API_KEY=…` (ou `anthropic` + `ANTHROPIC_API_KEY`).
 Modelo: `AGENT_MODEL=…`. Desligar tudo: `AGENT_DISABLED=1`.
@@ -132,7 +132,7 @@ Conversas que cabem nos 5 € (em 4,90 €):
 O painel calcula esta estimativa em tempo real, a partir da média do mês.
 
 ### Painel do dono
-`https://devloper.eu/api/admin.html` → colar o `AGENT_ADMIN_TOKEN` (definido no `devloper-agent.env`,
+`https://devlopereu.com/api/admin.html` → colar o `AGENT_ADMIN_TOKEN` (definido no `devloper-agent.env`,
 com pelo menos 24 caracteres aleatórios). Mostra:
 - gasto do período e % do orçamento, com o patamar atual;
 - conversas e custo médio por conversa;
@@ -141,7 +141,7 @@ com pelo menos 24 caracteres aleatórios). Mostra:
 - gasto por dia.
 
 Só agregados — nada de IP, nomes, contactos ou mensagens. Também se pode consultar em JSON:
-`curl -H "Authorization: Bearer TOKEN" https://devloper.eu/api/agent.php?action=admin`.
+`curl -H "Authorization: Bearer TOKEN" https://devlopereu.com/api/agent.php?action=admin`.
 
 ### Reiniciar clientes (para voltar a testar o agente)
 No painel, secção **Reiniciar clientes**:
@@ -168,7 +168,7 @@ limite de turnos.
 
 ```bash
 curl -X POST -H "Authorization: Bearer TOKEN" -H "Content-Type: application/json" \
-  -d '{"action":"admin_reset","scope":"mine"}' https://devloper.eu/api/agent.php
+  -d '{"action":"admin_reset","scope":"mine"}' https://devlopereu.com/api/agent.php
 # → {"ok":true,"scope":"mine","clients":1,"rateLimits":1}      (scope "all" = todos)
 ```
 Mesmo contrato no PHP (produção) e no middleware Vite (dev/preview). O teste é
@@ -185,7 +185,7 @@ custos não há IA.
   guiadas»); a Política de Privacidade (6 idiomas) descreve este tratamento.
 - Filtro de prompt-injection (PT/EN/FR/ES/DE/SV) responde sem chamar o modelo e volta ao tema; o
   system prompt proíbe inventar preços, clientes, números ou prazos e trata o texto do visitante como dados.
-- CORS: só `https://devloper.eu`/`www` (+ `AGENT_ALLOWED_ORIGINS`) e pedidos do próprio domínio.
+- CORS: só `https://devlopereu.com`/`www` (+ `AGENT_ALLOWED_ORIGINS`) e pedidos do próprio domínio.
 - Logs: só ação, provider, estado e duração — nunca conteúdo, IP ou dados pessoais. O rate limit
   guarda apenas um hash do IP e carimbos de tempo.
 - Sem chave, provider em baixo, timeout, rate limit ou rede falhada → fluxo guiado, sem erro visível.

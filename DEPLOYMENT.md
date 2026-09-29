@@ -9,6 +9,17 @@ servidor Node nem regras de SPA.
 1. `npm ci && npm run build`
 2. Enviar o conteúdo de `dist/` (inclui `.htaccess`: HTTPS + domínio canónico, 404, cache, MIME AVIF/WebP).
 
+## Coolify (Dockerfile) — produção em devlopereu.com
+O `Dockerfile` da raiz faz build em `node:22-alpine` (`npm ci && npm run build`) e serve `dist/` com
+`php:8.3-apache` (PHP para `/api/agent.php`, `.htaccess` ativo, `mod_remoteip`).
+- **Build Pack:** Dockerfile · **Porta:** 80 · Base directory `/`.
+- **Domínios:** `https://devlopereu.com,https://www.devlopereu.com` (o TLS termina no Traefik; o
+  `.htaccess` decide o redirect HTTPS por `X-Forwarded-Proto` e força `www` → apex).
+- **Volume persistente:** montar em `/data` (ledger do orçamento do agente; `AGENT_DATA_DIR=/data`).
+- **Variáveis de ambiente (só Runtime, NENHUMA Build Variable):** `GEMINI_API_KEY`,
+  `AGENT_ADMIN_TOKEN`, `AGENT_PROVIDER`, `AGENT_MODEL`, `AGENT_BUDGET_EUR`, `AGENT_BUDGET_PERIOD`.
+- Healthcheck do contentor: `curl` a `http://localhost/`.
+
 ## Vercel / Netlify / Cloudflare Pages
 - Build: `npm run build` · Output: `dist` · Node 18+.
 - Não configurar rewrites para `index.html` (cada rota tem o seu HTML).

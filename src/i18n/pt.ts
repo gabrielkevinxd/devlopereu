@@ -43,7 +43,7 @@ export const pt = {
   },
 
   boot: [
-    'a iniciar agente devloper.eu',
+    'a iniciar agente devlopereu.com',
     'a carregar capacidades · {n}/{n}',
     'contexto · empresas em Portugal e na Europa',
     'pronto',
@@ -478,7 +478,7 @@ export const pt = {
       sections: [
         {
           h: '1. Responsável pelo tratamento',
-          p: ['DevloperEU (devloper.eu), Braga, Portugal. Contacto: devlopereu@gmail.com.'],
+          p: ['DevloperEU (devlopereu.com), Braga, Portugal. Contacto: devlopereu@gmail.com.'],
         },
         {
           h: '2. Que dados tratamos',
@@ -545,7 +545,7 @@ export const pt = {
       sections: [
         {
           h: '1. Aceitação',
-          p: ['Ao utilizar devloper.eu aceita estes termos. Se não concordar, não utilize o site.'],
+          p: ['Ao utilizar devlopereu.com aceita estes termos. Se não concordar, não utilize o site.'],
         },
         {
           h: '2. O site',

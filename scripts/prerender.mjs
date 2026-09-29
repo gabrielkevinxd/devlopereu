@@ -10,7 +10,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
 const ssrEntry = join(root, 'dist-ssr', 'entry-server.js');
-const SITE = 'https://devloper.eu';
+const SITE = 'https://devlopereu.com';
 const TAGS = { pt: 'pt-PT', en: 'en', fr: 'fr', es: 'es', de: 'de', sv: 'sv' };
 
 // CSS crítico inline: o stylesheet (~7 kB gzip) deixa de bloquear a primeira pintura.

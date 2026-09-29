@@ -34,3 +34,6 @@ devloper-agent.env
 # ledger local do orçamento do agente (dev)
 .agent-data/
 devloper-agent-data/
+
+# artefactos locais de verificação
+.verify/

@@ -29,7 +29,7 @@ p{font-size:23px;color:#a39b88}
 <div><div class="e"><i></i>agente online · Braga, PT</div>
 <h1>Agentes de IA que tratam o trabalho repetitivo da sua empresa</h1>
 <p>Automação e hiperautomação para empresas em Portugal e na Europa.</p>
-<div class="u">devloper.eu</div></div>
+<div class="u">devlopereu.com</div></div>
 </body></html>`;
 
 (async () => {

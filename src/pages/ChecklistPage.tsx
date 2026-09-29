@@ -38,7 +38,7 @@ export function ChecklistPage() {
             {m.back}
           </a>
         </div>
-        <p className="checklist__print-footer mono">devloper.eu · devlopereu@gmail.com · +351 929 070 650</p>
+        <p className="checklist__print-footer mono">devlopereu.com · devlopereu@gmail.com · +351 929 070 650</p>
       </div>
     </article>
   );
